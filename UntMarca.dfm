@@ -1,324 +1,60 @@
-object FrmPadrao1: TFrmPadrao1
-  Left = 0
-  Top = 0
-  BorderIcons = []
-  BorderStyle = bsSingle
-  Caption = 'FrmPadrao1'
-  ClientHeight = 468
-  ClientWidth = 844
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'Tahoma'
-  Font.Style = []
-  OldCreateOrder = False
-  Position = poScreenCenter
+inherited FrmMarca: TFrmMarca
+  Caption = 'FrmMarca'
   PixelsPerInch = 96
   TextHeight = 13
-  object ToolBar1: TToolBar
-    Left = 0
-    Top = 0
-    Width = 844
-    Height = 57
-    BorderWidth = 1
-    ButtonHeight = 52
-    ButtonWidth = 59
-    Caption = 'ToolBar1'
-    DisabledImages = ImageList2
-    EdgeBorders = [ebTop, ebBottom]
-    HotImages = ImageList3
-    Images = ImageList1
-    ParentShowHint = False
-    ShowCaptions = True
-    ShowHint = True
-    TabOrder = 0
-    object btn_pesquisa: TToolButton
-      Left = 0
-      Top = 0
-      Hint = 'Pesquisar Registro'
-      Caption = 'Pesquisar'
-      DropdownMenu = PopupMenu1
-      ImageIndex = 0
-      Style = tbsDropDown
-    end
-    object btn_ordenar: TToolButton
-      Left = 74
-      Top = 0
-      Hint = 'Ordenar Registros'
-      Caption = 'Ordenar'
-      DropdownMenu = PopupMenu2
-      ImageIndex = 1
-      Style = tbsDropDown
-    end
-    object Separador1: TToolButton
-      Left = 148
-      Top = 0
-      Width = 8
-      Caption = 'Separador1'
-      ImageIndex = 2
-      Style = tbsSeparator
-    end
-    object btn_primeiro: TToolButton
-      Left = 156
-      Top = 0
-      Hint = 'Primeiro Registro'
-      Caption = 'Primeiro'
-      ImageIndex = 2
-      OnClick = btn_primeiroClick
-    end
-    object btn_anterior: TToolButton
-      Left = 215
-      Top = 0
-      Hint = 'Registro Anterior'
-      Caption = 'Anterior'
-      ImageIndex = 3
-      OnClick = btn_anteriorClick
-    end
-    object btn_proximo: TToolButton
-      Left = 274
-      Top = 0
-      Hint = 'Pr'#243'ximo Registro'
-      Caption = 'Pr'#243'ximo'
-      ImageIndex = 4
-      OnClick = btn_proximoClick
-    end
-    object btn_ultimo: TToolButton
-      Left = 333
-      Top = 0
-      Hint = #218'ltimo Registro'
-      Caption = #218'ltimo'
-      ImageIndex = 5
-      OnClick = btn_ultimoClick
-    end
-    object Separador2: TToolButton
-      Left = 392
-      Top = 0
-      Width = 8
-      Caption = 'Separador2'
-      ImageIndex = 6
-      Style = tbsSeparator
-    end
-    object btn_inserir: TToolButton
-      Left = 400
-      Top = 0
-      Hint = 'Inserir Registro'
-      Caption = 'Inserir'
-      ImageIndex = 6
-      OnClick = btn_inserirClick
-    end
-    object btn_editar: TToolButton
-      Left = 459
-      Top = 0
-      Hint = 'Editar Registro'
-      Caption = 'Editar'
-      ImageIndex = 7
-      OnClick = btn_editarClick
-    end
-    object btn_excluir: TToolButton
-      Left = 518
-      Top = 0
-      Hint = 'Excluir Registro'
-      Caption = 'Excluir'
-      ImageIndex = 8
-      OnClick = btn_excluirClick
-    end
-    object Separador3: TToolButton
-      Left = 577
-      Top = 0
-      Width = 8
-      Caption = 'Separador3'
-      ImageIndex = 9
-      Style = tbsSeparator
-    end
-    object btn_salvar: TToolButton
-      Left = 585
-      Top = 0
-      Hint = 'Salvar Registro'
-      Caption = 'Salvar'
-      ImageIndex = 9
-      OnClick = btn_salvarClick
-    end
-    object btn_cancelar: TToolButton
-      Left = 644
-      Top = 0
-      Hint = 'Cancelar Registro'
-      Caption = 'Cancelar'
-      ImageIndex = 10
-      OnClick = btn_cancelarClick
-    end
-    object Separador4: TToolButton
-      Left = 703
-      Top = 0
-      Width = 8
-      Caption = 'Separador4'
-      ImageIndex = 11
-      Style = tbsSeparator
-    end
-    object btn_imprimir: TToolButton
-      Left = 711
-      Top = 0
-      Hint = 'Imprimir Relat'#243'rio'
-      Caption = 'Imprimir'
-      ImageIndex = 11
-    end
-    object Separador5: TToolButton
-      Left = 770
-      Top = 0
-      Width = 8
-      Caption = 'Separador5'
-      ImageIndex = 12
-      Style = tbsSeparator
-    end
-    object btn_sair: TToolButton
-      Left = 778
-      Top = 0
-      Hint = 'Sair'
-      Caption = 'Sair'
-      ImageIndex = 12
-      OnClick = btn_sairClick
-    end
-  end
-  object StatusBar1: TStatusBar
-    Left = 0
-    Top = 449
-    Width = 844
-    Height = 19
-    Panels = <
-      item
-        Width = 75
-      end
-      item
-        Width = 75
-      end
-      item
-        Width = 250
-      end
-      item
-        Width = 50
-      end>
-  end
-  object PanelEntrada: TPanel
-    Left = 0
-    Top = 57
-    Width = 844
-    Height = 30
-    Align = alTop
-    BevelInner = bvRaised
-    BevelOuter = bvLowered
-    TabOrder = 2
-    object Label1: TLabel
-      Left = 9
-      Top = 8
-      Width = 52
+  inherited PnlFicha: TPanel
+    object Label2: TLabel
+      Left = 56
+      Top = 27
+      Width = 33
       Height = 13
-      Caption = 'ID-C'#243'digo:'
+      Caption = 'Codigo'
     end
-    object btnOK: TSpeedButton
-      Left = 116
-      Top = 6
-      Width = 23
-      Height = 22
-      Flat = True
-      Glyph.Data = {
-        36060000424D3606000000000000360000002800000020000000100000000100
-        18000000000000060000C40E0000C40E00000000000000000000FF00FFFF00FF
-        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
-        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
-        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
-        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
-        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
-        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
-        FF00FFFF00FFFF00FF006600006600FF00FFFF00FFFF00FFFF00FFFF00FFFF00
-        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF656565656565FF
-        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
-        FF00FFFF00FF0066001EB2311FB133006600FF00FFFF00FFFF00FFFF00FFFF00
-        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF6565659A9A9A9A9A9A65
-        6565FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
-        FF00FF00660031C24F22B7381AB02D21B437006600FF00FFFF00FFFF00FFFF00
-        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF656565ABABAB9E9E9E9797979C
-        9C9C656565FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
-        00660047D36D3BCB5E25A83B0066001BA92E1DB132006600FF00FFFF00FFFF00
-        FFFF00FFFF00FFFF00FFFF00FFFF00FF656565BFBFBFB5B5B598989865656594
-        9494999999656565FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF006600
-        4FD67953DE7F31B54D006600FF00FF006600179D271EAE31006600FF00FFFF00
-        FFFF00FFFF00FFFF00FFFF00FF656565C4C4C4CACACAA5A5A5656565FF00FF65
-        65658C8C8C989898656565FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
-        00660041C563006600FF00FFFF00FFFF00FFFF00FF00660019AA2B006600FF00
-        FFFF00FFFF00FFFF00FFFF00FFFF00FF656565B5B5B5656565FF00FFFF00FFFF
-        00FFFF00FF656565939393656565FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
-        FF00FF006600FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF006600149D210066
-        00FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF656565FF00FFFF00FFFF00FFFF
-        00FFFF00FFFF00FF6565658A8A8A656565FF00FFFF00FFFF00FFFF00FFFF00FF
-        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF0066
-        00006600FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
-        00FFFF00FFFF00FFFF00FFFF00FF656565656565FF00FFFF00FFFF00FFFF00FF
-        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
-        FF006600006600FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
-        00FFFF00FFFF00FFFF00FFFF00FFFF00FF656565656565FF00FFFF00FFFF00FF
-        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
-        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
-        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
-        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
-        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
-        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
-        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
-        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
-        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
-        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
-        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
-        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
-        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
-        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
-        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
-      NumGlyphs = 2
-    end
-    object lblStatus: TLabel
-      Left = 666
-      Top = 8
-      Width = 59
+    object Label3: TLabel
+      Left = 58
+      Top = 54
+      Width = 31
       Height = 13
-      Caption = 'Bloqueado'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clRed
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
+      Caption = 'Status'
     end
-    object ValorCampo: TEdit
-      Left = 67
-      Top = 5
-      Width = 49
+    object Label4: TLabel
+      Left = 58
+      Top = 81
+      Width = 46
+      Height = 13
+      Caption = 'Descri'#231#227'o'
+    end
+    object DBEdit1: TDBEdit
+      Left = 112
+      Top = 24
+      Width = 46
       Height = 21
+      DataField = 'CD_MARCA'
+      DataSource = DataSource1
       TabOrder = 0
     end
-    object CheckHabilita: TDBCheckBox
-      Left = 145
-      Top = 7
-      Width = 120
-      Height = 17
-      Caption = 'Habilitar este registro'
+    object DBEdit2: TDBEdit
+      Left = 112
+      Top = 51
+      Width = 121
+      Height = 21
       DataField = 'STATUS'
       DataSource = DataSource1
       TabOrder = 1
     end
+    object DBEdit3: TDBEdit
+      Left = 112
+      Top = 78
+      Width = 290
+      Height = 21
+      DataField = 'DESCRICAO'
+      DataSource = DataSource1
+      TabOrder = 2
+    end
   end
-  object PnlFicha: TPanel
-    Left = 0
-    Top = 87
-    Width = 844
-    Height = 362
-    Align = alClient
-    TabOrder = 3
-  end
-  object ImageList1: TImageList
-    Height = 24
-    Width = 24
-    Left = 521
-    Top = 400
+  inherited ImageList1: TImageList
     Bitmap = {
-      494C01010D001800200018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800240018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1513,13 +1249,9 @@ object FrmPadrao1: TFrmPadrao1
       3FFC003FFFFFF7FFFFFFFF00FFFF00FF00000000000000000000000000000000
       000000000000}
   end
-  object ImageList2: TImageList
-    Height = 24
-    Width = 24
-    Left = 577
-    Top = 400
+  inherited ImageList2: TImageList
     Bitmap = {
-      494C01010D001800200018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800240018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2714,13 +2446,9 @@ object FrmPadrao1: TFrmPadrao1
       3FFC003FFFFFF7FFFFFFFF00FFFF00FF00000000000000000000000000000000
       000000000000}
   end
-  object ImageList3: TImageList
-    Height = 24
-    Width = 24
-    Left = 633
-    Top = 400
+  inherited ImageList3: TImageList
     Bitmap = {
-      494C01010D001800200018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800240018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -3915,22 +3643,33 @@ object FrmPadrao1: TFrmPadrao1
       3FFC003FFFFFF7FFFFFFFF00FFFF00FF00000000000000000000000000000000
       000000000000}
   end
-  object DataSource1: TDataSource
-    DataSet = FDTabela
-    Left = 449
-    Top = 400
+  inherited FDTabela: TFDTable
+    IndexFieldNames = 'CD_MARCA;DESCRICAO;STATUS'
+    UpdateOptions.UpdateTableName = 'ALUGMAT.dbo.MARCA'
+    TableName = 'ALUGMAT.dbo.MARCA'
+    object FDTabelaCD_MARCA: TFDAutoIncField
+      FieldName = 'CD_MARCA'
+      Origin = 'CD_MARCA'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object FDTabelaDESCRICAO: TStringField
+      FieldName = 'DESCRICAO'
+      Origin = 'DESCRICAO'
+      Required = True
+      Size = 30
+    end
+    object FDTabelaSTATUS: TStringField
+      FieldName = 'STATUS'
+      Origin = 'STATUS'
+      Required = True
+      FixedChar = True
+      Size = 1
+    end
   end
-  object FDTabela: TFDTable
-    Connection = DM.FDConnection1
-    Transaction = DM.FDTransaction1
-    Left = 385
-    Top = 400
-  end
-  object ImageList4: TImageList
-    Left = 689
-    Top = 399
+  inherited ImageList4: TImageList
     Bitmap = {
-      494C010104000800180010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101040008001C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4201,59 +3940,17 @@ object FrmPadrao1: TFrmPadrao1
       001FFFFFFFFFFFFF001FFFFFFFFFFFFF00000000000000000000000000000000
       000000000000}
   end
-  object PopupMenu1: TPopupMenu
-    Images = ImageList4
-    Left = 688
-    Top = 343
-    object Cdigo1: TMenuItem
-      Caption = 'C'#243'digo'
-      ImageIndex = 0
-      OnClick = Cdigo1Click
-    end
-    object odososregistrosdessatabela1: TMenuItem
-      Caption = 'Todos os registros dessa tabela'
-      OnClick = odososregistrosdessatabela1Click
-    end
-    object N1: TMenuItem
-      Caption = '-'
-    end
-    object Registrosincludosnoperuodo1: TMenuItem
-      Caption = 'Registros inclu'#237'dos no per'#237'odo'
-      ImageIndex = 1
-      OnClick = Registrosincludosnoperuodo1Click
-    end
-    object Registrosalteradosnoperodo1: TMenuItem
-      Caption = 'Registros alterados no per'#237'odo'
-      ImageIndex = 1
-      OnClick = Registrosalteradosnoperodo1Click
-    end
-    object N2: TMenuItem
-      Caption = '-'
-    end
-    object Registrosbloqueadosparaouso1: TMenuItem
-      Caption = 'Registros bloqueados para o uso'
-      ImageIndex = 2
-      OnClick = Registrosbloqueadosparaouso1Click
-    end
-  end
-  object PopupMenu2: TPopupMenu
-    Images = ImageList4
-    Left = 600
-    Top = 343
-    object IDCdigo1: TMenuItem
-      Caption = 'ID-C'#243'digo'
-      ImageIndex = 3
-      OnClick = IDCdigo1Click
-    end
-    object Datadeincluso1: TMenuItem
-      Caption = 'Data de inclus'#227'o'
-      ImageIndex = 0
-      OnClick = Datadeincluso1Click
-    end
-    object Datadealterao1: TMenuItem
-      Caption = 'Data de altera'#231#227'o'
-      ImageIndex = 0
-      OnClick = Datadealterao1Click
-    end
+  object FDQryMArca: TFDQuery
+    Active = True
+    MasterSource = DataSource1
+    MasterFields = 'CD_MARCA;DESCRICAO;STATUS'
+    Connection = DM.FDConnection1
+    Transaction = DM.FDTransaction1
+    SQL.Strings = (
+      'SELECT CD_MARCA '
+      'FROM MARCA'
+      'ORDER BY CD_MARCA')
+    Left = 248
+    Top = 335
   end
 end
