@@ -5,13 +5,21 @@ inherited FrmCliente: TFrmCliente
   ExplicitHeight = 343
   PixelsPerInch = 96
   TextHeight = 13
+  inherited ToolBar1: TToolBar
+    inherited btn_pesquisa: TToolButton
+      ExplicitWidth = 78
+    end
+    inherited btn_ordenar: TToolButton
+      ExplicitWidth = 78
+    end
+  end
   inherited StatusBar1: TStatusBar
     Top = 289
+    ExplicitTop = 289
   end
   inherited PnlFicha: TPanel
     Height = 202
-    ExplicitLeft = 2
-    ExplicitHeight = 625
+    ExplicitHeight = 202
     object Label2: TLabel
       Left = 73
       Top = 24
@@ -27,20 +35,20 @@ inherited FrmCliente: TFrmCliente
       Caption = '* Nome:'
     end
     object lbCPFCNPJ: TLabel
-      Left = 466
+      Left = 428
       Top = 57
-      Width = 32
+      Width = 61
       Height = 13
       Alignment = taRightJustify
-      Caption = '* CPF:'
+      Caption = '* CPF/CNPJ:'
     end
     object lbRGIE: TLabel
-      Left = 656
+      Left = 642
       Top = 57
-      Width = 27
+      Width = 41
       Height = 13
       Alignment = taRightJustify
-      Caption = '* RG:'
+      Caption = '* RG/IE:'
     end
     object Label6: TLabel
       Left = 15
@@ -129,14 +137,14 @@ inherited FrmCliente: TFrmCliente
     object edNome: TDBEdit
       Left = 112
       Top = 54
-      Width = 329
+      Width = 302
       Height = 21
       DataField = 'NOME'
       DataSource = DataSource1
       TabOrder = 0
     end
     object edCPFCNPJ: TDBEdit
-      Left = 504
+      Left = 495
       Top = 54
       Width = 132
       Height = 21
@@ -209,7 +217,7 @@ inherited FrmCliente: TFrmCliente
       Left = 112
       Top = 153
       Width = 113
-      Height = 20
+      Height = 21
       DataField = 'TELEFONE'
       DataSource = DataSource1
       TabOrder = 9
@@ -307,7 +315,7 @@ inherited FrmCliente: TFrmCliente
     Left = 473
     Top = 264
     Bitmap = {
-      494C01010D001800240018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800280018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1506,7 +1514,7 @@ inherited FrmCliente: TFrmCliente
     Left = 529
     Top = 264
     Bitmap = {
-      494C01010D001800240018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800280018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2705,7 +2713,7 @@ inherited FrmCliente: TFrmCliente
     Left = 585
     Top = 264
     Bitmap = {
-      494C01010D001800240018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800280018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -4023,7 +4031,7 @@ inherited FrmCliente: TFrmCliente
     Left = 641
     Top = 263
     Bitmap = {
-      494C0101040008001C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000800200010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
