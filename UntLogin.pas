@@ -22,6 +22,7 @@ type
     StatusBar1: TStatusBar;
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -111,6 +112,11 @@ begin
   //Qualquer um dos dois comandos abaixo vai parar a execução de qualquer aplicação
   //Halt();
   Application.Terminate;
+end;
+
+procedure TFrmLogin.FormCreate(Sender: TObject);
+begin
+  //ValorNome.SetFocus;
 end;
 
 end.

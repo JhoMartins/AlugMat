@@ -4,11 +4,11 @@ object DM: TDM
   Width = 560
   object FDConnection1: TFDConnection
     Params.Strings = (
-      'SERVER=NCC04-06'
+      'SERVER=Cris-PC\SQLServer'
       'OSAuthent=Yes'
       'ApplicationName=Enterprise/Architect/Ultimate'
-      'Workstation=NCC04-06'
-      'DATABASE=VENDAS2018'
+      'Workstation=CRIS-PC'
+      'DATABASE=ALUGMAT'
       'MARS=yes'
       'DriverID=MSSQL')
     Connected = True

@@ -9,7 +9,8 @@ uses
   UntPerfil in 'UntPerfil.pas' {FrmPerfil},
   UntLogin in 'UntLogin.pas' {FrmLogin},
   UntPesqData in 'UntPesqData.pas' {pesqData},
-  UntPesqString in 'UntPesqString.pas' {pesqString};
+  UntPesqString in 'UntPesqString.pas' {pesqString},
+  UntCliente in 'UntCliente.pas' {FrmCliente};
 
 {$R *.res}
 
@@ -22,5 +23,6 @@ begin
   Application.CreateForm(TFrmLogin, FrmLogin);
   Application.CreateForm(TpesqData, pesqData);
   Application.CreateForm(TpesqString, pesqString);
+  Application.CreateForm(TFrmCliente, FrmCliente);
   Application.Run;
 end.
