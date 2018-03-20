@@ -22,7 +22,12 @@ type
     StatusBar1: TStatusBar;
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
+    procedure UsuarioChange(Sender: TObject);
+    procedure ValorSenhaKeyPress(Sender: TObject; var Key: Char);
+    procedure ValorNomeEnter(Sender: TObject);
+    procedure ValorNomeExit(Sender: TObject);
+    procedure ValorSenhaEnter(Sender: TObject);
+    procedure ValorSenhaExit(Sender: TObject);
   private
     { Private declarations }
   public
@@ -114,9 +119,38 @@ begin
   Application.Terminate;
 end;
 
-procedure TFrmLogin.FormCreate(Sender: TObject);
+procedure TFrmLogin.UsuarioChange(Sender: TObject);
 begin
-  //ValorNome.SetFocus;
+  //Se as duas condições forem verdadeiras, retorna True. Senão, retorna False.
+  //Como está atribuindo o resultado da condição a um botão, não é necessário digitar o if
+  BitBtn1.Enabled := (Length(ValorNome.Text) > 2) and (Length(ValorSenha.Text) > 2);
+end;
+
+procedure TFrmLogin.ValorNomeEnter(Sender: TObject);
+begin
+  TEdit(sender).Color := $00C1FFFF;
+  StatusBar1.Panels[0].Text := 'Informe o Usuário...';
+end;
+
+procedure TFrmLogin.ValorNomeExit(Sender: TObject);
+begin
+  TEdit(sender).Color := clWindow;
+end;
+
+procedure TFrmLogin.ValorSenhaEnter(Sender: TObject);
+begin
+  TEdit(sender).Color := $00C1FFFF;
+  StatusBar1.Panels[0].Text := 'Informe a Senha...';
+end;
+
+procedure TFrmLogin.ValorSenhaExit(Sender: TObject);
+begin
+  TEdit(sender).Color := clWindow;
+end;
+
+procedure TFrmLogin.ValorSenhaKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (Key = #13) and (BitBtn1.Enabled = True) then BitBtn1.Click;
 end;
 
 end.
