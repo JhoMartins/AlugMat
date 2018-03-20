@@ -11,7 +11,6 @@ uses
   UntPesqData in 'UntPesqData.pas' {pesqData},
   UntPesqString in 'UntPesqString.pas' {pesqString},
   UntCliente in 'UntCliente.pas' {FrmCliente};
-  UntMarca in 'UntMarca.pas' {FrmPadrao2};
 
 {$R *.res}
 
@@ -25,6 +24,5 @@ begin
   Application.CreateForm(TpesqData, pesqData);
   Application.CreateForm(TpesqString, pesqString);
   Application.CreateForm(TFrmCliente, FrmCliente);
-  Application.CreateForm(TFrmPadrao2, FrmPadrao2);
   Application.Run;
 end.
