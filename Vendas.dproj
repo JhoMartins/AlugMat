@@ -100,43 +100,44 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="UntMenuPrincipal.pas">
-            <Form>FrmMenuPrincipal</Form>
+        <DCCReference Include="UntPadrao\UntPadrao1.pas">
+            <Form>FrmPadrao1</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="UntDM.pas">
+        <DCCReference Include="UntPadrao\UntPesqData.pas">
+            <Form>pesqData</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="UntPadrao\UntPesqString.pas">
+            <Form>pesqString</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="UntGeral\UntDM.pas">
             <Form>DM</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="UntPadrao1.pas">
-            <Form>FrmPadrao1</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="UntUsuario.pas">
-            <Form>FrmUsuario</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="UntPerfil.pas">
-            <Form>FrmPerfil</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="UntLogin.pas">
+        <DCCReference Include="UntGeral\UntLogin.pas">
             <Form>FrmLogin</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="UntPesqData.pas">
-            <Form>pesqData</Form>
+        <DCCReference Include="UntGeral\UntMenuPrincipal.pas">
+            <Form>FrmMenuPrincipal</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="UntPesqString.pas">
-            <Form>pesqString</Form>
+        <DCCReference Include="UntGeral\UntPerfil.pas">
+            <Form>FrmPerfil</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="UntCliente.pas">
+        <DCCReference Include="UntCadastro\UntCliente.pas">
             <Form>FrmCliente</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="UntCadastro\UntUsuario.pas">
+            <Form>FrmUsuario</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <None Include="Vendas.dpr"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -171,27 +172,18 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployClass Name="DependencyModule">
+                <DeployFile LocalName="Vendas.dpr" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
-                        <Operation>0</Operation>
-                        <Extensions>.dll;.bpl</Extensions>
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
                     </Platform>
+                </DeployFile>
+                <DeployClass Name="ProjectiOSDeviceResourceRules">
                     <Platform Name="iOSDevice64">
                         <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
-                    </Platform>
-                    <Platform Name="OSX32">
-                        <RemoteDir>Contents\MacOS</RemoteDir>
-                        <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="iOSDevice32">
                         <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
-                    </Platform>
-                    <Platform Name="iOSSimulator">
-                        <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
                     </Platform>
                 </DeployClass>
                 <DeployClass Name="ProjectOSXResource">
@@ -570,12 +562,27 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="ProjectiOSDeviceResourceRules">
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
                     <Platform Name="iOSDevice64">
                         <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="iOSDevice32">
                         <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
                     </Platform>
                 </DeployClass>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>

@@ -46,7 +46,9 @@ end;
 
 procedure TFrmMenuPrincipal.Button1Click(Sender: TObject);
 begin
+  Application.CreateForm(TFrmPerfil, FrmPerfil);
   FrmPerfil.ShowModal;
+  FrmPerfil.Free;
 end;
 
 procedure TFrmMenuPrincipal.Button2Click(Sender: TObject);
