@@ -14,7 +14,6 @@ object FrmLogin: TFrmLogin
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
-  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -1776,6 +1775,9 @@ object FrmLogin: TFrmLogin
       Hint = 'Digite seu nome de login'
       MaxLength = 10
       TabOrder = 0
+      OnChange = UsuarioChange
+      OnEnter = ValorNomeEnter
+      OnExit = ValorNomeExit
     end
     object ValorSenha: TEdit
       Left = 166
@@ -1786,6 +1788,10 @@ object FrmLogin: TFrmLogin
       MaxLength = 10
       PasswordChar = '*'
       TabOrder = 1
+      OnChange = UsuarioChange
+      OnEnter = ValorSenhaEnter
+      OnExit = ValorSenhaExit
+      OnKeyPress = ValorSenhaKeyPress
     end
   end
   object BitBtn1: TBitBtn
@@ -1794,6 +1800,7 @@ object FrmLogin: TFrmLogin
     Width = 58
     Height = 25
     Caption = '&OK'
+    Enabled = False
     Glyph.Data = {
       36060000424D3606000000000000360000002800000020000000100000000100
       18000000000000060000C40E0000C40E00000000000000000000FF00FFFF00FF
