@@ -14,6 +14,7 @@ object FrmPadrao1: TFrmPadrao1
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object ToolBar1: TToolBar
@@ -43,7 +44,7 @@ object FrmPadrao1: TFrmPadrao1
       Style = tbsDropDown
     end
     object btn_ordenar: TToolButton
-      Left = 74
+      Left = 78
       Top = 0
       Hint = 'Ordenar Registros'
       Caption = 'Ordenar'
@@ -52,7 +53,7 @@ object FrmPadrao1: TFrmPadrao1
       Style = tbsDropDown
     end
     object Separador1: TToolButton
-      Left = 148
+      Left = 156
       Top = 0
       Width = 8
       Caption = 'Separador1'
@@ -60,7 +61,7 @@ object FrmPadrao1: TFrmPadrao1
       Style = tbsSeparator
     end
     object btn_primeiro: TToolButton
-      Left = 156
+      Left = 164
       Top = 0
       Hint = 'Primeiro Registro'
       Caption = 'Primeiro'
@@ -68,7 +69,7 @@ object FrmPadrao1: TFrmPadrao1
       OnClick = btn_primeiroClick
     end
     object btn_anterior: TToolButton
-      Left = 215
+      Left = 223
       Top = 0
       Hint = 'Registro Anterior'
       Caption = 'Anterior'
@@ -76,7 +77,7 @@ object FrmPadrao1: TFrmPadrao1
       OnClick = btn_anteriorClick
     end
     object btn_proximo: TToolButton
-      Left = 274
+      Left = 282
       Top = 0
       Hint = 'Pr'#243'ximo Registro'
       Caption = 'Pr'#243'ximo'
@@ -84,7 +85,7 @@ object FrmPadrao1: TFrmPadrao1
       OnClick = btn_proximoClick
     end
     object btn_ultimo: TToolButton
-      Left = 333
+      Left = 341
       Top = 0
       Hint = #218'ltimo Registro'
       Caption = #218'ltimo'
@@ -92,7 +93,7 @@ object FrmPadrao1: TFrmPadrao1
       OnClick = btn_ultimoClick
     end
     object Separador2: TToolButton
-      Left = 392
+      Left = 400
       Top = 0
       Width = 8
       Caption = 'Separador2'
@@ -100,7 +101,7 @@ object FrmPadrao1: TFrmPadrao1
       Style = tbsSeparator
     end
     object btn_inserir: TToolButton
-      Left = 400
+      Left = 408
       Top = 0
       Hint = 'Inserir Registro'
       Caption = 'Inserir'
@@ -108,7 +109,7 @@ object FrmPadrao1: TFrmPadrao1
       OnClick = btn_inserirClick
     end
     object btn_editar: TToolButton
-      Left = 459
+      Left = 467
       Top = 0
       Hint = 'Editar Registro'
       Caption = 'Editar'
@@ -116,7 +117,7 @@ object FrmPadrao1: TFrmPadrao1
       OnClick = btn_editarClick
     end
     object btn_excluir: TToolButton
-      Left = 518
+      Left = 526
       Top = 0
       Hint = 'Excluir Registro'
       Caption = 'Excluir'
@@ -124,7 +125,7 @@ object FrmPadrao1: TFrmPadrao1
       OnClick = btn_excluirClick
     end
     object Separador3: TToolButton
-      Left = 577
+      Left = 585
       Top = 0
       Width = 8
       Caption = 'Separador3'
@@ -132,7 +133,7 @@ object FrmPadrao1: TFrmPadrao1
       Style = tbsSeparator
     end
     object btn_salvar: TToolButton
-      Left = 585
+      Left = 593
       Top = 0
       Hint = 'Salvar Registro'
       Caption = 'Salvar'
@@ -140,7 +141,7 @@ object FrmPadrao1: TFrmPadrao1
       OnClick = btn_salvarClick
     end
     object btn_cancelar: TToolButton
-      Left = 644
+      Left = 652
       Top = 0
       Hint = 'Cancelar Registro'
       Caption = 'Cancelar'
@@ -148,7 +149,7 @@ object FrmPadrao1: TFrmPadrao1
       OnClick = btn_cancelarClick
     end
     object Separador4: TToolButton
-      Left = 703
+      Left = 711
       Top = 0
       Width = 8
       Caption = 'Separador4'
@@ -156,14 +157,14 @@ object FrmPadrao1: TFrmPadrao1
       Style = tbsSeparator
     end
     object btn_imprimir: TToolButton
-      Left = 711
+      Left = 719
       Top = 0
       Hint = 'Imprimir Relat'#243'rio'
       Caption = 'Imprimir'
       ImageIndex = 11
     end
     object Separador5: TToolButton
-      Left = 770
+      Left = 778
       Top = 0
       Width = 8
       Caption = 'Separador5'
@@ -171,7 +172,7 @@ object FrmPadrao1: TFrmPadrao1
       Style = tbsSeparator
     end
     object btn_sair: TToolButton
-      Left = 778
+      Left = 786
       Top = 0
       Hint = 'Sair'
       Caption = 'Sair'

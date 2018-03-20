@@ -79,6 +79,7 @@ type
     procedure IDCdigo1Click(Sender: TObject);
     procedure Datadeincluso1Click(Sender: TObject);
     procedure Datadealterao1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
     //Criação da Função Executar
@@ -264,7 +265,7 @@ end;
 
 procedure TFrmPadrao1.Datadealterao1Click(Sender: TObject);
 begin
-  //Ordena pelo campo ID
+  //Ordena pelo campo DATA_ALT
   FDTabela.IndexFieldNames := 'DATA_ALT';
   StatusBar1.Panels[2].Text := 'Ordenado: Data de Alteração';
 end;
@@ -274,6 +275,11 @@ begin
   //Ordena pelo campo data de inclusão
   FDTabela.IndexFieldNames := 'DATA_INC';
   StatusBar1.Panels[2].Text := 'Ordenado: Data de Inclusão';
+end;
+
+procedure TFrmPadrao1.FormCreate(Sender: TObject);
+begin
+  PnlFicha.Enabled := false;
 end;
 
 procedure TFrmPadrao1.IDCdigo1Click(Sender: TObject);

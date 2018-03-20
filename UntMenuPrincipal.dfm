@@ -15,14 +15,6 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
   OnCloseQuery = FormCloseQuery
   PixelsPerInch = 96
   TextHeight = 13
-  object Ribbon1: TRibbon
-    Left = 0
-    Top = 0
-    Width = 619
-    Height = 143
-    Caption = 'Ribbon1'
-    StyleName = 'Ribbon - Luna'
-  end
   object StatusBar1: TStatusBar
     Left = 0
     Top = 394
@@ -57,8 +49,17 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     Width = 75
     Height = 25
     Caption = 'Button2'
-    TabOrder = 3
+    TabOrder = 1
     OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 442
+    Top = 288
+    Width = 75
+    Height = 25
+    Caption = 'Button3'
+    TabOrder = 3
+    OnClick = Button3Click
   end
   object QueryLogin: TFDQuery
     Connection = DM.FDConnection1
