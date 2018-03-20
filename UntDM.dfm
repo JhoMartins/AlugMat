@@ -11,7 +11,6 @@ object DM: TDM
       'DATABASE=ALUGMAT'
       'MARS=yes'
       'DriverID=MSSQL')
-    Connected = True
     LoginPrompt = False
     Transaction = FDTransaction1
     Left = 136
