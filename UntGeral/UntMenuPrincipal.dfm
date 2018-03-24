@@ -15,103 +15,6 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
   OnCloseQuery = FormCloseQuery
   PixelsPerInch = 96
   TextHeight = 13
-  object Ribbon1: TRibbon
-    Left = 0
-    Top = 0
-    Width = 619
-    Height = 143
-    ActionManager = ActionManager1
-    ApplicationMenu.Menu = RibbonApplicationMenuBar1
-    Caption = 'Sistema de Vendas - Desenvolvimento de Sistemas II - 2018'
-    QuickAccessToolbar.ActionBar = RibbonQuickAccessToolbar1
-    Tabs = <
-      item
-        Caption = 'Cadastro'
-        Page = RibbonPage1
-      end
-      item
-        Caption = 'Movimenta'#231#227'o'
-        Page = RibbonPage2
-      end
-      item
-        Caption = 'Relat'#243'rio'
-        Page = RibbonPage3
-      end
-      item
-        Caption = 'Gr'#225'fico'
-        Page = RibbonPage4
-      end
-      item
-        Caption = 'Ferramenta'
-        Page = RibbonPage5
-      end>
-    TabIndex = 4
-    DesignSize = (
-      619
-      143)
-    StyleName = 'Ribbon - Luna'
-    object RibbonPage1: TRibbonPage
-      Left = 0
-      Top = 50
-      Width = 618
-      Height = 93
-      Caption = 'Cadastro'
-      Index = 0
-    end
-    object RibbonPage2: TRibbonPage
-      Left = 0
-      Top = 50
-      Width = 618
-      Height = 93
-      Caption = 'Movimenta'#231#227'o'
-      Index = 1
-    end
-    object RibbonPage3: TRibbonPage
-      Left = 0
-      Top = 50
-      Width = 618
-      Height = 93
-      Caption = 'Relat'#243'rio'
-      Index = 2
-    end
-    object RibbonPage4: TRibbonPage
-      Left = 0
-      Top = 50
-      Width = 618
-      Height = 93
-      Caption = 'Gr'#225'fico'
-      Index = 3
-    end
-    object RibbonPage5: TRibbonPage
-      Left = 0
-      Top = 50
-      Width = 618
-      Height = 93
-      Caption = 'Ferramenta'
-      Index = 4
-      object RibbonGroup1: TRibbonGroup
-        Left = 4
-        Top = 3
-        Width = 96
-        Height = 86
-        ActionManager = ActionManager1
-        Caption = 'Usu'#225'rio'
-        GroupIndex = 0
-      end
-    end
-    object RibbonApplicationMenuBar1: TRibbonApplicationMenuBar
-      ActionManager = ActionManager1
-      OptionItems = <>
-      RecentItems = <>
-    end
-    object RibbonQuickAccessToolbar1: TRibbonQuickAccessToolbar
-      Left = 49
-      Top = 1
-      Width = 75
-      Height = 24
-      ActionManager = ActionManager1
-    end
-  end
   object StatusBar1: TStatusBar
     Left = 0
     Top = 394
@@ -156,7 +59,6 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
             ImageIndex = 0
             CommandProperties.ButtonSize = bsLarge
           end>
-        ActionBar = RibbonGroup1
       end
       item
         Items = <
@@ -164,12 +66,11 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
             ChangesAllowed = [caModify]
             Items = <
               item
-                Caption = 'ActionClientItem0'
+                Caption = '&ActionClientItem0'
               end>
-            Caption = 'ActionClientItem0'
+            Caption = '&ActionClientItem0'
             KeyTip = 'F'
           end>
-        ActionBar = RibbonApplicationMenuBar1
         AutoSize = False
       end
       item
@@ -185,13 +86,12 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
             ImageIndex = 1
             ShowCaption = False
           end>
-        ActionBar = RibbonQuickAccessToolbar1
         AutoSize = False
       end>
     Images = ImageList1
     Left = 344
     Top = 240
-    StyleName = 'Ribbon - Luna'
+    StyleName = 'Platform Default'
     object Action1: TAction
       Category = 'Cadastro'
       Caption = 'Cadastro'
@@ -257,7 +157,7 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     Left = 464
     Top = 256
     Bitmap = {
-      494C010104000800140010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000800180010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
