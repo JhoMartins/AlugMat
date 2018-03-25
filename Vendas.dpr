@@ -11,6 +11,7 @@ uses
   UntPerfil in 'UntGeral\UntPerfil.pas' {FrmPerfil},
   UntCliente in 'UntCadastro\UntCliente.pas' {FrmCliente},
   UntUsuario in 'UntCadastro\UntUsuario.pas' {FrmUsuario},
+  UntMarca in 'UntCadastro\UntMarca.pas' {FrmPadrao2};
   UntCategoria in 'UntCadastro\UntCategoria.pas' {FrmCategoria};
 
 {$R *.res}
@@ -27,6 +28,7 @@ begin
   Application.CreateForm(TFrmPerfil, FrmPerfil);
   Application.CreateForm(TFrmCliente, FrmCliente);
   Application.CreateForm(TFrmUsuario, FrmUsuario);
+  Application.CreateForm(TFrmPadrao2, FrmPadrao2);
   Application.CreateForm(TFrmCategoria, FrmCategoria);
   Application.Run;
 end.

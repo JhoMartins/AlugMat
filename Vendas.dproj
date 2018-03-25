@@ -137,6 +137,10 @@
             <Form>FrmUsuario</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="UntCadastro\UntMarca.pas">
+            <Form>FrmPadrao2</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <DCCReference Include="UntCadastro\UntCategoria.pas">
             <Form>FrmCategoria</Form>
             <FormType>dfm</FormType>

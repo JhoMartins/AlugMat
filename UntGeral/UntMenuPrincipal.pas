@@ -43,7 +43,7 @@ type
     RibbonGroup1: TRibbonGroup;
     RibbonApplicationMenuBar1: TRibbonApplicationMenuBar;
     RibbonQuickAccessToolbar1: TRibbonQuickAccessToolbar;
-    Button10: TButton;
+    Button1: TButton;
     procedure btn_usuarioClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -69,7 +69,7 @@ implementation
 
 {$R *.dfm}
 
-uses UntUsuario, UntDM, UntLogin, UntPerfil, UntCategoria;
+uses UntUsuario, UntDM, UntLogin, UntPerfil, UntCategoria, UntMarca, UntCliente;
 
 procedure TFrmMenuPrincipal.Action10Execute(Sender: TObject);
 begin
@@ -126,6 +126,7 @@ end;
 procedure TFrmMenuPrincipal.Button1Click(Sender: TObject);
 begin
   Application.CreateForm(TFrmPerfil, FrmPerfil);
+
   FrmPerfil.ShowModal;
   FrmPerfil.Free;
 end;
@@ -142,10 +143,10 @@ begin
   WindowState := wsMaximized;
 
   //dddd = Dia da Semana
-  //dd = Dia Numérico
-  //mmmm = Mês por Extenso
-  //yyyy = Ano numérico
-  //Tudo que está entre aspas duplas é constante. (Ex.: ", " | " de ")
+  //dd = Dia NumÃ©rico
+  //mmmm = MÃªs por Extenso
+  //yyyy = Ano numÃ©rico
+  //Tudo que estÃ¡ entre aspas duplas Ã© constante. (Ex.: ", " | " de ")
   StatusBar1.Panels[1].Text := FormatDateTime(' dddd ", " dd " de " mmmm " de " yyyy', Now);
 
   Application.CreateForm(TFrmLogin, FrmLogin);
@@ -156,8 +157,8 @@ end;
 procedure TFrmMenuPrincipal.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 var confSaida: Integer;
 begin
-  //Mensagem de confirmação para sair do sistema
-  confSaida := Application.MessageBox('Tem certeza que deseja sair do sistema?', 'Atenção', MB_YESNO + MB_DEFBUTTON2 + MB_ICONQUESTION);
+  //Mensagem de confirmaÃ§Ã£o para sair do sistema
+  confSaida := Application.MessageBox('Tem certeza que deseja sair do sistema?', 'AtenÃ§Ã£o', MB_YESNO + MB_DEFBUTTON2 + MB_ICONQUESTION);
 
   if confSaida = IDYES then Application.Terminate
   else CanClose := False;
