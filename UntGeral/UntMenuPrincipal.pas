@@ -43,6 +43,7 @@ type
     RibbonGroup1: TRibbonGroup;
     RibbonApplicationMenuBar1: TRibbonApplicationMenuBar;
     RibbonQuickAccessToolbar1: TRibbonQuickAccessToolbar;
+    Button1: TButton;
     procedure btn_usuarioClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -67,7 +68,7 @@ implementation
 
 {$R *.dfm}
 
-uses UntUsuario, UntDM, UntLogin, UntPerfil;
+uses UntUsuario, UntDM, UntLogin, UntPerfil, UntMarca, UntCliente;
 
 procedure TFrmMenuPrincipal.Action10Execute(Sender: TObject);
 begin
@@ -117,6 +118,7 @@ end;
 procedure TFrmMenuPrincipal.Button1Click(Sender: TObject);
 begin
   Application.CreateForm(TFrmPerfil, FrmPerfil);
+
   FrmPerfil.ShowModal;
   FrmPerfil.Free;
 end;
