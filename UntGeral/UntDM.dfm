@@ -4,7 +4,7 @@ object DM: TDM
   Width = 560
   object FDConnection1: TFDConnection
     Params.Strings = (
-      'SERVER=NCC04-06'
+      'SERVER=DESKTOP-TL1GQGV\SQLEXPRESS'
       'OSAuthent=Yes'
       'ApplicationName=Enterprise/Architect/Ultimate'
       'Workstation=CRIS-PC'

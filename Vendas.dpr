@@ -10,7 +10,8 @@ uses
   UntMenuPrincipal in 'UntGeral\UntMenuPrincipal.pas' {FrmMenuPrincipal},
   UntPerfil in 'UntGeral\UntPerfil.pas' {FrmPerfil},
   UntCliente in 'UntCadastro\UntCliente.pas' {FrmCliente},
-  UntUsuario in 'UntCadastro\UntUsuario.pas' {FrmUsuario};
+  UntUsuario in 'UntCadastro\UntUsuario.pas' {FrmUsuario},
+  UntCategoria in 'UntCadastro\UntCategoria.pas' {FrmCategoria};
 
 {$R *.res}
 
@@ -26,5 +27,6 @@ begin
   Application.CreateForm(TFrmPerfil, FrmPerfil);
   Application.CreateForm(TFrmCliente, FrmCliente);
   Application.CreateForm(TFrmUsuario, FrmUsuario);
+  Application.CreateForm(TFrmCategoria, FrmCategoria);
   Application.Run;
 end.
