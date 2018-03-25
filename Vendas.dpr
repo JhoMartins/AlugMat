@@ -10,7 +10,8 @@ uses
   UntMenuPrincipal in 'UntGeral\UntMenuPrincipal.pas' {FrmMenuPrincipal},
   UntPerfil in 'UntGeral\UntPerfil.pas' {FrmPerfil},
   UntCliente in 'UntCadastro\UntCliente.pas' {FrmCliente},
-  UntUsuario in 'UntCadastro\UntUsuario.pas' {FrmUsuario};
+  UntUsuario in 'UntCadastro\UntUsuario.pas' {FrmUsuario},
+  UntPesqRadio in 'UntPadrao\UntPesqRadio.pas' {pesqRadio};
 
 {$R *.res}
 
@@ -23,8 +24,6 @@ begin
   Application.CreateForm(TpesqString, pesqString);
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TFrmLogin, FrmLogin);
-  Application.CreateForm(TFrmPerfil, FrmPerfil);
-  Application.CreateForm(TFrmCliente, FrmCliente);
-  Application.CreateForm(TFrmUsuario, FrmUsuario);
+  Application.CreateForm(TpesqRadio, pesqRadio);
   Application.Run;
 end.

@@ -34,6 +34,33 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
         Width = 50
       end>
   end
+  object Button1: TButton
+    Left = 104
+    Top = 256
+    Width = 75
+    Height = 25
+    Caption = 'Perfil'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 104
+    Top = 288
+    Width = 75
+    Height = 25
+    Caption = 'Usu'#225'rio'
+    TabOrder = 2
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 104
+    Top = 319
+    Width = 75
+    Height = 25
+    Caption = 'Cliente'
+    TabOrder = 3
+    OnClick = Button3Click
+  end
   object QueryLogin: TFDQuery
     Connection = DM.FDConnection1
     SQL.Strings = (
@@ -157,7 +184,7 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     Left = 464
     Top = 256
     Bitmap = {
-      494C010104000800180010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101040008001C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

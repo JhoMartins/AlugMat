@@ -21,6 +21,7 @@ type
     procedure BitBtn2Click(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -45,6 +46,15 @@ begin
   end
   else
   begin
+    if nomeJanela = 'Cliente' then
+    begin
+
+      if (Edit1.Text <> '') and (length(Edit1.Text) <> 11) and (length(Edit1.Text) <> 14) then
+      begin
+        ShowMessage('CPF ou CNPJ inválidos.' + #13 + 'Digite o CPF ou CNPJ completos (apenas números)');
+        abort;
+      end
+    end;
     Close;
   end;
 end;
@@ -60,6 +70,12 @@ begin
   Edit1.Clear;
   Edit1.SetFocus;
   pesqString.Caption := tarefa;
+end;
+
+procedure TpesqString.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Edit1.NumbersOnly := false;
+  RadioGroup1.Visible := true;
 end;
 
 end.

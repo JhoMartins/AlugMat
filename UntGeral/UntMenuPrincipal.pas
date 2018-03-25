@@ -8,15 +8,15 @@ uses
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  Vcl.ComCtrls, Vcl.RibbonLunaStyleActnCtrls, Vcl.Ribbon, System.Actions,
+  Vcl.ComCtrls, {Vcl.RibbonLunaStyleActnCtrls, Vcl.Ribbon,} System.Actions,
   Vcl.ActnList, Vcl.PlatformDefaultStyleActnCtrls, Vcl.ActnMan, Vcl.ToolWin,
   Vcl.ActnCtrls, Vcl.AppEvnts, Vcl.ExtCtrls, System.ImageList, Vcl.ImgList,
-  Vcl.ActnMenus, Vcl.RibbonActnMenus;
+  Vcl.ActnMenus{, Vcl.RibbonActnMenus};
 
 type
   TFrmMenuPrincipal = class(TForm)
     QueryLogin: TFDQuery;
-    Ribbon1: TRibbon;
+//    Ribbon1: TRibbon;
     StatusBar1: TStatusBar;
     ActionManager1: TActionManager;
     Action1: TAction;
@@ -35,14 +35,17 @@ type
     ApplicationEvents1: TApplicationEvents;
     Action12: TAction;
     Action13: TAction;
-    RibbonPage1: TRibbonPage;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    {RibbonPage1: TRibbonPage;
     RibbonPage2: TRibbonPage;
     RibbonPage3: TRibbonPage;
     RibbonPage4: TRibbonPage;
     RibbonPage5: TRibbonPage;
     RibbonGroup1: TRibbonGroup;
     RibbonApplicationMenuBar1: TRibbonApplicationMenuBar;
-    RibbonQuickAccessToolbar1: TRibbonQuickAccessToolbar;
+    RibbonQuickAccessToolbar1: TRibbonQuickAccessToolbar;}
     procedure btn_usuarioClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -54,6 +57,7 @@ type
     procedure Action12Execute(Sender: TObject);
     procedure Action9Update(Sender: TObject);
     procedure Action10Update(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -67,7 +71,7 @@ implementation
 
 {$R *.dfm}
 
-uses UntUsuario, UntDM, UntLogin, UntPerfil;
+uses UntUsuario, UntDM, UntLogin, UntPerfil, UntCliente;
 
 procedure TFrmMenuPrincipal.Action10Execute(Sender: TObject);
 begin
@@ -126,6 +130,13 @@ begin
   Application.CreateForm(TFrmUsuario, FrmUsuario);
   FrmUsuario.ShowModal;
   FrmUsuario.Free;
+end;
+
+procedure TFrmMenuPrincipal.Button3Click(Sender: TObject);
+begin
+  Application.CreateForm(TFrmCliente, FrmCliente);
+  FrmCliente.ShowModal;
+  FrmCliente.Free;
 end;
 
 procedure TFrmMenuPrincipal.FormActivate(Sender: TObject);
