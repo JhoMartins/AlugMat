@@ -7,7 +7,7 @@ object DM: TDM
       'SERVER=Cris-PC\SQLServer'
       'OSAuthent=Yes'
       'ApplicationName=Enterprise/Architect/Ultimate'
-      'Workstation=CRIS-PC'
+      'Workstation=DEIVID-PC'
       'DATABASE=ALUGMAT'
       'MARS=yes'
       'DriverID=MSSQL')
