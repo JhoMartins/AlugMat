@@ -43,6 +43,7 @@ type
     RibbonGroup1: TRibbonGroup;
     RibbonApplicationMenuBar1: TRibbonApplicationMenuBar;
     RibbonQuickAccessToolbar1: TRibbonQuickAccessToolbar;
+    Button10: TButton;
     procedure btn_usuarioClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -54,6 +55,7 @@ type
     procedure Action12Execute(Sender: TObject);
     procedure Action9Update(Sender: TObject);
     procedure Action10Update(Sender: TObject);
+    procedure Button10Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -67,7 +69,7 @@ implementation
 
 {$R *.dfm}
 
-uses UntUsuario, UntDM, UntLogin, UntPerfil;
+uses UntUsuario, UntDM, UntLogin, UntPerfil, UntCategoria;
 
 procedure TFrmMenuPrincipal.Action10Execute(Sender: TObject);
 begin
@@ -112,6 +114,13 @@ end;
 procedure TFrmMenuPrincipal.btn_usuarioClick(Sender: TObject);
 begin
   FrmUsuario.ShowModal;
+end;
+
+procedure TFrmMenuPrincipal.Button10Click(Sender: TObject);
+begin
+  Application.CreateForm(TFrmCategoria, FrmCategoria);
+  FrmCategoria.ShowModal;
+  FrmCategoria.Free;
 end;
 
 procedure TFrmMenuPrincipal.Button1Click(Sender: TObject);
