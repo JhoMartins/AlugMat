@@ -141,6 +141,10 @@
             <Form>FrmPadrao2</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="UntCadastro\UntCategoria.pas">
+            <Form>FrmCategoria</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <None Include="Vendas.dpr"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
