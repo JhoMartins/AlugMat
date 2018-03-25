@@ -65,6 +65,13 @@ type
     FDTabelaDATA_INC: TSQLTimeStampField;
     FDTabelaDATA_ALT: TSQLTimeStampField;
     FDTabelaSTATUS: TStringField;
+    N3: TMenuItem;
+    NomedoCliente1: TMenuItem;
+    CPFdoCliente1: TMenuItem;
+    ipodePessoa1: TMenuItem;
+    N4: TMenuItem;
+    NomedoCliente2: TMenuItem;
+    ipodePessoa2: TMenuItem;
     procedure btn_inserirClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure cbTipoClick(Sender: TObject);
@@ -76,6 +83,15 @@ type
     procedure btn_editarClick(Sender: TObject);
     procedure btn_cancelarClick(Sender: TObject);
     procedure btn_excluirClick(Sender: TObject);
+    procedure ipodePessoa1Click(Sender: TObject);
+    procedure NomedoCliente1Click(Sender: TObject);
+    procedure CPFdoCliente1Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure NomedoCliente2Click(Sender: TObject);
+    procedure ipodePessoa2Click(Sender: TObject);
+    procedure IDCdigo1Click(Sender: TObject);
+    procedure Datadeincluso1Click(Sender: TObject);
+    procedure Datadealterao1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -89,7 +105,7 @@ implementation
 
 {$R *.dfm}
 
-uses UntDM, UntMenuPrincipal;
+uses UntDM, UntMenuPrincipal, UntPesqString, UntPesqRadio;
 
 procedure TFrmCliente.btn_anteriorClick(Sender: TObject);
 begin
@@ -488,8 +504,126 @@ end;
 
 
 
+procedure TFrmCliente.CPFdoCliente1Click(Sender: TObject);
+var cpfcnpj, cpf, cnpj: string;
+begin
+  pesqString.Edit1.NumbersOnly := true;
+  pesqString.RadioGroup1.Visible := false;
+
+  inherited;
+
+  tarefa := 'Pesquisa por CPF/CNPJ';
+  pesqString.ShowModal;
+
+  cpf := '';
+  cnpj := '';
+  cpfcnpj := pesqString.Edit1.Text;
+
+  if (length(pesqString.Edit1.Text) = 11) then cpf := Copy(pesqString.Edit1.text,0,3) + '.' + Copy(pesqString.Edit1.text,4,3) + '.' + Copy(pesqString.Edit1.text,7,3) + '-' + Copy(pesqString.Edit1.text,10,2)
+  else if (length(pesqString.Edit1.Text) = 14) then cnpj := Copy(pesqString.Edit1.text,0,2) + '.' + Copy(pesqString.Edit1.text,3,3) + '.' + Copy(pesqString.Edit1.text,6,3) + '/' + Copy(pesqString.Edit1.text,9,4) + '-' + Copy(pesqString.Edit1.text,13,2);
+
+  if cpf <> '' then
+  begin
+    FDTabela.Filter := 'CPF = ' + #39 + cpf + #39;
+    StatusBar1.Panels[2].Text := 'CPF do Cliente: ' + cpf;
+  end;
+
+  if cnpj <> '' then
+  begin
+    FDTabela.Filter := 'CNPJ = ' + #39 + cnpj + #39;
+    StatusBar1.Panels[2].Text := 'CNPJ do Cliente: ' + cnpj;
+  end;
+
+  FDTabela.Filtered := True;
+
+  Executar := sentencaSQL;
+  Executar := exibePanels;
+  Executar := navegacao;
+  Executar := habilitaBotoes;
+
+  if FDTabela.FieldByName('TIPO_PESSOA').Value = 'F' then
+  begin
+    cbTipo.ItemIndex := 0;
+    edCPFCNPJ.DataField :=  'CPF';
+    edRGIE.DataField := 'RG';
+    lbCPFCNPJ.Caption := '* CPF:';
+    lbRGIE.Caption := '* RG:';
+  end
+  else if FDTabela.FieldByName('TIPO_PESSOA').Value = 'J' then
+  begin
+    cbTipo.ItemIndex := 1;
+    edCPFCNPJ.DataField :=  'CNPJ';
+    edRGIE.DataField := 'IE';
+    lbCPFCNPJ.Caption := '* CNPJ:';
+    lbRGIE.Caption := '* IE:';
+  end
+  else
+  begin
+    cbTipo.ItemIndex := -1;
+    lbCPFCNPJ.Caption := '* CPF/CNPJ';
+    lbRGIE.Caption := '* RG/IE:';
+  end;
+end;
+
+procedure TFrmCliente.Datadealterao1Click(Sender: TObject);
+begin
+  inherited;
+
+  if FDTabela.FieldByName('TIPO_PESSOA').Value = 'F' then
+  begin
+    cbTipo.ItemIndex := 0;
+    edCPFCNPJ.DataField :=  'CPF';
+    edRGIE.DataField := 'RG';
+    lbCPFCNPJ.Caption := '* CPF:';
+    lbRGIE.Caption := '* RG:';
+  end
+  else if FDTabela.FieldByName('TIPO_PESSOA').Value = 'J' then
+  begin
+    cbTipo.ItemIndex := 1;
+    edCPFCNPJ.DataField :=  'CNPJ';
+    edRGIE.DataField := 'IE';
+    lbCPFCNPJ.Caption := '* CNPJ:';
+    lbRGIE.Caption := '* IE:';
+  end
+  else
+  begin
+    cbTipo.ItemIndex := -1;
+    lbCPFCNPJ.Caption := '* CPF/CNPJ';
+    lbRGIE.Caption := '* RG/IE:';
+  end;
+end;
+
+procedure TFrmCliente.Datadeincluso1Click(Sender: TObject);
+begin
+  inherited;
+
+  if FDTabela.FieldByName('TIPO_PESSOA').Value = 'F' then
+  begin
+    cbTipo.ItemIndex := 0;
+    edCPFCNPJ.DataField :=  'CPF';
+    edRGIE.DataField := 'RG';
+    lbCPFCNPJ.Caption := '* CPF:';
+    lbRGIE.Caption := '* RG:';
+  end
+  else if FDTabela.FieldByName('TIPO_PESSOA').Value = 'J' then
+  begin
+    cbTipo.ItemIndex := 1;
+    edCPFCNPJ.DataField :=  'CNPJ';
+    edRGIE.DataField := 'IE';
+    lbCPFCNPJ.Caption := '* CNPJ:';
+    lbRGIE.Caption := '* IE:';
+  end
+  else
+  begin
+    cbTipo.ItemIndex := -1;
+    lbCPFCNPJ.Caption := '* CPF/CNPJ';
+    lbRGIE.Caption := '* RG/IE:';
+  end;
+end;
+
 procedure TFrmCliente.FormActivate(Sender: TObject);
 begin
+  nomeJanela := 'Cliente';
   FDTabela.TableName := 'CLIENTE';
   TipoID := 0;
 
@@ -512,6 +646,220 @@ begin
 
   edDataInc.Enabled := false;
   edDataAlt.Enabled := false;
+
+  if FDTabela.FieldByName('TIPO_PESSOA').Value = 'F' then
+  begin
+    cbTipo.ItemIndex := 0;
+    edCPFCNPJ.DataField :=  'CPF';
+    edRGIE.DataField := 'RG';
+    lbCPFCNPJ.Caption := '* CPF:';
+    lbRGIE.Caption := '* RG:';
+  end
+  else if FDTabela.FieldByName('TIPO_PESSOA').Value = 'J' then
+  begin
+    cbTipo.ItemIndex := 1;
+    edCPFCNPJ.DataField :=  'CNPJ';
+    edRGIE.DataField := 'IE';
+    lbCPFCNPJ.Caption := '* CNPJ:';
+    lbRGIE.Caption := '* IE:';
+  end
+  else
+  begin
+    cbTipo.ItemIndex := -1;
+    lbCPFCNPJ.Caption := '* CPF/CNPJ';
+    lbRGIE.Caption := '* RG/IE:';
+  end;
+end;
+
+procedure TFrmCliente.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  inherited;
+  nomeJanela := '';
+end;
+
+procedure TFrmCliente.IDCdigo1Click(Sender: TObject);
+begin
+  inherited;
+
+  if FDTabela.FieldByName('TIPO_PESSOA').Value = 'F' then
+  begin
+    cbTipo.ItemIndex := 0;
+    edCPFCNPJ.DataField :=  'CPF';
+    edRGIE.DataField := 'RG';
+    lbCPFCNPJ.Caption := '* CPF:';
+    lbRGIE.Caption := '* RG:';
+  end
+  else if FDTabela.FieldByName('TIPO_PESSOA').Value = 'J' then
+  begin
+    cbTipo.ItemIndex := 1;
+    edCPFCNPJ.DataField :=  'CNPJ';
+    edRGIE.DataField := 'IE';
+    lbCPFCNPJ.Caption := '* CNPJ:';
+    lbRGIE.Caption := '* IE:';
+  end
+  else
+  begin
+    cbTipo.ItemIndex := -1;
+    lbCPFCNPJ.Caption := '* CPF/CNPJ';
+    lbRGIE.Caption := '* RG/IE:';
+  end;
+end;
+
+procedure TFrmCliente.ipodePessoa1Click(Sender: TObject);
+var i: integer;
+begin
+  inherited;
+
+  tarefa := 'Pesquisa por Tipo de Pessoa';
+
+  pesqRadio.RadioGroup1.Caption := 'Pesquisa por Tipo de Pessoa:';
+  pesqRadio.RadioGroup1.Items.Add('Pessoa Física');
+  pesqRadio.RadioGroup1.Items.Add('Pessoa Jurídica');
+
+  pesqRadio.ShowModal;
+
+  if pesqRadio.RadioGroup1.ItemIndex = 0 then
+  begin
+    FDTabela.Filter := 'TIPO_PESSOA = ' + #39 + 'F' + #39;
+    StatusBar1.Panels[2].Text := 'Tipo de Pessoa: Física';
+  end;
+
+  if pesqRadio.RadioGroup1.ItemIndex = 1 then
+  begin
+    FDTabela.Filter := 'TIPO_PESSOA = ' + #39 + 'J' + #39;
+    StatusBar1.Panels[2].Text := 'Tipo de Pessoa: Jurídica';
+  end;
+
+  FDTabela.Filtered := True;
+
+  Executar := sentencaSQL;
+  Executar := exibePanels;
+  Executar := navegacao;
+  Executar := habilitaBotoes;
+
+  i := pesqRadio.RadioGroup1.Items.Count - 1;
+  while i > -1 do
+  begin
+    pesqRadio.RadioGroup1.Items.Delete(i);
+    i := i - 1;
+  end;
+
+  if FDTabela.FieldByName('TIPO_PESSOA').Value = 'F' then
+  begin
+    cbTipo.ItemIndex := 0;
+    edCPFCNPJ.DataField :=  'CPF';
+    edRGIE.DataField := 'RG';
+    lbCPFCNPJ.Caption := '* CPF:';
+    lbRGIE.Caption := '* RG:';
+  end
+  else if FDTabela.FieldByName('TIPO_PESSOA').Value = 'J' then
+  begin
+    cbTipo.ItemIndex := 1;
+    edCPFCNPJ.DataField :=  'CNPJ';
+    edRGIE.DataField := 'IE';
+    lbCPFCNPJ.Caption := '* CNPJ:';
+    lbRGIE.Caption := '* IE:';
+  end
+  else
+  begin
+    cbTipo.ItemIndex := -1;
+    lbCPFCNPJ.Caption := '* CPF/CNPJ';
+    lbRGIE.Caption := '* RG/IE:';
+  end;
+end;
+
+procedure TFrmCliente.ipodePessoa2Click(Sender: TObject);
+begin
+  inherited;
+
+  FDTabela.IndexFieldNames := 'TIPO_PESSOA';
+  StatusBar1.Panels[2].Text := 'Ordenado: Tipo de Pessoa';
+
+  if FDTabela.FieldByName('TIPO_PESSOA').Value = 'F' then
+  begin
+    cbTipo.ItemIndex := 0;
+    edCPFCNPJ.DataField :=  'CPF';
+    edRGIE.DataField := 'RG';
+    lbCPFCNPJ.Caption := '* CPF:';
+    lbRGIE.Caption := '* RG:';
+  end
+  else if FDTabela.FieldByName('TIPO_PESSOA').Value = 'J' then
+  begin
+    cbTipo.ItemIndex := 1;
+    edCPFCNPJ.DataField :=  'CNPJ';
+    edRGIE.DataField := 'IE';
+    lbCPFCNPJ.Caption := '* CNPJ:';
+    lbRGIE.Caption := '* IE:';
+  end
+  else
+  begin
+    cbTipo.ItemIndex := -1;
+    lbCPFCNPJ.Caption := '* CPF/CNPJ';
+    lbRGIE.Caption := '* RG/IE:';
+  end;
+end;
+
+procedure TFrmCliente.NomedoCliente1Click(Sender: TObject);
+begin
+  inherited;
+
+  tarefa := 'Pesquisa alfanumérica por Nome';
+  pesqString.ShowModal;
+
+  if pesqString.RadioGroup1.ItemIndex = 0 then
+  begin
+    FDTabela.Filter := 'UPPER(NOME) LIKE ' + #39 + '%' + pesqString.Edit1.text + '%' + #39;
+    StatusBar1.Panels[2].Text := 'Nome contém: ' + pesqString.Edit1.Text;
+  end;
+
+  if pesqString.RadioGroup1.ItemIndex = 1 then
+  begin
+    FDTabela.Filter := 'UPPER(NOME) LIKE ' + #39 + pesqString.Edit1.text + '%' + #39;
+    StatusBar1.Panels[2].Text := 'Nome inicia com: ' + pesqString.Edit1.Text;
+  end;
+
+  if pesqString.RadioGroup1.ItemIndex = 2 then
+  begin
+    FDTabela.Filter := 'UPPER(NOME) LIKE ' + #39 + '%' + pesqString.Edit1.text + #39;
+    StatusBar1.Panels[2].Text := 'Nome termina com: ' + pesqString.Edit1.Text;
+  end;
+
+  FDTabela.Filtered := True;
+
+  Executar := sentencaSQL;
+  Executar := exibePanels;
+  Executar := navegacao;
+  Executar := habilitaBotoes;
+
+  if FDTabela.FieldByName('TIPO_PESSOA').Value = 'F' then
+  begin
+    cbTipo.ItemIndex := 0;
+    edCPFCNPJ.DataField :=  'CPF';
+    edRGIE.DataField := 'RG';
+    lbCPFCNPJ.Caption := '* CPF:';
+    lbRGIE.Caption := '* RG:';
+  end
+  else if FDTabela.FieldByName('TIPO_PESSOA').Value = 'J' then
+  begin
+    cbTipo.ItemIndex := 1;
+    edCPFCNPJ.DataField :=  'CNPJ';
+    edRGIE.DataField := 'IE';
+    lbCPFCNPJ.Caption := '* CNPJ:';
+    lbRGIE.Caption := '* IE:';
+  end
+  else
+  begin
+    cbTipo.ItemIndex := -1;
+    lbCPFCNPJ.Caption := '* CPF/CNPJ';
+    lbRGIE.Caption := '* RG/IE:';
+  end;
+end;
+
+procedure TFrmCliente.NomedoCliente2Click(Sender: TObject);
+begin
+  inherited;
+  FDTabela.IndexFieldNames := 'NOME';
+  StatusBar1.Panels[2].Text := 'Ordenado: Nome';
 
   if FDTabela.FieldByName('TIPO_PESSOA').Value = 'F' then
   begin

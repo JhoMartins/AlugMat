@@ -35,6 +35,9 @@ type
     ApplicationEvents1: TApplicationEvents;
     Action12: TAction;
     Action13: TAction;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
     RibbonPage1: TRibbonPage;
     RibbonPage2: TRibbonPage;
     RibbonPage3: TRibbonPage;
@@ -55,6 +58,7 @@ type
     procedure Action12Execute(Sender: TObject);
     procedure Action9Update(Sender: TObject);
     procedure Action10Update(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
     procedure Button10Click(Sender: TObject);
   private
     { Private declarations }
@@ -136,6 +140,13 @@ begin
   Application.CreateForm(TFrmUsuario, FrmUsuario);
   FrmUsuario.ShowModal;
   FrmUsuario.Free;
+end;
+
+procedure TFrmMenuPrincipal.Button3Click(Sender: TObject);
+begin
+  Application.CreateForm(TFrmCliente, FrmCliente);
+  FrmCliente.ShowModal;
+  FrmCliente.Free;
 end;
 
 procedure TFrmMenuPrincipal.FormActivate(Sender: TObject);

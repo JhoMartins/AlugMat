@@ -35,13 +35,31 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
       end>
   end
   object Button1: TButton
-    Left = 376
-    Top = 136
+    Left = 104
+    Top = 256
     Width = 75
     Height = 25
-    Caption = 'Button1'
+    Caption = 'Perfil'
     TabOrder = 1
     OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 104
+    Top = 288
+    Width = 75
+    Height = 25
+    Caption = 'Usu'#225'rio'
+    TabOrder = 2
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 104
+    Top = 319
+    Width = 75
+    Height = 25
+    Caption = 'Cliente'
+    TabOrder = 3
+    OnClick = Button3Click
   end
   object QueryLogin: TFDQuery
     Connection = DM.FDConnection1

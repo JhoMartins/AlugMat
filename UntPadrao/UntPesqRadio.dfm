@@ -1,10 +1,10 @@
-object pesqString: TpesqString
+object pesqRadio: TpesqRadio
   Left = 0
   Top = 0
   BorderIcons = []
   BorderStyle = bsSingle
-  Caption = 'Pesquisa Alfanum'#233'rica de Registro'
-  ClientHeight = 162
+  Caption = 'Pesquisa de Registro por Op'#231#245'es'
+  ClientHeight = 155
   ClientWidth = 458
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -15,7 +15,6 @@ object pesqString: TpesqString
   OldCreateOrder = False
   Position = poScreenCenter
   OnActivate = FormActivate
-  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -31,18 +30,11 @@ object pesqString: TpesqString
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label2: TLabel
-    Left = 143
-    Top = 80
-    Width = 28
-    Height = 13
-    Caption = 'Valor:'
-  end
   object Panel1: TPanel
     Left = 0
     Top = 0
     Width = 137
-    Height = 143
+    Height = 136
     Align = alLeft
     BevelOuter = bvNone
     BorderWidth = 1
@@ -52,7 +44,7 @@ object pesqString: TpesqString
       Left = 1
       Top = 1
       Width = 131
-      Height = 137
+      Height = 130
       Align = alClient
       Picture.Data = {
         0954506E67496D61676589504E470D0A1A0A0000000D49484452000000800000
@@ -408,13 +400,13 @@ object pesqString: TpesqString
         04E89BE25E1D555DE09209906AF9BA38F512F05C0608D077455D0731DDAAA6EE
         65EB78DB6BEB040D10A06F8BBAAA997B7D43B521A7D781E7F2FF01424CF5CAFA
         03B1910000000049454E44AE426082}
-      ExplicitWidth = 136
-      ExplicitHeight = 155
+      ExplicitWidth = 104
+      ExplicitHeight = 96
     end
   end
   object BitBtn1: TBitBtn
     Left = 293
-    Top = 112
+    Top = 104
     Width = 75
     Height = 25
     Caption = 'Pesquisar'
@@ -423,7 +415,7 @@ object pesqString: TpesqString
   end
   object BitBtn2: TBitBtn
     Left = 374
-    Top = 112
+    Top = 105
     Width = 75
     Height = 25
     Caption = 'Sair'
@@ -432,7 +424,7 @@ object pesqString: TpesqString
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 143
+    Top = 136
     Width = 458
     Height = 19
     Panels = <>
@@ -441,22 +433,8 @@ object pesqString: TpesqString
     Left = 143
     Top = 27
     Width = 306
-    Height = 38
-    Caption = 'Modo de Pesquisa:'
+    Height = 71
     Columns = 3
-    ItemIndex = 0
-    Items.Strings = (
-      'Cont'#233'm'
-      'Inicia com'
-      'Termina com')
     TabOrder = 4
-  end
-  object Edit1: TEdit
-    Left = 177
-    Top = 77
-    Width = 272
-    Height = 21
-    CharCase = ecUpperCase
-    TabOrder = 5
   end
 end
