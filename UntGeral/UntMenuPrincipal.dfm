@@ -35,13 +35,49 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
       end>
   end
   object Button1: TButton
-    Left = 376
-    Top = 136
+    Left = 8
+    Top = 144
     Width = 75
     Height = 25
-    Caption = 'Button1'
+    Caption = 'Perfil'
     TabOrder = 1
     OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 8
+    Top = 176
+    Width = 75
+    Height = 25
+    Caption = 'Usu'#225'rio'
+    TabOrder = 2
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 8
+    Top = 207
+    Width = 75
+    Height = 25
+    Caption = 'Cliente'
+    TabOrder = 3
+    OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 8
+    Top = 238
+    Width = 75
+    Height = 25
+    Caption = 'Marca'
+    TabOrder = 4
+    OnClick = Button4Click
+  end
+  object Button5: TButton
+    Left = 8
+    Top = 269
+    Width = 75
+    Height = 25
+    Caption = 'Categoria'
+    TabOrder = 5
+    OnClick = Button5Click
   end
   object QueryLogin: TFDQuery
     Connection = DM.FDConnection1
@@ -49,8 +85,8 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
       'SELECT U.*, P.*'
       'FROM USUARIO U'
       'INNER JOIN PERFIL P ON U.USU_ID_PERFIL = P.ID')
-    Left = 144
-    Top = 184
+    Left = 272
+    Top = 360
   end
   object ActionManager1: TActionManager
     ActionBars = <
@@ -98,8 +134,8 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
         AutoSize = False
       end>
     Images = ImageList1
-    Left = 344
-    Top = 240
+    Left = 408
+    Top = 360
     StyleName = 'Platform Default'
     object Action1: TAction
       Category = 'Cadastro'
@@ -163,10 +199,10 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     end
   end
   object ImageList1: TImageList
-    Left = 464
-    Top = 256
+    Left = 336
+    Top = 360
     Bitmap = {
-      494C0101040008001C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000800240010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -438,11 +474,11 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
       000000000000}
   end
   object Timer1: TTimer
-    Left = 528
-    Top = 304
+    Left = 576
+    Top = 360
   end
   object ApplicationEvents1: TApplicationEvents
-    Left = 440
-    Top = 320
+    Left = 504
+    Top = 360
   end
 end

@@ -1,106 +1,133 @@
 inherited FrmMarca: TFrmMarca
   Caption = 'FrmMarca'
+  ClientHeight = 199
+  ExplicitHeight = 227
   PixelsPerInch = 96
   TextHeight = 13
   inherited ToolBar1: TToolBar
+    inherited btn_pesquisa: TToolButton
+      ExplicitWidth = 74
+    end
     inherited btn_ordenar: TToolButton
       Left = 74
+      ExplicitLeft = 74
+      ExplicitWidth = 74
     end
     inherited Separador1: TToolButton
       Left = 148
+      ExplicitLeft = 148
     end
     inherited btn_primeiro: TToolButton
       Left = 156
+      ExplicitLeft = 156
     end
     inherited btn_anterior: TToolButton
       Left = 215
+      ExplicitLeft = 215
     end
     inherited btn_proximo: TToolButton
       Left = 274
+      ExplicitLeft = 274
     end
     inherited btn_ultimo: TToolButton
       Left = 333
+      ExplicitLeft = 333
     end
     inherited Separador2: TToolButton
       Left = 392
+      ExplicitLeft = 392
     end
     inherited btn_inserir: TToolButton
       Left = 400
+      ExplicitLeft = 400
     end
     inherited btn_editar: TToolButton
       Left = 459
+      ExplicitLeft = 459
     end
     inherited btn_excluir: TToolButton
       Left = 518
+      ExplicitLeft = 518
     end
     inherited Separador3: TToolButton
       Left = 577
+      ExplicitLeft = 577
     end
     inherited btn_salvar: TToolButton
       Left = 585
+      ExplicitLeft = 585
     end
     inherited btn_cancelar: TToolButton
       Left = 644
+      ExplicitLeft = 644
     end
     inherited Separador4: TToolButton
       Left = 703
+      ExplicitLeft = 703
     end
     inherited btn_imprimir: TToolButton
       Left = 711
+      ExplicitLeft = 711
     end
     inherited Separador5: TToolButton
       Left = 770
+      ExplicitLeft = 770
     end
     inherited btn_sair: TToolButton
       Left = 778
+      ExplicitLeft = 778
     end
   end
+  inherited StatusBar1: TStatusBar
+    Top = 180
+  end
   inherited PnlFicha: TPanel
-    ExplicitLeft = 32
-    ExplicitTop = 98
+    Height = 93
     object Label3: TLabel
-      Left = 335
+      Left = 26
       Top = 16
-      Width = 90
+      Width = 85
       Height = 13
-      Caption = '* Data de Inclus'#227'o'
+      Caption = 'Data de Inclus'#227'o:'
     end
     object Label4: TLabel
-      Left = 568
+      Left = 595
       Top = 16
-      Width = 87
+      Width = 91
       Height = 13
-      Caption = 'Date de Altera'#231#227'o'
+      Caption = 'Date de Altera'#231#227'o:'
     end
     object lbDESCRICAO: TLabel
-      Left = 56
-      Top = 16
-      Width = 46
+      Left = 61
+      Top = 56
+      Width = 50
       Height = 13
-      Caption = 'Descri'#231#227'o'
+      Caption = 'Descri'#231#227'o:'
     end
     object edDataInc: TDBEdit
-      Left = 441
+      Left = 117
       Top = 13
       Width = 121
       Height = 21
       DataField = 'DATA_INC'
       DataSource = DataSource1
+      Enabled = False
       TabOrder = 0
     end
     object edDataAlt: TDBEdit
-      Left = 661
+      Left = 692
       Top = 13
       Width = 121
       Height = 21
       DataField = 'DATA_ALT'
       DataSource = DataSource1
+      Enabled = False
       TabOrder = 1
     end
     object edDescricao: TDBEdit
-      Left = 124
-      Top = 13
-      Width = 205
+      Left = 117
+      Top = 53
+      Width = 696
       Height = 21
       DataField = 'DESCRICAO'
       DataSource = DataSource1
@@ -108,8 +135,10 @@ inherited FrmMarca: TFrmMarca
     end
   end
   inherited ImageList1: TImageList
+    Left = 625
+    Top = 224
     Bitmap = {
-      494C01010D0018002C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1305,8 +1334,10 @@ inherited FrmMarca: TFrmMarca
       000000000000}
   end
   inherited ImageList2: TImageList
+    Left = 681
+    Top = 224
     Bitmap = {
-      494C01010D0018002C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2502,8 +2533,10 @@ inherited FrmMarca: TFrmMarca
       000000000000}
   end
   inherited ImageList3: TImageList
+    Left = 737
+    Top = 224
     Bitmap = {
-      494C01010D0018002C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -3698,14 +3731,22 @@ inherited FrmMarca: TFrmMarca
       3FFC003FFFFFF7FFFFFFFF00FFFF00FF00000000000000000000000000000000
       000000000000}
   end
+  inherited DataSource1: TDataSource
+    Left = 553
+    Top = 224
+  end
   inherited FDTabela: TFDTable
     IndexFieldNames = 'ID'
     UpdateOptions.UpdateTableName = 'ALUGMAT.dbo.CATEGORIA'
     TableName = 'ALUGMAT.dbo.CATEGORIA'
+    Left = 489
+    Top = 224
   end
   inherited ImageList4: TImageList
+    Left = 793
+    Top = 223
     Bitmap = {
-      494C010104000800240010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000800280010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -3975,5 +4016,13 @@ inherited FrmMarca: TFrmMarca
       6BFECD93FC0FFFFF6000CFF3FC0FFFFF7800C003FC0FFFFF0000C003FFFFFFFF
       001FFFFFFFFFFFFF001FFFFFFFFFFFFF00000000000000000000000000000000
       000000000000}
+  end
+  inherited PopupMenu1: TPopupMenu
+    Left = 792
+    Top = 167
+  end
+  inherited PopupMenu2: TPopupMenu
+    Left = 704
+    Top = 167
   end
 end
