@@ -11,8 +11,9 @@ uses
   UntPerfil in 'UntGeral\UntPerfil.pas' {FrmPerfil},
   UntCliente in 'UntCadastro\UntCliente.pas' {FrmCliente},
   UntUsuario in 'UntCadastro\UntUsuario.pas' {FrmUsuario},
-  UntMarca in 'UntCadastro\UntMarca.pas' {FrmPadrao2};
-  UntCategoria in 'UntCadastro\UntCategoria.pas' {FrmCategoria};
+  UntMarca in 'UntCadastro\UntMarca.pas' {FrmPadrao2},
+  UntCategoria in 'UntCadastro\UntCategoria.pas' {FrmCategoria},
+  UntPesqRadio in 'UntPadrao\UntPesqRadio.pas' {pesqRadio};
 
 {$R *.res}
 
@@ -25,10 +26,6 @@ begin
   Application.CreateForm(TpesqString, pesqString);
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TFrmLogin, FrmLogin);
-  Application.CreateForm(TFrmPerfil, FrmPerfil);
-  Application.CreateForm(TFrmCliente, FrmCliente);
-  Application.CreateForm(TFrmUsuario, FrmUsuario);
-  Application.CreateForm(TFrmPadrao2, FrmPadrao2);
-  Application.CreateForm(TFrmCategoria, FrmCategoria);
+  Application.CreateForm(TpesqRadio, pesqRadio);
   Application.Run;
 end.

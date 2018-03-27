@@ -4,7 +4,7 @@ object DM: TDM
   Width = 560
   object FDConnection1: TFDConnection
     Params.Strings = (
-      'SERVER=DEIVID-PC'
+      'SERVER=NCC04-06'
       'OSAuthent=Yes'
       'ApplicationName=Enterprise/Architect/Ultimate'
       'Workstation=DEIVID-PC'
