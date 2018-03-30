@@ -65,7 +65,7 @@ implementation
 
 {$R *.dfm}
 
-uses UntDM, UntMenuPrincipal;
+uses UntDM, UntMenuPrincipal, UntUsuario;
 
 procedure TFrmProduto.btn_salvarClick(Sender: TObject);
 begin

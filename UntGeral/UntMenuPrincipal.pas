@@ -16,7 +16,6 @@ uses
 type
   TFrmMenuPrincipal = class(TForm)
     QueryLogin: TFDQuery;
-    Ribbon1: TRibbon;
     StatusBar1: TStatusBar;
     ActionManager1: TActionManager;
     Action1: TAction;
@@ -38,16 +37,9 @@ type
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
-    RibbonPage1: TRibbonPage;
-    RibbonPage2: TRibbonPage;
-    RibbonPage3: TRibbonPage;
-    RibbonPage4: TRibbonPage;
-    RibbonPage5: TRibbonPage;
-    RibbonGroup1: TRibbonGroup;
-    RibbonApplicationMenuBar1: TRibbonApplicationMenuBar;
-    RibbonQuickAccessToolbar1: TRibbonQuickAccessToolbar;
     Button4: TButton;
     Button5: TButton;
+    Button6: TButton;
     procedure btn_usuarioClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -62,6 +54,7 @@ type
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -75,7 +68,8 @@ implementation
 
 {$R *.dfm}
 
-uses UntUsuario, UntDM, UntLogin, UntPerfil, UntCliente, UntMarca, UntCategoria;
+uses UntUsuario, UntDM, UntLogin, UntPerfil, UntCliente, UntMarca, UntCategoria,
+  UntProduto;
 
 procedure TFrmMenuPrincipal.Action10Execute(Sender: TObject);
 begin
@@ -155,6 +149,13 @@ begin
   Application.CreateForm(TFrmCategoria, FrmCategoria);
   FrmCategoria.ShowModal;
   FrmCategoria.Free;
+end;
+
+procedure TFrmMenuPrincipal.Button6Click(Sender: TObject);
+begin
+  Application.CreateForm(TFrmProduto, FrmProduto);
+  FrmProduto.ShowModal;
+  FrmProduto.Free;
 end;
 
 procedure TFrmMenuPrincipal.FormActivate(Sender: TObject);
