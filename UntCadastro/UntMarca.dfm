@@ -1,7 +1,9 @@
 inherited FrmMarca: TFrmMarca
-  Caption = 'FrmMarca'
-  ClientHeight = 199
-  ExplicitHeight = 227
+  Caption = 'Manunten'#231#227'o no Cadatro de Marca'
+  ClientHeight = 359
+  OnActivate = FormActivate
+  ExplicitWidth = 850
+  ExplicitHeight = 388
   PixelsPerInch = 96
   TextHeight = 13
   inherited ToolBar1: TToolBar
@@ -79,10 +81,12 @@ inherited FrmMarca: TFrmMarca
     end
   end
   inherited StatusBar1: TStatusBar
-    Top = 180
+    Top = 340
+    ExplicitTop = 180
   end
   inherited PnlFicha: TPanel
-    Height = 93
+    Height = 253
+    ExplicitHeight = 93
     object Label3: TLabel
       Left = 26
       Top = 16
@@ -138,7 +142,7 @@ inherited FrmMarca: TFrmMarca
     Left = 625
     Top = 224
     Bitmap = {
-      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800340018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1337,7 +1341,7 @@ inherited FrmMarca: TFrmMarca
     Left = 681
     Top = 224
     Bitmap = {
-      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800340018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2536,7 +2540,7 @@ inherited FrmMarca: TFrmMarca
     Left = 737
     Top = 224
     Bitmap = {
-      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800340018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -3736,17 +3740,45 @@ inherited FrmMarca: TFrmMarca
     Top = 224
   end
   inherited FDTabela: TFDTable
-    IndexFieldNames = 'ID'
-    UpdateOptions.UpdateTableName = 'ALUGMAT.dbo.CATEGORIA'
-    TableName = 'ALUGMAT.dbo.CATEGORIA'
+    IndexFieldNames = 'DATA_ALT;DATA_INC;DESCRICAO;ID;STATUS'
+    DetailFields = 'DATA_ALT;DATA_INC;DESCRICAO;ID;STATUS'
+    UpdateOptions.UpdateTableName = 'ALUGMAT.dbo.MARCA'
+    TableName = 'ALUGMAT.dbo.MARCA'
     Left = 489
     Top = 224
+    object FDTabelaID: TFDAutoIncField
+      FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object FDTabelaDESCRICAO: TStringField
+      FieldName = 'DESCRICAO'
+      Origin = 'DESCRICAO'
+      Required = True
+      Size = 30
+    end
+    object FDTabelaDATA_INC: TSQLTimeStampField
+      FieldName = 'DATA_INC'
+      Origin = 'DATA_INC'
+    end
+    object FDTabelaDATA_ALT: TSQLTimeStampField
+      FieldName = 'DATA_ALT'
+      Origin = 'DATA_ALT'
+    end
+    object FDTabelaSTATUS: TStringField
+      FieldName = 'STATUS'
+      Origin = 'STATUS'
+      Required = True
+      FixedChar = True
+      Size = 1
+    end
   end
   inherited ImageList4: TImageList
     Left = 793
     Top = 223
     Bitmap = {
-      494C010104000800280010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101040008002C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4020,9 +4052,17 @@ inherited FrmMarca: TFrmMarca
   inherited PopupMenu1: TPopupMenu
     Left = 792
     Top = 167
+    object Descrio2: TMenuItem [1]
+      Caption = 'Descri'#231#227'o'
+      OnClick = Descrio2Click
+    end
   end
   inherited PopupMenu2: TPopupMenu
     Left = 704
     Top = 167
+    object Descrio1: TMenuItem [1]
+      Caption = 'Descri'#231#227'o'
+      OnClick = Descrio1Click
+    end
   end
 end

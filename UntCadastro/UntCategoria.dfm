@@ -5,15 +5,66 @@ inherited FrmCategoria: TFrmCategoria
   ExplicitHeight = 214
   PixelsPerInch = 96
   TextHeight = 13
+  inherited ToolBar1: TToolBar
+    inherited btn_ordenar: TToolButton
+      Left = 74
+    end
+    inherited Separador1: TToolButton
+      Left = 148
+    end
+    inherited btn_primeiro: TToolButton
+      Left = 156
+    end
+    inherited btn_anterior: TToolButton
+      Left = 215
+    end
+    inherited btn_proximo: TToolButton
+      Left = 274
+    end
+    inherited btn_ultimo: TToolButton
+      Left = 333
+    end
+    inherited Separador2: TToolButton
+      Left = 392
+    end
+    inherited btn_inserir: TToolButton
+      Left = 400
+    end
+    inherited btn_editar: TToolButton
+      Left = 459
+    end
+    inherited btn_excluir: TToolButton
+      Left = 518
+    end
+    inherited Separador3: TToolButton
+      Left = 577
+    end
+    inherited btn_salvar: TToolButton
+      Left = 585
+    end
+    inherited btn_cancelar: TToolButton
+      Left = 644
+    end
+    inherited Separador4: TToolButton
+      Left = 703
+    end
+    inherited btn_imprimir: TToolButton
+      Left = 711
+    end
+    inherited Separador5: TToolButton
+      Left = 770
+    end
+    inherited btn_sair: TToolButton
+      Left = 778
+    end
+  end
   inherited StatusBar1: TStatusBar
     Top = 166
-    ExplicitTop = 348
+    ExplicitTop = 166
   end
   inherited PnlFicha: TPanel
     Height = 79
-    ExplicitLeft = 8
-    ExplicitTop = 63
-    ExplicitHeight = 397
+    ExplicitHeight = 79
     object Label2: TLabel
       Left = 24
       Top = 24
@@ -25,7 +76,7 @@ inherited FrmCategoria: TFrmCategoria
       Left = 89
       Top = 21
       Width = 743
-      Height = 44
+      Height = 21
       DataField = 'DESCRICAO'
       DataSource = DataSource1
       TabOrder = 0
@@ -35,7 +86,7 @@ inherited FrmCategoria: TFrmCategoria
     Left = 441
     Top = 144
     Bitmap = {
-      494C01010D0018002C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1234,7 +1285,7 @@ inherited FrmCategoria: TFrmCategoria
     Left = 497
     Top = 144
     Bitmap = {
-      494C01010D0018002C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2433,7 +2484,7 @@ inherited FrmCategoria: TFrmCategoria
     Left = 553
     Top = 144
     Bitmap = {
-      494C01010D0018002C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -3670,7 +3721,7 @@ inherited FrmCategoria: TFrmCategoria
     Left = 601
     Top = 143
     Bitmap = {
-      494C010104000800240010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000800280010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
