@@ -2,8 +2,84 @@
   Caption = 'Configura'#231#245'es de Perfis de Usu'#225'rios'
   OnActivate = FormActivate
   OnClose = FormClose
+  ExplicitWidth = 850
+  ExplicitHeight = 497
   PixelsPerInch = 96
   TextHeight = 13
+  inherited ToolBar1: TToolBar
+    inherited btn_pesquisa: TToolButton
+      ExplicitWidth = 74
+    end
+    inherited btn_ordenar: TToolButton
+      Left = 74
+      ExplicitLeft = 74
+      ExplicitWidth = 74
+    end
+    inherited Separador1: TToolButton
+      Left = 148
+      ExplicitLeft = 148
+    end
+    inherited btn_primeiro: TToolButton
+      Left = 156
+      ExplicitLeft = 156
+    end
+    inherited btn_anterior: TToolButton
+      Left = 215
+      ExplicitLeft = 215
+    end
+    inherited btn_proximo: TToolButton
+      Left = 274
+      ExplicitLeft = 274
+    end
+    inherited btn_ultimo: TToolButton
+      Left = 333
+      ExplicitLeft = 333
+    end
+    inherited Separador2: TToolButton
+      Left = 392
+      ExplicitLeft = 392
+    end
+    inherited btn_inserir: TToolButton
+      Left = 400
+      ExplicitLeft = 400
+    end
+    inherited btn_editar: TToolButton
+      Left = 459
+      ExplicitLeft = 459
+    end
+    inherited btn_excluir: TToolButton
+      Left = 518
+      ExplicitLeft = 518
+    end
+    inherited Separador3: TToolButton
+      Left = 577
+      ExplicitLeft = 577
+    end
+    inherited btn_salvar: TToolButton
+      Left = 585
+      ExplicitLeft = 585
+    end
+    inherited btn_cancelar: TToolButton
+      Left = 644
+      ExplicitLeft = 644
+    end
+    inherited Separador4: TToolButton
+      Left = 703
+      ExplicitLeft = 703
+    end
+    inherited btn_imprimir: TToolButton
+      Left = 711
+      ExplicitLeft = 711
+    end
+    inherited Separador5: TToolButton
+      Left = 770
+      ExplicitLeft = 770
+    end
+    inherited btn_sair: TToolButton
+      Left = 778
+      ExplicitLeft = 778
+    end
+  end
   inherited PnlFicha: TPanel
     object PanelSup: TPanel
       Left = 1
@@ -64,26 +140,14 @@
       TabOrder = 1
       object TabSheet1: TTabSheet
         Caption = 'Cadastro'
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
       end
       object TabSheet2: TTabSheet
         Caption = 'Vendas'
         ImageIndex = 1
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
       end
       object Relatório: TTabSheet
         Caption = 'Relat'#243'rio'
         ImageIndex = 2
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
       end
       object Ferramentas: TTabSheet
         Caption = 'Ferramentas'
@@ -215,7 +279,7 @@
   end
   inherited ImageList1: TImageList
     Bitmap = {
-      494C01010D001800280018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D0018002C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1412,7 +1476,7 @@
   end
   inherited ImageList2: TImageList
     Bitmap = {
-      494C01010D001800280018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D0018002C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2609,7 +2673,7 @@
   end
   inherited ImageList3: TImageList
     Bitmap = {
-      494C01010D001800280018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D0018002C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -3896,7 +3960,7 @@
   end
   inherited ImageList4: TImageList
     Bitmap = {
-      494C010104000800180010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101040008001C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
