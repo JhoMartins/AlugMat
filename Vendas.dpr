@@ -13,7 +13,8 @@ uses
   UntUsuario in 'UntCadastro\UntUsuario.pas' {FrmUsuario},
   UntMarca in 'UntCadastro\UntMarca.pas' {FrmPadrao2},
   UntCategoria in 'UntCadastro\UntCategoria.pas' {FrmCategoria},
-  UntPesqRadio in 'UntPadrao\UntPesqRadio.pas' {pesqRadio};
+  UntPesqRadio in 'UntPadrao\UntPesqRadio.pas' {pesqRadio},
+  UntProduto in 'UntCadastro\UntProduto.pas' {FrmProduto};
 
 {$R *.res}
 
@@ -27,5 +28,6 @@ begin
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TFrmLogin, FrmLogin);
   Application.CreateForm(TpesqRadio, pesqRadio);
+  Application.CreateForm(TFrmProduto, FrmProduto);
   Application.Run;
 end.
