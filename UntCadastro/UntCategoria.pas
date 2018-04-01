@@ -20,6 +20,10 @@ type
     FDTabelaSTATUS: TStringField;
     edDescricao: TDBEdit;
     Label2: TLabel;
+    Label3: TLabel;
+    DBEdit1: TDBEdit;
+    Label4: TLabel;
+    DBEdit2: TDBEdit;
     procedure btn_salvarClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
   private
