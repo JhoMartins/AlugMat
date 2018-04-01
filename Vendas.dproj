@@ -153,6 +153,10 @@
             <Form>FrmProduto</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="UntCadastro\UntFornecedor.pas">
+            <Form>FrmFornecedor</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <None Include="Vendas.dpr"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
