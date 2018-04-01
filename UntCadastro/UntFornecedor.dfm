@@ -1,6 +1,7 @@
 inherited FrmFornecedor: TFrmFornecedor
   Caption = 'Manuten'#231#227'o no Cadastro de Fornecedor'
   ClientHeight = 308
+  OnActivate = FormActivate
   ExplicitHeight = 337
   PixelsPerInch = 96
   TextHeight = 13
@@ -80,10 +81,11 @@ inherited FrmFornecedor: TFrmFornecedor
   end
   inherited StatusBar1: TStatusBar
     Top = 289
+    ExplicitTop = 289
   end
   inherited PnlFicha: TPanel
     Height = 202
-    ExplicitTop = 89
+    ExplicitHeight = 202
     object Label2: TLabel
       Left = 37
       Top = 24
@@ -219,6 +221,7 @@ inherited FrmFornecedor: TFrmFornecedor
       Height = 21
       DataField = 'DATA_INC'
       DataSource = DataSource1
+      Enabled = False
       TabOrder = 1
     end
     object edDataAlt: TDBEdit
@@ -228,6 +231,7 @@ inherited FrmFornecedor: TFrmFornecedor
       Height = 21
       DataField = 'DATA_ALT'
       DataSource = DataSource1
+      Enabled = False
       TabOrder = 2
     end
     object edNomeFantasia: TDBEdit
@@ -300,6 +304,34 @@ inherited FrmFornecedor: TFrmFornecedor
       Height = 21
       DataField = 'ESTADO'
       DataSource = DataSource1
+      Items.Strings = (
+        'AC'
+        'AL'
+        'AP'
+        'AM'
+        'BA'
+        'CE'
+        'DF'
+        'ES'
+        'GO'
+        'MA'
+        'MT'
+        'MS'
+        'MG'
+        'PA'
+        'PB'
+        'PR'
+        'PE'
+        'PI'
+        'RJ'
+        'RN'
+        'RS'
+        'RO'
+        'RR'
+        'SC'
+        'SP'
+        'SE'
+        'TO')
       TabOrder = 10
     end
     object edNomeLog: TDBEdit
@@ -368,7 +400,7 @@ inherited FrmFornecedor: TFrmFornecedor
     Left = 121
     Top = 272
     Bitmap = {
-      494C01010D0018002C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1567,7 +1599,7 @@ inherited FrmFornecedor: TFrmFornecedor
     Left = 177
     Top = 272
     Bitmap = {
-      494C01010D0018002C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2766,7 +2798,7 @@ inherited FrmFornecedor: TFrmFornecedor
     Left = 233
     Top = 272
     Bitmap = {
-      494C01010D0018002C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -4079,7 +4111,7 @@ inherited FrmFornecedor: TFrmFornecedor
     Left = 297
     Top = 271
     Bitmap = {
-      494C010104000800240010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000800280010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

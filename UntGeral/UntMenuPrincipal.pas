@@ -11,7 +11,7 @@ uses
   Vcl.ComCtrls, Vcl.RibbonLunaStyleActnCtrls, Vcl.Ribbon, System.Actions,
   Vcl.ActnList, Vcl.PlatformDefaultStyleActnCtrls, Vcl.ActnMan, Vcl.ToolWin,
   Vcl.ActnCtrls, Vcl.AppEvnts, Vcl.ExtCtrls, System.ImageList, Vcl.ImgList,
-  Vcl.ActnMenus, Vcl.RibbonActnMenus;
+  Vcl.ActnMenus, Vcl.RibbonActnMenus, UntFornecedor;
 
 type
   TFrmMenuPrincipal = class(TForm)
@@ -40,6 +40,7 @@ type
     Button4: TButton;
     Button5: TButton;
     Button6: TButton;
+    Button7: TButton;
     procedure btn_usuarioClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -55,6 +56,7 @@ type
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -156,6 +158,13 @@ begin
   Application.CreateForm(TFrmProduto, FrmProduto);
   FrmProduto.ShowModal;
   FrmProduto.Free;
+end;
+
+procedure TFrmMenuPrincipal.Button7Click(Sender: TObject);
+begin
+  Application.CreateForm(TFrmFornecedor, FrmFornecedor);
+  FrmFornecedor.ShowModal;
+  FrmFornecedor.Free;
 end;
 
 procedure TFrmMenuPrincipal.FormActivate(Sender: TObject);
