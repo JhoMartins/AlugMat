@@ -1,8 +1,7 @@
-inherited FrmCliente: TFrmCliente
-  Caption = 'Manuten'#231#227'o no Cadastro de Cliente'
+inherited FrmFornecedor: TFrmFornecedor
+  Caption = 'Manuten'#231#227'o no Cadastro de Fornecedor'
   ClientHeight = 308
   OnActivate = FormActivate
-  OnClose = FormClose
   ExplicitHeight = 337
   PixelsPerInch = 96
   TextHeight = 13
@@ -88,245 +87,221 @@ inherited FrmCliente: TFrmCliente
     Height = 202
     ExplicitHeight = 202
     object Label2: TLabel
-      Left = 73
+      Left = 37
       Top = 24
-      Width = 33
+      Width = 73
       Height = 13
-      Caption = '* Tipo:'
+      Caption = '* Raz'#227'o Social:'
     end
     object Label3: TLabel
-      Left = 66
-      Top = 57
-      Width = 40
-      Height = 13
-      Caption = '* Nome:'
-    end
-    object lbCPFCNPJ: TLabel
-      Left = 428
-      Top = 57
-      Width = 61
-      Height = 13
-      Alignment = taRightJustify
-      Caption = '* CPF/CNPJ:'
-    end
-    object lbRGIE: TLabel
-      Left = 642
-      Top = 57
-      Width = 41
-      Height = 13
-      Alignment = taRightJustify
-      Caption = '* RG/IE:'
-    end
-    object Label6: TLabel
-      Left = 15
-      Top = 90
-      Width = 91
-      Height = 13
-      Caption = '* Tipo Logradouro:'
-    end
-    object Label7: TLabel
-      Left = 235
-      Top = 90
-      Width = 98
-      Height = 13
-      Caption = '* Nome Logradouro:'
-    end
-    object Label8: TLabel
-      Left = 726
-      Top = 90
-      Width = 25
-      Height = 13
-      Caption = '* N'#186':'
-    end
-    object Label9: TLabel
-      Left = 37
-      Top = 123
-      Width = 69
-      Height = 13
-      Caption = 'Complemento:'
-    end
-    object Label10: TLabel
-      Left = 249
-      Top = 123
-      Width = 41
-      Height = 13
-      Caption = '* Bairro:'
-    end
-    object Label11: TLabel
-      Left = 460
-      Top = 123
-      Width = 46
-      Height = 13
-      Caption = '* Cidade:'
-    end
-    object Label12: TLabel
-      Left = 692
-      Top = 123
-      Width = 46
-      Height = 13
-      Caption = '* Estado:'
-    end
-    object Label13: TLabel
-      Left = 60
-      Top = 156
-      Width = 46
-      Height = 13
-      Caption = 'Telefone:'
-    end
-    object Label14: TLabel
-      Left = 258
-      Top = 156
-      Width = 37
-      Height = 13
-      Caption = 'Celular:'
-    end
-    object Label15: TLabel
-      Left = 448
-      Top = 156
-      Width = 32
-      Height = 13
-      Caption = 'E-mail:'
-    end
-    object Label4: TLabel
-      Left = 353
+      Left = 391
       Top = 24
       Width = 94
       Height = 13
       Caption = '* Data de Inclus'#227'o:'
     end
-    object Label5: TLabel
-      Left = 638
+    object Label4: TLabel
+      Left = 618
       Top = 24
       Width = 91
       Height = 13
       Caption = 'Data de Altera'#231#227'o:'
     end
-    object edNome: TDBEdit
-      Left = 112
-      Top = 54
-      Width = 302
+    object Label5: TLabel
+      Left = 26
+      Top = 57
+      Width = 84
+      Height = 13
+      Caption = '* Nome Fantasia:'
+    end
+    object Label6: TLabel
+      Left = 391
+      Top = 57
+      Width = 38
+      Height = 13
+      Caption = '* CNPJ:'
+    end
+    object Label7: TLabel
+      Left = 618
+      Top = 57
+      Width = 23
+      Height = 13
+      Caption = '* IE:'
+    end
+    object Label8: TLabel
+      Left = 19
+      Top = 91
+      Width = 91
+      Height = 13
+      Caption = '* Tipo Logradouro:'
+    end
+    object Label29: TLabel
+      Left = 722
+      Top = 91
+      Width = 25
+      Height = 13
+      Caption = '* N'#186':'
+    end
+    object Label10: TLabel
+      Left = 305
+      Top = 125
+      Width = 41
+      Height = 13
+      Caption = '* Bairro:'
+    end
+    object Label11: TLabel
+      Left = 508
+      Top = 125
+      Width = 46
+      Height = 13
+      Caption = '* Cidade:'
+    end
+    object Label12: TLabel
+      Left = 726
+      Top = 125
+      Width = 46
+      Height = 13
+      Caption = '* Estado:'
+    end
+    object Label14: TLabel
+      Left = 224
+      Top = 91
+      Width = 98
+      Height = 13
+      Caption = '* Nome Logradouro:'
+    end
+    object Label13: TLabel
+      Left = 32
+      Top = 125
+      Width = 69
+      Height = 13
+      Caption = 'Complemento:'
+    end
+    object Label15: TLabel
+      Left = 64
+      Top = 160
+      Width = 46
+      Height = 13
+      Caption = 'Telefone:'
+    end
+    object Label16: TLabel
+      Left = 223
+      Top = 160
+      Width = 37
+      Height = 13
+      Caption = 'Celular:'
+    end
+    object Label17: TLabel
+      Left = 376
+      Top = 160
+      Width = 43
+      Height = 13
+      Caption = 'Contato:'
+    end
+    object Label18: TLabel
+      Left = 552
+      Top = 160
+      Width = 32
+      Height = 13
+      Caption = 'E-mail:'
+    end
+    object edRazaoSocial: TDBEdit
+      Left = 116
+      Top = 21
+      Width = 269
       Height = 21
-      DataField = 'NOME'
+      DataField = 'RAZAO_SOCIAL'
       DataSource = DataSource1
       TabOrder = 0
     end
-    object edCPFCNPJ: TDBEdit
-      Left = 495
-      Top = 54
-      Width = 132
-      Height = 21
-      DataSource = DataSource1
-      TabOrder = 1
-    end
-    object edRGIE: TDBEdit
-      Left = 689
-      Top = 54
+    object edDataInc: TDBEdit
+      Left = 491
+      Top = 21
       Width = 121
       Height = 21
+      DataField = 'DATA_INC'
       DataSource = DataSource1
+      Enabled = False
+      TabOrder = 1
+    end
+    object edDataAlt: TDBEdit
+      Left = 715
+      Top = 21
+      Width = 121
+      Height = 21
+      DataField = 'DATA_ALT'
+      DataSource = DataSource1
+      Enabled = False
       TabOrder = 2
     end
-    object edTipoLog: TDBEdit
-      Left = 112
-      Top = 87
-      Width = 97
+    object edNomeFantasia: TDBEdit
+      Left = 116
+      Top = 54
+      Width = 269
       Height = 21
-      DataField = 'LOGRADOURO'
+      DataField = 'NOME_FANTASIA'
       DataSource = DataSource1
       TabOrder = 3
     end
-    object edNomeLog: TDBEdit
-      Left = 339
-      Top = 87
-      Width = 358
+    object edCNPJ: TDBEdit
+      Left = 435
+      Top = 54
+      Width = 177
       Height = 21
-      DataField = 'NOME_LOGRADOURO'
+      DataField = 'CNPJ'
       DataSource = DataSource1
       TabOrder = 4
     end
-    object edN: TDBEdit
-      Left = 757
-      Top = 87
-      Width = 53
+    object edIE: TDBEdit
+      Left = 647
+      Top = 54
+      Width = 189
       Height = 21
-      DataField = 'NUM'
+      DataField = 'IE'
       DataSource = DataSource1
       TabOrder = 5
     end
-    object edComplemento: TDBEdit
-      Left = 112
-      Top = 120
-      Width = 129
+    object edTipoLog: TDBEdit
+      Left = 116
+      Top = 88
+      Width = 102
       Height = 21
-      DataField = 'COMPLEMENTO'
+      DataField = 'LOGRADOURO'
       DataSource = DataSource1
       TabOrder = 6
     end
-    object edBairro: TDBEdit
-      Left = 296
-      Top = 120
-      Width = 153
+    object edN: TDBEdit
+      Left = 753
+      Top = 88
+      Width = 83
       Height = 21
-      DataField = 'BAIRRO'
-      DataSource = DataSource1
-      TabOrder = 7
-    end
-    object edCidade: TDBEdit
-      Left = 512
-      Top = 120
-      Width = 171
-      Height = 21
-      DataField = 'CIDADE'
+      DataField = 'NUM'
       DataSource = DataSource1
       TabOrder = 8
     end
-    object edTelefone: TDBEdit
-      Left = 112
-      Top = 153
-      Width = 113
+    object edBairro: TDBEdit
+      Left = 352
+      Top = 122
+      Width = 150
       Height = 21
-      DataField = 'TELEFONE'
-      DataSource = DataSource1
-      TabOrder = 9
-    end
-    object edCelular: TDBEdit
-      Left = 301
-      Top = 153
-      Width = 113
-      Height = 21
-      DataField = 'CELULAR'
+      DataField = 'BAIRRO'
       DataSource = DataSource1
       TabOrder = 10
     end
-    object edEmail: TDBEdit
-      Left = 486
-      Top = 153
-      Width = 324
+    object edCidade: TDBEdit
+      Left = 560
+      Top = 122
+      Width = 160
       Height = 21
-      DataField = 'EMAIL'
+      DataField = 'CIDADE'
       DataSource = DataSource1
       TabOrder = 11
     end
-    object cbTipo: TDBComboBox
-      Left = 112
-      Top = 21
-      Width = 145
-      Height = 21
-      Style = csDropDownList
-      DataField = 'TIPO_PESSOA'
-      DataSource = DataSource1
-      Items.Strings = (
-        'Pessoa F'#237'sica'
-        'Pessoa Jur'#237'dica')
-      TabOrder = 12
-      OnClick = cbTipoClick
-    end
     object cbEstado: TDBComboBox
-      Left = 744
-      Top = 120
-      Width = 66
+      Left = 778
+      Top = 122
+      Width = 58
       Height = 21
-      Style = csDropDownList
       DataField = 'ESTADO'
       DataSource = DataSource1
       Items.Strings = (
@@ -357,32 +332,68 @@ inherited FrmCliente: TFrmCliente
         'SP'
         'SE'
         'TO')
+      TabOrder = 12
+    end
+    object edNomeLog: TDBEdit
+      Left = 328
+      Top = 88
+      Width = 388
+      Height = 21
+      DataField = 'NOME_LOGRADOURO'
+      DataSource = DataSource1
+      TabOrder = 7
+    end
+    object edTelefone: TDBEdit
+      Left = 116
+      Top = 157
+      Width = 101
+      Height = 21
+      DataField = 'TELEFONE'
+      DataSource = DataSource1
       TabOrder = 13
     end
-    object edDataInc: TDBEdit
-      Left = 453
-      Top = 21
-      Width = 75
+    object edCelular: TDBEdit
+      Left = 266
+      Top = 157
+      Width = 104
       Height = 21
-      DataField = 'DATA_INC'
+      DataField = 'CELULAR'
       DataSource = DataSource1
       TabOrder = 14
     end
-    object edDataAlt: TDBEdit
-      Left = 735
-      Top = 21
-      Width = 75
+    object edContato: TDBEdit
+      Left = 425
+      Top = 157
+      Width = 121
       Height = 21
-      DataField = 'DATA_ALT'
+      DataField = 'CONTATO'
       DataSource = DataSource1
       TabOrder = 15
     end
+    object edEmail: TDBEdit
+      Left = 590
+      Top = 157
+      Width = 246
+      Height = 21
+      DataField = 'EMAIL'
+      DataSource = DataSource1
+      TabOrder = 16
+    end
+    object edComplemento: TDBEdit
+      Left = 116
+      Top = 122
+      Width = 183
+      Height = 21
+      DataField = 'COMPLEMENTO'
+      DataSource = DataSource1
+      TabOrder = 9
+    end
   end
   inherited ImageList1: TImageList
-    Left = 473
-    Top = 264
+    Left = 121
+    Top = 272
     Bitmap = {
-      494C01010D0018003C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1578,10 +1589,10 @@ inherited FrmCliente: TFrmCliente
       000000000000}
   end
   inherited ImageList2: TImageList
-    Left = 529
-    Top = 264
+    Left = 177
+    Top = 272
     Bitmap = {
-      494C01010D0018003C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2777,10 +2788,10 @@ inherited FrmCliente: TFrmCliente
       000000000000}
   end
   inherited ImageList3: TImageList
-    Left = 585
-    Top = 264
+    Left = 233
+    Top = 272
     Bitmap = {
-      494C01010D0018003C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -3976,52 +3987,42 @@ inherited FrmCliente: TFrmCliente
       000000000000}
   end
   inherited DataSource1: TDataSource
-    Left = 401
-    Top = 264
+    Left = 65
+    Top = 272
   end
   inherited FDTabela: TFDTable
     IndexFieldNames = 'ID'
-    UpdateOptions.UpdateTableName = 'CLIENTE'
-    TableName = 'CLIENTE'
-    Left = 337
-    Top = 264
+    UpdateOptions.UpdateTableName = 'ALUGMAT.dbo.FORNECEDOR'
+    TableName = 'ALUGMAT.dbo.FORNECEDOR'
+    Left = 25
+    Top = 272
     object FDTabelaID: TFDAutoIncField
       FieldName = 'ID'
       Origin = 'ID'
       ProviderFlags = [pfInWhere, pfInKey]
       ReadOnly = True
     end
-    object FDTabelaTIPO_PESSOA: TStringField
-      FieldName = 'TIPO_PESSOA'
-      Origin = 'TIPO_PESSOA'
-      Required = True
-      FixedChar = True
-      Size = 1
-    end
-    object FDTabelaNOME: TStringField
-      FieldName = 'NOME'
-      Origin = 'NOME'
+    object FDTabelaRAZAO_SOCIAL: TStringField
+      FieldName = 'RAZAO_SOCIAL'
+      Origin = 'RAZAO_SOCIAL'
       Required = True
       Size = 50
     end
-    object FDTabelaCPF: TStringField
-      FieldName = 'CPF'
-      Origin = 'CPF'
-      Size = 14
-    end
-    object FDTabelaRG: TStringField
-      FieldName = 'RG'
-      Origin = 'RG'
-      Size = 12
+    object FDTabelaNOME_FANTASIA: TStringField
+      FieldName = 'NOME_FANTASIA'
+      Origin = 'NOME_FANTASIA'
+      Size = 50
     end
     object FDTabelaCNPJ: TStringField
       FieldName = 'CNPJ'
       Origin = 'CNPJ'
+      Required = True
       Size = 18
     end
     object FDTabelaIE: TStringField
       FieldName = 'IE'
       Origin = 'IE'
+      Required = True
       Size = 15
     end
     object FDTabelaLOGRADOURO: TStringField
@@ -4078,6 +4079,11 @@ inherited FrmCliente: TFrmCliente
       Origin = 'EMAIL'
       Size = 50
     end
+    object FDTabelaCONTATO: TStringField
+      FieldName = 'CONTATO'
+      Origin = 'CONTATO'
+      Size = 50
+    end
     object FDTabelaDATA_INC: TSQLTimeStampField
       FieldName = 'DATA_INC'
       Origin = 'DATA_INC'
@@ -4095,10 +4101,10 @@ inherited FrmCliente: TFrmCliente
     end
   end
   inherited ImageList4: TImageList
-    Left = 641
-    Top = 263
+    Left = 297
+    Top = 271
     Bitmap = {
-      494C010104000800340010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000800280010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4370,37 +4376,11 @@ inherited FrmCliente: TFrmCliente
       000000000000}
   end
   inherited PopupMenu1: TPopupMenu
-    Left = 786
-    Top = 263
-    object N3: TMenuItem
-      Caption = '-'
-    end
-    object ipodePessoa1: TMenuItem
-      Caption = 'Tipo de Pessoa'
-      OnClick = ipodePessoa1Click
-    end
-    object NomedoCliente1: TMenuItem
-      Caption = 'Nome do Cliente'
-      OnClick = NomedoCliente1Click
-    end
-    object CPFdoCliente1: TMenuItem
-      Caption = 'CPF/CNPJ do Cliente'
-      OnClick = CPFdoCliente1Click
-    end
+    Left = 640
+    Top = 271
   end
   inherited PopupMenu2: TPopupMenu
-    Left = 712
-    Top = 263
-    object N4: TMenuItem
-      Caption = '-'
-    end
-    object ipodePessoa2: TMenuItem
-      Caption = 'Tipo de Pessoa'
-      OnClick = ipodePessoa2Click
-    end
-    object NomedoCliente2: TMenuItem
-      Caption = 'Nome do Cliente'
-      OnClick = NomedoCliente2Click
-    end
+    Left = 592
+    Top = 271
   end
 end
