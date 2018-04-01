@@ -277,7 +277,7 @@ inherited FrmFornecedor: TFrmFornecedor
       Height = 21
       DataField = 'NUM'
       DataSource = DataSource1
-      TabOrder = 7
+      TabOrder = 8
     end
     object edBairro: TDBEdit
       Left = 352
@@ -286,7 +286,7 @@ inherited FrmFornecedor: TFrmFornecedor
       Height = 21
       DataField = 'BAIRRO'
       DataSource = DataSource1
-      TabOrder = 8
+      TabOrder = 10
     end
     object edCidade: TDBEdit
       Left = 560
@@ -295,7 +295,7 @@ inherited FrmFornecedor: TFrmFornecedor
       Height = 21
       DataField = 'CIDADE'
       DataSource = DataSource1
-      TabOrder = 9
+      TabOrder = 11
     end
     object cbEstado: TDBComboBox
       Left = 778
@@ -332,7 +332,7 @@ inherited FrmFornecedor: TFrmFornecedor
         'SP'
         'SE'
         'TO')
-      TabOrder = 10
+      TabOrder = 12
     end
     object edNomeLog: TDBEdit
       Left = 328
@@ -341,14 +341,7 @@ inherited FrmFornecedor: TFrmFornecedor
       Height = 21
       DataField = 'NOME_LOGRADOURO'
       DataSource = DataSource1
-      TabOrder = 11
-    end
-    object DBEdit12: TDBEdit
-      Left = 1052
-      Top = 362
-      Width = 183
-      Height = 21
-      TabOrder = 12
+      TabOrder = 7
     end
     object edTelefone: TDBEdit
       Left = 116
@@ -393,7 +386,7 @@ inherited FrmFornecedor: TFrmFornecedor
       Height = 21
       DataField = 'COMPLEMENTO'
       DataSource = DataSource1
-      TabOrder = 17
+      TabOrder = 9
     end
   end
   inherited ImageList1: TImageList

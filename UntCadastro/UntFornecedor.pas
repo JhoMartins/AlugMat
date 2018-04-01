@@ -57,7 +57,6 @@ type
     Label14: TLabel;
     edNomeLog: TDBEdit;
     Label13: TLabel;
-    DBEdit12: TDBEdit;
     Label15: TLabel;
     edTelefone: TDBEdit;
     Label16: TLabel;
