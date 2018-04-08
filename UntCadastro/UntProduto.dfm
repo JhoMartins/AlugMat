@@ -1,91 +1,16 @@
 inherited FrmProduto: TFrmProduto
   Caption = 'Manuten'#231#227'o no Cadastrdo de Produto'
-  ClientHeight = 478
+  ClientHeight = 466
   OnActivate = FormActivate
-  ExplicitWidth = 850
-  ExplicitHeight = 507
+  ExplicitHeight = 495
   PixelsPerInch = 96
   TextHeight = 13
-  inherited ToolBar1: TToolBar
-    inherited btn_pesquisa: TToolButton
-      ExplicitWidth = 74
-    end
-    inherited btn_ordenar: TToolButton
-      Left = 74
-      ExplicitLeft = 74
-      ExplicitWidth = 74
-    end
-    inherited Separador1: TToolButton
-      Left = 148
-      ExplicitLeft = 148
-    end
-    inherited btn_primeiro: TToolButton
-      Left = 156
-      ExplicitLeft = 156
-    end
-    inherited btn_anterior: TToolButton
-      Left = 215
-      ExplicitLeft = 215
-    end
-    inherited btn_proximo: TToolButton
-      Left = 274
-      ExplicitLeft = 274
-    end
-    inherited btn_ultimo: TToolButton
-      Left = 333
-      ExplicitLeft = 333
-    end
-    inherited Separador2: TToolButton
-      Left = 392
-      ExplicitLeft = 392
-    end
-    inherited btn_inserir: TToolButton
-      Left = 400
-      ExplicitLeft = 400
-    end
-    inherited btn_editar: TToolButton
-      Left = 459
-      ExplicitLeft = 459
-    end
-    inherited btn_excluir: TToolButton
-      Left = 518
-      ExplicitLeft = 518
-    end
-    inherited Separador3: TToolButton
-      Left = 577
-      ExplicitLeft = 577
-    end
-    inherited btn_salvar: TToolButton
-      Left = 585
-      ExplicitLeft = 585
-    end
-    inherited btn_cancelar: TToolButton
-      Left = 644
-      ExplicitLeft = 644
-    end
-    inherited Separador4: TToolButton
-      Left = 703
-      ExplicitLeft = 703
-    end
-    inherited btn_imprimir: TToolButton
-      Left = 711
-      ExplicitLeft = 711
-    end
-    inherited Separador5: TToolButton
-      Left = 770
-      ExplicitLeft = 770
-    end
-    inherited btn_sair: TToolButton
-      Left = 778
-      ExplicitLeft = 778
-    end
-  end
   inherited StatusBar1: TStatusBar
-    Top = 459
+    Top = 447
     ExplicitTop = 459
   end
   inherited PnlFicha: TPanel
-    Height = 372
+    Height = 360
     ExplicitHeight = 372
     object Label10: TLabel
       Left = 240
@@ -245,7 +170,7 @@ inherited FrmProduto: TFrmProduto
   end
   inherited ImageList1: TImageList
     Bitmap = {
-      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800340018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1442,7 +1367,7 @@ inherited FrmProduto: TFrmProduto
   end
   inherited ImageList2: TImageList
     Bitmap = {
-      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800340018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2639,7 +2564,7 @@ inherited FrmProduto: TFrmProduto
   end
   inherited ImageList3: TImageList
     Bitmap = {
-      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800340018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -3909,7 +3834,7 @@ inherited FrmProduto: TFrmProduto
   end
   inherited ImageList4: TImageList
     Bitmap = {
-      494C010104000800280010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101040008002C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4179,6 +4104,16 @@ inherited FrmProduto: TFrmProduto
       6BFECD93FC0FFFFF6000CFF3FC0FFFFF7800C003FC0FFFFF0000C003FFFFFFFF
       001FFFFFFFFFFFFF001FFFFFFFFFFFFF00000000000000000000000000000000
       000000000000}
+  end
+  inherited PopupMenu1: TPopupMenu
+    object Descrio1: TMenuItem [1]
+      Caption = 'Descri'#231#227'o'
+      OnClick = Descrio1Click
+    end
+    object CdigoInterno1: TMenuItem [2]
+      Caption = 'C'#243'digo Interno'
+      OnClick = CdigoInterno1Click
+    end
   end
   object DSMarca: TDataSource
     DataSet = FDQryMarca

@@ -50,8 +50,13 @@ type
     FDQryCategoria: TFDQuery;
     DSFornecedor: TDataSource;
     FDQryFornecedor: TFDQuery;
+    Descrio1: TMenuItem;
+    CdigoInterno1: TMenuItem;
     procedure btn_salvarClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure Cdigo1Click(Sender: TObject);
+    procedure Descrio1Click(Sender: TObject);
+    procedure CdigoInterno1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -65,7 +70,8 @@ implementation
 
 {$R *.dfm}
 
-uses UntDM, UntMenuPrincipal, UntUsuario;
+uses UntDM, UntMenuPrincipal, UntUsuario, UntPesqString, UntPerfil, UntLogin,
+  UntPesqData, UntPesqRadio, UntCategoria, UntMarca, UntCliente;
 
 procedure TFrmProduto.btn_salvarClick(Sender: TObject);
 begin
@@ -96,6 +102,63 @@ begin
     DBLookupComboBox2.color := clWindow;
     DBLookupComboBox3.Color := clWindow;
   end;
+end;
+
+procedure TFrmProduto.Cdigo1Click(Sender: TObject);
+begin
+  ValorCampo.Clear;
+  ValorCampo.SetFocus;
+
+end;
+
+procedure TFrmProduto.CdigoInterno1Click(Sender: TObject);
+begin
+  pesqString.Edit1.NumbersOnly := true;
+  pesqString.RadioGroup1.Visible := false;
+
+  inherited;
+
+  tarefa := 'Pesquisa por Código Interno';
+  pesqString.ShowModal;
+
+
+   begin
+    FDTabela.Filter := 'CD_INTERNO = ';
+    StatusBar1.Panels[2].Text := 'Pesquisa Por Código interno ';
+  end;
+
+end;
+
+procedure TFrmProduto.Descrio1Click(Sender: TObject);
+begin
+  inherited;
+ tarefa := 'Pesquisa por Descrição';
+  pesqString.ShowModal;
+
+   if pesqString.RadioGroup1.ItemIndex = 0 then
+  begin
+    FDTabela.Filter := 'UPPER(DESCRICAO) LIKE ' + #39 + '%' + pesqString.Edit1.text + '%' + #39;
+    StatusBar1.Panels[2].Text := 'Nome contém: ' + pesqString.Edit1.Text;
+  end;
+
+  if pesqString.RadioGroup1.ItemIndex = 1 then
+  begin
+    FDTabela.Filter := 'UPPER(DESCRICAO) LIKE ' + #39 + pesqString.Edit1.text + '%' + #39;
+    StatusBar1.Panels[2].Text := 'Nome inicia com: ' + pesqString.Edit1.Text;
+  end;
+
+  if pesqString.RadioGroup1.ItemIndex = 2 then
+  begin
+    FDTabela.Filter := 'UPPER(DESCRICAO) LIKE ' + #39 + '%' + pesqString.Edit1.text + #39;
+    StatusBar1.Panels[2].Text := 'Nome termina com: ' + pesqString.Edit1.Text;
+  end;
+
+  FDTabela.Filtered := True;
+
+  Executar := sentencaSQL;
+  Executar := exibePanels;
+  Executar := navegacao;
+  Executar := habilitaBotoes;
 end;
 
 procedure TFrmProduto.FormActivate(Sender: TObject);

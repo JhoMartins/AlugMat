@@ -72,7 +72,7 @@ end;
 procedure TFrmMarca.Descrio2Click(Sender: TObject);
 begin
   inherited;
-  tarefa := 'Pesquisa alfanumérica por Nome';
+  tarefa := 'Pesquisa por Descrição';
   pesqString.ShowModal;
 
    if pesqString.RadioGroup1.ItemIndex = 0 then
