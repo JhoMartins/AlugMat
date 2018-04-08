@@ -2,6 +2,7 @@ inherited FrmProduto: TFrmProduto
   Caption = 'Manuten'#231#227'o no Cadastrdo de Produto'
   ClientHeight = 478
   OnActivate = FormActivate
+  ExplicitTop = -49
   ExplicitWidth = 850
   ExplicitHeight = 507
   PixelsPerInch = 96
@@ -95,7 +96,7 @@ inherited FrmProduto: TFrmProduto
       Caption = 'Valor da Di'#225'ria'
     end
     object Label11: TLabel
-      Left = 240
+      Left = 222
       Top = 112
       Width = 87
       Height = 13
@@ -137,8 +138,8 @@ inherited FrmProduto: TFrmProduto
       Caption = 'C'#243'digo Marca'
     end
     object Label7: TLabel
-      Left = 449
-      Top = 120
+      Left = 429
+      Top = 112
       Width = 91
       Height = 13
       Caption = 'C'#243'digo Fornecedor'
@@ -171,6 +172,8 @@ inherited FrmProduto: TFrmProduto
       Top = 21
       Width = 85
       Height = 21
+      DataField = 'DATA_ALT'
+      DataSource = DataSource1
       TabOrder = 1
     end
     object edValorDiaria: TDBEdit
@@ -185,7 +188,7 @@ inherited FrmProduto: TFrmProduto
     object DBLookupComboBox1: TDBLookupComboBox
       Left = 135
       Top = 112
-      Width = 93
+      Width = 66
       Height = 21
       DataField = 'CD_MARCA'
       DataSource = DataSource1
@@ -203,36 +206,37 @@ inherited FrmProduto: TFrmProduto
       DataSource = DataSource1
       TabOrder = 4
     end
-    object edCaracteristicas: TDBEdit
-      Left = 542
-      Top = 69
-      Width = 121
-      Height = 21
-      DataField = 'CARACTERISTICAS'
-      DataSource = DataSource1
-      TabOrder = 5
-    end
     object DBLookupComboBox2: TDBLookupComboBox
       Left = 333
       Top = 112
-      Width = 105
+      Width = 69
       Height = 21
       DataField = 'CD_CATEGORIA'
       DataSource = DataSource1
       KeyField = 'ID'
       ListField = 'ID'
       ListSource = DSCategoria
-      TabOrder = 6
+      TabOrder = 5
     end
     object DBLookupComboBox3: TDBLookupComboBox
-      Left = 546
+      Left = 526
       Top = 112
-      Width = 121
+      Width = 75
       Height = 21
       DataField = 'CD_FORNECEDOR'
       DataSource = DataSource1
+      KeyField = 'ID'
       ListField = 'ID'
       ListSource = DSFornecedor
+      TabOrder = 6
+    end
+    object edCaracteristicas: TDBEdit
+      Left = 526
+      Top = 69
+      Width = 121
+      Height = 21
+      DataField = 'CARACTERISTICAS'
+      DataSource = DataSource1
       TabOrder = 7
     end
   end
@@ -241,11 +245,13 @@ inherited FrmProduto: TFrmProduto
     Top = 108
     Width = 81
     Height = 21
+    DataField = 'DATA_INC'
+    DataSource = DataSource1
     TabOrder = 4
   end
   inherited ImageList1: TImageList
     Bitmap = {
-      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800340018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1442,7 +1448,7 @@ inherited FrmProduto: TFrmProduto
   end
   inherited ImageList2: TImageList
     Bitmap = {
-      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800340018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2639,7 +2645,7 @@ inherited FrmProduto: TFrmProduto
   end
   inherited ImageList3: TImageList
     Bitmap = {
-      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800340018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -3863,6 +3869,8 @@ inherited FrmProduto: TFrmProduto
       FieldName = 'VALOR_DIARIA'
       Origin = 'VALOR_DIARIA'
       Required = True
+      DisplayFormat = ',#.00'
+      EditFormat = ',#.00'
     end
     object FDTabelaSTATUS: TStringField
       FieldName = 'STATUS'
@@ -3909,7 +3917,7 @@ inherited FrmProduto: TFrmProduto
   end
   inherited ImageList4: TImageList
     Bitmap = {
-      494C010104000800280010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101040008002C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4212,16 +4220,16 @@ inherited FrmProduto: TFrmProduto
     Top = 399
   end
   object DSFornecedor: TDataSource
-    DataSet = FDQryFornecedor
+    DataSet = FDQyFornecedor
     Left = 112
     Top = 399
   end
-  object FDQryFornecedor: TFDQuery
+  object FDQyFornecedor: TFDQuery
     Active = True
     DetailFields = 'ID'
     Connection = DM.FDConnection1
     SQL.Strings = (
-      'SELECT ID'
+      'SELECT ID '
       'FROM FORNECEDOR'
       'ORDER BY ID')
     Left = 72
