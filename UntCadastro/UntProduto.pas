@@ -24,6 +24,19 @@ type
     Label11: TLabel;
     Label12: TLabel;
     edDescricao: TDBEdit;
+    edDataInc: TDBEdit;
+    edDataAlt: TDBEdit;
+    edValorDiaria: TDBEdit;
+    DSMarca: TDataSource;
+    FDQryMarca: TFDQuery;
+    DBLookupComboBox1: TDBLookupComboBox;
+    edCodInt: TDBEdit;
+    DBLookupComboBox2: TDBLookupComboBox;
+    DSCategoria: TDataSource;
+    FDQryCategoria: TFDQuery;
+    DBLookupComboBox3: TDBLookupComboBox;
+    DSFornecedor: TDataSource;
+    FDQyFornecedor: TFDQuery;
     FDTabelaID: TFDAutoIncField;
     FDTabelaDESCRICAO: TStringField;
     FDTabelaCD_INTERNO: TStringField;
@@ -36,20 +49,7 @@ type
     FDTabelaCD_FORNECEDOR: TIntegerField;
     FDTabelaDATA_INC: TSQLTimeStampField;
     FDTabelaDATA_ALT: TSQLTimeStampField;
-    edDataInc: TDBEdit;
-    edDataAlt: TDBEdit;
-    edValorDiaria: TDBEdit;
-    DSMarca: TDataSource;
-    FDQryMarca: TFDQuery;
-    DBLookupComboBox1: TDBLookupComboBox;
-    edCodInt: TDBEdit;
     edCaracteristicas: TDBEdit;
-    DBLookupComboBox2: TDBLookupComboBox;
-    DBLookupComboBox3: TDBLookupComboBox;
-    DSCategoria: TDataSource;
-    FDQryCategoria: TFDQuery;
-    DSFornecedor: TDataSource;
-    FDQryFornecedor: TFDQuery;
     procedure btn_salvarClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
   private
@@ -65,7 +65,8 @@ implementation
 
 {$R *.dfm}
 
-uses UntDM, UntMenuPrincipal, UntUsuario;
+uses UntDM, UntMenuPrincipal, UntUsuario, UntFornecedor, UntPesqData,
+  UntPesqString;
 
 procedure TFrmProduto.btn_salvarClick(Sender: TObject);
 begin
@@ -108,9 +109,14 @@ begin
                 FrmMenuPrincipal.QueryLogin.FieldByName('PER_PRODUTO_E').AsString;
 
   Executar := ExibePanels;
+
+  FDTabela.FieldByName('DATA_INC').EditMask := '99/99/9999;1;_';
+  FDTabela.FieldByName('DATA_ALT').EditMask := '99/99/9999;1;_';
   inherited;
   FDTabela.Open();
   Executar := habilitaBotoes;
+  edDataInc.Enabled := false;
+  edDataAlt.Enabled := false;
 end;
 
 end.
