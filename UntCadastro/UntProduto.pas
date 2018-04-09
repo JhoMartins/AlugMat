@@ -43,15 +43,28 @@ type
     FDTabelaVALOR_DIARIA: TFloatField;
     FDTabelaSTATUS: TStringField;
     FDTabelaDISPONIVEL: TStringField;
-    FDTabelaCARACTERISTICAS: TMemoField;
     FDTabelaCD_MARCA: TIntegerField;
     FDTabelaCD_CATEGORIA: TIntegerField;
     FDTabelaCD_FORNECEDOR: TIntegerField;
     FDTabelaDATA_INC: TSQLTimeStampField;
     FDTabelaDATA_ALT: TSQLTimeStampField;
     edCaracteristicas: TDBEdit;
+    CbDisponivel: TDBComboBox;
+    Descrio1: TMenuItem;
+    ValordaDiria1: TMenuItem;
+    Disponivel1: TMenuItem;
+    Descrio2: TMenuItem;
+    CdigoInterno1: TMenuItem;
+    ValordaDiria2: TMenuItem;
+    FDTabelaCARACTERISTICAS: TMemoField;
     procedure btn_salvarClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure Disponivel1Click(Sender: TObject);
+    procedure Descrio1Click(Sender: TObject);
+    procedure ValordaDiria1Click(Sender: TObject);
+    procedure Descrio2Click(Sender: TObject);
+    procedure CdigoInterno1Click(Sender: TObject);
+    procedure ValordaDiria2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -66,7 +79,7 @@ implementation
 {$R *.dfm}
 
 uses UntDM, UntMenuPrincipal, UntUsuario, UntFornecedor, UntPesqData,
-  UntPesqString;
+  UntPesqString, UntPesqRadio;
 
 procedure TFrmProduto.btn_salvarClick(Sender: TObject);
 begin
@@ -99,6 +112,108 @@ begin
   end;
 end;
 
+procedure TFrmProduto.CdigoInterno1Click(Sender: TObject);
+begin
+  inherited;
+   FDTabela.IndexFieldNames := 'CD_INTERNO';
+   StatusBar1.Panels[2].Text := 'Ordenado: Código Interno';
+end;
+
+procedure TFrmProduto.Descrio1Click(Sender: TObject);
+begin
+  inherited;
+  tarefa := 'Pesquisa alfanumérica por Nome';
+  pesqString.ShowModal;
+
+   if pesqString.RadioGroup1.ItemIndex = 0 then
+  begin
+    FDTabela.Filter := 'UPPER(DESCRICAO) LIKE ' + #39 + '%' + pesqString.Edit1.text + '%' + #39;
+    StatusBar1.Panels[2].Text := 'Nome contém: ' + pesqString.Edit1.Text;
+  end;
+
+  if pesqString.RadioGroup1.ItemIndex = 1 then
+  begin
+    FDTabela.Filter := 'UPPER(DESCRICAO) LIKE ' + #39 + pesqString.Edit1.text + '%' + #39;
+    StatusBar1.Panels[2].Text := 'Nome inicia com: ' + pesqString.Edit1.Text;
+  end;
+
+  if pesqString.RadioGroup1.ItemIndex = 2 then
+  begin
+    FDTabela.Filter := 'UPPER(DESCRICAO) LIKE ' + #39 + '%' + pesqString.Edit1.text + #39;
+    StatusBar1.Panels[2].Text := 'Nome termina com: ' + pesqString.Edit1.Text;
+  end;
+
+  FDTabela.Filtered := True;
+
+  Executar := sentencaSQL;
+  Executar := exibePanels;
+  Executar := navegacao;
+  Executar := habilitaBotoes;
+
+end;
+
+procedure TFrmProduto.Descrio2Click(Sender: TObject);
+begin
+  inherited;
+   FDTabela.IndexFieldNames := 'DESCRICAO';
+   StatusBar1.Panels[2].Text := 'Ordenado: Descrição';
+end;
+
+procedure TFrmProduto.Disponivel1Click(Sender: TObject);
+var i: integer;
+begin
+  inherited;
+tarefa := 'Pesquisa por Tipo de Pessoa';
+
+  pesqRadio.RadioGroup1.Caption := 'Pesquisa de Produtos disponíveis:';
+  pesqRadio.RadioGroup1.Items.Add('Sim');
+  pesqRadio.RadioGroup1.Items.Add('Não');
+
+  pesqRadio.ShowModal;
+
+  if pesqRadio.RadioGroup1.ItemIndex = 0 then
+  begin
+    FDTabela.Filter := 'DISPONIVEL = ' + #39 + 'Sim' + #39;
+    StatusBar1.Panels[2].Text := 'Sim';
+  end;
+
+  if pesqRadio.RadioGroup1.ItemIndex = 1 then
+  begin
+    FDTabela.Filter := 'DISPONIVEL = ' + #39 + 'Não' + #39;
+    StatusBar1.Panels[2].Text := 'Não';
+  end;
+
+  FDTabela.Filtered := True;
+
+  Executar := sentencaSQL;
+  Executar := exibePanels;
+  Executar := navegacao;
+  Executar := habilitaBotoes;
+  i := pesqRadio.RadioGroup1.Items.Count - 1;
+  while i > -1 do
+  begin
+    pesqRadio.RadioGroup1.Items.Delete(i);
+    i := i - 1;
+  end;
+
+  if FDTabela.FieldByName('DISPONIVEL').Value = 'Sim' then
+  begin
+    CbDisponivel.ItemIndex := 0;
+
+  end
+  else if FDTabela.FieldByName('DISPONIVEL').Value = 'Não' then
+  begin
+    CbDisponivel.ItemIndex := 1;
+  end
+  else
+  begin
+    CbDisponivel.ItemIndex := -1;
+
+  end;
+end;
+
+
+
 procedure TFrmProduto.FormActivate(Sender: TObject);
 begin
     FDTabela.TableName := 'PRODUTO';
@@ -117,6 +232,47 @@ begin
   Executar := habilitaBotoes;
   edDataInc.Enabled := false;
   edDataAlt.Enabled := false;
+end;
+
+procedure TFrmProduto.ValordaDiria1Click(Sender: TObject);
+begin
+  inherited;
+  tarefa := 'Pesquisa alfanumérica por Valor';
+  pesqString.ShowModal;
+
+   if pesqString.RadioGroup1.ItemIndex = 0 then
+  begin
+    FDTabela.Filter := 'UPPER(VALOR_DIARIA) LIKE ' + #39 + '%' + pesqString.Edit1.text + '%' + #39;
+    StatusBar1.Panels[2].Text := 'Valor contém: ' + pesqString.Edit1.Text;
+  end;
+
+  if pesqString.RadioGroup1.ItemIndex = 1 then
+  begin
+    FDTabela.Filter := 'UPPER(VALOR_DIARIA) LIKE ' + #39 + pesqString.Edit1.text + '%' + #39;
+    StatusBar1.Panels[2].Text := 'Valor inicia com: ' + pesqString.Edit1.Text;
+  end;
+
+  if pesqString.RadioGroup1.ItemIndex = 2 then
+  begin
+    FDTabela.Filter := 'UPPER(VALOR_DIARIA) LIKE ' + #39 + '%' + pesqString.Edit1.text + #39;
+    StatusBar1.Panels[2].Text := 'Valor termina com: ' + pesqString.Edit1.Text;
+  end;
+
+  FDTabela.Filtered := True;
+
+  Executar := sentencaSQL;
+  Executar := exibePanels;
+  Executar := navegacao;
+  Executar := habilitaBotoes;
+
+end;
+
+procedure TFrmProduto.ValordaDiria2Click(Sender: TObject);
+begin
+  inherited;
+  FDTabela.IndexFieldNames := 'VALOR_DIARIA';
+  StatusBar1.Panels[2].Text := 'Ordenado: Valor';
+
 end;
 
 end.
