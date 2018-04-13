@@ -2,7 +2,6 @@ inherited FrmProduto: TFrmProduto
   Caption = 'Manuten'#231#227'o no Cadastrdo de Produto'
   ClientHeight = 478
   OnActivate = FormActivate
-  ExplicitTop = -49
   ExplicitWidth = 850
   ExplicitHeight = 507
   PixelsPerInch = 96
@@ -96,7 +95,7 @@ inherited FrmProduto: TFrmProduto
       Caption = 'Valor da Di'#225'ria'
     end
     object Label11: TLabel
-      Left = 222
+      Left = 231
       Top = 112
       Width = 87
       Height = 13
@@ -158,6 +157,14 @@ inherited FrmProduto: TFrmProduto
       Height = 13
       Caption = 'Codigo Interno'
     end
+    object DBText1: TDBText
+      Left = 135
+      Top = 152
+      Width = 65
+      Height = 17
+      DataField = 'DISPONIVEL'
+      DataSource = DataSource1
+    end
     object edDescricao: TDBEdit
       Left = 135
       Top = 21
@@ -188,12 +195,12 @@ inherited FrmProduto: TFrmProduto
     object DBLookupComboBox1: TDBLookupComboBox
       Left = 135
       Top = 112
-      Width = 66
+      Width = 90
       Height = 21
       DataField = 'CD_MARCA'
       DataSource = DataSource1
       KeyField = 'ID'
-      ListField = 'ID'
+      ListField = 'DESCRICAO'
       ListSource = DSMarca
       TabOrder = 3
     end
@@ -209,24 +216,24 @@ inherited FrmProduto: TFrmProduto
     object DBLookupComboBox2: TDBLookupComboBox
       Left = 333
       Top = 112
-      Width = 69
+      Width = 90
       Height = 21
       DataField = 'CD_CATEGORIA'
       DataSource = DataSource1
       KeyField = 'ID'
-      ListField = 'ID'
+      ListField = 'DESCRICAO'
       ListSource = DSCategoria
       TabOrder = 5
     end
     object DBLookupComboBox3: TDBLookupComboBox
       Left = 526
       Top = 112
-      Width = 75
+      Width = 120
       Height = 21
       DataField = 'CD_FORNECEDOR'
       DataSource = DataSource1
       KeyField = 'ID'
-      ListField = 'ID'
+      ListField = 'RAZAO_SOCIAL'
       ListSource = DSFornecedor
       TabOrder = 6
     end
@@ -251,7 +258,7 @@ inherited FrmProduto: TFrmProduto
   end
   inherited ImageList1: TImageList
     Bitmap = {
-      494C01010D001800340018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800380018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1448,7 +1455,7 @@ inherited FrmProduto: TFrmProduto
   end
   inherited ImageList2: TImageList
     Bitmap = {
-      494C01010D001800340018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800380018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2645,7 +2652,7 @@ inherited FrmProduto: TFrmProduto
   end
   inherited ImageList3: TImageList
     Bitmap = {
-      494C01010D001800340018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800380018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -3917,7 +3924,7 @@ inherited FrmProduto: TFrmProduto
   end
   inherited ImageList4: TImageList
     Bitmap = {
-      494C0101040008002C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000800300010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4188,6 +4195,24 @@ inherited FrmProduto: TFrmProduto
       001FFFFFFFFFFFFF001FFFFFFFFFFFFF00000000000000000000000000000000
       000000000000}
   end
+  inherited PopupMenu1: TPopupMenu
+    object Descrio1: TMenuItem
+      Caption = 'Descri'#231#227'o'
+      OnClick = Descrio1Click
+    end
+    object Marca1: TMenuItem
+      Caption = 'Marca'
+      OnClick = Marca1Click
+    end
+    object Categoria1: TMenuItem
+      Caption = 'Categoria'
+      OnClick = Categoria1Click
+    end
+    object Fornecedor1: TMenuItem
+      Caption = 'Fornecedor'
+      OnClick = Fornecedor1Click
+    end
+  end
   object DSMarca: TDataSource
     DataSet = FDQryMarca
     Left = 328
@@ -4195,11 +4220,12 @@ inherited FrmProduto: TFrmProduto
   end
   object FDQryMarca: TFDQuery
     Active = True
+    DetailFields = 'DESCRICAO;ID'
     Connection = DM.FDConnection1
     SQL.Strings = (
       'SELECT ID,DESCRICAO '
       'FROM MARCA'
-      'ORDER BY ID')
+      'ORDER BY DESCRICAO')
     Left = 272
     Top = 399
   end
@@ -4210,12 +4236,12 @@ inherited FrmProduto: TFrmProduto
   end
   object FDQryCategoria: TFDQuery
     Active = True
-    DetailFields = 'ID'
+    DetailFields = 'DESCRICAO'
     Connection = DM.FDConnection1
     SQL.Strings = (
-      'SELECT ID '
+      'SELECT ID,DESCRICAO '
       'FROM CATEGORIA'
-      'ORDER BY ID')
+      'ORDER BY DESCRICAO')
     Left = 160
     Top = 399
   end
@@ -4226,10 +4252,10 @@ inherited FrmProduto: TFrmProduto
   end
   object FDQyFornecedor: TFDQuery
     Active = True
-    DetailFields = 'ID'
+    DetailFields = 'RAZAO_SOCIAL'
     Connection = DM.FDConnection1
     SQL.Strings = (
-      'SELECT ID '
+      'SELECT ID,RAZAO_SOCIAL '
       'FROM FORNECEDOR'
       'ORDER BY ID')
     Left = 72
