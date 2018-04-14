@@ -5,80 +5,6 @@ inherited FrmCategoria: TFrmCategoria
   ExplicitHeight = 197
   PixelsPerInch = 96
   TextHeight = 13
-  inherited ToolBar1: TToolBar
-    inherited btn_pesquisa: TToolButton
-      ExplicitWidth = 74
-    end
-    inherited btn_ordenar: TToolButton
-      Left = 74
-      ExplicitLeft = 74
-      ExplicitWidth = 74
-    end
-    inherited Separador1: TToolButton
-      Left = 148
-      ExplicitLeft = 148
-    end
-    inherited btn_primeiro: TToolButton
-      Left = 156
-      ExplicitLeft = 156
-    end
-    inherited btn_anterior: TToolButton
-      Left = 215
-      ExplicitLeft = 215
-    end
-    inherited btn_proximo: TToolButton
-      Left = 274
-      ExplicitLeft = 274
-    end
-    inherited btn_ultimo: TToolButton
-      Left = 333
-      ExplicitLeft = 333
-    end
-    inherited Separador2: TToolButton
-      Left = 392
-      ExplicitLeft = 392
-    end
-    inherited btn_inserir: TToolButton
-      Left = 400
-      ExplicitLeft = 400
-    end
-    inherited btn_editar: TToolButton
-      Left = 459
-      ExplicitLeft = 459
-    end
-    inherited btn_excluir: TToolButton
-      Left = 518
-      ExplicitLeft = 518
-    end
-    inherited Separador3: TToolButton
-      Left = 577
-      ExplicitLeft = 577
-    end
-    inherited btn_salvar: TToolButton
-      Left = 585
-      ExplicitLeft = 585
-    end
-    inherited btn_cancelar: TToolButton
-      Left = 644
-      ExplicitLeft = 644
-    end
-    inherited Separador4: TToolButton
-      Left = 703
-      ExplicitLeft = 703
-    end
-    inherited btn_imprimir: TToolButton
-      Left = 711
-      ExplicitLeft = 711
-    end
-    inherited Separador5: TToolButton
-      Left = 770
-      ExplicitLeft = 770
-    end
-    inherited btn_sair: TToolButton
-      Left = 778
-      ExplicitLeft = 778
-    end
-  end
   inherited StatusBar1: TStatusBar
     Top = 149
     ExplicitTop = 149
@@ -141,7 +67,7 @@ inherited FrmCategoria: TFrmCategoria
     Left = 441
     Top = 144
     Bitmap = {
-      494C01010D001800380018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D0018003C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1340,7 +1266,7 @@ inherited FrmCategoria: TFrmCategoria
     Left = 497
     Top = 144
     Bitmap = {
-      494C01010D001800380018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D0018003C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2539,7 +2465,7 @@ inherited FrmCategoria: TFrmCategoria
     Left = 553
     Top = 144
     Bitmap = {
-      494C01010D001800380018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D0018003C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -3776,7 +3702,7 @@ inherited FrmCategoria: TFrmCategoria
     Left = 601
     Top = 143
     Bitmap = {
-      494C010104000800300010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000800340010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4050,6 +3976,13 @@ inherited FrmCategoria: TFrmCategoria
   inherited PopupMenu1: TPopupMenu
     Left = 696
     Top = 143
+    object N3: TMenuItem
+      Caption = '-'
+    end
+    object Descrio1: TMenuItem
+      Caption = 'Descri'#231#227'o'
+      OnClick = Descrio1Click
+    end
   end
   inherited PopupMenu2: TPopupMenu
     Left = 648

@@ -8,7 +8,7 @@ uses
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   Vcl.Menus, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  System.ImageList, Vcl.ImgList, Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Buttons,
+  System.ImageList, Vcl.ImgList, Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Buttons, UntPesqString,
   Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.ToolWin, UntDM, Vcl.Mask, UntMenuPrincipal;
 
 type
@@ -24,8 +24,11 @@ type
     DBEdit1: TDBEdit;
     Label4: TLabel;
     DBEdit2: TDBEdit;
+    N3: TMenuItem;
+    Descrio1: TMenuItem;
     procedure btn_salvarClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure Descrio1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -54,6 +57,38 @@ begin
     inherited;
     edDescricao.Color:= clWindow;
   end;
+end;
+
+procedure TFrmCategoria.Descrio1Click(Sender: TObject);
+begin
+  inherited;
+  tarefa := 'Pesquisa alfanumérica por Descrição';
+  pesqString.ShowModal;
+
+  if pesqString.RadioGroup1.ItemIndex = 0 then
+  begin
+    FDTabela.Filter := 'UPPER(DESCRICAO) LIKE ' + #39 + '%' + pesqString.Edit1.text + '%' + #39;
+    StatusBar1.Panels[2].Text := 'Descrição contém: ' + pesqString.Edit1.Text;
+  end;
+
+  if pesqString.RadioGroup1.ItemIndex = 1 then
+  begin
+    FDTabela.Filter := 'UPPER(DESCRICAO) LIKE ' + #39 + pesqString.Edit1.text + '%' + #39;
+    StatusBar1.Panels[2].Text := 'Descrição inicia com: ' + pesqString.Edit1.Text;
+  end;
+
+  if pesqString.RadioGroup1.ItemIndex = 2 then
+  begin
+    FDTabela.Filter := 'UPPER(DESCRICAO) LIKE ' + #39 + '%' + pesqString.Edit1.text + #39;
+    StatusBar1.Panels[2].Text := 'Descrição termina com: ' + pesqString.Edit1.Text;
+  end;
+
+  FDTabela.Filtered := True;
+
+  Executar := sentencaSQL;
+  Executar := exibePanels;
+  Executar := navegacao;
+  Executar := habilitaBotoes;
 end;
 
 procedure TFrmCategoria.FormActivate(Sender: TObject);
