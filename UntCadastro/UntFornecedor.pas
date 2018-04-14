@@ -140,7 +140,7 @@ begin
   tarefa := 'Pesquisa alfanumérica por CNPJ';
   pesqString.ShowModal;
 
-  cnpj := Copy(pesqString.Edit1.text,0,2) + '.' + Copy(pesqString.Edit1.text,3,3) + '.' + Copy(pesqString.Edit1.text,6,3) + '/' + Copy(pesqString.Edit1.text,9,4) + '-' + Copy(pesqString.Edit1.text,13,2);
+  if (length(pesqString.Edit1.Text) = 14) then cnpj := Copy(pesqString.Edit1.text,0,2) + '.' + Copy(pesqString.Edit1.text,3,3) + '.' + Copy(pesqString.Edit1.text,6,3) + '/' + Copy(pesqString.Edit1.text,9,4) + '-' + Copy(pesqString.Edit1.text,13,2);
 
   if pesqString.RadioGroup1.ItemIndex = 0 then
   begin
