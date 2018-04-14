@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UntPadrao1, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
-  Vcl.Menus, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
+  Vcl.Menus, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, UntPesqString,
   System.ImageList, Vcl.ImgList, Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Buttons,
   Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.ToolWin, UntDM, Vcl.Mask;
 
@@ -66,8 +66,12 @@ type
     Label18: TLabel;
     edEmail: TDBEdit;
     edComplemento: TDBEdit;
+    N3: TMenuItem;
+    NomeFantasia1: TMenuItem;
+    CNPJ1: TMenuItem;
     procedure FormActivate(Sender: TObject);
     procedure btn_salvarClick(Sender: TObject);
+    procedure NomeFantasia1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -149,6 +153,40 @@ begin
 
   FDTabela.Open();
   Executar := habilitaBotoes;
+end;
+
+procedure TFrmFornecedor.NomeFantasia1Click(Sender: TObject);
+begin
+  inherited;
+
+  tarefa := 'Pesquisa alfanumérica por Nome Fantasia';
+  pesqString.ShowModal;
+
+  if pesqString.RadioGroup1.ItemIndex = 0 then
+  begin
+    FDTabela.Filter := 'UPPER(NOME_FANTASIA) LIKE ' + #39 + '%' + pesqString.Edit1.text + '%' + #39;
+    StatusBar1.Panels[2].Text := 'Nome Fantasia contém: ' + pesqString.Edit1.Text;
+  end;
+
+  if pesqString.RadioGroup1.ItemIndex = 1 then
+  begin
+    FDTabela.Filter := 'UPPER(NOME_FANTASIA) LIKE ' + #39 + pesqString.Edit1.text + '%' + #39;
+    StatusBar1.Panels[2].Text := 'Nome Fantasia inicia com: ' + pesqString.Edit1.Text;
+  end;
+
+  if pesqString.RadioGroup1.ItemIndex = 2 then
+  begin
+    FDTabela.Filter := 'UPPER(NOME_FANTASIA) LIKE ' + #39 + '%' + pesqString.Edit1.text + #39;
+    StatusBar1.Panels[2].Text := 'Nome Fantasia termina com: ' + pesqString.Edit1.Text;
+  end;
+
+  FDTabela.Filtered := True;
+
+  Executar := sentencaSQL;
+  Executar := exibePanels;
+  Executar := navegacao;
+  Executar := habilitaBotoes;
+
 end;
 
 end.
