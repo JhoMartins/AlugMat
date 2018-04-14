@@ -4387,6 +4387,7 @@ inherited FrmFornecedor: TFrmFornecedor
     end
     object CNPJ1: TMenuItem
       Caption = 'CNPJ'
+      OnClick = CNPJ1Click
     end
   end
   inherited PopupMenu2: TPopupMenu

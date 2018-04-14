@@ -72,6 +72,7 @@ type
     procedure FormActivate(Sender: TObject);
     procedure btn_salvarClick(Sender: TObject);
     procedure NomeFantasia1Click(Sender: TObject);
+    procedure CNPJ1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -126,6 +127,45 @@ begin
     end;
   end;
   inherited;
+end;
+
+procedure TFrmFornecedor.CNPJ1Click(Sender: TObject);
+var cnpj: String;
+begin
+  inherited;
+
+  pesqString.Edit1.NumbersOnly := true;
+  pesqString.RadioGroup1.Visible := false;
+
+  tarefa := 'Pesquisa alfanumérica por CNPJ';
+  pesqString.ShowModal;
+
+  cnpj := Copy(pesqString.Edit1.text,0,2) + '.' + Copy(pesqString.Edit1.text,3,3) + '.' + Copy(pesqString.Edit1.text,6,3) + '/' + Copy(pesqString.Edit1.text,9,4) + '-' + Copy(pesqString.Edit1.text,13,2);
+
+  if pesqString.RadioGroup1.ItemIndex = 0 then
+  begin
+    FDTabela.Filter := 'UPPER(CNPJ) LIKE ' + #39 + '%' + cnpj + '%' + #39;
+    StatusBar1.Panels[2].Text := 'CNPJ contém: ' + cnpj;
+  end;
+
+  if pesqString.RadioGroup1.ItemIndex = 1 then
+  begin
+    FDTabela.Filter := 'UPPER(CNPJ) LIKE ' + #39 + cnpj + '%' + #39;
+    StatusBar1.Panels[2].Text := 'CNPJ inicia com: ' + cnpj;
+  end;
+
+  if pesqString.RadioGroup1.ItemIndex = 2 then
+  begin
+    FDTabela.Filter := 'UPPER(CNPJ) LIKE ' + #39 + '%' + cnpj + #39;
+    StatusBar1.Panels[2].Text := 'CNPJ termina com: ' + cnpj;
+  end;
+
+  FDTabela.Filtered := True;
+
+  Executar := sentencaSQL;
+  Executar := exibePanels;
+  Executar := navegacao;
+  Executar := habilitaBotoes;
 end;
 
 procedure TFrmFornecedor.FormActivate(Sender: TObject);
