@@ -48,8 +48,6 @@ type
     FDTabelaCD_FORNECEDOR: TIntegerField;
     FDTabelaDATA_INC: TSQLTimeStampField;
     FDTabelaDATA_ALT: TSQLTimeStampField;
-    edCaracteristicas: TDBEdit;
-    CbDisponivel: TDBComboBox;
     Descrio1: TMenuItem;
     ValordaDiria1: TMenuItem;
     Disponivel1: TMenuItem;
@@ -57,6 +55,8 @@ type
     CdigoInterno1: TMenuItem;
     ValordaDiria2: TMenuItem;
     FDTabelaCARACTERISTICAS: TMemoField;
+    dbCaracteristicas: TDBMemo;
+    DBText1: TDBText;
     procedure btn_salvarClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure Disponivel1Click(Sender: TObject);
@@ -65,6 +65,7 @@ type
     procedure Descrio2Click(Sender: TObject);
     procedure CdigoInterno1Click(Sender: TObject);
     procedure ValordaDiria2Click(Sender: TObject);
+    procedure IDCdigo1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -83,14 +84,14 @@ uses UntDM, UntMenuPrincipal, UntUsuario, UntFornecedor, UntPesqData,
 
 procedure TFrmProduto.btn_salvarClick(Sender: TObject);
 begin
-   if (edDescricao.Text = '') or (edCodInt.Text = '') or (edValorDiaria.Text = '') or (edCaracteristicas.Text = '') or (strtoint(DBLookupComboBox1.Text)= -1) or (strtoint(DBLookupComboBox2.Text)= -1) or (strtoint(DBLookupComboBox3.Text)= -1) then
+   if (edDescricao.Text = '') or (edCodInt.Text = '') or (edValorDiaria.Text = '') or (dbCaracteristicas.Text = '') or (strtoint(DBLookupComboBox1.Text)= -1) or (strtoint(DBLookupComboBox2.Text)= -1) or (strtoint(DBLookupComboBox3.Text)= -1) then
     begin
 
     //Colorir Campos Obrigatórios
     edDescricao.color := clInactiveCaption;
     edCodInt.Color:= clInactiveCaption;
     edValorDiaria.color := clInactiveCaption;
-    edCaracteristicas.Color := clInactiveCaption;
+    dbCaracteristicas.Color := clInactiveCaption;
     DBLookupComboBox1.color := clInactiveCaption;
     DBLookupComboBox2.color := clInactiveCaption;
     DBLookupComboBox3.color := clInactiveCaption;
@@ -105,7 +106,7 @@ begin
     edDescricao.color := clWindow;
     edCodInt.Color := clWindow;
     edValorDiaria.color := clWindow;
-    edCaracteristicas.Color := clWindow;
+    dbCaracteristicas.Color := clWindow;
     DBLookupComboBox1.color := clWindow;
     DBLookupComboBox2.color := clWindow;
     DBLookupComboBox3.Color := clWindow;
@@ -122,7 +123,7 @@ end;
 procedure TFrmProduto.Descrio1Click(Sender: TObject);
 begin
   inherited;
-  tarefa := 'Pesquisa alfanumérica por Nome';
+  tarefa := 'Pesquisa por Nome';
   pesqString.ShowModal;
 
    if pesqString.RadioGroup1.ItemIndex = 0 then
@@ -163,7 +164,7 @@ procedure TFrmProduto.Disponivel1Click(Sender: TObject);
 var i: integer;
 begin
   inherited;
-tarefa := 'Pesquisa por Tipo de Pessoa';
+tarefa := 'Pesquisa por Disponibilidade';
 
   pesqRadio.RadioGroup1.Caption := 'Pesquisa de Produtos disponíveis:';
   pesqRadio.RadioGroup1.Items.Add('Sim');
@@ -173,14 +174,14 @@ tarefa := 'Pesquisa por Tipo de Pessoa';
 
   if pesqRadio.RadioGroup1.ItemIndex = 0 then
   begin
-    FDTabela.Filter := 'DISPONIVEL = ' + #39 + 'Sim' + #39;
-    StatusBar1.Panels[2].Text := 'Sim';
+    FDTabela.Filter := 'DISPONIVEL = ' + #39 + 'S' + #39;
+    StatusBar1.Panels[2].Text := 'Diponivél.: Sim';
   end;
 
   if pesqRadio.RadioGroup1.ItemIndex = 1 then
   begin
-    FDTabela.Filter := 'DISPONIVEL = ' + #39 + 'Não' + #39;
-    StatusBar1.Panels[2].Text := 'Não';
+    FDTabela.Filter := 'DISPONIVEL = ' + #39 + 'N' + #39;
+    StatusBar1.Panels[2].Text := 'Disponivél.: Não';
   end;
 
   FDTabela.Filtered := True;
@@ -196,20 +197,7 @@ tarefa := 'Pesquisa por Tipo de Pessoa';
     i := i - 1;
   end;
 
-  if FDTabela.FieldByName('DISPONIVEL').Value = 'Sim' then
-  begin
-    CbDisponivel.ItemIndex := 0;
-
-  end
-  else if FDTabela.FieldByName('DISPONIVEL').Value = 'Não' then
-  begin
-    CbDisponivel.ItemIndex := 1;
-  end
-  else
-  begin
-    CbDisponivel.ItemIndex := -1;
-
-  end;
+ 
 end;
 
 
@@ -230,15 +218,25 @@ begin
   FDTabela.FieldByName('DATA_ALT').EditMask := '99/99/9999;1;_';
   inherited;
   FDTabela.Open();
+  FDQryMarca.Open();
+  FDQryCategoria.Open();
+  FDQyFornecedor.Open();
   Executar := habilitaBotoes;
   edDataInc.Enabled := false;
   edDataAlt.Enabled := false;
 end;
 
+procedure TFrmProduto.IDCdigo1Click(Sender: TObject);
+begin
+  inherited;
+   FDTabela.IndexFieldNames := 'ID';
+   StatusBar1.Panels[2].Text := 'Ordenado: Por ID';
+end;
+
 procedure TFrmProduto.ValordaDiria1Click(Sender: TObject);
 begin
   inherited;
-  tarefa := 'Pesquisa alfanumérica por Valor';
+  tarefa := 'Pesquisa por Valor';
   pesqString.ShowModal;
 
    if pesqString.RadioGroup1.ItemIndex = 0 then
@@ -272,7 +270,7 @@ procedure TFrmProduto.ValordaDiria2Click(Sender: TObject);
 begin
   inherited;
   FDTabela.IndexFieldNames := 'VALOR_DIARIA';
-  StatusBar1.Panels[2].Text := 'Ordenado: Valor';
+  StatusBar1.Panels[2].Text := 'Ordenado: Valor da diária';
 
 end;
 

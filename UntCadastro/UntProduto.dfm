@@ -1,91 +1,20 @@
 inherited FrmProduto: TFrmProduto
   Caption = 'Manuten'#231#227'o no Cadastrdo de Produto'
-  ClientHeight = 262
+  ClientHeight = 391
   OnActivate = FormActivate
-  ExplicitHeight = 291
+  ExplicitLeft = 1
+  ExplicitHeight = 420
   PixelsPerInch = 96
   TextHeight = 13
-  inherited ToolBar1: TToolBar
-    inherited btn_pesquisa: TToolButton
-      ExplicitWidth = 74
-    end
-    inherited btn_ordenar: TToolButton
-      Left = 74
-      ExplicitLeft = 74
-      ExplicitWidth = 74
-    end
-    inherited Separador1: TToolButton
-      Left = 148
-      ExplicitLeft = 148
-    end
-    inherited btn_primeiro: TToolButton
-      Left = 156
-      ExplicitLeft = 156
-    end
-    inherited btn_anterior: TToolButton
-      Left = 215
-      ExplicitLeft = 215
-    end
-    inherited btn_proximo: TToolButton
-      Left = 274
-      ExplicitLeft = 274
-    end
-    inherited btn_ultimo: TToolButton
-      Left = 333
-      ExplicitLeft = 333
-    end
-    inherited Separador2: TToolButton
-      Left = 392
-      ExplicitLeft = 392
-    end
-    inherited btn_inserir: TToolButton
-      Left = 400
-      ExplicitLeft = 400
-    end
-    inherited btn_editar: TToolButton
-      Left = 459
-      ExplicitLeft = 459
-    end
-    inherited btn_excluir: TToolButton
-      Left = 518
-      ExplicitLeft = 518
-    end
-    inherited Separador3: TToolButton
-      Left = 577
-      ExplicitLeft = 577
-    end
-    inherited btn_salvar: TToolButton
-      Left = 585
-      ExplicitLeft = 585
-    end
-    inherited btn_cancelar: TToolButton
-      Left = 644
-      ExplicitLeft = 644
-    end
-    inherited Separador4: TToolButton
-      Left = 703
-      ExplicitLeft = 703
-    end
-    inherited btn_imprimir: TToolButton
-      Left = 711
-      ExplicitLeft = 711
-    end
-    inherited Separador5: TToolButton
-      Left = 770
-      ExplicitLeft = 770
-    end
-    inherited btn_sair: TToolButton
-      Left = 778
-      ExplicitLeft = 778
-    end
-  end
   inherited StatusBar1: TStatusBar
-    Top = 243
+    Top = 372
     ExplicitTop = 243
   end
   inherited PnlFicha: TPanel
-    Height = 156
-    ExplicitHeight = 156
+    Height = 285
+    ExplicitLeft = 8
+    ExplicitTop = 91
+    ExplicitHeight = 359
     object Label10: TLabel
       Left = 240
       Top = 72
@@ -94,11 +23,11 @@ inherited FrmProduto: TFrmProduto
       Caption = 'Valor da Di'#225'ria'
     end
     object Label11: TLabel
-      Left = 222
-      Top = 112
-      Width = 87
+      Left = 272
+      Top = 173
+      Width = 51
       Height = 13
-      Caption = 'C'#243'digo Catergoria'
+      Caption = 'Catergoria'
     end
     object Label12: TLabel
       Left = 542
@@ -115,32 +44,32 @@ inherited FrmProduto: TFrmProduto
       Caption = 'Descri'#231#227'o'
     end
     object Label4: TLabel
-      Left = 568
-      Top = 112
+      Left = 461
+      Top = 72
       Width = 48
       Height = 13
       Caption = 'Dispon'#237'vel'
     end
     object Label5: TLabel
-      Left = 449
-      Top = 72
+      Left = 58
+      Top = 118
       Width = 71
       Height = 13
       Caption = 'Caracteristicas'
     end
     object Label6: TLabel
-      Left = 57
-      Top = 112
-      Width = 65
+      Left = 272
+      Top = 132
+      Width = 29
       Height = 13
-      Caption = 'C'#243'digo Marca'
+      Caption = 'Marca'
     end
     object Label7: TLabel
-      Left = 390
-      Top = 112
-      Width = 91
+      Left = 272
+      Top = 213
+      Width = 55
       Height = 13
-      Caption = 'C'#243'digo Fornecedor'
+      Caption = 'Fornecedor'
     end
     object Label8: TLabel
       Left = 343
@@ -155,6 +84,14 @@ inherited FrmProduto: TFrmProduto
       Width = 72
       Height = 13
       Caption = 'Codigo Interno'
+    end
+    object DBText1: TDBText
+      Left = 542
+      Top = 72
+      Width = 65
+      Height = 17
+      DataField = 'DISPONIVEL'
+      DataSource = DataSource1
     end
     object edDescricao: TDBEdit
       Left = 135
@@ -184,9 +121,9 @@ inherited FrmProduto: TFrmProduto
       TabOrder = 2
     end
     object DBLookupComboBox1: TDBLookupComboBox
-      Left = 135
-      Top = 112
-      Width = 66
+      Left = 335
+      Top = 132
+      Width = 114
       Height = 21
       DataField = 'CD_MARCA'
       DataSource = DataSource1
@@ -205,9 +142,9 @@ inherited FrmProduto: TFrmProduto
       TabOrder = 4
     end
     object DBLookupComboBox2: TDBLookupComboBox
-      Left = 315
-      Top = 112
-      Width = 69
+      Left = 335
+      Top = 173
+      Width = 114
       Height = 21
       DataField = 'CD_CATEGORIA'
       DataSource = DataSource1
@@ -217,9 +154,9 @@ inherited FrmProduto: TFrmProduto
       TabOrder = 5
     end
     object DBLookupComboBox3: TDBLookupComboBox
-      Left = 487
-      Top = 112
-      Width = 75
+      Left = 333
+      Top = 213
+      Width = 116
       Height = 21
       DataField = 'CD_FORNECEDOR'
       DataSource = DataSource1
@@ -228,26 +165,14 @@ inherited FrmProduto: TFrmProduto
       ListSource = DSFornecedor
       TabOrder = 6
     end
-    object edCaracteristicas: TDBEdit
-      Left = 526
-      Top = 69
-      Width = 203
-      Height = 21
+    object dbCaracteristicas: TDBMemo
+      Left = 57
+      Top = 137
+      Width = 185
+      Height = 89
       DataField = 'CARACTERISTICAS'
       DataSource = DataSource1
       TabOrder = 7
-    end
-    object CbDisponivel: TDBComboBox
-      Left = 622
-      Top = 109
-      Width = 51
-      Height = 21
-      DataField = 'DISPONIVEL'
-      DataSource = DataSource1
-      Items.Strings = (
-        'Sim'
-        'N'#227'o')
-      TabOrder = 8
     end
   end
   object edDataInc: TDBEdit [4]
@@ -261,7 +186,7 @@ inherited FrmProduto: TFrmProduto
   end
   inherited ImageList1: TImageList
     Bitmap = {
-      494C01010D0018003C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800400018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1458,7 +1383,7 @@ inherited FrmProduto: TFrmProduto
   end
   inherited ImageList2: TImageList
     Bitmap = {
-      494C01010D0018003C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800400018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2655,7 +2580,7 @@ inherited FrmProduto: TFrmProduto
   end
   inherited ImageList3: TImageList
     Bitmap = {
-      494C01010D0018003C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800400018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -3931,7 +3856,7 @@ inherited FrmProduto: TFrmProduto
   end
   inherited ImageList4: TImageList
     Bitmap = {
-      494C010104000800340010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000800380010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4236,7 +4161,7 @@ inherited FrmProduto: TFrmProduto
     Top = 399
   end
   object FDQryMarca: TFDQuery
-    Active = True
+    DetailFields = 'ID;DESCRICAO'
     Connection = DM.FDConnection1
     SQL.Strings = (
       'SELECT ID,DESCRICAO '
@@ -4251,7 +4176,6 @@ inherited FrmProduto: TFrmProduto
     Top = 399
   end
   object FDQryCategoria: TFDQuery
-    Active = True
     DetailFields = 'ID'
     Connection = DM.FDConnection1
     SQL.Strings = (
@@ -4267,7 +4191,6 @@ inherited FrmProduto: TFrmProduto
     Top = 399
   end
   object FDQyFornecedor: TFDQuery
-    Active = True
     DetailFields = 'ID'
     Connection = DM.FDConnection1
     SQL.Strings = (
