@@ -100,8 +100,11 @@ begin
                 FrmMenuPrincipal.QueryLogin.FieldByName('PER_CATEGORIA_A').AsString +
                 FrmMenuPrincipal.QueryLogin.FieldByName('PER_CATEGORIA_E').AsString;
 
+  Executar := exibeBotoes;
   Executar := ExibePanels;
+
   inherited;
+
   FDTabela.Open();
   Executar := habilitaBotoes;
 end;

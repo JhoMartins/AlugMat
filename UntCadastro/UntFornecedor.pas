@@ -179,6 +179,7 @@ begin
                 FrmMenuPrincipal.QueryLogin.FieldByName('PER_FORNECEDOR_A').AsString +
                 FrmMenuPrincipal.QueryLogin.FieldByName('PER_FORNECEDOR_E').AsString;
 
+  Executar := exibeBotoes;
   Executar := ExibePanels;
 
   //Máscaras

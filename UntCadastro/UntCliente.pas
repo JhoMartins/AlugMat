@@ -631,6 +631,7 @@ begin
                 FrmMenuPrincipal.QueryLogin.FieldByName('PER_CLIENTE_A').AsString +
                 FrmMenuPrincipal.QueryLogin.FieldByName('PER_CLIENTE_E').AsString;
 
+  Executar := exibeBotoes;
   Executar := ExibePanels;
 
   //Máscaras

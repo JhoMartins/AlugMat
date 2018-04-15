@@ -223,6 +223,7 @@ begin
                 FrmMenuPrincipal.QueryLogin.FieldByName('PER_PRODUTO_A').AsString +
                 FrmMenuPrincipal.QueryLogin.FieldByName('PER_PRODUTO_E').AsString;
 
+  Executar := exibeBotoes;
   Executar := ExibePanels;
 
   FDTabela.FieldByName('DATA_INC').EditMask := '99/99/9999;1;_';
