@@ -46,7 +46,7 @@ begin
   end
   else
   begin
-    if (nomeJanela = 'Cliente') or (nomeJanela = 'Fornecedor') then
+    if nomeJanela = 'Cliente' then
     begin
 
       if (Edit1.Text <> '') and (length(Edit1.Text) <> 11) and (length(Edit1.Text) <> 14) then

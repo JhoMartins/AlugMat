@@ -93,9 +93,18 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     Top = 331
     Width = 75
     Height = 25
-    Caption = 'Fornecedor'
+    Caption = 'Aluguel'
     TabOrder = 7
     OnClick = Button7Click
+  end
+  object Button8: TButton
+    Left = 8
+    Top = 362
+    Width = 75
+    Height = 25
+    Caption = 'Devolu'#231#227'o'
+    TabOrder = 8
+    OnClick = Button8Click
   end
   object QueryLogin: TFDQuery
     Connection = DM.FDConnection1
@@ -220,7 +229,7 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     Left = 336
     Top = 360
     Bitmap = {
-      494C0101040008002C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000800300010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

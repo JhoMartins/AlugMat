@@ -1,17 +1,70 @@
 inherited FrmCategoria: TFrmCategoria
   Caption = 'Manuten'#231#227'o no Cadastro de Categoria'
-  ClientHeight = 168
+  ClientHeight = 185
   OnActivate = FormActivate
-  ExplicitHeight = 197
+  ExplicitHeight = 214
   PixelsPerInch = 96
   TextHeight = 13
+  inherited ToolBar1: TToolBar
+    inherited btn_ordenar: TToolButton
+      Left = 74
+    end
+    inherited Separador1: TToolButton
+      Left = 148
+    end
+    inherited btn_primeiro: TToolButton
+      Left = 156
+    end
+    inherited btn_anterior: TToolButton
+      Left = 215
+    end
+    inherited btn_proximo: TToolButton
+      Left = 274
+    end
+    inherited btn_ultimo: TToolButton
+      Left = 333
+    end
+    inherited Separador2: TToolButton
+      Left = 392
+    end
+    inherited btn_inserir: TToolButton
+      Left = 400
+    end
+    inherited btn_editar: TToolButton
+      Left = 459
+    end
+    inherited btn_excluir: TToolButton
+      Left = 518
+    end
+    inherited Separador3: TToolButton
+      Left = 577
+    end
+    inherited btn_salvar: TToolButton
+      Left = 585
+    end
+    inherited btn_cancelar: TToolButton
+      Left = 644
+    end
+    inherited Separador4: TToolButton
+      Left = 703
+    end
+    inherited btn_imprimir: TToolButton
+      Left = 711
+    end
+    inherited Separador5: TToolButton
+      Left = 770
+    end
+    inherited btn_sair: TToolButton
+      Left = 778
+    end
+  end
   inherited StatusBar1: TStatusBar
-    Top = 149
-    ExplicitTop = 149
+    Top = 166
+    ExplicitTop = 166
   end
   inherited PnlFicha: TPanel
-    Height = 62
-    ExplicitHeight = 62
+    Height = 79
+    ExplicitHeight = 79
     object Label2: TLabel
       Left = 24
       Top = 24
@@ -19,55 +72,21 @@ inherited FrmCategoria: TFrmCategoria
       Height = 13
       Caption = '* Descri'#231#227'o:'
     end
-    object Label3: TLabel
-      Left = 400
-      Top = 24
-      Width = 88
-      Height = 13
-      Caption = '* Data de Iclus'#227'o:'
-    end
-    object Label4: TLabel
-      Left = 621
-      Top = 24
-      Width = 91
-      Height = 13
-      Caption = 'Data de Altera'#231#227'o:'
-    end
     object edDescricao: TDBEdit
       Left = 89
       Top = 21
-      Width = 305
+      Width = 743
       Height = 21
       DataField = 'DESCRICAO'
       DataSource = DataSource1
       TabOrder = 0
-    end
-    object DBEdit1: TDBEdit
-      Left = 494
-      Top = 21
-      Width = 121
-      Height = 21
-      DataField = 'DATA_INC'
-      DataSource = DataSource1
-      Enabled = False
-      TabOrder = 1
-    end
-    object DBEdit2: TDBEdit
-      Left = 718
-      Top = 21
-      Width = 121
-      Height = 21
-      DataField = 'DATA_ALT'
-      DataSource = DataSource1
-      Enabled = False
-      TabOrder = 2
     end
   end
   inherited ImageList1: TImageList
     Left = 441
     Top = 144
     Bitmap = {
-      494C01010D001800400018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1266,7 +1285,7 @@ inherited FrmCategoria: TFrmCategoria
     Left = 497
     Top = 144
     Bitmap = {
-      494C01010D001800400018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2465,7 +2484,7 @@ inherited FrmCategoria: TFrmCategoria
     Left = 553
     Top = 144
     Bitmap = {
-      494C01010D001800400018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -3702,7 +3721,7 @@ inherited FrmCategoria: TFrmCategoria
     Left = 601
     Top = 143
     Bitmap = {
-      494C010104000800380010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000800280010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -3976,13 +3995,6 @@ inherited FrmCategoria: TFrmCategoria
   inherited PopupMenu1: TPopupMenu
     Left = 696
     Top = 143
-    object N3: TMenuItem
-      Caption = '-'
-    end
-    object Descrio1: TMenuItem
-      Caption = 'Descri'#231#227'o'
-      OnClick = Descrio1Click
-    end
   end
   inherited PopupMenu2: TPopupMenu
     Left = 648

@@ -92,6 +92,7 @@ type
     procedure IDCdigo1Click(Sender: TObject);
     procedure Datadeincluso1Click(Sender: TObject);
     procedure Datadealterao1Click(Sender: TObject);
+    procedure btn_sairClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -105,7 +106,7 @@ implementation
 
 {$R *.dfm}
 
-uses UntDM, UntMenuPrincipal, UntPesqString, UntPesqRadio;
+uses UntDM, UntMenuPrincipal, UntPesqString, UntPesqRadio, UntAlugueis;
 
 procedure TFrmCliente.btn_anteriorClick(Sender: TObject);
 begin
@@ -338,6 +339,13 @@ begin
     lbCPFCNPJ.Caption := '* CPF/CNPJ';
     lbRGIE.Caption := '* RG/IE:';
   end;
+end;
+
+procedure TFrmCliente.btn_sairClick(Sender: TObject);
+begin
+  inherited;
+  FrmAluguel.FDQryCliente.Close;
+  FrmAluguel.FDQryCliente.Open();
 end;
 
 procedure TFrmCliente.btn_salvarClick(Sender: TObject);
@@ -631,12 +639,11 @@ begin
                 FrmMenuPrincipal.QueryLogin.FieldByName('PER_CLIENTE_A').AsString +
                 FrmMenuPrincipal.QueryLogin.FieldByName('PER_CLIENTE_E').AsString;
 
-  Executar := exibeBotoes;
   Executar := ExibePanels;
 
   //Máscaras
-  FDTabela.FieldByName('DATA_INC').EditMask := '99/99/9999;1;_';
-  FDTabela.FieldByName('DATA_ALT').EditMask := '99/99/9999;1;_';
+  //FDTabela.FieldByName('DATA_INC').EditMask := '99/99/9999;1;_';
+  //FDTabela.FieldByName('DATA_ALT').EditMask := '99/99/9999;1;_';
   FDTabela.FieldByName('TELEFONE').EditMask := '(99)9999-9999;1;_';
   FDTabela.FieldByName('CELULAR').EditMask := '(99)99999-9999;1;_';
 
