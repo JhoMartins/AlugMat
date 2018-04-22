@@ -1,48 +1,115 @@
 inherited FrmMarca: TFrmMarca
   Caption = 'Manunten'#231#227'o no Cadatro de Marca'
-  ClientHeight = 203
+  ClientHeight = 170
   OnActivate = FormActivate
-  ExplicitHeight = 238
+  ExplicitWidth = 850
+  ExplicitHeight = 199
   PixelsPerInch = 96
   TextHeight = 13
   inherited ToolBar1: TToolBar
     inherited btn_pesquisa: TToolButton
-      ExplicitWidth = 78
+      ExplicitWidth = 74
     end
     inherited btn_ordenar: TToolButton
-      ExplicitWidth = 78
+      Left = 74
+      ExplicitLeft = 74
+      ExplicitWidth = 74
+    end
+    inherited Separador1: TToolButton
+      Left = 148
+      ExplicitLeft = 148
+    end
+    inherited btn_primeiro: TToolButton
+      Left = 156
+      ExplicitLeft = 156
+    end
+    inherited btn_anterior: TToolButton
+      Left = 215
+      ExplicitLeft = 215
+    end
+    inherited btn_proximo: TToolButton
+      Left = 274
+      ExplicitLeft = 274
+    end
+    inherited btn_ultimo: TToolButton
+      Left = 333
+      ExplicitLeft = 333
+    end
+    inherited Separador2: TToolButton
+      Left = 392
+      ExplicitLeft = 392
+    end
+    inherited btn_inserir: TToolButton
+      Left = 400
+      ExplicitLeft = 400
+    end
+    inherited btn_editar: TToolButton
+      Left = 459
+      ExplicitLeft = 459
+    end
+    inherited btn_excluir: TToolButton
+      Left = 518
+      ExplicitLeft = 518
+    end
+    inherited Separador3: TToolButton
+      Left = 577
+      ExplicitLeft = 577
+    end
+    inherited btn_salvar: TToolButton
+      Left = 585
+      ExplicitLeft = 585
+    end
+    inherited btn_cancelar: TToolButton
+      Left = 644
+      ExplicitLeft = 644
+    end
+    inherited Separador4: TToolButton
+      Left = 703
+      ExplicitLeft = 703
+    end
+    inherited btn_imprimir: TToolButton
+      Left = 711
+      ExplicitLeft = 711
+    end
+    inherited Separador5: TToolButton
+      Left = 770
+      ExplicitLeft = 770
+    end
+    inherited btn_sair: TToolButton
+      Left = 778
+      ExplicitLeft = 778
     end
   end
   inherited StatusBar1: TStatusBar
-    Top = 184
-    ExplicitTop = 340
+    Top = 151
+    ExplicitTop = 196
   end
   inherited PnlFicha: TPanel
-    Height = 97
-    ExplicitHeight = 253
+    Height = 64
+    ExplicitHeight = 109
     object Label3: TLabel
-      Left = 26
+      Left = 386
       Top = 16
-      Width = 85
+      Width = 94
       Height = 13
-      Caption = 'Data de Inclus'#227'o:'
+      Caption = '* Data de Inclus'#227'o:'
     end
     object Label4: TLabel
-      Left = 595
+      Left = 616
       Top = 16
       Width = 91
       Height = 13
-      Caption = 'Date de Altera'#231#227'o:'
+      Caption = 'Data de Altera'#231#227'o:'
     end
     object lbDESCRICAO: TLabel
-      Left = 61
-      Top = 56
-      Width = 50
+      Left = 9
+      Top = 16
+      Width = 59
       Height = 13
-      Caption = 'Descri'#231#227'o:'
+      Caption = '* Descri'#231#227'o:'
     end
     object edDataInc: TDBEdit
-      Left = 117
+      Left = 486
       Top = 13
       Width = 121
       Height = 21
@@ -52,7 +119,7 @@ inherited FrmMarca: TFrmMarca
       TabOrder = 0
     end
     object edDataAlt: TDBEdit
-      Left = 692
+      Left = 713
       Top = 13
       Width = 121
       Height = 21
@@ -62,9 +129,9 @@ inherited FrmMarca: TFrmMarca
       TabOrder = 1
     end
     object edDescricao: TDBEdit
-      Left = 117
-      Top = 53
-      Width = 696
+      Left = 74
+      Top = 13
+      Width = 292
       Height = 21
       DataField = 'DESCRICAO'
       DataSource = DataSource1
@@ -75,7 +142,7 @@ inherited FrmMarca: TFrmMarca
     Left = 625
     Top = 224
     Bitmap = {
-      494C01010D001800380018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800400018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1274,7 +1341,7 @@ inherited FrmMarca: TFrmMarca
     Left = 681
     Top = 224
     Bitmap = {
-      494C01010D001800380018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800400018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2473,7 +2540,7 @@ inherited FrmMarca: TFrmMarca
     Left = 737
     Top = 224
     Bitmap = {
-      494C01010D001800380018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800400018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -3711,7 +3778,7 @@ inherited FrmMarca: TFrmMarca
     Left = 793
     Top = 223
     Bitmap = {
-      494C010104000800300010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000800380010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

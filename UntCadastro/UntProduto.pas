@@ -24,34 +24,48 @@ type
     Label11: TLabel;
     Label12: TLabel;
     edDescricao: TDBEdit;
+    edDataInc: TDBEdit;
+    edDataAlt: TDBEdit;
+    edValorDiaria: TDBEdit;
+    DSMarca: TDataSource;
+    FDQryMarca: TFDQuery;
+    edCodInt: TDBEdit;
+    DBLookupComboBox2: TDBLookupComboBox;
+    DSCategoria: TDataSource;
+    FDQryCategoria: TFDQuery;
+    DBLookupComboBox3: TDBLookupComboBox;
+    DSFornecedor: TDataSource;
+    FDQyFornecedor: TFDQuery;
     FDTabelaID: TFDAutoIncField;
     FDTabelaDESCRICAO: TStringField;
     FDTabelaCD_INTERNO: TStringField;
     FDTabelaVALOR_DIARIA: TFloatField;
     FDTabelaSTATUS: TStringField;
     FDTabelaDISPONIVEL: TStringField;
-    FDTabelaCARACTERISTICAS: TMemoField;
     FDTabelaCD_MARCA: TIntegerField;
     FDTabelaCD_CATEGORIA: TIntegerField;
     FDTabelaCD_FORNECEDOR: TIntegerField;
     FDTabelaDATA_INC: TSQLTimeStampField;
     FDTabelaDATA_ALT: TSQLTimeStampField;
-    edDataInc: TDBEdit;
-    edDataAlt: TDBEdit;
-    edValorDiaria: TDBEdit;
-    DSMarca: TDataSource;
-    FDQryMarca: TFDQuery;
+    Descrio1: TMenuItem;
+    ValordaDiria1: TMenuItem;
+    Disponivel1: TMenuItem;
+    Descrio2: TMenuItem;
+    CdigoInterno1: TMenuItem;
+    ValordaDiria2: TMenuItem;
+    FDTabelaCARACTERISTICAS: TMemoField;
+    dbCaracteristicas: TDBMemo;
+    DBText1: TDBText;
     DBLookupComboBox1: TDBLookupComboBox;
-    edCodInt: TDBEdit;
-    edCaracteristicas: TDBEdit;
-    DBLookupComboBox2: TDBLookupComboBox;
-    DBLookupComboBox3: TDBLookupComboBox;
-    DSCategoria: TDataSource;
-    FDQryCategoria: TFDQuery;
-    DSFornecedor: TDataSource;
-    FDQryFornecedor: TFDQuery;
     procedure btn_salvarClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure Disponivel1Click(Sender: TObject);
+    procedure Descrio1Click(Sender: TObject);
+    procedure ValordaDiria1Click(Sender: TObject);
+    procedure Descrio2Click(Sender: TObject);
+    procedure CdigoInterno1Click(Sender: TObject);
+    procedure ValordaDiria2Click(Sender: TObject);
+    procedure IDCdigo1Click(Sender: TObject);
     procedure btn_sairClick(Sender: TObject);
   private
     { Private declarations }
@@ -66,25 +80,27 @@ implementation
 
 {$R *.dfm}
 
-uses UntDM, UntMenuPrincipal, UntUsuario, UntAlugueis;
+uses UntDM, UntMenuPrincipal, UntUsuario, UntFornecedor, UntPesqData,
+  UntPesqString, UntPesqRadio;
 
 procedure TFrmProduto.btn_sairClick(Sender: TObject);
 begin
   inherited;
-  FrmAluguel.FDQryProduto.Close;
-  FrmAluguel.FDQryProduto.Open();
+  //FrmAluguel.FDQryProduto.Close;
+  //FrmAluguel.FDQryProduto.Open();
+
 end;
 
 procedure TFrmProduto.btn_salvarClick(Sender: TObject);
 begin
-   if (edDescricao.Text = '') or (edCodInt.Text = '') or (edValorDiaria.Text = '') or (edCaracteristicas.Text = '') or (strtoint(DBLookupComboBox1.Text)= -1) or (strtoint(DBLookupComboBox2.Text)= -1) or (strtoint(DBLookupComboBox3.Text)= -1) then
+   if (edDescricao.Text = '') or (edCodInt.Text = '') or (edValorDiaria.Text = '') or (dbCaracteristicas.Text = '') or (strtoint(DBLookupComboBox1.Text)= -1) or (strtoint(DBLookupComboBox2.Text)= -1) or (strtoint(DBLookupComboBox3.Text)= -1) then
     begin
 
     //Colorir Campos Obrigatórios
     edDescricao.color := clInactiveCaption;
     edCodInt.Color:= clInactiveCaption;
     edValorDiaria.color := clInactiveCaption;
-    edCaracteristicas.Color := clInactiveCaption;
+    dbCaracteristicas.Color := clInactiveCaption;
     DBLookupComboBox1.color := clInactiveCaption;
     DBLookupComboBox2.color := clInactiveCaption;
     DBLookupComboBox3.color := clInactiveCaption;
@@ -99,12 +115,101 @@ begin
     edDescricao.color := clWindow;
     edCodInt.Color := clWindow;
     edValorDiaria.color := clWindow;
-    edCaracteristicas.Color := clWindow;
+    dbCaracteristicas.Color := clWindow;
     DBLookupComboBox1.color := clWindow;
     DBLookupComboBox2.color := clWindow;
     DBLookupComboBox3.Color := clWindow;
   end;
 end;
+
+procedure TFrmProduto.CdigoInterno1Click(Sender: TObject);
+begin
+  inherited;
+   FDTabela.IndexFieldNames := 'CD_INTERNO';
+   StatusBar1.Panels[2].Text := 'Ordenado: Código Interno';
+end;
+
+procedure TFrmProduto.Descrio1Click(Sender: TObject);
+begin
+  inherited;
+  tarefa := 'Pesquisa por Nome';
+  pesqString.ShowModal;
+
+   if pesqString.RadioGroup1.ItemIndex = 0 then
+  begin
+    FDTabela.Filter := 'UPPER(DESCRICAO) LIKE ' + #39 + '%' + pesqString.Edit1.text + '%' + #39;
+    StatusBar1.Panels[2].Text := 'Nome contém: ' + pesqString.Edit1.Text;
+  end;
+
+  if pesqString.RadioGroup1.ItemIndex = 1 then
+  begin
+    FDTabela.Filter := 'UPPER(DESCRICAO) LIKE ' + #39 + pesqString.Edit1.text + '%' + #39;
+    StatusBar1.Panels[2].Text := 'Nome inicia com: ' + pesqString.Edit1.Text;
+  end;
+
+  if pesqString.RadioGroup1.ItemIndex = 2 then
+  begin
+    FDTabela.Filter := 'UPPER(DESCRICAO) LIKE ' + #39 + '%' + pesqString.Edit1.text + #39;
+    StatusBar1.Panels[2].Text := 'Nome termina com: ' + pesqString.Edit1.Text;
+  end;
+
+  FDTabela.Filtered := True;
+
+  Executar := sentencaSQL;
+  Executar := exibePanels;
+  Executar := navegacao;
+  Executar := habilitaBotoes;
+
+end;
+
+procedure TFrmProduto.Descrio2Click(Sender: TObject);
+begin
+  inherited;
+   FDTabela.IndexFieldNames := 'DESCRICAO';
+   StatusBar1.Panels[2].Text := 'Ordenado: Descrição';
+end;
+
+procedure TFrmProduto.Disponivel1Click(Sender: TObject);
+var i: integer;
+begin
+  inherited;
+tarefa := 'Pesquisa por Disponibilidade';
+
+  pesqRadio.RadioGroup1.Caption := 'Pesquisa de Produtos disponíveis:';
+  pesqRadio.RadioGroup1.Items.Add('Sim');
+  pesqRadio.RadioGroup1.Items.Add('Não');
+
+  pesqRadio.ShowModal;
+
+  if pesqRadio.RadioGroup1.ItemIndex = 0 then
+  begin
+    FDTabela.Filter := 'DISPONIVEL = ' + #39 + 'S' + #39;
+    StatusBar1.Panels[2].Text := 'Diponivél.: Sim';
+  end;
+
+  if pesqRadio.RadioGroup1.ItemIndex = 1 then
+  begin
+    FDTabela.Filter := 'DISPONIVEL = ' + #39 + 'N' + #39;
+    StatusBar1.Panels[2].Text := 'Disponivél.: Não';
+  end;
+
+  FDTabela.Filtered := True;
+
+  Executar := sentencaSQL;
+  Executar := exibePanels;
+  Executar := navegacao;
+  Executar := habilitaBotoes;
+  i := pesqRadio.RadioGroup1.Items.Count - 1;
+  while i > -1 do
+  begin
+    pesqRadio.RadioGroup1.Items.Delete(i);
+    i := i - 1;
+  end;
+
+ 
+end;
+
+
 
 procedure TFrmProduto.FormActivate(Sender: TObject);
 begin
@@ -115,10 +220,67 @@ begin
                 FrmMenuPrincipal.QueryLogin.FieldByName('PER_PRODUTO_A').AsString +
                 FrmMenuPrincipal.QueryLogin.FieldByName('PER_PRODUTO_E').AsString;
 
+  Executar := exibeBotoes;
   Executar := ExibePanels;
+
+  FDTabela.FieldByName('DATA_INC').EditMask := '99/99/9999;1;_';
+  FDTabela.FieldByName('DATA_ALT').EditMask := '99/99/9999;1;_';
   inherited;
   FDTabela.Open();
+  FDQryMarca.Open();
+  FDQryCategoria.Open();
+  FDQyFornecedor.Open();
   Executar := habilitaBotoes;
+  edDataInc.Enabled := false;
+  edDataAlt.Enabled := false;
+end;
+
+procedure TFrmProduto.IDCdigo1Click(Sender: TObject);
+begin
+  inherited;
+   FDTabela.IndexFieldNames := 'ID';
+   StatusBar1.Panels[2].Text := 'Ordenado: Por ID';
+end;
+
+procedure TFrmProduto.ValordaDiria1Click(Sender: TObject);
+begin
+  inherited;
+  tarefa := 'Pesquisa por Valor';
+  pesqString.ShowModal;
+
+   if pesqString.RadioGroup1.ItemIndex = 0 then
+  begin
+    FDTabela.Filter := 'UPPER(VALOR_DIARIA) LIKE ' + #39 + '%' + pesqString.Edit1.text + '%' + #39;
+    StatusBar1.Panels[2].Text := 'Valor contém: ' + pesqString.Edit1.Text;
+  end;
+
+  if pesqString.RadioGroup1.ItemIndex = 1 then
+  begin
+    FDTabela.Filter := 'UPPER(VALOR_DIARIA) LIKE ' + #39 + pesqString.Edit1.text + '%' + #39;
+    StatusBar1.Panels[2].Text := 'Valor inicia com: ' + pesqString.Edit1.Text;
+  end;
+
+  if pesqString.RadioGroup1.ItemIndex = 2 then
+  begin
+    FDTabela.Filter := 'UPPER(VALOR_DIARIA) LIKE ' + #39 + '%' + pesqString.Edit1.text + #39;
+    StatusBar1.Panels[2].Text := 'Valor termina com: ' + pesqString.Edit1.Text;
+  end;
+
+  FDTabela.Filtered := True;
+
+  Executar := sentencaSQL;
+  Executar := exibePanels;
+  Executar := navegacao;
+  Executar := habilitaBotoes;
+
+end;
+
+procedure TFrmProduto.ValordaDiria2Click(Sender: TObject);
+begin
+  inherited;
+  FDTabela.IndexFieldNames := 'VALOR_DIARIA';
+  StatusBar1.Panels[2].Text := 'Ordenado: Valor da diária';
+
 end;
 
 end.
