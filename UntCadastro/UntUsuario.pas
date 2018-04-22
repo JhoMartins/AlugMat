@@ -44,6 +44,10 @@ type
     Nome1: TMenuItem;
     Departamento2: TMenuItem;
     Login2: TMenuItem;
+    Label7: TLabel;
+    Label8: TLabel;
+    edDataInc: TDBEdit;
+    edDataAlt: TDBEdit;
     procedure FormActivate(Sender: TObject);
     procedure btn_salvarClick(Sender: TObject);
     procedure NomedoUsurio1Click(Sender: TObject);
