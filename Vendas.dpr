@@ -30,6 +30,6 @@ begin
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TFrmLogin, FrmLogin);
   Application.CreateForm(TpesqRadio, pesqRadio);
-  Application.CreateForm(TFrmDevolucao, FrmDevolucao);
+  Application.CreateForm(TFrmAluguel, FrmAluguel);
   Application.Run;
 end.
