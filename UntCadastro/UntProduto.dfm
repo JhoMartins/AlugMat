@@ -1,113 +1,190 @@
 inherited FrmProduto: TFrmProduto
   Caption = 'Manuten'#231#227'o no Cadastrdo de Produto'
-  ClientHeight = 478
+  ClientHeight = 397
   OnActivate = FormActivate
-  ExplicitHeight = 513
+  ExplicitWidth = 850
+  ExplicitHeight = 426
   PixelsPerInch = 96
   TextHeight = 13
   inherited ToolBar1: TToolBar
     inherited btn_pesquisa: TToolButton
-      ExplicitWidth = 78
+      ExplicitWidth = 74
     end
     inherited btn_ordenar: TToolButton
-      ExplicitWidth = 78
+      Left = 74
+      ExplicitLeft = 74
+      ExplicitWidth = 74
+    end
+    inherited Separador1: TToolButton
+      Left = 148
+      ExplicitLeft = 148
+    end
+    inherited btn_primeiro: TToolButton
+      Left = 156
+      ExplicitLeft = 156
+    end
+    inherited btn_anterior: TToolButton
+      Left = 215
+      ExplicitLeft = 215
+    end
+    inherited btn_proximo: TToolButton
+      Left = 274
+      ExplicitLeft = 274
+    end
+    inherited btn_ultimo: TToolButton
+      Left = 333
+      ExplicitLeft = 333
+    end
+    inherited Separador2: TToolButton
+      Left = 392
+      ExplicitLeft = 392
+    end
+    inherited btn_inserir: TToolButton
+      Left = 400
+      ExplicitLeft = 400
+    end
+    inherited btn_editar: TToolButton
+      Left = 459
+      ExplicitLeft = 459
+    end
+    inherited btn_excluir: TToolButton
+      Left = 518
+      ExplicitLeft = 518
+    end
+    inherited Separador3: TToolButton
+      Left = 577
+      ExplicitLeft = 577
+    end
+    inherited btn_salvar: TToolButton
+      Left = 585
+      ExplicitLeft = 585
+    end
+    inherited btn_cancelar: TToolButton
+      Left = 644
+      ExplicitLeft = 644
+    end
+    inherited Separador4: TToolButton
+      Left = 703
+      ExplicitLeft = 703
+    end
+    inherited btn_imprimir: TToolButton
+      Left = 711
+      ExplicitLeft = 711
+    end
+    inherited Separador5: TToolButton
+      Left = 770
+      ExplicitLeft = 770
+    end
+    inherited btn_sair: TToolButton
+      Left = 778
+      ExplicitLeft = 778
     end
   end
   inherited StatusBar1: TStatusBar
-    Top = 459
-    ExplicitTop = 459
+    Top = 378
+    ExplicitTop = 372
   end
   inherited PnlFicha: TPanel
-    Height = 372
-    ExplicitHeight = 372
+    Height = 291
+    ExplicitHeight = 285
     object Label10: TLabel
-      Left = 240
+      Left = 164
       Top = 72
-      Width = 69
+      Width = 82
       Height = 13
-      Caption = 'Valor da Di'#225'ria'
+      Caption = '* Valor da Di'#225'ria:'
     end
     object Label11: TLabel
-      Left = 240
+      Left = 201
       Top = 112
-      Width = 87
+      Width = 64
       Height = 13
-      Caption = 'C'#243'digo Catergoria'
+      Caption = '* Catergoria:'
     end
     object Label12: TLabel
-      Left = 542
+      Left = 473
       Top = 24
-      Width = 96
+      Width = 100
       Height = 13
-      Caption = '* Data de Altera'#231#227'o'
+      Caption = '* Data de Altera'#231#227'o:'
     end
     object Label2: TLabel
-      Left = 57
+      Left = 21
       Top = 24
-      Width = 46
+      Width = 59
       Height = 13
-      Caption = 'Descri'#231#227'o'
+      Caption = '* Descri'#231#227'o:'
     end
     object Label4: TLabel
-      Left = 57
-      Top = 152
-      Width = 48
+      Left = 666
+      Top = 24
+      Width = 52
       Height = 13
-      Caption = 'Dispon'#237'vel'
+      Caption = 'Dispon'#237'vel:'
     end
     object Label5: TLabel
-      Left = 449
-      Top = 72
-      Width = 71
+      Left = 22
+      Top = 158
+      Width = 84
       Height = 13
-      Caption = 'Caracteristicas'
+      Caption = '* Caracteristicas:'
     end
     object Label6: TLabel
-      Left = 57
+      Left = 21
       Top = 112
-      Width = 65
+      Width = 42
       Height = 13
-      Caption = 'C'#243'digo Marca'
+      Caption = '* Marca:'
     end
     object Label7: TLabel
-      Left = 449
-      Top = 120
-      Width = 91
+      Left = 402
+      Top = 112
+      Width = 68
       Height = 13
-      Caption = 'C'#243'digo Fornecedor'
+      Caption = '* Fornecedor:'
     end
     object Label8: TLabel
-      Left = 312
+      Left = 290
       Top = 24
-      Width = 90
+      Width = 94
       Height = 13
-      Caption = '* Data de Inclus'#227'o'
+      Caption = '* Data de Inclus'#227'o:'
     end
     object Label9: TLabel
-      Left = 57
+      Left = 21
       Top = 72
-      Width = 72
+      Width = 85
       Height = 13
-      Caption = 'Codigo Interno'
+      Caption = '* Codigo Interno:'
+    end
+    object DBText1: TDBText
+      Left = 724
+      Top = 24
+      Width = 65
+      Height = 17
+      DataField = 'DISPONIVEL'
+      DataSource = DataSource1
     end
     object edDescricao: TDBEdit
-      Left = 135
+      Left = 82
       Top = 21
-      Width = 121
+      Width = 202
       Height = 21
       DataField = 'DESCRICAO'
       DataSource = DataSource1
       TabOrder = 0
     end
     object edDataAlt: TDBEdit
-      Left = 644
+      Left = 575
       Top = 21
       Width = 85
       Height = 21
+      DataField = 'DATA_ALT'
+      DataSource = DataSource1
       TabOrder = 1
     end
     object edValorDiaria: TDBEdit
-      Left = 335
+      Left = 252
       Top = 69
       Width = 90
       Height = 21
@@ -115,70 +192,73 @@ inherited FrmProduto: TFrmProduto
       DataSource = DataSource1
       TabOrder = 2
     end
-    object DBLookupComboBox1: TDBLookupComboBox
-      Left = 135
-      Top = 112
-      Width = 93
-      Height = 21
-      DataField = 'CD_MARCA'
-      DataSource = DataSource1
-      KeyField = 'ID'
-      ListField = 'ID'
-      ListSource = DSMarca
-      TabOrder = 3
-    end
     object edCodInt: TDBEdit
-      Left = 135
+      Left = 108
       Top = 69
-      Width = 90
+      Width = 50
       Height = 21
       DataField = 'CD_INTERNO'
       DataSource = DataSource1
-      TabOrder = 4
-    end
-    object edCaracteristicas: TDBEdit
-      Left = 542
-      Top = 69
-      Width = 121
-      Height = 21
-      DataField = 'CARACTERISTICAS'
-      DataSource = DataSource1
-      TabOrder = 5
+      TabOrder = 3
     end
     object DBLookupComboBox2: TDBLookupComboBox
-      Left = 333
+      Left = 271
       Top = 112
-      Width = 105
+      Width = 114
       Height = 21
       DataField = 'CD_CATEGORIA'
       DataSource = DataSource1
       KeyField = 'ID'
-      ListField = 'ID'
+      ListField = 'DESCRICAO'
       ListSource = DSCategoria
-      TabOrder = 6
+      TabOrder = 4
     end
     object DBLookupComboBox3: TDBLookupComboBox
-      Left = 546
+      Left = 476
       Top = 112
-      Width = 121
+      Width = 116
       Height = 21
       DataField = 'CD_FORNECEDOR'
       DataSource = DataSource1
-      ListField = 'ID'
+      KeyField = 'ID'
+      ListField = 'RAZAO_SOCIAL'
       ListSource = DSFornecedor
+      TabOrder = 5
+    end
+    object dbCaracteristicas: TDBMemo
+      Left = 30
+      Top = 177
+      Width = 750
+      Height = 89
+      DataField = 'CARACTERISTICAS'
+      DataSource = DataSource1
+      TabOrder = 6
+    end
+    object DBLookupComboBox1: TDBLookupComboBox
+      Left = 69
+      Top = 112
+      Width = 116
+      Height = 21
+      DataField = 'CD_MARCA'
+      DataSource = DataSource1
+      KeyField = 'ID'
+      ListField = 'DESCRICAO'
+      ListSource = DSMarca
       TabOrder = 7
     end
   end
   object edDataInc: TDBEdit [4]
-    Left = 408
+    Left = 386
     Top = 108
     Width = 81
     Height = 21
+    DataField = 'DATA_INC'
+    DataSource = DataSource1
     TabOrder = 4
   end
   inherited ImageList1: TImageList
     Bitmap = {
-      494C01010D0018003C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800440018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1375,7 +1455,7 @@ inherited FrmProduto: TFrmProduto
   end
   inherited ImageList2: TImageList
     Bitmap = {
-      494C01010D0018003C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800440018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2572,7 +2652,7 @@ inherited FrmProduto: TFrmProduto
   end
   inherited ImageList3: TImageList
     Bitmap = {
-      494C01010D0018003C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800440018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -3767,6 +3847,9 @@ inherited FrmProduto: TFrmProduto
       3FFC003FFFFFF7FFFFFFFF00FFFF00FF00000000000000000000000000000000
       000000000000}
   end
+  inherited DataSource1: TDataSource
+    Left = 473
+  end
   inherited FDTabela: TFDTable
     IndexFieldNames = 'ID'
     DetailFields = 
@@ -3774,6 +3857,7 @@ inherited FrmProduto: TFrmProduto
       'ATA_ALT;DATA_INC;DESCRICAO;DISPONIVEL;ID;STATUS;VALOR_DIARIA'
     UpdateOptions.UpdateTableName = 'ALUGMAT.dbo.PRODUTO'
     TableName = 'ALUGMAT.dbo.PRODUTO'
+    Left = 433
     object FDTabelaID: TFDAutoIncField
       FieldName = 'ID'
       Origin = 'ID'
@@ -3796,6 +3880,8 @@ inherited FrmProduto: TFrmProduto
       FieldName = 'VALOR_DIARIA'
       Origin = 'VALOR_DIARIA'
       Required = True
+      DisplayFormat = ',#.00'
+      EditFormat = ',#.00'
     end
     object FDTabelaSTATUS: TStringField
       FieldName = 'STATUS'
@@ -3809,12 +3895,6 @@ inherited FrmProduto: TFrmProduto
       Origin = 'DISPONIVEL'
       FixedChar = True
       Size = 1
-    end
-    object FDTabelaCARACTERISTICAS: TMemoField
-      FieldName = 'CARACTERISTICAS'
-      Origin = 'CARACTERISTICAS'
-      BlobType = ftMemo
-      Size = 2147483647
     end
     object FDTabelaCD_MARCA: TIntegerField
       FieldName = 'CD_MARCA'
@@ -3839,10 +3919,16 @@ inherited FrmProduto: TFrmProduto
       FieldName = 'DATA_ALT'
       Origin = 'DATA_ALT'
     end
+    object FDTabelaCARACTERISTICAS: TMemoField
+      FieldName = 'CARACTERISTICAS'
+      Origin = 'CARACTERISTICAS'
+      BlobType = ftMemo
+      Size = 2147483647
+    end
   end
   inherited ImageList4: TImageList
     Bitmap = {
-      494C010104000800340010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101040008003C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4113,51 +4199,76 @@ inherited FrmProduto: TFrmProduto
       001FFFFFFFFFFFFF001FFFFFFFFFFFFF00000000000000000000000000000000
       000000000000}
   end
+  inherited PopupMenu1: TPopupMenu
+    object Descrio1: TMenuItem [1]
+      Caption = 'Descri'#231#227'o'
+      OnClick = Descrio1Click
+    end
+    object ValordaDiria1: TMenuItem [2]
+      Caption = 'Valor da Di'#225'ria'
+      OnClick = ValordaDiria1Click
+    end
+    object Disponivel1: TMenuItem [3]
+      Caption = 'Dispon'#237'vel'
+      OnClick = Disponivel1Click
+    end
+  end
+  inherited PopupMenu2: TPopupMenu
+    object Descrio2: TMenuItem
+      Caption = 'Descri'#231#227'o'
+      OnClick = Descrio2Click
+    end
+    object CdigoInterno1: TMenuItem
+      Caption = 'C'#243'digo Interno'
+      OnClick = CdigoInterno1Click
+    end
+    object ValordaDiria2: TMenuItem
+      Caption = 'Valor da Di'#225'ria'
+      OnClick = ValordaDiria2Click
+    end
+  end
   object DSMarca: TDataSource
     DataSet = FDQryMarca
-    Left = 328
+    Left = 392
     Top = 399
   end
   object FDQryMarca: TFDQuery
-    Active = True
     Connection = DM.FDConnection1
     SQL.Strings = (
       'SELECT ID,DESCRICAO '
       'FROM MARCA'
-      'ORDER BY ID')
-    Left = 272
+      'ORDER BY DESCRICAO')
+    Left = 352
     Top = 399
   end
   object DSCategoria: TDataSource
     DataSet = FDQryCategoria
-    Left = 216
+    Left = 312
     Top = 399
   end
   object FDQryCategoria: TFDQuery
-    Active = True
     DetailFields = 'ID'
     Connection = DM.FDConnection1
     SQL.Strings = (
-      'SELECT ID '
+      'SELECT ID,DESCRICAO '
       'FROM CATEGORIA'
       'ORDER BY ID')
-    Left = 160
+    Left = 272
     Top = 399
   end
   object DSFornecedor: TDataSource
-    DataSet = FDQryFornecedor
-    Left = 112
+    DataSet = FDQyFornecedor
+    Left = 232
     Top = 399
   end
-  object FDQryFornecedor: TFDQuery
-    Active = True
+  object FDQyFornecedor: TFDQuery
     DetailFields = 'ID'
     Connection = DM.FDConnection1
     SQL.Strings = (
-      'SELECT ID'
+      'SELECT ID,RAZAO_SOCIAL '
       'FROM FORNECEDOR'
       'ORDER BY ID')
-    Left = 72
+    Left = 192
     Top = 399
   end
 end
