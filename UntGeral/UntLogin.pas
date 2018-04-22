@@ -56,7 +56,7 @@ begin
   ValorSenha.Enabled := false;
 
   //Reservar 3 segundos para que a consulta de login seja feita no banco de dados
-  Sleep(3000);
+  Sleep(1000);
 
   //Instrução SQL para pesquisar login do usuário
   StrSql := 'SELECT U.*, P.* FROM USUARIO U INNER JOIN PERFIL P ON U.USU_ID_PERFIL = P.ID WHERE U.USU_LOGIN = ' + #39 + ValorNome.Text + #39 + ' AND U.USU_SENHA = ' + #39 + ValorSenha.Text + #39;

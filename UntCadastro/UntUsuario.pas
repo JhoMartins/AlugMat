@@ -54,6 +54,7 @@ type
     procedure Nome1Click(Sender: TObject);
     procedure Departamento2Click(Sender: TObject);
     procedure Login2Click(Sender: TObject);
+    procedure btn_sairClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -67,7 +68,14 @@ implementation
 
 {$R *.dfm}
 
-uses UntMenuPrincipal, UntDM, UntPesqString, UntPerfil;
+uses UntMenuPrincipal, UntDM, UntPesqString, UntPerfil, UntAlugueis;
+
+procedure TFrmUsuario.btn_sairClick(Sender: TObject);
+begin
+  inherited;
+  FrmAluguel.FDQryAtendente.Close;
+  FrmAluguel.FDQryAtendente.Open();
+end;
 
 procedure TFrmUsuario.btn_salvarClick(Sender: TObject);
 begin

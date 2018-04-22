@@ -1,91 +1,25 @@
 inherited FrmMarca: TFrmMarca
   Caption = 'Manunten'#231#227'o no Cadatro de Marca'
-  ClientHeight = 215
+  ClientHeight = 203
   OnActivate = FormActivate
-  ExplicitHeight = 244
+  ExplicitHeight = 238
   PixelsPerInch = 96
   TextHeight = 13
   inherited ToolBar1: TToolBar
     inherited btn_pesquisa: TToolButton
-      ExplicitWidth = 74
+      ExplicitWidth = 78
     end
     inherited btn_ordenar: TToolButton
-      Left = 74
-      ExplicitLeft = 74
-      ExplicitWidth = 74
-    end
-    inherited Separador1: TToolButton
-      Left = 148
-      ExplicitLeft = 148
-    end
-    inherited btn_primeiro: TToolButton
-      Left = 156
-      ExplicitLeft = 156
-    end
-    inherited btn_anterior: TToolButton
-      Left = 215
-      ExplicitLeft = 215
-    end
-    inherited btn_proximo: TToolButton
-      Left = 274
-      ExplicitLeft = 274
-    end
-    inherited btn_ultimo: TToolButton
-      Left = 333
-      ExplicitLeft = 333
-    end
-    inherited Separador2: TToolButton
-      Left = 392
-      ExplicitLeft = 392
-    end
-    inherited btn_inserir: TToolButton
-      Left = 400
-      ExplicitLeft = 400
-    end
-    inherited btn_editar: TToolButton
-      Left = 459
-      ExplicitLeft = 459
-    end
-    inherited btn_excluir: TToolButton
-      Left = 518
-      ExplicitLeft = 518
-    end
-    inherited Separador3: TToolButton
-      Left = 577
-      ExplicitLeft = 577
-    end
-    inherited btn_salvar: TToolButton
-      Left = 585
-      ExplicitLeft = 585
-    end
-    inherited btn_cancelar: TToolButton
-      Left = 644
-      ExplicitLeft = 644
-    end
-    inherited Separador4: TToolButton
-      Left = 703
-      ExplicitLeft = 703
-    end
-    inherited btn_imprimir: TToolButton
-      Left = 711
-      ExplicitLeft = 711
-    end
-    inherited Separador5: TToolButton
-      Left = 770
-      ExplicitLeft = 770
-    end
-    inherited btn_sair: TToolButton
-      Left = 778
-      ExplicitLeft = 778
+      ExplicitWidth = 78
     end
   end
   inherited StatusBar1: TStatusBar
-    Top = 196
-    ExplicitTop = 196
+    Top = 184
+    ExplicitTop = 340
   end
   inherited PnlFicha: TPanel
-    Height = 109
-    ExplicitHeight = 109
+    Height = 97
+    ExplicitHeight = 253
     object Label3: TLabel
       Left = 26
       Top = 16
@@ -141,7 +75,7 @@ inherited FrmMarca: TFrmMarca
     Left = 625
     Top = 224
     Bitmap = {
-      494C01010D0018003C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800380018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1340,7 +1274,7 @@ inherited FrmMarca: TFrmMarca
     Left = 681
     Top = 224
     Bitmap = {
-      494C01010D0018003C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800380018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2539,7 +2473,7 @@ inherited FrmMarca: TFrmMarca
     Left = 737
     Top = 224
     Bitmap = {
-      494C01010D0018003C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800380018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -3777,7 +3711,7 @@ inherited FrmMarca: TFrmMarca
     Left = 793
     Top = 223
     Bitmap = {
-      494C010104000800340010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000800300010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

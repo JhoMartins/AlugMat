@@ -8,10 +8,10 @@ uses
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  Vcl.ComCtrls, Vcl.RibbonLunaStyleActnCtrls, Vcl.Ribbon, System.Actions,
+  Vcl.ComCtrls, {Vcl.RibbonLunaStyleActnCtrls, Vcl.Ribbon,} System.Actions,
   Vcl.ActnList, Vcl.PlatformDefaultStyleActnCtrls, Vcl.ActnMan, Vcl.ToolWin,
   Vcl.ActnCtrls, Vcl.AppEvnts, Vcl.ExtCtrls, System.ImageList, Vcl.ImgList,
-  Vcl.ActnMenus, Vcl.RibbonActnMenus, UntFornecedor;
+  Vcl.ActnMenus{, Vcl.RibbonActnMenus};
 
 type
   TFrmMenuPrincipal = class(TForm)
@@ -41,6 +41,7 @@ type
     Button5: TButton;
     Button6: TButton;
     Button7: TButton;
+    Button8: TButton;
     procedure btn_usuarioClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -57,6 +58,7 @@ type
     procedure Button5Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure Button7Click(Sender: TObject);
+    procedure Button8Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -71,7 +73,7 @@ implementation
 {$R *.dfm}
 
 uses UntUsuario, UntDM, UntLogin, UntPerfil, UntCliente, UntMarca, UntCategoria,
-  UntProduto;
+  UntProduto, UntAlugueis, UntDevolucao;
 
 procedure TFrmMenuPrincipal.Action10Execute(Sender: TObject);
 begin
@@ -162,9 +164,16 @@ end;
 
 procedure TFrmMenuPrincipal.Button7Click(Sender: TObject);
 begin
-  Application.CreateForm(TFrmFornecedor, FrmFornecedor);
-  FrmFornecedor.ShowModal;
-  FrmFornecedor.Free;
+  Application.CreateForm(TFrmAluguel, FrmAluguel);
+  FrmAluguel.ShowModal;
+  FrmAluguel.Free;
+end;
+
+procedure TFrmMenuPrincipal.Button8Click(Sender: TObject);
+begin
+  Application.CreateForm(TFrmDevolucao, FrmDevolucao);
+  FrmDevolucao.ShowModal;
+  FrmDevolucao.Free;
 end;
 
 procedure TFrmMenuPrincipal.FormActivate(Sender: TObject);

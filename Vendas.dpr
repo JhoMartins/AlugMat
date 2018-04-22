@@ -15,7 +15,8 @@ uses
   UntCategoria in 'UntCadastro\UntCategoria.pas' {FrmCategoria},
   UntPesqRadio in 'UntPadrao\UntPesqRadio.pas' {pesqRadio},
   UntProduto in 'UntCadastro\UntProduto.pas' {FrmProduto},
-  UntFornecedor in 'UntCadastro\UntFornecedor.pas' {FrmFornecedor};
+  UntAlugueis in 'UntCadastro\UntAlugueis.pas' {FrmAluguel},
+  UntDevolucao in 'UntCadastro\UntDevolucao.pas' {FrmDevolucao};
 
 {$R *.res}
 
@@ -29,7 +30,6 @@ begin
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TFrmLogin, FrmLogin);
   Application.CreateForm(TpesqRadio, pesqRadio);
-  Application.CreateForm(TFrmProduto, FrmProduto);
-  Application.CreateForm(TFrmFornecedor, FrmFornecedor);
+  Application.CreateForm(TFrmDevolucao, FrmDevolucao);
   Application.Run;
 end.

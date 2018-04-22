@@ -110,11 +110,8 @@ begin
                 FrmMenuPrincipal.QueryLogin.FieldByName('PER_MARCA_A').AsString +
                 FrmMenuPrincipal.QueryLogin.FieldByName('PER_MARCA_E').AsString;
 
-  Executar := exibeBotoes;
   Executar := ExibePanels;
-
   inherited;
-
   FDTabela.Open();
   Executar := habilitaBotoes;
 
