@@ -164,9 +164,7 @@ end;
 
 procedure TFrmMenuPrincipal.Button7Click(Sender: TObject);
 begin
-  Application.CreateForm(TFrmAluguel, FrmAluguel);
   FrmAluguel.ShowModal;
-  FrmAluguel.Free;
 end;
 
 procedure TFrmMenuPrincipal.Button8Click(Sender: TObject);

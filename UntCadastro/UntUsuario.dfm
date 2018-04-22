@@ -1,12 +1,15 @@
 inherited FrmUsuario: TFrmUsuario
   Caption = 'FrmUsuario'
   ClientHeight = 261
+  ClientWidth = 858
   OnActivate = FormActivate
   OnClose = FormClose
+  ExplicitWidth = 864
   ExplicitHeight = 296
   PixelsPerInch = 96
   TextHeight = 13
   inherited ToolBar1: TToolBar
+    Width = 858
     inherited btn_pesquisa: TToolButton
       ExplicitWidth = 78
     end
@@ -16,55 +19,60 @@ inherited FrmUsuario: TFrmUsuario
   end
   inherited StatusBar1: TStatusBar
     Top = 242
+    Width = 858
     ExplicitTop = 242
   end
+  inherited PanelEntrada: TPanel
+    Width = 858
+  end
   inherited PnlFicha: TPanel
+    Width = 858
     Height = 155
     ExplicitHeight = 155
     object Label2: TLabel
-      Left = 62
-      Top = 25
+      Left = 34
+      Top = 51
       Width = 31
       Height = 13
       Caption = 'Nome:'
       FocusControl = DBEdit1
     end
     object Label3: TLabel
-      Left = 20
-      Top = 65
+      Left = 500
+      Top = 51
       Width = 73
       Height = 13
       Caption = 'Departamento:'
       FocusControl = DBEdit2
     end
     object Label4: TLabel
-      Left = 64
-      Top = 104
+      Left = 37
+      Top = 82
       Width = 29
       Height = 13
       Caption = 'Login:'
       FocusControl = DBEdit3
     end
     object Label5: TLabel
-      Left = 246
-      Top = 104
+      Left = 261
+      Top = 82
       Width = 34
       Height = 13
       Caption = 'Senha:'
       FocusControl = DBEdit4
     end
     object Label6: TLabel
-      Left = 426
-      Top = 104
+      Left = 490
+      Top = 82
       Width = 28
       Height = 13
       Caption = 'Perfil:'
     end
     object SpeedButton1: TSpeedButton
-      Left = 647
-      Top = 100
+      Left = 796
+      Top = 79
       Width = 23
-      Height = 22
+      Height = 21
       Flat = True
       Glyph.Data = {
         36030000424D3603000000000000360000002800000010000000100000000100
@@ -95,37 +103,51 @@ inherited FrmUsuario: TFrmUsuario
         8FC90D8FC90D8FC90D8FC9FF00FFFF00FFFF00FFFF00FFFF00FF}
       OnClick = SpeedButton1Click
     end
+    object Label7: TLabel
+      Left = 34
+      Top = 19
+      Width = 85
+      Height = 13
+      Caption = 'Data de Inclus'#227'o:'
+    end
+    object Label8: TLabel
+      Left = 642
+      Top = 19
+      Width = 91
+      Height = 13
+      Caption = 'Data de Altera'#231#227'o:'
+    end
     object DBEdit1: TDBEdit
-      Left = 99
-      Top = 22
-      Width = 571
+      Left = 71
+      Top = 48
+      Width = 422
       Height = 21
       DataField = 'USU_NOME'
       DataSource = DataSource1
       TabOrder = 0
     end
     object DBEdit2: TDBEdit
-      Left = 99
-      Top = 62
-      Width = 571
+      Left = 579
+      Top = 48
+      Width = 240
       Height = 21
       DataField = 'USU_DEPARTAMENTO'
       DataSource = DataSource1
       TabOrder = 1
     end
     object DBEdit3: TDBEdit
-      Left = 99
-      Top = 101
-      Width = 134
+      Left = 71
+      Top = 79
+      Width = 184
       Height = 21
       DataField = 'USU_LOGIN'
       DataSource = DataSource1
       TabOrder = 2
     end
     object DBEdit4: TDBEdit
-      Left = 286
-      Top = 101
-      Width = 134
+      Left = 301
+      Top = 79
+      Width = 183
       Height = 21
       DataField = 'USU_SENHA'
       DataSource = DataSource1
@@ -133,9 +155,9 @@ inherited FrmUsuario: TFrmUsuario
       TabOrder = 3
     end
     object DBLookupComboBox1: TDBLookupComboBox
-      Left = 460
-      Top = 101
-      Width = 175
+      Left = 524
+      Top = 79
+      Width = 266
       Height = 21
       DataField = 'USU_ID_PERFIL'
       DataSource = DataSource1
@@ -144,12 +166,32 @@ inherited FrmUsuario: TFrmUsuario
       ListSource = DSPefil
       TabOrder = 4
     end
+    object edDataInc: TDBEdit
+      Left = 125
+      Top = 16
+      Width = 85
+      Height = 21
+      DataField = 'DATA_INC'
+      DataSource = DataSource1
+      Enabled = False
+      TabOrder = 5
+    end
+    object edDataAlt: TDBEdit
+      Left = 739
+      Top = 16
+      Width = 80
+      Height = 21
+      DataField = 'DATA_ALT'
+      DataSource = DataSource1
+      Enabled = False
+      TabOrder = 6
+    end
   end
   inherited ImageList1: TImageList
     Left = 122
     Top = 208
     Bitmap = {
-      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800340018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1348,7 +1390,7 @@ inherited FrmUsuario: TFrmUsuario
     Left = 178
     Top = 208
     Bitmap = {
-      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800340018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2547,7 +2589,7 @@ inherited FrmUsuario: TFrmUsuario
     Left = 234
     Top = 208
     Bitmap = {
-      494C01010D001800300018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800340018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -3811,7 +3853,7 @@ inherited FrmUsuario: TFrmUsuario
     Left = 288
     Top = 207
     Bitmap = {
-      494C010104000800280010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101040008002C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
