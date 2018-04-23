@@ -1,94 +1,27 @@
 inherited FrmProduto: TFrmProduto
   Caption = 'Manuten'#231#227'o no Cadastrdo de Produto'
-  ClientHeight = 397
+  ClientHeight = 495
   OnActivate = FormActivate
-  ExplicitWidth = 850
-  ExplicitHeight = 426
+  ExplicitHeight = 530
   PixelsPerInch = 96
   TextHeight = 13
   inherited ToolBar1: TToolBar
     inherited btn_pesquisa: TToolButton
-      ExplicitWidth = 74
+      ExplicitWidth = 78
     end
     inherited btn_ordenar: TToolButton
-      Left = 74
-      ExplicitLeft = 74
-      ExplicitWidth = 74
-    end
-    inherited Separador1: TToolButton
-      Left = 148
-      ExplicitLeft = 148
-    end
-    inherited btn_primeiro: TToolButton
-      Left = 156
-      ExplicitLeft = 156
-    end
-    inherited btn_anterior: TToolButton
-      Left = 215
-      ExplicitLeft = 215
-    end
-    inherited btn_proximo: TToolButton
-      Left = 274
-      ExplicitLeft = 274
-    end
-    inherited btn_ultimo: TToolButton
-      Left = 333
-      ExplicitLeft = 333
-    end
-    inherited Separador2: TToolButton
-      Left = 392
-      ExplicitLeft = 392
-    end
-    inherited btn_inserir: TToolButton
-      Left = 400
-      ExplicitLeft = 400
-    end
-    inherited btn_editar: TToolButton
-      Left = 459
-      ExplicitLeft = 459
-    end
-    inherited btn_excluir: TToolButton
-      Left = 518
-      ExplicitLeft = 518
-    end
-    inherited Separador3: TToolButton
-      Left = 577
-      ExplicitLeft = 577
-    end
-    inherited btn_salvar: TToolButton
-      Left = 585
-      ExplicitLeft = 585
-    end
-    inherited btn_cancelar: TToolButton
-      Left = 644
-      ExplicitLeft = 644
-    end
-    inherited Separador4: TToolButton
-      Left = 703
-      ExplicitLeft = 703
-    end
-    inherited btn_imprimir: TToolButton
-      Left = 711
-      ExplicitLeft = 711
-    end
-    inherited Separador5: TToolButton
-      Left = 770
-      ExplicitLeft = 770
-    end
-    inherited btn_sair: TToolButton
-      Left = 778
-      ExplicitLeft = 778
+      ExplicitWidth = 78
     end
   end
   inherited StatusBar1: TStatusBar
-    Top = 378
-    ExplicitTop = 372
+    Top = 476
+    ExplicitTop = 476
   end
   inherited PnlFicha: TPanel
-    Height = 291
-    ExplicitHeight = 285
+    Height = 389
+    ExplicitHeight = 389
     object Label10: TLabel
-      Left = 164
+      Left = 168
       Top = 72
       Width = 82
       Height = 13
@@ -184,7 +117,7 @@ inherited FrmProduto: TFrmProduto
       TabOrder = 1
     end
     object edValorDiaria: TDBEdit
-      Left = 252
+      Left = 256
       Top = 69
       Width = 90
       Height = 21
@@ -193,7 +126,7 @@ inherited FrmProduto: TFrmProduto
       TabOrder = 2
     end
     object edCodInt: TDBEdit
-      Left = 108
+      Left = 112
       Top = 69
       Width = 50
       Height = 21
@@ -237,7 +170,7 @@ inherited FrmProduto: TFrmProduto
     object DBLookupComboBox1: TDBLookupComboBox
       Left = 69
       Top = 112
-      Width = 116
+      Width = 145
       Height = 21
       DataField = 'CD_MARCA'
       DataSource = DataSource1
@@ -257,8 +190,10 @@ inherited FrmProduto: TFrmProduto
     TabOrder = 4
   end
   inherited ImageList1: TImageList
+    Left = 41
+    Top = 456
     Bitmap = {
-      494C01010D001800440018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800500018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1454,8 +1389,10 @@ inherited FrmProduto: TFrmProduto
       000000000000}
   end
   inherited ImageList2: TImageList
+    Left = 97
+    Top = 456
     Bitmap = {
-      494C01010D001800440018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800500018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2651,8 +2588,10 @@ inherited FrmProduto: TFrmProduto
       000000000000}
   end
   inherited ImageList3: TImageList
+    Left = 153
+    Top = 456
     Bitmap = {
-      494C01010D001800440018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800500018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -3848,7 +3787,7 @@ inherited FrmProduto: TFrmProduto
       000000000000}
   end
   inherited DataSource1: TDataSource
-    Left = 473
+    Left = 569
   end
   inherited FDTabela: TFDTable
     IndexFieldNames = 'ID'
@@ -3857,7 +3796,7 @@ inherited FrmProduto: TFrmProduto
       'ATA_ALT;DATA_INC;DESCRICAO;DISPONIVEL;ID;STATUS;VALOR_DIARIA'
     UpdateOptions.UpdateTableName = 'ALUGMAT.dbo.PRODUTO'
     TableName = 'ALUGMAT.dbo.PRODUTO'
-    Left = 433
+    Left = 497
     object FDTabelaID: TFDAutoIncField
       FieldName = 'ID'
       Origin = 'ID'
@@ -3925,10 +3864,22 @@ inherited FrmProduto: TFrmProduto
       BlobType = ftMemo
       Size = 2147483647
     end
+    object FDTabelaDEVOLVER: TStringField
+      FieldName = 'DEVOLVER'
+      Origin = 'DEVOLVER'
+      FixedChar = True
+      Size = 1
+    end
+    object FDTabelaCD_CLIENTE: TIntegerField
+      FieldName = 'CD_CLIENTE'
+      Origin = 'CD_CLIENTE'
+    end
   end
   inherited ImageList4: TImageList
+    Left = 209
+    Top = 455
     Bitmap = {
-      494C0101040008003C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000800480010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4200,6 +4151,8 @@ inherited FrmProduto: TFrmProduto
       000000000000}
   end
   inherited PopupMenu1: TPopupMenu
+    Left = 368
+    Top = 455
     object Descrio1: TMenuItem [1]
       Caption = 'Descri'#231#227'o'
       OnClick = Descrio1Click
@@ -4214,6 +4167,8 @@ inherited FrmProduto: TFrmProduto
     end
   end
   inherited PopupMenu2: TPopupMenu
+    Left = 280
+    Top = 455
     object Descrio2: TMenuItem
       Caption = 'Descri'#231#227'o'
       OnClick = Descrio2Click
@@ -4229,21 +4184,21 @@ inherited FrmProduto: TFrmProduto
   end
   object DSMarca: TDataSource
     DataSet = FDQryMarca
-    Left = 392
+    Left = 440
     Top = 399
   end
   object FDQryMarca: TFDQuery
     Connection = DM.FDConnection1
     SQL.Strings = (
-      'SELECT ID,DESCRICAO '
+      'SELECT ID, DESCRICAO '
       'FROM MARCA'
       'ORDER BY DESCRICAO')
-    Left = 352
+    Left = 376
     Top = 399
   end
   object DSCategoria: TDataSource
     DataSet = FDQryCategoria
-    Left = 312
+    Left = 304
     Top = 399
   end
   object FDQryCategoria: TFDQuery
@@ -4253,12 +4208,12 @@ inherited FrmProduto: TFrmProduto
       'SELECT ID,DESCRICAO '
       'FROM CATEGORIA'
       'ORDER BY ID')
-    Left = 272
+    Left = 219
     Top = 399
   end
   object DSFornecedor: TDataSource
     DataSet = FDQyFornecedor
-    Left = 232
+    Left = 133
     Top = 399
   end
   object FDQyFornecedor: TFDQuery
@@ -4268,7 +4223,7 @@ inherited FrmProduto: TFrmProduto
       'SELECT ID,RAZAO_SOCIAL '
       'FROM FORNECEDOR'
       'ORDER BY ID')
-    Left = 192
+    Left = 44
     Top = 399
   end
 end
