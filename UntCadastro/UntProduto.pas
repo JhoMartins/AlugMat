@@ -56,6 +56,8 @@ type
     FDTabelaCARACTERISTICAS: TMemoField;
     dbCaracteristicas: TDBMemo;
     DBText1: TDBText;
+    FDTabelaDEVOLVER: TStringField;
+    FDTabelaCD_CLIENTE: TIntegerField;
     DBLookupComboBox1: TDBLookupComboBox;
     procedure btn_salvarClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
@@ -81,19 +83,19 @@ implementation
 {$R *.dfm}
 
 uses UntDM, UntMenuPrincipal, UntUsuario, UntFornecedor, UntPesqData,
-  UntPesqString, UntPesqRadio;
+  UntPesqString, UntPesqRadio, UntAlugueis;
 
 procedure TFrmProduto.btn_sairClick(Sender: TObject);
 begin
   inherited;
-  //FrmAluguel.FDQryProduto.Close;
-  //FrmAluguel.FDQryProduto.Open();
+  FrmAluguel.FDQryProduto.Close;
+  FrmAluguel.FDQryProduto.Open();
 
 end;
 
 procedure TFrmProduto.btn_salvarClick(Sender: TObject);
 begin
-   if (edDescricao.Text = '') or (edCodInt.Text = '') or (edValorDiaria.Text = '') or (dbCaracteristicas.Text = '') or (strtoint(DBLookupComboBox1.Text)= -1) or (strtoint(DBLookupComboBox2.Text)= -1) or (strtoint(DBLookupComboBox3.Text)= -1) then
+   if (edDescricao.Text = '') or (edCodInt.Text = '') or (edValorDiaria.Text = '') or (dbCaracteristicas.Text = '') or (DBLookupComboBox1.Text = '') or (DBLookupComboBox2.Text= '') or (DBLookupComboBox3.Text = '') then
     begin
 
     //Colorir Campos Obrigatórios
@@ -111,7 +113,11 @@ begin
   end
   else
   begin
+    FDTabelaDISPONIVEL.AsString := 'S';
+    FDTabelaDEVOLVER.AsString := 'N';
+
     inherited;
+
     edDescricao.color := clWindow;
     edCodInt.Color := clWindow;
     edValorDiaria.color := clWindow;
@@ -213,7 +219,7 @@ end;
 
 procedure TFrmProduto.FormActivate(Sender: TObject);
 begin
-    FDTabela.TableName := 'PRODUTO';
+  FDTabela.TableName := 'PRODUTO';
   TipoID := 0;
 
   modoEdicao := FrmMenuPrincipal.QueryLogin.FieldByName('PER_PRODUTO_I').AsString +
@@ -226,10 +232,19 @@ begin
   FDTabela.FieldByName('DATA_INC').EditMask := '99/99/9999;1;_';
   FDTabela.FieldByName('DATA_ALT').EditMask := '99/99/9999;1;_';
   inherited;
+
+  FDTabela.Close;
   FDTabela.Open();
+
+  FDQryMarca.Close;
   FDQryMarca.Open();
+
+  FDQryCategoria.Close;
   FDQryCategoria.Open();
+
+  FDQyFornecedor.Close;
   FDQyFornecedor.Open();
+
   Executar := habilitaBotoes;
   edDataInc.Enabled := false;
   edDataAlt.Enabled := false;
