@@ -69,6 +69,9 @@ type
     procedure ValordaDiria2Click(Sender: TObject);
     procedure IDCdigo1Click(Sender: TObject);
     procedure btn_sairClick(Sender: TObject);
+    procedure btn_inserirClick(Sender: TObject);
+    procedure btn_editarClick(Sender: TObject);
+    procedure btn_cancelarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -82,8 +85,29 @@ implementation
 
 {$R *.dfm}
 
-uses UntDM, UntMenuPrincipal, UntUsuario, UntFornecedor, UntPesqData,
+uses UntDM, UntMenuPrincipal, UntUsuario, {UntFornecedor,} UntPesqData,
   UntPesqString, UntPesqRadio, UntAlugueis;
+
+procedure TFrmProduto.btn_cancelarClick(Sender: TObject);
+begin
+  inherited;
+
+  dbCaracteristicas.ReadOnly := true;
+end;
+
+procedure TFrmProduto.btn_editarClick(Sender: TObject);
+begin
+  inherited;
+
+  dbCaracteristicas.ReadOnly := false;
+end;
+
+procedure TFrmProduto.btn_inserirClick(Sender: TObject);
+begin
+  inherited;
+
+  dbCaracteristicas.ReadOnly := false;
+end;
 
 procedure TFrmProduto.btn_sairClick(Sender: TObject);
 begin
@@ -95,14 +119,13 @@ end;
 
 procedure TFrmProduto.btn_salvarClick(Sender: TObject);
 begin
-   if (edDescricao.Text = '') or (edCodInt.Text = '') or (edValorDiaria.Text = '') or (dbCaracteristicas.Text = '') or (DBLookupComboBox1.Text = '') or (DBLookupComboBox2.Text= '') or (DBLookupComboBox3.Text = '') then
+   if (edDescricao.Text = '') or (edCodInt.Text = '') or (edValorDiaria.Text = '') or (DBLookupComboBox1.Text = '') or (DBLookupComboBox2.Text= '') or (DBLookupComboBox3.Text = '') then
     begin
 
     //Colorir Campos Obrigatórios
     edDescricao.color := clInactiveCaption;
     edCodInt.Color:= clInactiveCaption;
     edValorDiaria.color := clInactiveCaption;
-    dbCaracteristicas.Color := clInactiveCaption;
     DBLookupComboBox1.color := clInactiveCaption;
     DBLookupComboBox2.color := clInactiveCaption;
     DBLookupComboBox3.color := clInactiveCaption;
@@ -121,10 +144,11 @@ begin
     edDescricao.color := clWindow;
     edCodInt.Color := clWindow;
     edValorDiaria.color := clWindow;
-    dbCaracteristicas.Color := clWindow;
     DBLookupComboBox1.color := clWindow;
     DBLookupComboBox2.color := clWindow;
     DBLookupComboBox3.Color := clWindow;
+
+    dbCaracteristicas.ReadOnly := true;
   end;
 end;
 
@@ -248,6 +272,8 @@ begin
   Executar := habilitaBotoes;
   edDataInc.Enabled := false;
   edDataAlt.Enabled := false;
+
+  dbCaracteristicas.ReadOnly := true;
 end;
 
 procedure TFrmProduto.IDCdigo1Click(Sender: TObject);
