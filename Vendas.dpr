@@ -16,7 +16,8 @@ uses
   UntPesqRadio in 'UntPadrao\UntPesqRadio.pas' {pesqRadio},
   UntProduto in 'UntCadastro\UntProduto.pas' {FrmProduto},
   UntAlugueis in 'UntCadastro\UntAlugueis.pas' {FrmAluguel},
-  UntDevolucao in 'UntCadastro\UntDevolucao.pas' {FrmDevolucao};
+  UntDevolucao in 'UntCadastro\UntDevolucao.pas' {FrmDevolucao},
+  UntFornecedor in 'UntCadastro\UntFornecedor.pas' {FrmFornecedor};
 
 {$R *.res}
 
@@ -31,5 +32,6 @@ begin
   Application.CreateForm(TFrmLogin, FrmLogin);
   Application.CreateForm(TpesqRadio, pesqRadio);
   Application.CreateForm(TFrmAluguel, FrmAluguel);
+  Application.CreateForm(TFrmFornecedor, FrmFornecedor);
   Application.Run;
 end.

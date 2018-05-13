@@ -2,7 +2,7 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
   Left = 0
   Top = 0
   Caption = 'FrmMenuPrincipal'
-  ClientHeight = 413
+  ClientHeight = 455
   ClientWidth = 619
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -17,7 +17,7 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
   TextHeight = 13
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 394
+    Top = 436
     Width = 619
     Height = 19
     Panels = <
@@ -33,6 +33,7 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
       item
         Width = 50
       end>
+    ExplicitTop = 394
   end
   object Button1: TButton
     Left = 8
@@ -105,6 +106,15 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     Caption = 'Devolu'#231#227'o'
     TabOrder = 8
     OnClick = Button8Click
+  end
+  object Button9: TButton
+    Left = 8
+    Top = 393
+    Width = 75
+    Height = 25
+    Caption = 'Fornecedor'
+    TabOrder = 9
+    OnClick = Button9Click
   end
   object QueryLogin: TFDQuery
     Connection = DM.FDConnection1
@@ -229,7 +239,7 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     Left = 336
     Top = 360
     Bitmap = {
-      494C010104000800380010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101040008003C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
