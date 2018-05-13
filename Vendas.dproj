@@ -165,6 +165,10 @@
             <Form>FrmFornecedor</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="UntPadrao\UntPadraoRel.pas">
+            <Form>FrmPadraoRel</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <None Include="Vendas.dpr"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
