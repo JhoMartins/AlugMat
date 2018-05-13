@@ -1,49 +1,221 @@
-inherited FrmCategoria: TFrmCategoria
-  Caption = 'Manuten'#231#227'o no Cadastro de Categoria'
-  ClientHeight = 168
+inherited FrmFornecedor: TFrmFornecedor
+  Caption = 'Manuten'#231#227'o no Cadastro de Fornecedor'
+  ClientHeight = 308
   OnActivate = FormActivate
-  ExplicitHeight = 197
+  ExplicitHeight = 337
   PixelsPerInch = 96
   TextHeight = 13
+  inherited ToolBar1: TToolBar
+    inherited btn_pesquisa: TToolButton
+      ExplicitWidth = 74
+    end
+    inherited btn_ordenar: TToolButton
+      Left = 74
+      ExplicitLeft = 74
+      ExplicitWidth = 74
+    end
+    inherited Separador1: TToolButton
+      Left = 148
+      ExplicitLeft = 148
+    end
+    inherited btn_primeiro: TToolButton
+      Left = 156
+      ExplicitLeft = 156
+    end
+    inherited btn_anterior: TToolButton
+      Left = 215
+      ExplicitLeft = 215
+    end
+    inherited btn_proximo: TToolButton
+      Left = 274
+      ExplicitLeft = 274
+    end
+    inherited btn_ultimo: TToolButton
+      Left = 333
+      ExplicitLeft = 333
+    end
+    inherited Separador2: TToolButton
+      Left = 392
+      ExplicitLeft = 392
+    end
+    inherited btn_inserir: TToolButton
+      Left = 400
+      ExplicitLeft = 400
+    end
+    inherited btn_editar: TToolButton
+      Left = 459
+      ExplicitLeft = 459
+    end
+    inherited btn_excluir: TToolButton
+      Left = 518
+      ExplicitLeft = 518
+    end
+    inherited Separador3: TToolButton
+      Left = 577
+      ExplicitLeft = 577
+    end
+    inherited btn_salvar: TToolButton
+      Left = 585
+      ExplicitLeft = 585
+    end
+    inherited btn_cancelar: TToolButton
+      Left = 644
+      ExplicitLeft = 644
+    end
+    inherited Separador4: TToolButton
+      Left = 703
+      ExplicitLeft = 703
+    end
+    inherited btn_imprimir: TToolButton
+      Left = 711
+      ExplicitLeft = 711
+    end
+    inherited Separador5: TToolButton
+      Left = 770
+      ExplicitLeft = 770
+    end
+    inherited btn_sair: TToolButton
+      Left = 778
+      ExplicitLeft = 778
+    end
+  end
   inherited StatusBar1: TStatusBar
-    Top = 149
-    ExplicitTop = 149
+    Top = 289
+    ExplicitTop = 289
   end
   inherited PnlFicha: TPanel
-    Height = 62
-    ExplicitHeight = 62
+    Height = 202
+    ExplicitHeight = 202
     object Label2: TLabel
-      Left = 24
+      Left = 37
       Top = 24
-      Width = 59
+      Width = 73
       Height = 13
-      Caption = '* Descri'#231#227'o:'
+      Caption = '* Raz'#227'o Social:'
     end
     object Label3: TLabel
-      Left = 400
+      Left = 391
       Top = 24
-      Width = 88
+      Width = 94
       Height = 13
-      Caption = '* Data de Iclus'#227'o:'
+      Caption = '* Data de Inclus'#227'o:'
     end
     object Label4: TLabel
-      Left = 621
+      Left = 618
       Top = 24
       Width = 91
       Height = 13
       Caption = 'Data de Altera'#231#227'o:'
     end
-    object edDescricao: TDBEdit
-      Left = 89
+    object Label5: TLabel
+      Left = 26
+      Top = 57
+      Width = 84
+      Height = 13
+      Caption = '* Nome Fantasia:'
+    end
+    object Label6: TLabel
+      Left = 391
+      Top = 57
+      Width = 38
+      Height = 13
+      Caption = '* CNPJ:'
+    end
+    object Label7: TLabel
+      Left = 618
+      Top = 57
+      Width = 23
+      Height = 13
+      Caption = '* IE:'
+    end
+    object Label8: TLabel
+      Left = 19
+      Top = 91
+      Width = 91
+      Height = 13
+      Caption = '* Tipo Logradouro:'
+    end
+    object Label29: TLabel
+      Left = 722
+      Top = 91
+      Width = 25
+      Height = 13
+      Caption = '* N'#186':'
+    end
+    object Label10: TLabel
+      Left = 305
+      Top = 125
+      Width = 41
+      Height = 13
+      Caption = '* Bairro:'
+    end
+    object Label11: TLabel
+      Left = 508
+      Top = 125
+      Width = 46
+      Height = 13
+      Caption = '* Cidade:'
+    end
+    object Label12: TLabel
+      Left = 726
+      Top = 125
+      Width = 46
+      Height = 13
+      Caption = '* Estado:'
+    end
+    object Label14: TLabel
+      Left = 224
+      Top = 91
+      Width = 98
+      Height = 13
+      Caption = '* Nome Logradouro:'
+    end
+    object Label13: TLabel
+      Left = 32
+      Top = 125
+      Width = 69
+      Height = 13
+      Caption = 'Complemento:'
+    end
+    object Label15: TLabel
+      Left = 64
+      Top = 160
+      Width = 46
+      Height = 13
+      Caption = 'Telefone:'
+    end
+    object Label16: TLabel
+      Left = 223
+      Top = 160
+      Width = 37
+      Height = 13
+      Caption = 'Celular:'
+    end
+    object Label17: TLabel
+      Left = 376
+      Top = 160
+      Width = 43
+      Height = 13
+      Caption = 'Contato:'
+    end
+    object Label18: TLabel
+      Left = 552
+      Top = 160
+      Width = 32
+      Height = 13
+      Caption = 'E-mail:'
+    end
+    object edRazaoSocial: TDBEdit
+      Left = 116
       Top = 21
-      Width = 305
+      Width = 269
       Height = 21
-      DataField = 'DESCRICAO'
+      DataField = 'RAZAO_SOCIAL'
       DataSource = DataSource1
       TabOrder = 0
     end
-    object DBEdit1: TDBEdit
-      Left = 494
+    object edDataInc: TDBEdit
+      Left = 491
       Top = 21
       Width = 121
       Height = 21
@@ -52,8 +224,8 @@ inherited FrmCategoria: TFrmCategoria
       Enabled = False
       TabOrder = 1
     end
-    object DBEdit2: TDBEdit
-      Left = 718
+    object edDataAlt: TDBEdit
+      Left = 715
       Top = 21
       Width = 121
       Height = 21
@@ -62,12 +234,166 @@ inherited FrmCategoria: TFrmCategoria
       Enabled = False
       TabOrder = 2
     end
+    object edNomeFantasia: TDBEdit
+      Left = 116
+      Top = 54
+      Width = 269
+      Height = 21
+      DataField = 'NOME_FANTASIA'
+      DataSource = DataSource1
+      TabOrder = 3
+    end
+    object edCNPJ: TDBEdit
+      Left = 435
+      Top = 54
+      Width = 177
+      Height = 21
+      DataField = 'CNPJ'
+      DataSource = DataSource1
+      TabOrder = 4
+    end
+    object edIE: TDBEdit
+      Left = 647
+      Top = 54
+      Width = 189
+      Height = 21
+      DataField = 'IE'
+      DataSource = DataSource1
+      TabOrder = 5
+    end
+    object edTipoLog: TDBEdit
+      Left = 116
+      Top = 88
+      Width = 102
+      Height = 21
+      DataField = 'LOGRADOURO'
+      DataSource = DataSource1
+      TabOrder = 6
+    end
+    object edN: TDBEdit
+      Left = 753
+      Top = 88
+      Width = 83
+      Height = 21
+      DataField = 'NUM'
+      DataSource = DataSource1
+      TabOrder = 8
+    end
+    object edBairro: TDBEdit
+      Left = 352
+      Top = 122
+      Width = 150
+      Height = 21
+      DataField = 'BAIRRO'
+      DataSource = DataSource1
+      TabOrder = 10
+    end
+    object edCidade: TDBEdit
+      Left = 560
+      Top = 122
+      Width = 160
+      Height = 21
+      DataField = 'CIDADE'
+      DataSource = DataSource1
+      TabOrder = 11
+    end
+    object cbEstado: TDBComboBox
+      Left = 778
+      Top = 122
+      Width = 58
+      Height = 21
+      DataField = 'ESTADO'
+      DataSource = DataSource1
+      Items.Strings = (
+        'AC'
+        'AL'
+        'AP'
+        'AM'
+        'BA'
+        'CE'
+        'DF'
+        'ES'
+        'GO'
+        'MA'
+        'MT'
+        'MS'
+        'MG'
+        'PA'
+        'PB'
+        'PR'
+        'PE'
+        'PI'
+        'RJ'
+        'RN'
+        'RS'
+        'RO'
+        'RR'
+        'SC'
+        'SP'
+        'SE'
+        'TO')
+      TabOrder = 12
+    end
+    object edNomeLog: TDBEdit
+      Left = 328
+      Top = 88
+      Width = 388
+      Height = 21
+      DataField = 'NOME_LOGRADOURO'
+      DataSource = DataSource1
+      TabOrder = 7
+    end
+    object edTelefone: TDBEdit
+      Left = 116
+      Top = 157
+      Width = 101
+      Height = 21
+      DataField = 'TELEFONE'
+      DataSource = DataSource1
+      TabOrder = 13
+    end
+    object edCelular: TDBEdit
+      Left = 266
+      Top = 157
+      Width = 104
+      Height = 21
+      DataField = 'CELULAR'
+      DataSource = DataSource1
+      TabOrder = 14
+    end
+    object edContato: TDBEdit
+      Left = 425
+      Top = 157
+      Width = 121
+      Height = 21
+      DataField = 'CONTATO'
+      DataSource = DataSource1
+      TabOrder = 15
+    end
+    object edEmail: TDBEdit
+      Left = 590
+      Top = 157
+      Width = 246
+      Height = 21
+      DataField = 'EMAIL'
+      DataSource = DataSource1
+      TabOrder = 16
+    end
+    object edComplemento: TDBEdit
+      Left = 116
+      Top = 122
+      Width = 183
+      Height = 21
+      DataField = 'COMPLEMENTO'
+      DataSource = DataSource1
+      TabOrder = 9
+    end
   end
   inherited ImageList1: TImageList
-    Left = 441
-    Top = 144
+    Left = 121
+    Top = 272
     Bitmap = {
-      494C01010D001800400018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800380018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1263,10 +1589,10 @@ inherited FrmCategoria: TFrmCategoria
       000000000000}
   end
   inherited ImageList2: TImageList
-    Left = 497
-    Top = 144
+    Left = 177
+    Top = 272
     Bitmap = {
-      494C01010D001800400018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800380018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2462,10 +2788,10 @@ inherited FrmCategoria: TFrmCategoria
       000000000000}
   end
   inherited ImageList3: TImageList
-    Left = 553
-    Top = 144
+    Left = 233
+    Top = 272
     Bitmap = {
-      494C01010D001800400018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800380018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -3661,26 +3987,102 @@ inherited FrmCategoria: TFrmCategoria
       000000000000}
   end
   inherited DataSource1: TDataSource
-    Left = 393
-    Top = 144
+    Left = 65
+    Top = 272
   end
   inherited FDTabela: TFDTable
     IndexFieldNames = 'ID'
-    UpdateOptions.UpdateTableName = 'ALUGMAT.dbo.CATEGORIA'
-    TableName = 'ALUGMAT.dbo.CATEGORIA'
-    Left = 345
-    Top = 144
+    UpdateOptions.UpdateTableName = 'ALUGMAT.dbo.FORNECEDOR'
+    TableName = 'ALUGMAT.dbo.FORNECEDOR'
+    Left = 25
+    Top = 272
     object FDTabelaID: TFDAutoIncField
       FieldName = 'ID'
       Origin = 'ID'
       ProviderFlags = [pfInWhere, pfInKey]
       ReadOnly = True
     end
-    object FDTabelaDESCRICAO: TStringField
-      FieldName = 'DESCRICAO'
-      Origin = 'DESCRICAO'
+    object FDTabelaRAZAO_SOCIAL: TStringField
+      FieldName = 'RAZAO_SOCIAL'
+      Origin = 'RAZAO_SOCIAL'
+      Required = True
+      Size = 50
+    end
+    object FDTabelaNOME_FANTASIA: TStringField
+      FieldName = 'NOME_FANTASIA'
+      Origin = 'NOME_FANTASIA'
+      Size = 50
+    end
+    object FDTabelaCNPJ: TStringField
+      FieldName = 'CNPJ'
+      Origin = 'CNPJ'
+      Required = True
+      Size = 18
+    end
+    object FDTabelaIE: TStringField
+      FieldName = 'IE'
+      Origin = 'IE'
+      Required = True
+      Size = 15
+    end
+    object FDTabelaLOGRADOURO: TStringField
+      FieldName = 'LOGRADOURO'
+      Origin = 'LOGRADOURO'
+      Required = True
+    end
+    object FDTabelaNOME_LOGRADOURO: TStringField
+      FieldName = 'NOME_LOGRADOURO'
+      Origin = 'NOME_LOGRADOURO'
+      Required = True
+      Size = 50
+    end
+    object FDTabelaNUM: TIntegerField
+      FieldName = 'NUM'
+      Origin = 'NUM'
+      Required = True
+    end
+    object FDTabelaCOMPLEMENTO: TStringField
+      FieldName = 'COMPLEMENTO'
+      Origin = 'COMPLEMENTO'
+    end
+    object FDTabelaBAIRRO: TStringField
+      FieldName = 'BAIRRO'
+      Origin = 'BAIRRO'
       Required = True
       Size = 30
+    end
+    object FDTabelaCIDADE: TStringField
+      FieldName = 'CIDADE'
+      Origin = 'CIDADE'
+      Required = True
+      Size = 40
+    end
+    object FDTabelaESTADO: TStringField
+      FieldName = 'ESTADO'
+      Origin = 'ESTADO'
+      Required = True
+      FixedChar = True
+      Size = 2
+    end
+    object FDTabelaTELEFONE: TStringField
+      FieldName = 'TELEFONE'
+      Origin = 'TELEFONE'
+      Size = 13
+    end
+    object FDTabelaCELULAR: TStringField
+      FieldName = 'CELULAR'
+      Origin = 'CELULAR'
+      Size = 14
+    end
+    object FDTabelaEMAIL: TStringField
+      FieldName = 'EMAIL'
+      Origin = 'EMAIL'
+      Size = 50
+    end
+    object FDTabelaCONTATO: TStringField
+      FieldName = 'CONTATO'
+      Origin = 'CONTATO'
+      Size = 50
     end
     object FDTabelaDATA_INC: TSQLTimeStampField
       FieldName = 'DATA_INC'
@@ -3699,10 +4101,10 @@ inherited FrmCategoria: TFrmCategoria
     end
   end
   inherited ImageList4: TImageList
-    Left = 601
-    Top = 143
+    Left = 297
+    Top = 271
     Bitmap = {
-      494C010104000800380010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000800300010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -3974,18 +4376,22 @@ inherited FrmCategoria: TFrmCategoria
       000000000000}
   end
   inherited PopupMenu1: TPopupMenu
-    Left = 696
-    Top = 143
+    Left = 640
+    Top = 271
     object N3: TMenuItem
       Caption = '-'
     end
-    object Descrio1: TMenuItem
-      Caption = 'Descri'#231#227'o'
-      OnClick = Descrio1Click
+    object NomeFantasia1: TMenuItem
+      Caption = 'Nome Fantasia'
+      OnClick = NomeFantasia1Click
+    end
+    object CNPJ1: TMenuItem
+      Caption = 'CNPJ'
+      OnClick = CNPJ1Click
     end
   end
   inherited PopupMenu2: TPopupMenu
-    Left = 648
-    Top = 143
+    Left = 592
+    Top = 271
   end
 end
