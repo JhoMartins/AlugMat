@@ -16,8 +16,8 @@ type
     SpeedButton1: TSpeedButton;
     Label1: TLabel;
     Label2: TLabel;
-    BitBtn1: TBitBtn;
-    BitBtn2: TBitBtn;
+    btn_cancelar: TBitBtn;
+    btn_imprimir: TBitBtn;
     StatusBar1: TStatusBar;
     FDQuery1: TFDQuery;
     frxDBDataset1: TfrxDBDataset;

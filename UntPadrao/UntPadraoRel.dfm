@@ -119,7 +119,7 @@ object FrmPadraoRel: TFrmPadraoRel
       ParentFont = False
     end
   end
-  object BitBtn1: TBitBtn
+  object btn_cancelar: TBitBtn
     Left = 312
     Top = 240
     Width = 90
@@ -179,7 +179,7 @@ object FrmPadraoRel: TFrmPadraoRel
     NumGlyphs = 2
     TabOrder = 1
   end
-  object BitBtn2: TBitBtn
+  object btn_imprimir: TBitBtn
     Left = 416
     Top = 240
     Width = 90
