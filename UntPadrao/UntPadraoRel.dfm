@@ -25,9 +25,6 @@ object FrmPadraoRel: TFrmPadraoRel
     Color = clGray
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 128
-    ExplicitTop = 88
-    ExplicitWidth = 185
     object SpeedButton1: TSpeedButton
       Left = 0
       Top = 0
@@ -253,9 +250,6 @@ object FrmPadraoRel: TFrmPadraoRel
       item
         Width = 50
       end>
-    ExplicitLeft = 264
-    ExplicitTop = 160
-    ExplicitWidth = 0
   end
   object FDQuery1: TFDQuery
     Connection = DM.FDConnection1
@@ -271,7 +265,7 @@ object FrmPadraoRel: TFrmPadraoRel
     Top = 232
   end
   object frxReport1: TfrxReport
-    Version = '5.4.6'
+    Version = '5.3.14'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
@@ -279,7 +273,7 @@ object FrmPadraoRel: TFrmPadraoRel
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 43233.721229606500000000
-    ReportOptions.LastChange = 43233.732522997690000000
+    ReportOptions.LastChange = 43236.863018321800000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       ''
@@ -303,17 +297,10 @@ object FrmPadraoRel: TFrmPadraoRel
       RightMargin = 10.000000000000000000
       TopMargin = 10.000000000000000000
       BottomMargin = 10.000000000000000000
-      object MasterData1: TfrxMasterData
-        FillType = ftBrush
-        Height = 22.677180000000000000
-        Top = 170.078850000000000000
-        Width = 718.110700000000000000
-        RowCount = 0
-      end
       object PageFooter1: TfrxPageFooter
         FillType = ftBrush
         Height = 22.677180000000000000
-        Top = 253.228510000000000000
+        Top = 219.212740000000000000
         Width = 718.110700000000000000
         object Memo1: TfrxMemoView
           Left = 419.527830000000000000
@@ -324,14 +311,13 @@ object FrmPadraoRel: TFrmPadraoRel
             'P'#225'gina [Page#] de [TotalPages#]')
         end
         object Memo6: TfrxMemoView
-          Width = 241.889920000000000000
+          Width = 374.173470000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
-          HAlign = haCenter
           Memo.UTF8W = (
             'Data/Hora de impress'#227'o: [Date] - [Time]')
           ParentFont = False
@@ -344,7 +330,7 @@ object FrmPadraoRel: TFrmPadraoRel
       end
       object PageHeader1: TfrxPageHeader
         FillType = ftBrush
-        Height = 90.708720000000000000
+        Height = 139.842610000000000000
         Top = 18.897650000000000000
         Width = 718.110700000000000000
         object Memo2: TfrxMemoView
@@ -361,7 +347,7 @@ object FrmPadraoRel: TFrmPadraoRel
           ParentFont = False
         end
         object Picture1: TfrxPictureView
-          Width = 185.196970000000000000
+          Width = 139.842610000000000000
           Height = 90.708720000000000000
           Picture.Data = {
             0A544A504547496D616765C81C0100FFD8FFE000104A46494600010100000100
@@ -2678,7 +2664,7 @@ object FrmPadraoRel: TFrmPadraoRel
           ParentFont = False
         end
         object Memo5: TfrxMemoView
-          Top = 71.811070000000000000
+          Top = 117.165430000000000000
           Width = 718.110700000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
