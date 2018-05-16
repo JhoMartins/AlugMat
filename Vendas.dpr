@@ -18,7 +18,8 @@ uses
   UntAlugueis in 'UntCadastro\UntAlugueis.pas' {FrmAluguel},
   UntDevolucao in 'UntCadastro\UntDevolucao.pas' {FrmDevolucao},
   UntFornecedor in 'UntCadastro\UntFornecedor.pas' {FrmFornecedor},
-  UntPadraoRel in 'UntPadrao\UntPadraoRel.pas' {FrmPadraoRel};
+  UntPadraoRel in 'UntPadrao\UntPadraoRel.pas' {FrmPadraoRel},
+  UntRelAluguel in 'UntRelatorio\UntRelAluguel.pas' {FrmRelAluguel};
 
 {$R *.res}
 
@@ -35,5 +36,6 @@ begin
   Application.CreateForm(TFrmAluguel, FrmAluguel);
   Application.CreateForm(TFrmFornecedor, FrmFornecedor);
   Application.CreateForm(TFrmPadraoRel, FrmPadraoRel);
+  Application.CreateForm(TFrmRelAluguel, FrmRelAluguel);
   Application.Run;
 end.
