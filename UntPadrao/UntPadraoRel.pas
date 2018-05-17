@@ -22,6 +22,7 @@ type
     FDQuery1: TFDQuery;
     frxDBDataset1: TfrxDBDataset;
     frxReport1: TfrxReport;
+    procedure btn_cancelarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,5 +35,10 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFrmPadraoRel.btn_cancelarClick(Sender: TObject);
+begin
+  Close;
+end;
 
 end.
