@@ -9,7 +9,7 @@ uses
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   Vcl.Menus, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
   System.ImageList, Vcl.ImgList, Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Buttons, UntPesqString,
-  Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.ToolWin, UntDM, Vcl.Mask, UntMenuPrincipal;
+  Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.ToolWin, UntDM, Vcl.Mask, UntMenuPrincipal, UntRelCategorias;
 
 type
   TFrmCategoria = class(TFrmPadrao1)
@@ -29,6 +29,7 @@ type
     procedure btn_salvarClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure Descrio1Click(Sender: TObject);
+    procedure btn_imprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,6 +42,14 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFrmCategoria.btn_imprimirClick(Sender: TObject);
+begin
+  inherited;
+  Application.CreateForm(TFrmRelCategorias, FrmRelCategorias);
+  FrmRelCategorias.ShowModal;
+  FrmRelCategorias.Free;
+end;
 
 procedure TFrmCategoria.btn_salvarClick(Sender: TObject);
 begin
