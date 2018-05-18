@@ -34,8 +34,6 @@ begin
   Application.CreateForm(TFrmLogin, FrmLogin);
   Application.CreateForm(TpesqRadio, pesqRadio);
   Application.CreateForm(TFrmAluguel, FrmAluguel);
-  Application.CreateForm(TFrmFornecedor, FrmFornecedor);
   Application.CreateForm(TFrmPadraoRel, FrmPadraoRel);
-  Application.CreateForm(TFrmRelAluguel, FrmRelAluguel);
   Application.Run;
 end.

@@ -175,6 +175,7 @@ object FrmPadraoRel: TFrmPadraoRel
       00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
     NumGlyphs = 2
     TabOrder = 1
+    OnClick = btn_cancelarClick
   end
   object btn_imprimir: TBitBtn
     Left = 416

@@ -122,6 +122,7 @@ type
     procedure Cliente1Click(Sender: TObject);
     procedure Atendente1Click(Sender: TObject);
     procedure DatadeDevoluo1Click(Sender: TObject);
+    procedure btn_imprimirClick(Sender: TObject);
   private
 
 
@@ -137,7 +138,8 @@ implementation
 
 {$R *.dfm}
 
-uses UntDM, UntMenuPrincipal, UntUsuario, UntCliente, UntProduto, UntPesqString;
+uses UntDM, UntMenuPrincipal, UntUsuario, UntCliente, UntProduto, UntPesqString,
+  UntRelAluguel;
 
 function TFrmAluguel.CalcularTotal(): real;
 var total: real;
@@ -479,6 +481,16 @@ begin
 
   Executar := habilitaBotoes;
   Executar := exibePanels;
+end;
+
+procedure TFrmAluguel.btn_imprimirClick(Sender: TObject);
+begin
+  inherited;
+
+  Application.CreateForm(TFrmRelAluguel, FrmRelAluguel);
+  FrmRelAluguel.edNumAluguel.Text := FDTabelaID.AsString;
+  FrmRelAluguel.ShowModal;
+  FrmRelAluguel.Free;
 end;
 
 procedure TFrmAluguel.btn_inserirClick(Sender: TObject);
