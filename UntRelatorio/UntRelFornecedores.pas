@@ -12,6 +12,15 @@ uses
 
 type
   TFrmRelFornecedores = class(TFrmPadraoRel)
+    edtIdDe: TLabeledEdit;
+    edtIdAte: TLabeledEdit;
+    LabeledEdit3: TLabeledEdit;
+    LabeledEdit4: TLabeledEdit;
+    LabeledEdit5: TLabeledEdit;
+    ComboBox1: TComboBox;
+    Label3: TLabel;
+    RadioGroup1: TRadioGroup;
+    RadioGroup2: TRadioGroup;
   private
     { Private declarations }
   public
