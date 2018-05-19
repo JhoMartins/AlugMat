@@ -11,15 +11,17 @@ uses
   Vcl.ComCtrls, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls;
 
 type
-  TFrmPadraoRel1 = class(TFrmPadraoRel)
+  TFrmRelProduto = class(TFrmPadraoRel)
     GroupBox1: TGroupBox;
     Chb_Marca: TCheckBox;
     Chb_Categoria: TCheckBox;
     Chb_Fornecedor: TCheckBox;
-    edtCodigoDe: TLabeledEdit;
+    edtCodigode: TLabeledEdit;
     edtCodigoAte: TLabeledEdit;
-    edtNomeDe: TLabeledEdit;
-    edtNomeAte: TLabeledEdit;
+    edtDescricaoDe: TLabeledEdit;
+    edtDescricaoAte: TLabeledEdit;
+    RadioGroup1: TRadioGroup;
+    procedure btn_imprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -27,10 +29,74 @@ type
   end;
 
 var
-  FrmPadraoRel1: TFrmPadraoRel1;
+  FrmRelProduto: TFrmRelProduto;
 
 implementation
 
 {$R *.dfm}
+
+procedure TFrmRelProduto.btn_imprimirClick(Sender: TObject);
+var StrLiga: String;
+begin
+  inherited;
+  StrLiga:= 'where ';
+  FDQuery1.CLose;
+  with FDQuery1.SQL do
+  begin
+    Clear;
+    add('SELECT p.id, p.descricao, P.cd_interno, p.status, p.disponivel, p.valor_diaria, m.descricao, c.descricao, f.razao_social '+
+   'FROM produto p INNER JOIN marca m on m.id = p.id'+
+   ' INNER JOIN categoria c on c.id = p.id'+
+   ' INNER JOIN fornecedor f on f.id = p.id ');
+    if edtCodigode.Text <> '' then
+    try
+      StrToInt (edtCodigode.Text);
+      Add(StrLiga+'ID >= '''+edtCodigode.Text+'''');
+      StrLiga:= 'and ';
+    except
+    on EconvertError do;
+    end;
+    if edtCodigoAte.Text <> '' then
+    try
+    StrToInt(EdtCodigoDe.Text);
+    Add(StrLiga+'ID <= '''+edtCodigoAte.Text+'''');
+    StrLiga:='and ';
+    except
+    on EConvertError do;
+    end;
+    if edtDescricaoDe.Text <> '' then
+    begin
+    Add(StrLiga+'DESCRICAO >= '''+edtDescricaoDe.Text+'''');
+    StrLiga:='and ';
+    end;
+    if edtDescricaoAte.Text <> '' then
+    begin
+      Add(StrLiga+'DESCRICAO <= '''+edtDescricaoAte.Text+'zzz''');
+      Strliga:= 'and ';
+    end;
+    if Chb_Marca.Checked = true then
+    begin
+      add(StrLiga+'M.DESCRICAO = '+#39+'M.ID'+#39);
+      strliga:='and ';
+    end;
+    if Chb_Categoria.Checked = true then
+    begin
+      add(strLiga+'C.DESCRICAO = '+#39+'C.ID'+#39);
+      Strliga:='and ';
+    end;
+      if Chb_Fornecedor.Checked = true then
+    begin
+      add(strLiga+'F.NOME_FANTASIA = '+#39+'F.ID'+#39);
+      Strliga:='and ';
+    end;
+    case RadioGroup1.ItemIndex of
+    0: add(' order by ID');
+    1: add(' order by DESCRICAO');
+    end;
+
+  end;
+  FDQuery1.Open();
+  frxReport1.ShowReport();
+end;
 
 end.
