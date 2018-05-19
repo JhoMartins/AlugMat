@@ -1,4 +1,4 @@
-unit UntRelProduto;
+unit UnitRelProdutos;
 
 interface
 
@@ -11,15 +11,7 @@ uses
   Vcl.ComCtrls, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls;
 
 type
-  TFrmPadraoRel1 = class(TFrmPadraoRel)
-    GroupBox1: TGroupBox;
-    Chb_Marca: TCheckBox;
-    Chb_Categoria: TCheckBox;
-    Chb_Fornecedor: TCheckBox;
-    edtCodigoDe: TLabeledEdit;
-    edtCodigoAte: TLabeledEdit;
-    edtNomeDe: TLabeledEdit;
-    edtNomeAte: TLabeledEdit;
+  TFrmRelProdutos = class(TFrmPadraoRel)
   private
     { Private declarations }
   public
@@ -27,7 +19,7 @@ type
   end;
 
 var
-  FrmPadraoRel1: TFrmPadraoRel1;
+  FrmRelProdutos: TFrmRelProdutos;
 
 implementation
 

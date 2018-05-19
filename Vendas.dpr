@@ -21,7 +21,8 @@ uses
   UntPadraoRel in 'UntPadrao\UntPadraoRel.pas' {FrmPadraoRel},
   UntRelAluguel in 'UntRelatorio\UntRelAluguel.pas' {FrmRelAluguel},
   UntRelCategorias in 'UntRelatorio\UntRelCategorias.pas' {FrmRelCategorias},
-  UntRelFornecedores in 'UntRelatorio\UntRelFornecedores.pas' {FrmRelFornecedores};
+  UntRelFornecedores in 'UntRelatorio\UntRelFornecedores.pas' {FrmRelFornecedores},
+  UnitRelProdutos in 'UntRelatorio\UnitRelProdutos.pas' {FrmRelProdutos};
 
 {$R *.res}
 
@@ -41,5 +42,6 @@ begin
   Application.CreateForm(TFrmRelAluguel, FrmRelAluguel);
   Application.CreateForm(TFrmRelCategorias, FrmRelCategorias);
   Application.CreateForm(TFrmRelFornecedores, FrmRelFornecedores);
+  Application.CreateForm(TFrmRelProdutos, FrmRelProdutos);
   Application.Run;
 end.

@@ -16,6 +16,14 @@ inherited FrmRelAluguel: TFrmRelAluguel
             end>
         end
       end
+      inherited PageHeader1: TfrxPageHeader
+        inherited Memo4: TfrxMemoView
+          Top = 30.236240000000000000
+        end
+        inherited Memo5: TfrxMemoView
+          Top = 117.165430000000000000
+        end
+      end
     end
   end
 end
