@@ -83,6 +83,12 @@ begin
     if cbEstado.ItemIndex <> -1 then
     begin
       Add(StrLiga + 'estado = ''' + cbEstado.Text + '''');
+      StrLiga := 'and ';
+    end;
+
+    case RadioGroup1.ItemIndex of
+      0: Add(StrLiga + 'status = ''S''');
+      1: Add(StrLiga + 'status = ''N''');
     end;
 
 
