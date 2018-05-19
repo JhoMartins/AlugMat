@@ -8,6 +8,7 @@ inherited FrmRelCategorias: TFrmRelCategorias
   TextHeight = 13
   inherited Panel1: TPanel
     Width = 342
+    ExplicitWidth = 342
     inherited Label1: TLabel
       Width = 279
       Caption = 'Relat'#243'rio de Categorias'
@@ -32,41 +33,7 @@ inherited FrmRelCategorias: TFrmRelCategorias
     ExplicitLeft = 236
     ExplicitTop = 264
   end
-  inherited StatusBar1: TStatusBar
-    Top = 308
-    Width = 342
-  end
-  object edtCodigoDe: TLabeledEdit [4]
-    Left = 15
-    Top = 64
-    Width = 66
-    Height = 21
-    EditLabel.Width = 30
-    EditLabel.Height = 13
-    EditLabel.Caption = 'ID de:'
-    TabOrder = 4
-  end
-  object edtCodigoAte: TLabeledEdit [5]
-    Left = 103
-    Top = 64
-    Width = 66
-    Height = 21
-    EditLabel.Width = 57
-    EditLabel.Height = 13
-    EditLabel.Caption = 'C'#243'digo At'#233':'
-    TabOrder = 5
-  end
-  object edtDescDe: TLabeledEdit [6]
-    Left = 15
-    Top = 112
-    Width = 311
-    Height = 21
-    EditLabel.Width = 65
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Descri'#231#227'o de:'
-    TabOrder = 6
-  end
-  object edtDescAte: TLabeledEdit [7]
+  object edtDescAte: TLabeledEdit [3]
     Left = 15
     Top = 160
     Width = 311
@@ -76,7 +43,7 @@ inherited FrmRelCategorias: TFrmRelCategorias
     EditLabel.Caption = 'Descri'#231#227'o at'#233':'
     TabOrder = 7
   end
-  object RadioGroup1: TRadioGroup [8]
+  object RadioGroup1: TRadioGroup [4]
     Left = 15
     Top = 187
     Width = 311
@@ -87,6 +54,42 @@ inherited FrmRelCategorias: TFrmRelCategorias
       'ID'
       'Nome')
     TabOrder = 8
+  end
+  object edtDescDe: TLabeledEdit [5]
+    Left = 15
+    Top = 112
+    Width = 311
+    Height = 21
+    EditLabel.Width = 65
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Descri'#231#227'o de:'
+    TabOrder = 6
+  end
+  object edtCodigoAte: TLabeledEdit [6]
+    Left = 103
+    Top = 64
+    Width = 66
+    Height = 21
+    EditLabel.Width = 35
+    EditLabel.Height = 13
+    EditLabel.Caption = 'ID At'#233':'
+    TabOrder = 5
+  end
+  object edtCodigoDe: TLabeledEdit [7]
+    Left = 15
+    Top = 64
+    Width = 66
+    Height = 21
+    EditLabel.Width = 30
+    EditLabel.Height = 13
+    EditLabel.Caption = 'ID de:'
+    TabOrder = 4
+  end
+  inherited StatusBar1: TStatusBar
+    Top = 308
+    Width = 342
+    ExplicitTop = 308
+    ExplicitWidth = 342
   end
   inherited FDQuery1: TFDQuery
     Active = True
@@ -184,9 +187,6 @@ inherited FrmRelCategorias: TFrmRelCategorias
         Height = 124.724490000000000000
         inherited Memo3: TfrxMemoView
           Width = 340.157700000000000000
-        end
-        inherited Memo4: TfrxMemoView
-          Top = 30.236240000000000000
         end
         inherited Memo5: TfrxMemoView
           Top = 102.047310000000000000

@@ -31,13 +31,7 @@ inherited FrmRelFornecedores: TFrmRelFornecedores
     Top = 304
     ExplicitTop = 304
   end
-  inherited btn_imprimir: TBitBtn
-    Left = 420
-    Top = 304
-    ExplicitLeft = 420
-    ExplicitTop = 304
-  end
-  object LabeledEdit5: TLabeledEdit [4]
+  object edtCidade: TLabeledEdit [3]
     Left = 8
     Top = 208
     Width = 394
@@ -47,13 +41,13 @@ inherited FrmRelFornecedores: TFrmRelFornecedores
     EditLabel.Caption = 'Cidade:'
     TabOrder = 8
   end
-  object ComboBox1: TComboBox [5]
+  object cbEstado: TComboBox [4]
     Left = 418
     Top = 208
     Width = 90
     Height = 21
     TabOrder = 9
-    Text = 'ComboBox1'
+    Text = 'cbEstado'
     Items.Strings = (
       'AC'
       'AL'
@@ -83,7 +77,7 @@ inherited FrmRelFornecedores: TFrmRelFornecedores
       'SE'
       'TO')
   end
-  object RadioGroup1: TRadioGroup [6]
+  object RadioGroup1: TRadioGroup [5]
     Left = 8
     Top = 235
     Width = 185
@@ -95,7 +89,47 @@ inherited FrmRelFornecedores: TFrmRelFornecedores
       'Desabilitado')
     TabOrder = 10
   end
-  object RadioGroup2: TRadioGroup [7]
+  object edtIdDe: TLabeledEdit [6]
+    Left = 8
+    Top = 64
+    Width = 73
+    Height = 21
+    EditLabel.Width = 29
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Id de:'
+    TabOrder = 4
+  end
+  object edtIdAte: TLabeledEdit [7]
+    Left = 95
+    Top = 64
+    Width = 73
+    Height = 21
+    EditLabel.Width = 33
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Id at'#233':'
+    TabOrder = 5
+  end
+  object edtNDantasiaDe: TLabeledEdit [8]
+    Left = 8
+    Top = 112
+    Width = 500
+    Height = 21
+    EditLabel.Width = 90
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Nome Fantasia de:'
+    TabOrder = 6
+  end
+  object edtNFantasiaAte: TLabeledEdit [9]
+    Left = 8
+    Top = 160
+    Width = 500
+    Height = 21
+    EditLabel.Width = 94
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Nome Fantasia at'#233':'
+    TabOrder = 7
+  end
+  object RadioGroup2: TRadioGroup [10]
     Left = 199
     Top = 235
     Width = 311
@@ -109,45 +143,12 @@ inherited FrmRelFornecedores: TFrmRelFornecedores
       'Estado')
     TabOrder = 11
   end
-  object LabeledEdit4: TLabeledEdit [8]
-    Left = 8
-    Top = 160
-    Width = 500
-    Height = 21
-    EditLabel.Width = 94
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Nome Fantasia at'#233':'
-    TabOrder = 7
-  end
-  object LabeledEdit3: TLabeledEdit [9]
-    Left = 8
-    Top = 112
-    Width = 500
-    Height = 21
-    EditLabel.Width = 90
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Nome Fantasia de:'
-    TabOrder = 6
-  end
-  object edtIdAte: TLabeledEdit [10]
-    Left = 95
-    Top = 64
-    Width = 73
-    Height = 21
-    EditLabel.Width = 33
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Id at'#233':'
-    TabOrder = 5
-  end
-  object edtIdDe: TLabeledEdit [11]
-    Left = 8
-    Top = 64
-    Width = 73
-    Height = 21
-    EditLabel.Width = 29
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Id de:'
-    TabOrder = 4
+  inherited btn_imprimir: TBitBtn
+    Left = 420
+    Top = 304
+    OnClick = btn_imprimirClick
+    ExplicitLeft = 420
+    ExplicitTop = 304
   end
   inherited StatusBar1: TStatusBar
     Top = 358
@@ -9397,14 +9398,6 @@ inherited FrmRelFornecedores: TFrmRelFornecedores
             end
             item
             end>
-        end
-      end
-      inherited PageHeader1: TfrxPageHeader
-        inherited Memo4: TfrxMemoView
-          Top = 30.236240000000000000
-        end
-        inherited Memo5: TfrxMemoView
-          Top = 117.165430000000000000
         end
       end
       object MasterData1: TfrxMasterData
