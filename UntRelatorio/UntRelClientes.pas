@@ -12,6 +12,16 @@ uses
 
 type
   TFrmRelClientes = class(TFrmPadraoRel)
+    edtIDDe: TLabeledEdit;
+    edtIDAte: TLabeledEdit;
+    edtNomeDe: TLabeledEdit;
+    edtNomeAte: TLabeledEdit;
+    edtCidade: TLabeledEdit;
+    cbEstado: TComboBox;
+    RadioGroup1: TRadioGroup;
+    RadioGroup2: TRadioGroup;
+    Label3: TLabel;
+    RadioGroup3: TRadioGroup;
   private
     { Private declarations }
   public
