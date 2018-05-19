@@ -185,6 +185,10 @@
             <Form>FrmRelProdutos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="UntRelatorio\UntRelClientes.pas">
+            <Form>FrmRelClientes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <None Include="Vendas.dpr"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>

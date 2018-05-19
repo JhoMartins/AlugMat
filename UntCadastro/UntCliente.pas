@@ -93,6 +93,7 @@ type
     procedure Datadeincluso1Click(Sender: TObject);
     procedure Datadealterao1Click(Sender: TObject);
     procedure btn_sairClick(Sender: TObject);
+    procedure btn_imprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -106,7 +107,7 @@ implementation
 
 {$R *.dfm}
 
-uses UntDM, UntMenuPrincipal, UntPesqString, UntPesqRadio, UntAlugueis;
+uses UntDM, UntMenuPrincipal, UntPesqString, UntPesqRadio, UntAlugueis, UntRelClientes;
 
 procedure TFrmCliente.btn_anteriorClick(Sender: TObject);
 begin
@@ -263,6 +264,14 @@ begin
     lbCPFCNPJ.Caption := '* CPF/CNPJ';
     lbRGIE.Caption := '* RG/IE:';
   end;
+end;
+
+procedure TFrmCliente.btn_imprimirClick(Sender: TObject);
+begin
+  inherited;
+  Application.CreateForm(TFrmRelClientes, FrmRelClientes);
+  FrmRelClientes.ShowModal;
+  FrmRelClientes.Free;
 end;
 
 procedure TFrmCliente.btn_inserirClick(Sender: TObject);
