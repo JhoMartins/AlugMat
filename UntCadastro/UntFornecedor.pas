@@ -73,6 +73,7 @@ type
     procedure btn_salvarClick(Sender: TObject);
     procedure NomeFantasia1Click(Sender: TObject);
     procedure CNPJ1Click(Sender: TObject);
+    procedure btn_imprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -86,7 +87,15 @@ implementation
 
 {$R *.dfm}
 
-uses UntMenuPrincipal;
+uses UntMenuPrincipal, UntRelFornecedores;
+
+procedure TFrmFornecedor.btn_imprimirClick(Sender: TObject);
+begin
+  inherited;
+  Application.CreateForm(TFrmRelFornecedores, FrmRelFornecedores);
+  FrmRelFornecedores.ShowModal;
+  FrmRelFornecedores.Free;
+end;
 
 procedure TFrmFornecedor.btn_salvarClick(Sender: TObject);
 begin
