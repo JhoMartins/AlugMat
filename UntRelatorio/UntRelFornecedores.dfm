@@ -47,7 +47,6 @@ inherited FrmRelFornecedores: TFrmRelFornecedores
     Width = 90
     Height = 21
     TabOrder = 9
-    Text = 'cbEstado'
     Items.Strings = (
       'AC'
       'AL'

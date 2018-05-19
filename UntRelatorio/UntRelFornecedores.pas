@@ -80,8 +80,13 @@ begin
       StrLiga:= 'and ';
     end;
 
+    if cbEstado.ItemIndex <> -1 then
+    begin
+      Add(StrLiga + 'estado = ''' + cbEstado.Text + '''');
+    end;
 
-    case RadioGroup1.ItemIndex of
+
+    case RadioGroup2.ItemIndex of
       0: Add(' ORDER BY id');
       1: Add(' ORDER BY nome_fantasia');
       2: Add(' ORDER BY cidade');
