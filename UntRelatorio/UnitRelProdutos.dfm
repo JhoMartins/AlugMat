@@ -1,8 +1,13 @@
 inherited FrmRelProdutos: TFrmRelProdutos
   Caption = 'Impress'#227'o do Relat'#243'rio de Produtos'
+  ClientHeight = 504
+  ClientWidth = 432
+  ExplicitWidth = 438
+  ExplicitHeight = 533
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
+    Width = 432
     inherited Label1: TLabel
       Width = 260
       Caption = 'Relat'#243'rio de Produtos'
@@ -13,6 +18,132 @@ inherited FrmRelProdutos: TFrmRelProdutos
       Caption = 'Relat'#243'rio de Produtos'
       ExplicitWidth = 260
     end
+  end
+  inherited btn_cancelar: TBitBtn
+    Left = 240
+    Top = 408
+    ExplicitLeft = 240
+    ExplicitTop = 408
+  end
+  inherited btn_imprimir: TBitBtn
+    Left = 336
+    Top = 408
+    OnClick = btn_imprimirClick
+    ExplicitLeft = 336
+    ExplicitTop = 408
+  end
+  inherited StatusBar1: TStatusBar
+    Top = 485
+    Width = 432
+  end
+  object GroupBox1: TGroupBox [4]
+    Left = 8
+    Top = 257
+    Width = 418
+    Height = 65
+    Caption = 'Cadastro'
+    TabOrder = 4
+  end
+  object Chb_Marca: TCheckBox [5]
+    Left = 24
+    Top = 312
+    Width = 97
+    Height = 17
+    Caption = 'Marca'
+    TabOrder = 5
+  end
+  object Chb_Categoria: TCheckBox [6]
+    Left = 159
+    Top = 312
+    Width = 97
+    Height = 17
+    Caption = 'Categoria'
+    TabOrder = 6
+  end
+  object Chb_Fornecedor: TCheckBox [7]
+    Left = 310
+    Top = 312
+    Width = 97
+    Height = 17
+    Caption = 'Fornecedor'
+    TabOrder = 7
+  end
+  object edtIDde: TLabeledEdit [8]
+    Left = 8
+    Top = 64
+    Width = 33
+    Height = 21
+    EditLabel.Width = 30
+    EditLabel.Height = 13
+    EditLabel.Caption = 'ID de:'
+    TabOrder = 8
+  end
+  object EdtIDate: TLabeledEdit [9]
+    Left = 159
+    Top = 64
+    Width = 42
+    Height = 21
+    EditLabel.Width = 34
+    EditLabel.Height = 13
+    EditLabel.Caption = 'ID at'#233':'
+    TabOrder = 9
+  end
+  object edtDescricaoDe: TLabeledEdit [10]
+    Left = 8
+    Top = 107
+    Width = 419
+    Height = 21
+    EditLabel.Width = 65
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Descri'#231#227'o de:'
+    TabOrder = 10
+  end
+  object edtDescricaoAte: TLabeledEdit [11]
+    Left = 8
+    Top = 158
+    Width = 418
+    Height = 21
+    EditLabel.Width = 65
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Descri'#231#227'o at'#233
+    TabOrder = 11
+  end
+  object RadioGroup1: TRadioGroup [12]
+    Left = 8
+    Top = 328
+    Width = 418
+    Height = 41
+    Caption = 'Ordena'#231#227'o'
+    Columns = 3
+    Items.Strings = (
+      'ID'
+      'Descri'#231#227'o'
+      'Valor da Di'#225'ria')
+    TabOrder = 12
+  end
+  object RadioGroup2: TRadioGroup [13]
+    Left = 8
+    Top = 200
+    Width = 193
+    Height = 41
+    Caption = 'Status'
+    Columns = 2
+    Items.Strings = (
+      'Habilitado'
+      'Desabilitado')
+    TabOrder = 13
+  end
+  object RadioGroup3: TRadioGroup [14]
+    Left = 216
+    Top = 200
+    Width = 208
+    Height = 41
+    Caption = 'Produto'
+    Columns = 2
+    Items.Strings = (
+      'Dispon'#237'vel'
+      'Indispon'#237'vel')
+    TabOrder = 14
   end
   inherited FDQuery1: TFDQuery
     Active = True
@@ -25,8 +156,13 @@ inherited FrmRelProdutos: TFrmRelProdutos
       'INNER JOIN marca m on p.cd_marca = m.id'
       'INNER JOIN categoria c on p.cd_categoria = c.id'
       'INNER JOIN fornecedor f on p.cd_fornecedor = f.id')
+    Top = 400
+  end
+  inherited frxDBDataset1: TfrxDBDataset
+    Top = 400
   end
   inherited frxReport1: TfrxReport
+    Top = 400
     Datasets = <
       item
         DataSet = frxDBDataset1
@@ -6183,14 +6319,6 @@ inherited FrmRelProdutos: TFrmRelProdutos
             end
             item
             end>
-        end
-      end
-      inherited PageHeader1: TfrxPageHeader
-        inherited Memo4: TfrxMemoView
-          Top = 30.236240000000000000
-        end
-        inherited Memo5: TfrxMemoView
-          Top = 117.165430000000000000
         end
       end
       object MasterData1: TfrxMasterData

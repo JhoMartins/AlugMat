@@ -72,6 +72,7 @@ type
     procedure btn_inserirClick(Sender: TObject);
     procedure btn_editarClick(Sender: TObject);
     procedure btn_cancelarClick(Sender: TObject);
+    procedure btn_imprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -86,7 +87,7 @@ implementation
 {$R *.dfm}
 
 uses UntDM, UntMenuPrincipal, UntUsuario, {UntFornecedor,} UntPesqData,
-  UntPesqString, UntPesqRadio, UntAlugueis;
+  UntPesqString, UntPesqRadio, UntAlugueis, UnitRelProdutos;
 
 procedure TFrmProduto.btn_cancelarClick(Sender: TObject);
 begin
@@ -100,6 +101,14 @@ begin
   inherited;
 
   dbCaracteristicas.ReadOnly := false;
+end;
+
+procedure TFrmProduto.btn_imprimirClick(Sender: TObject);
+begin
+  inherited;
+  Application.CreateForm(TFrmRelProdutos, FrmRelProdutos);
+  FrmRelProdutos.ShowModal;
+  FrmRelProdutos.Free;
 end;
 
 procedure TFrmProduto.btn_inserirClick(Sender: TObject);
