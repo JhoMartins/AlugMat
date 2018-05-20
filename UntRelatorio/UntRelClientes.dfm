@@ -3,7 +3,7 @@ inherited FrmRelClientes: TFrmRelClientes
   ClientHeight = 420
   ClientWidth = 433
   ExplicitWidth = 439
-  ExplicitHeight = 449
+  ExplicitHeight = 455
   PixelsPerInch = 96
   TextHeight = 13
   object Label3: TLabel [0]
@@ -15,7 +15,7 @@ inherited FrmRelClientes: TFrmRelClientes
   end
   inherited Panel1: TPanel
     Width = 433
-    ExplicitWidth = 435
+    ExplicitWidth = 433
     inherited Label1: TLabel
       Width = 247
       Caption = 'Relat'#243'rio de Clientes'
@@ -33,14 +33,7 @@ inherited FrmRelClientes: TFrmRelClientes
     ExplicitLeft = 239
     ExplicitTop = 362
   end
-  inherited btn_imprimir: TBitBtn
-    Left = 335
-    Top = 362
-    OnClick = btn_imprimirClick
-    ExplicitLeft = 335
-    ExplicitTop = 362
-  end
-  object edtCidade: TLabeledEdit [4]
+  object edtCidade: TLabeledEdit [3]
     Left = 8
     Top = 208
     Width = 321
@@ -50,14 +43,14 @@ inherited FrmRelClientes: TFrmRelClientes
     EditLabel.Caption = 'Cidade'
     TabOrder = 8
   end
-  object cbEstado: TComboBox [5]
+  object cbEstado: TComboBox [4]
     Left = 335
     Top = 208
     Width = 90
     Height = 21
     TabOrder = 9
   end
-  object RadioGroup1: TRadioGroup [6]
+  object RadioGroup1: TRadioGroup [5]
     Left = 8
     Top = 235
     Width = 201
@@ -69,7 +62,7 @@ inherited FrmRelClientes: TFrmRelClientes
       'Jur'#237'dica')
     TabOrder = 10
   end
-  object RadioGroup2: TRadioGroup [7]
+  object RadioGroup2: TRadioGroup [6]
     Left = 224
     Top = 235
     Width = 201
@@ -81,7 +74,47 @@ inherited FrmRelClientes: TFrmRelClientes
       'Desabilitado')
     TabOrder = 11
   end
-  object RadioGroup3: TRadioGroup [8]
+  object edtIDDe: TLabeledEdit [7]
+    Left = 8
+    Top = 64
+    Width = 65
+    Height = 21
+    EditLabel.Width = 30
+    EditLabel.Height = 13
+    EditLabel.Caption = 'ID de:'
+    TabOrder = 4
+  end
+  object edtIDAte: TLabeledEdit [8]
+    Left = 96
+    Top = 64
+    Width = 65
+    Height = 21
+    EditLabel.Width = 34
+    EditLabel.Height = 13
+    EditLabel.Caption = 'ID at'#233':'
+    TabOrder = 5
+  end
+  object edtNomeDe: TLabeledEdit [9]
+    Left = 8
+    Top = 112
+    Width = 417
+    Height = 21
+    EditLabel.Width = 46
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Nome de:'
+    TabOrder = 6
+  end
+  object edtNomeAte: TLabeledEdit [10]
+    Left = 8
+    Top = 160
+    Width = 417
+    Height = 21
+    EditLabel.Width = 50
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Nome at'#233':'
+    TabOrder = 7
+  end
+  object RadioGroup3: TRadioGroup [11]
     Left = 8
     Top = 295
     Width = 417
@@ -95,63 +128,24 @@ inherited FrmRelClientes: TFrmRelClientes
       'Estado')
     TabOrder = 12
   end
-  object edtNomeAte: TLabeledEdit [9]
-    Left = 8
-    Top = 160
-    Width = 417
-    Height = 21
-    EditLabel.Width = 50
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Nome at'#233':'
-    TabOrder = 7
-  end
-  object edtNomeDe: TLabeledEdit [10]
-    Left = 8
-    Top = 112
-    Width = 417
-    Height = 21
-    EditLabel.Width = 46
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Nome de:'
-    TabOrder = 6
-  end
-  object edtIDAte: TLabeledEdit [11]
-    Left = 96
-    Top = 64
-    Width = 65
-    Height = 21
-    EditLabel.Width = 34
-    EditLabel.Height = 13
-    EditLabel.Caption = 'ID at'#233':'
-    TabOrder = 5
-  end
-  object edtIDDe: TLabeledEdit [12]
-    Left = 8
-    Top = 64
-    Width = 65
-    Height = 21
-    EditLabel.Width = 30
-    EditLabel.Height = 13
-    EditLabel.Caption = 'ID de:'
-    TabOrder = 4
+  inherited btn_imprimir: TBitBtn
+    Left = 335
+    Top = 362
+    OnClick = btn_imprimirClick
+    ExplicitLeft = 335
+    ExplicitTop = 362
   end
   inherited StatusBar1: TStatusBar
     Top = 401
     Width = 433
     ExplicitTop = 401
-    ExplicitWidth = 435
+    ExplicitWidth = 433
   end
   inherited FDQuery1: TFDQuery
     SQL.Strings = (
-      'SELECT id, nome, cidade, estado, celular, status,'
-      '(CASE'
-      '  WHEN TIPO_PESSOA = '#39'J'#39' THEN '#39'PJ'#39
-      '  ELSE '#39'PF'#39
-      '  END) AS TIPO_PESSOA,'
-      '(CASE'
-      '  WHEN CPF IS NULL THEN CNPJ'
-      '  ELSE CPF'
-      '  END) AS CPF_CNPJ'
+      
+        'SELECT id, nome, cidade, estado, celular, status, tipo_pessoa, c' +
+        'pf, cnpj'
       'FROM cliente')
     Left = 48
     Top = 360
@@ -1714,9 +1708,6 @@ inherited FrmRelClientes: TFrmRelClientes
         end
       end
       inherited PageHeader1: TfrxPageHeader
-        inherited Memo4: TfrxMemoView
-          Top = 30.236240000000000000
-        end
         inherited Memo5: TfrxMemoView
           Top = 109.606370000000000000
         end
