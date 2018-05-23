@@ -43,6 +43,7 @@ type
     Button7: TButton;
     Button8: TButton;
     Button9: TButton;
+    Button10: TButton;
     procedure btn_usuarioClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -61,6 +62,7 @@ type
     procedure Button7Click(Sender: TObject);
     procedure Button8Click(Sender: TObject);
     procedure Button9Click(Sender: TObject);
+    procedure Button10Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -75,7 +77,7 @@ implementation
 {$R *.dfm}
 
 uses UntUsuario, UntDM, UntLogin, UntPerfil, UntCliente, UntMarca, UntCategoria,
-  UntProduto, UntAlugueis, UntDevolucao, UntFornecedor;
+  UntProduto, UntAlugueis, UntDevolucao, UntFornecedor, UntIEProduto;
 
 procedure TFrmMenuPrincipal.Action10Execute(Sender: TObject);
 begin
@@ -120,6 +122,13 @@ end;
 procedure TFrmMenuPrincipal.btn_usuarioClick(Sender: TObject);
 begin
   FrmUsuario.ShowModal;
+end;
+
+procedure TFrmMenuPrincipal.Button10Click(Sender: TObject);
+begin
+  Application.CreateForm(TFrmIEProduto, FrmIEProduto);
+  FrmIEProduto.ShowModal;
+  FrmIEProduto.Free;
 end;
 
 procedure TFrmMenuPrincipal.Button1Click(Sender: TObject);
