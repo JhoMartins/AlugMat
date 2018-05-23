@@ -1,7 +1,7 @@
 object DM: TDM
   OldCreateOrder = False
-  Height = 432
-  Width = 560
+  Height = 183
+  Width = 222
   object FDConnection1: TFDConnection
     Params.Strings = (
       'SERVER=Cris-PC\SQLServer'
@@ -14,18 +14,18 @@ object DM: TDM
     Connected = True
     LoginPrompt = False
     Transaction = FDTransaction1
-    Left = 136
-    Top = 80
+    Left = 40
+    Top = 16
   end
   object FDTransaction1: TFDTransaction
     Connection = FDConnection1
-    Left = 248
-    Top = 80
+    Left = 152
+    Top = 16
   end
   object FDGUIxWaitCursor1: TFDGUIxWaitCursor
     Provider = 'Forms'
-    Left = 192
-    Top = 168
+    Left = 96
+    Top = 64
   end
   object FDConWeb: TFDConnection
     Params.Strings = (
@@ -35,17 +35,17 @@ object DM: TDM
       'DriverID=MySQL')
     Connected = True
     LoginPrompt = False
-    Left = 96
-    Top = 280
+    Left = 24
+    Top = 120
   end
   object FDPhysWeb: TFDPhysMySQLDriverLink
     VendorLib = 'C:\Projetos_Delphi\PROJETO FINAL\AlugMat\banco\libmysql.dll'
-    Left = 168
-    Top = 280
+    Left = 96
+    Top = 120
   end
   object FDQuery1: TFDQuery
     Connection = FDConnection1
-    Left = 240
-    Top = 280
+    Left = 168
+    Top = 120
   end
 end

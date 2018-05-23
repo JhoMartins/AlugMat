@@ -1,7 +1,10 @@
 inherited FrmIEProduto: TFrmIEProduto
-  Caption = 'FrmIEProduto'
+  Caption = 'Importa'#231#227'o e Exporta'#231#227'o de Produtos'
   PixelsPerInch = 120
   TextHeight = 16
+  inherited Panel1: TPanel
+    Caption = 'Importa'#231#227'o e Exporta'#231#227'o de Produtos'
+  end
   inherited btnImportar: TBitBtn
     OnClick = btnImportarClick
   end
@@ -96,6 +99,7 @@ inherited FrmIEProduto: TFrmIEProduto
     object FDTWebID: TFDAutoIncField
       FieldName = 'ID'
       Origin = 'ID'
+      ReadOnly = True
     end
     object FDTWebDESCRICAO: TStringField
       FieldName = 'DESCRICAO'
