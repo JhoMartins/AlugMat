@@ -120,9 +120,18 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     Top = 144
     Width = 75
     Height = 25
-    Caption = 'Button10'
+    Caption = 'IE Produto'
     TabOrder = 10
     OnClick = Button10Click
+  end
+  object Button11: TButton
+    Left = 144
+    Top = 175
+    Width = 75
+    Height = 25
+    Caption = 'IE Usu'#225'rio'
+    TabOrder = 11
+    OnClick = Button11Click
   end
   object QueryLogin: TFDQuery
     Connection = DM.FDConnection1
@@ -247,7 +256,7 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     Left = 336
     Top = 360
     Bitmap = {
-      494C010104000800400010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000800440010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

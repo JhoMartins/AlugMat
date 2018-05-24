@@ -25,7 +25,8 @@ uses
   UnitRelProdutos in 'UntRelatorio\UnitRelProdutos.pas' {FrmRelProdutos},
   UntRelClientes in 'UntRelatorio\UntRelClientes.pas' {FrmRelClientes},
   UntPadraoImportacao in 'UntPadrao\UntPadraoImportacao.pas' {FrmPadraoImportacao},
-  UntIEProduto in 'UntImportacao\UntIEProduto.pas' {FrmIEProduto};
+  UntIEProduto in 'UntImportacao\UntIEProduto.pas' {FrmIEProduto},
+  UntIECliente in 'UntImportacao\UntIECliente.pas' {FrmIECliente};
 
 {$R *.res}
 
@@ -49,5 +50,6 @@ begin
   Application.CreateForm(TFrmRelClientes, FrmRelClientes);
   Application.CreateForm(TFrmPadraoImportacao, FrmPadraoImportacao);
   Application.CreateForm(TFrmIEProduto, FrmIEProduto);
+  Application.CreateForm(TFrmIECliente, FrmIECliente);
   Application.Run;
 end.
