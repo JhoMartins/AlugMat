@@ -19,14 +19,14 @@ uses
   UntDevolucao in 'UntCadastro\UntDevolucao.pas' {FrmDevolucao},
   UntFornecedor in 'UntCadastro\UntFornecedor.pas' {FrmFornecedor},
   UntPadraoRel in 'UntPadrao\UntPadraoRel.pas' {FrmPadraoRel},
-  UntRelAluguel in 'UntRelatorio\UntRelAluguel.pas' {FrmRelAluguel},
   UntRelCategorias in 'UntRelatorio\UntRelCategorias.pas' {FrmRelCategorias},
   UntRelFornecedores in 'UntRelatorio\UntRelFornecedores.pas' {FrmRelFornecedores},
   UnitRelProdutos in 'UntRelatorio\UnitRelProdutos.pas' {FrmRelProdutos},
   UntRelClientes in 'UntRelatorio\UntRelClientes.pas' {FrmRelClientes},
   UntPadraoImportacao in 'UntPadrao\UntPadraoImportacao.pas' {FrmPadraoImportacao},
   UntIEProduto in 'UntImportacao\UntIEProduto.pas' {FrmIEProduto},
-  UntIECliente in 'UntImportacao\UntIECliente.pas' {FrmIECliente};
+  UntIECliente in 'UntImportacao\UntIECliente.pas' {FrmIECliente},
+  UntRelAluguel in 'UntRelatorio\UntRelAluguel.pas' {FrmRelAluguel};
 
 {$R *.res}
 
@@ -43,13 +43,6 @@ begin
   Application.CreateForm(TFrmAluguel, FrmAluguel);
   Application.CreateForm(TFrmFornecedor, FrmFornecedor);
   Application.CreateForm(TFrmPadraoRel, FrmPadraoRel);
-  Application.CreateForm(TFrmRelAluguel, FrmRelAluguel);
-  Application.CreateForm(TFrmRelCategorias, FrmRelCategorias);
-  Application.CreateForm(TFrmRelFornecedores, FrmRelFornecedores);
-  Application.CreateForm(TFrmRelProdutos, FrmRelProdutos);
-  Application.CreateForm(TFrmRelClientes, FrmRelClientes);
   Application.CreateForm(TFrmPadraoImportacao, FrmPadraoImportacao);
-  Application.CreateForm(TFrmIEProduto, FrmIEProduto);
-  Application.CreateForm(TFrmIECliente, FrmIECliente);
   Application.Run;
 end.
