@@ -33,7 +33,6 @@ object DM: TDM
       'User_Name=root'
       'Server=localhost'
       'DriverID=MySQL')
-    Connected = True
     LoginPrompt = False
     Left = 24
     Top = 120
