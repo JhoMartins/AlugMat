@@ -2,82 +2,18 @@ inherited FrmCategoria: TFrmCategoria
   Caption = 'Manuten'#231#227'o no Cadastro de Categoria'
   ClientHeight = 168
   OnActivate = FormActivate
-  ExplicitHeight = 197
+  ExplicitHeight = 203
   PixelsPerInch = 96
   TextHeight = 13
   inherited ToolBar1: TToolBar
     inherited btn_pesquisa: TToolButton
-      ExplicitWidth = 74
+      ExplicitWidth = 78
     end
     inherited btn_ordenar: TToolButton
-      Left = 74
-      ExplicitLeft = 74
-      ExplicitWidth = 74
-    end
-    inherited Separador1: TToolButton
-      Left = 148
-      ExplicitLeft = 148
-    end
-    inherited btn_primeiro: TToolButton
-      Left = 156
-      ExplicitLeft = 156
-    end
-    inherited btn_anterior: TToolButton
-      Left = 215
-      ExplicitLeft = 215
-    end
-    inherited btn_proximo: TToolButton
-      Left = 274
-      ExplicitLeft = 274
-    end
-    inherited btn_ultimo: TToolButton
-      Left = 333
-      ExplicitLeft = 333
-    end
-    inherited Separador2: TToolButton
-      Left = 392
-      ExplicitLeft = 392
-    end
-    inherited btn_inserir: TToolButton
-      Left = 400
-      ExplicitLeft = 400
-    end
-    inherited btn_editar: TToolButton
-      Left = 459
-      ExplicitLeft = 459
-    end
-    inherited btn_excluir: TToolButton
-      Left = 518
-      ExplicitLeft = 518
-    end
-    inherited Separador3: TToolButton
-      Left = 577
-      ExplicitLeft = 577
-    end
-    inherited btn_salvar: TToolButton
-      Left = 585
-      ExplicitLeft = 585
-    end
-    inherited btn_cancelar: TToolButton
-      Left = 644
-      ExplicitLeft = 644
-    end
-    inherited Separador4: TToolButton
-      Left = 703
-      ExplicitLeft = 703
+      ExplicitWidth = 78
     end
     inherited btn_imprimir: TToolButton
-      Left = 711
       OnClick = btn_imprimirClick
-      ExplicitLeft = 711
-    end
-    inherited Separador5: TToolButton
-      Left = 770
-      ExplicitLeft = 770
-    end
-    inherited btn_sair: TToolButton
-      Left = 778
-      ExplicitLeft = 778
     end
   end
   inherited StatusBar1: TStatusBar
@@ -142,7 +78,7 @@ inherited FrmCategoria: TFrmCategoria
     Left = 441
     Top = 144
     Bitmap = {
-      494C01010D001800440018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800480018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1341,7 +1277,7 @@ inherited FrmCategoria: TFrmCategoria
     Left = 497
     Top = 144
     Bitmap = {
-      494C01010D001800440018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800480018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2540,7 +2476,7 @@ inherited FrmCategoria: TFrmCategoria
     Left = 553
     Top = 144
     Bitmap = {
-      494C01010D001800440018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800480018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -3777,7 +3713,7 @@ inherited FrmCategoria: TFrmCategoria
     Left = 601
     Top = 143
     Bitmap = {
-      494C0101040008003C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000800400010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

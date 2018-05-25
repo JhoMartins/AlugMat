@@ -36,6 +36,7 @@ type
     Label1: TLabel;
     Label2: TLabel;
     StatusBar1: TStatusBar;
+    rbOrdenar: TRadioGroup;
     procedure btn_cancelarClick(Sender: TObject);
     procedure btn_imprimirClick(Sender: TObject);
   private
@@ -169,6 +170,13 @@ begin
 
     //GROUP BY
     Add(' GROUP BY A.ID, A.DATA_INC, A.DATA_ALT, A.STATUS, A.CD_CLIENTE, C.NOME, TIPO_PESSOA, CPF, CNPJ, RG, IE, C.TELEFONE, C.CELULAR, C.CIDADE');
+
+    case rbOrdenar.ItemIndex of
+      0: Add(' ORDER BY A.ID');
+      1: Add(' ORDER BY C.NOME');
+      2: Add(' ORDER BY A.DATA_INC');
+    end;
+
   end;
 
   FDQuery1.Open();

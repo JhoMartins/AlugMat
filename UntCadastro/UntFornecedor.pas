@@ -93,6 +93,8 @@ procedure TFrmFornecedor.btn_imprimirClick(Sender: TObject);
 begin
   inherited;
   Application.CreateForm(TFrmRelFornecedores, FrmRelFornecedores);
+  FrmRelFornecedores.edtIdDe.Text := FDTabelaID.AsString;
+  FrmRelFornecedores.edtIdAte.Text := FDTabelaID.AsString;
   FrmRelFornecedores.ShowModal;
   FrmRelFornecedores.Free;
 end;

@@ -5,7 +5,7 @@ object FrmDevolucao: TFrmDevolucao
   BorderStyle = bsSingle
   Caption = 'Devolu'#231#227'o de Produtos Alugados'
   ClientHeight = 519
-  ClientWidth = 1112
+  ClientWidth = 1067
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,10 +19,11 @@ object FrmDevolucao: TFrmDevolucao
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 1112
+    Width = 1067
     Height = 117
     Align = alTop
     TabOrder = 0
+    ExplicitWidth = 1112
     object gbCliente: TGroupBox
       Left = 179
       Top = 14
@@ -155,14 +156,15 @@ object FrmDevolucao: TFrmDevolucao
   object Panel2: TPanel
     Left = 0
     Top = 117
-    Width = 1112
+    Width = 1067
     Height = 402
     Align = alClient
     TabOrder = 1
+    ExplicitWidth = 1112
     object StatusBar1: TStatusBar
       Left = 1
       Top = 382
-      Width = 1110
+      Width = 1065
       Height = 19
       Panels = <
         item
@@ -177,11 +179,12 @@ object FrmDevolucao: TFrmDevolucao
         item
           Width = 50
         end>
+      ExplicitWidth = 1110
     end
     object grAlugueis: TDBGrid
       Left = 1
       Top = 1
-      Width = 1110
+      Width = 1065
       Height = 340
       Align = alClient
       DataSource = DSProduto
@@ -232,7 +235,7 @@ object FrmDevolucao: TFrmDevolucao
           Title.Font.Height = -13
           Title.Font.Name = 'Tahoma'
           Title.Font.Style = [fsBold]
-          Width = 271
+          Width = 249
           Visible = True
         end
         item
@@ -245,7 +248,7 @@ object FrmDevolucao: TFrmDevolucao
           Title.Font.Height = -13
           Title.Font.Name = 'Tahoma'
           Title.Font.Style = [fsBold]
-          Width = 215
+          Width = 196
           Visible = True
         end
         item
@@ -317,10 +320,11 @@ object FrmDevolucao: TFrmDevolucao
     object Panel3: TPanel
       Left = 1
       Top = 341
-      Width = 1110
+      Width = 1065
       Height = 41
       Align = alBottom
       TabOrder = 2
+      ExplicitWidth = 1110
       object Label12: TLabel
         Left = 25
         Top = 12
@@ -343,7 +347,7 @@ object FrmDevolucao: TFrmDevolucao
         Caption = 'Desconto:'
       end
       object Label15: TLabel
-        Left = 925
+        Left = 881
         Top = 12
         Width = 82
         Height = 16
@@ -380,8 +384,8 @@ object FrmDevolucao: TFrmDevolucao
         OnExit = edDescontoExit
       end
       object edTotal: TDBEdit
-        Left = 1013
-        Top = 13
+        Left = 969
+        Top = 10
         Width = 75
         Height = 22
         DataField = 'TOTAL'
@@ -403,8 +407,8 @@ object FrmDevolucao: TFrmDevolucao
     Transaction = DM.FDTransaction1
     UpdateOptions.UpdateTableName = 'ITENSALUGUEL'
     TableName = 'ITENSALUGUEL'
-    Left = 968
-    Top = 401
+    Left = 712
+    Top = 409
     object FDItensAluguelID: TFDAutoIncField
       FieldName = 'ID'
       Origin = 'ID'
@@ -469,8 +473,8 @@ object FrmDevolucao: TFrmDevolucao
   end
   object DSItensAluguel: TDataSource
     DataSet = FDItensAluguel
-    Left = 1048
-    Top = 401
+    Left = 792
+    Top = 409
   end
   object DSProduto: TDataSource
     DataSet = FDProduto
@@ -645,7 +649,7 @@ object FrmDevolucao: TFrmDevolucao
     Left = 426
     Top = 330
     Bitmap = {
-      494C010104000800280010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101040008002C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -922,8 +926,8 @@ object FrmDevolucao: TFrmDevolucao
     Transaction = DM.FDTransaction1
     UpdateOptions.UpdateTableName = 'ALUGUEL'
     TableName = 'ALUGUEL'
-    Left = 825
-    Top = 401
+    Left = 569
+    Top = 409
     object FDAluguelID: TFDAutoIncField
       FieldName = 'ID'
       Origin = 'ID'
@@ -975,7 +979,7 @@ object FrmDevolucao: TFrmDevolucao
   end
   object DSAluguel: TDataSource
     DataSet = FDAluguel
-    Left = 889
-    Top = 401
+    Left = 633
+    Top = 409
   end
 end

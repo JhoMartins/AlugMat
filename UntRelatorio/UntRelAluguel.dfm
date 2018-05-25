@@ -2,7 +2,7 @@ object FrmRelAluguel: TFrmRelAluguel
   Left = 0
   Top = 0
   Caption = 'FrmRelAluguel'
-  ClientHeight = 288
+  ClientHeight = 453
   ClientWidth = 374
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -67,7 +67,7 @@ object FrmRelAluguel: TFrmRelAluguel
   end
   object btn_cancelar: TBitBtn
     Left = 179
-    Top = 220
+    Top = 292
     Width = 88
     Height = 33
     Caption = 'Cancelar'
@@ -134,7 +134,7 @@ object FrmRelAluguel: TFrmRelAluguel
   end
   object btn_imprimir: TBitBtn
     Left = 273
-    Top = 220
+    Top = 292
     Width = 88
     Height = 33
     Caption = 'Imprimir'
@@ -321,7 +321,6 @@ object FrmRelAluguel: TFrmRelAluguel
     Color = clGray
     ParentBackground = False
     TabOrder = 9
-    ExplicitWidth = 326
     object SpeedButton1: TSpeedButton
       Left = 28
       Top = 2
@@ -415,15 +414,28 @@ object FrmRelAluguel: TFrmRelAluguel
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 269
+    Top = 434
     Width = 374
     Height = 19
     Panels = <
       item
         Width = 50
       end>
-    ExplicitTop = 426
-    ExplicitWidth = 326
+    ExplicitTop = 269
+  end
+  object rbOrdenar: TRadioGroup
+    Left = 16
+    Top = 224
+    Width = 345
+    Height = 57
+    Caption = 'Ordenar por:'
+    Columns = 3
+    ItemIndex = 0
+    Items.Strings = (
+      'C'#243'digo'
+      'Cliente'
+      'Data Loca'#231#227'o')
+    TabOrder = 11
   end
   object frxReport1: TfrxReport
     Version = '5.3.14'
@@ -442,7 +454,7 @@ object FrmRelAluguel: TFrmRelAluguel
       ''
       'end.')
     Left = 96
-    Top = 320
+    Top = 376
     Datasets = <
       item
         DataSet = frxDBDataset1
@@ -3642,7 +3654,7 @@ object FrmRelAluguel: TFrmRelAluguel
       #9#9' C.CELULAR,'
       #9#9' C.CIDADE')
     Left = 24
-    Top = 368
+    Top = 424
   end
   object FDQuery2: TFDQuery
     Active = True
@@ -3658,19 +3670,19 @@ object FrmRelAluguel: TFrmRelAluguel
       'INNER JOIN PRODUTO P ON P.ID = IA.CD_PRODUTO'
       'WHERE IA.CD_ALUGUEL = :ID')
     Left = 24
-    Top = 272
+    Top = 328
     ParamData = <
       item
         Name = 'ID'
         DataType = ftAutoInc
         ParamType = ptInput
-        Value = 2
+        Value = 1
       end>
   end
   object DataSource1: TDataSource
     DataSet = FDQuery1
     Left = 24
-    Top = 320
+    Top = 376
   end
   object frxDBDataset1: TfrxDBDataset
     UserName = 'frxDBDataset1'
@@ -3678,7 +3690,7 @@ object FrmRelAluguel: TFrmRelAluguel
     DataSet = FDQuery1
     BCDToCurrency = False
     Left = 96
-    Top = 368
+    Top = 424
   end
   object frxDBDataset2: TfrxDBDataset
     UserName = 'frxDBDataset2'
@@ -3686,6 +3698,6 @@ object FrmRelAluguel: TFrmRelAluguel
     DataSet = FDQuery2
     BCDToCurrency = False
     Left = 96
-    Top = 272
+    Top = 328
   end
 end

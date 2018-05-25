@@ -3,11 +3,12 @@ inherited FrmRelProdutos: TFrmRelProdutos
   ClientHeight = 504
   ClientWidth = 432
   ExplicitWidth = 438
-  ExplicitHeight = 533
+  ExplicitHeight = 539
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
     Width = 432
+    ExplicitWidth = 432
     inherited Label1: TLabel
       Width = 260
       Caption = 'Relat'#243'rio de Produtos'
@@ -35,6 +36,8 @@ inherited FrmRelProdutos: TFrmRelProdutos
   inherited StatusBar1: TStatusBar
     Top = 485
     Width = 432
+    ExplicitTop = 485
+    ExplicitWidth = 432
   end
   object GroupBox1: TGroupBox [4]
     Left = 8
@@ -60,45 +63,7 @@ inherited FrmRelProdutos: TFrmRelProdutos
     Caption = 'Categoria'
     TabOrder = 6
   end
-  object Chb_Fornecedor: TCheckBox [7]
-    Left = 310
-    Top = 312
-    Width = 97
-    Height = 17
-    Caption = 'Fornecedor'
-    TabOrder = 7
-  end
-  object edtIDde: TLabeledEdit [8]
-    Left = 8
-    Top = 64
-    Width = 33
-    Height = 21
-    EditLabel.Width = 30
-    EditLabel.Height = 13
-    EditLabel.Caption = 'ID de:'
-    TabOrder = 8
-  end
-  object EdtIDate: TLabeledEdit [9]
-    Left = 159
-    Top = 64
-    Width = 42
-    Height = 21
-    EditLabel.Width = 34
-    EditLabel.Height = 13
-    EditLabel.Caption = 'ID at'#233':'
-    TabOrder = 9
-  end
-  object edtDescricaoDe: TLabeledEdit [10]
-    Left = 8
-    Top = 107
-    Width = 419
-    Height = 21
-    EditLabel.Width = 65
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Descri'#231#227'o de:'
-    TabOrder = 10
-  end
-  object edtDescricaoAte: TLabeledEdit [11]
+  object edtDescricaoAte: TLabeledEdit [7]
     Left = 8
     Top = 158
     Width = 418
@@ -108,7 +73,7 @@ inherited FrmRelProdutos: TFrmRelProdutos
     EditLabel.Caption = 'Descri'#231#227'o at'#233
     TabOrder = 11
   end
-  object RadioGroup1: TRadioGroup [12]
+  object RadioGroup1: TRadioGroup [8]
     Left = 8
     Top = 328
     Width = 418
@@ -121,7 +86,7 @@ inherited FrmRelProdutos: TFrmRelProdutos
       'Valor da Di'#225'ria')
     TabOrder = 12
   end
-  object RadioGroup2: TRadioGroup [13]
+  object RadioGroup2: TRadioGroup [9]
     Left = 8
     Top = 200
     Width = 193
@@ -133,7 +98,7 @@ inherited FrmRelProdutos: TFrmRelProdutos
       'Desabilitado')
     TabOrder = 13
   end
-  object RadioGroup3: TRadioGroup [14]
+  object RadioGroup3: TRadioGroup [10]
     Left = 216
     Top = 200
     Width = 208
@@ -144,6 +109,44 @@ inherited FrmRelProdutos: TFrmRelProdutos
       'Dispon'#237'vel'
       'Indispon'#237'vel')
     TabOrder = 14
+  end
+  object edtDescricaoDe: TLabeledEdit [11]
+    Left = 8
+    Top = 107
+    Width = 419
+    Height = 21
+    EditLabel.Width = 65
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Descri'#231#227'o de:'
+    TabOrder = 10
+  end
+  object EdtIDate: TLabeledEdit [12]
+    Left = 159
+    Top = 64
+    Width = 42
+    Height = 21
+    EditLabel.Width = 34
+    EditLabel.Height = 13
+    EditLabel.Caption = 'ID at'#233':'
+    TabOrder = 9
+  end
+  object edtIDde: TLabeledEdit [13]
+    Left = 8
+    Top = 64
+    Width = 33
+    Height = 21
+    EditLabel.Width = 30
+    EditLabel.Height = 13
+    EditLabel.Caption = 'ID de:'
+    TabOrder = 8
+  end
+  object Chb_Fornecedor: TCheckBox [14]
+    Left = 310
+    Top = 312
+    Width = 97
+    Height = 17
+    Caption = 'Fornecedor'
+    TabOrder = 7
   end
   inherited FDQuery1: TFDQuery
     Active = True
