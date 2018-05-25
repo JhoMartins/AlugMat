@@ -3,7 +3,7 @@ inherited FrmRelClientes: TFrmRelClientes
   ClientHeight = 420
   ClientWidth = 433
   ExplicitWidth = 439
-  ExplicitHeight = 449
+  ExplicitHeight = 455
   PixelsPerInch = 96
   TextHeight = 13
   object Label3: TLabel [0]
@@ -12,6 +12,101 @@ inherited FrmRelClientes: TFrmRelClientes
     Width = 33
     Height = 13
     Caption = 'Estado'
+  end
+  object edtCidade: TLabeledEdit [1]
+    Left = 8
+    Top = 208
+    Width = 321
+    Height = 21
+    EditLabel.Width = 33
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Cidade'
+    TabOrder = 8
+  end
+  object cbEstado: TComboBox [2]
+    Left = 335
+    Top = 208
+    Width = 90
+    Height = 21
+    TabOrder = 9
+  end
+  object edtNomeAte: TLabeledEdit [3]
+    Left = 8
+    Top = 160
+    Width = 417
+    Height = 21
+    EditLabel.Width = 50
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Nome at'#233':'
+    TabOrder = 7
+  end
+  object edtIDDe: TLabeledEdit [4]
+    Left = 8
+    Top = 64
+    Width = 65
+    Height = 21
+    EditLabel.Width = 30
+    EditLabel.Height = 13
+    EditLabel.Caption = 'ID de:'
+    TabOrder = 4
+  end
+  object RadioGroup2: TRadioGroup [5]
+    Left = 224
+    Top = 235
+    Width = 201
+    Height = 54
+    Caption = 'Status'
+    Columns = 2
+    Items.Strings = (
+      'Habilitado'
+      'Desabilitado')
+    TabOrder = 11
+  end
+  object edtIDAte: TLabeledEdit [6]
+    Left = 96
+    Top = 64
+    Width = 65
+    Height = 21
+    EditLabel.Width = 34
+    EditLabel.Height = 13
+    EditLabel.Caption = 'ID at'#233':'
+    TabOrder = 5
+  end
+  object edtNomeDe: TLabeledEdit [7]
+    Left = 8
+    Top = 112
+    Width = 417
+    Height = 21
+    EditLabel.Width = 46
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Nome de:'
+    TabOrder = 6
+  end
+  object RadioGroup3: TRadioGroup [8]
+    Left = 8
+    Top = 295
+    Width = 417
+    Height = 58
+    Caption = 'Ordena'#231#227'o'
+    Columns = 4
+    Items.Strings = (
+      'ID'
+      'Nome'
+      'Cidade'
+      'Estado')
+    TabOrder = 12
+  end
+  object RadioGroup1: TRadioGroup [9]
+    Left = 8
+    Top = 235
+    Width = 201
+    Height = 54
+    Caption = 'Tipo de Pessoa'
+    Columns = 2
+    Items.Strings = (
+      'F'#237'sica'
+      'Jur'#237'dica')
+    TabOrder = 10
   end
   inherited Panel1: TPanel
     Width = 433
@@ -26,101 +121,6 @@ inherited FrmRelClientes: TFrmRelClientes
       Caption = 'Relat'#243'rio de Clientes'
       ExplicitWidth = 247
     end
-  end
-  object edtCidade: TLabeledEdit [2]
-    Left = 8
-    Top = 208
-    Width = 321
-    Height = 21
-    EditLabel.Width = 33
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Cidade'
-    TabOrder = 8
-  end
-  object cbEstado: TComboBox [3]
-    Left = 335
-    Top = 208
-    Width = 90
-    Height = 21
-    TabOrder = 9
-  end
-  object RadioGroup1: TRadioGroup [4]
-    Left = 8
-    Top = 235
-    Width = 201
-    Height = 54
-    Caption = 'Tipo de Pessoa'
-    Columns = 2
-    Items.Strings = (
-      'F'#237'sica'
-      'Jur'#237'dica')
-    TabOrder = 10
-  end
-  object edtNomeAte: TLabeledEdit [5]
-    Left = 8
-    Top = 160
-    Width = 417
-    Height = 21
-    EditLabel.Width = 50
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Nome at'#233':'
-    TabOrder = 7
-  end
-  object RadioGroup3: TRadioGroup [6]
-    Left = 8
-    Top = 295
-    Width = 417
-    Height = 58
-    Caption = 'Ordena'#231#227'o'
-    Columns = 4
-    Items.Strings = (
-      'ID'
-      'Nome'
-      'Cidade'
-      'Estado')
-    TabOrder = 12
-  end
-  object edtNomeDe: TLabeledEdit [7]
-    Left = 8
-    Top = 112
-    Width = 417
-    Height = 21
-    EditLabel.Width = 46
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Nome de:'
-    TabOrder = 6
-  end
-  object edtIDAte: TLabeledEdit [8]
-    Left = 96
-    Top = 64
-    Width = 65
-    Height = 21
-    EditLabel.Width = 34
-    EditLabel.Height = 13
-    EditLabel.Caption = 'ID at'#233':'
-    TabOrder = 5
-  end
-  object edtIDDe: TLabeledEdit [9]
-    Left = 8
-    Top = 64
-    Width = 65
-    Height = 21
-    EditLabel.Width = 30
-    EditLabel.Height = 13
-    EditLabel.Caption = 'ID de:'
-    TabOrder = 4
-  end
-  object RadioGroup2: TRadioGroup [10]
-    Left = 224
-    Top = 235
-    Width = 201
-    Height = 54
-    Caption = 'Status'
-    Columns = 2
-    Items.Strings = (
-      'Habilitado'
-      'Desabilitado')
-    TabOrder = 11
   end
   inherited btn_cancelar: TBitBtn
     Left = 239
@@ -6317,9 +6317,6 @@ inherited FrmRelClientes: TFrmRelClientes
         end
       end
       inherited PageHeader1: TfrxPageHeader
-        inherited Memo4: TfrxMemoView
-          Top = 30.236240000000000000
-        end
         inherited Memo5: TfrxMemoView
           Top = 109.606370000000000000
         end

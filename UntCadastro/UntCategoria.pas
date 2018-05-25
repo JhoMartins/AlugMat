@@ -47,6 +47,8 @@ procedure TFrmCategoria.btn_imprimirClick(Sender: TObject);
 begin
   inherited;
   Application.CreateForm(TFrmRelCategorias, FrmRelCategorias);
+  FrmRelCategorias.edtCodigoDe.Text := FDTabelaID.AsString;
+  FrmRelCategorias.edtCodigoAte.Text := FDTabelaID.AsString;
   FrmRelCategorias.ShowModal;
   FrmRelCategorias.Free;
 end;

@@ -107,6 +107,8 @@ procedure TFrmProduto.btn_imprimirClick(Sender: TObject);
 begin
   inherited;
   Application.CreateForm(TFrmRelProdutos, FrmRelProdutos);
+  FrmRelProdutos.edtIDde.Text := FDTabelaID.AsString;
+  FrmRelProdutos.EdtIDate.Text := FDTabelaID.AsString;
   FrmRelProdutos.ShowModal;
   FrmRelProdutos.Free;
 end;
