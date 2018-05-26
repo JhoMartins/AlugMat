@@ -45,6 +45,7 @@ type
     procedure btn_imprimirClick(Sender: TObject);
     procedure btn_cancelarClick(Sender: TObject);
     procedure DataSource1DataChange(Sender: TObject; Field: TField);
+    procedure btn_limparClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -148,6 +149,19 @@ begin
   FDQuery2.Open();
 
   frxReport1.ShowReport();
+end;
+
+procedure TFrmRelReservaWeb.btn_limparClick(Sender: TObject);
+begin
+  edNumReserva.Clear;
+  edDataI.Clear;
+  edDataF.Clear;
+  edCdCliente.Clear;
+  edCliente.Clear;
+  edCidade.Clear;
+  rbOrdenar.ItemIndex := 0;
+
+  edNumReserva.SetFocus;
 end;
 
 procedure TFrmRelReservaWeb.DataSource1DataChange(Sender: TObject;

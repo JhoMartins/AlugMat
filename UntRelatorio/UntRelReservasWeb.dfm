@@ -354,6 +354,7 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
       D4C8D0D4C8D0D4C8D0D4C8D0D4C8D0D4C8D0D4C8D0D4C8D0D4C8D0D4C8D0D4C8
       D0D4C8D0D4C8D0D4C8D0D4C8D0D4C8D0D4C8D0D4C8D0D4C8D0D4}
     TabOrder = 3
+    OnClick = btn_limparClick
   end
   object edNumReserva: TLabeledEdit
     Left = 16
