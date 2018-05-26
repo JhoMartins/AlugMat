@@ -23,6 +23,7 @@ type
     Label3: TLabel;
     RadioGroup3: TRadioGroup;
     procedure btn_imprimirClick(Sender: TObject);
+    procedure btn_limparClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,7 +40,7 @@ implementation
 procedure TFrmRelClientes.btn_imprimirClick(Sender: TObject);
 var StrLiga: String;
 begin
-  StrLiga:= 'where ';
+  StrLiga:= ' where ';
   FDQuery1.Close;
   with FDQuery1.SQL do
   begin
@@ -49,7 +50,7 @@ begin
     try
       StrToInt(edtIDDe.Text);
       Add(StrLiga + 'ID >= ''' + edtIdDe.Text + '''');
-      StrLiga:= 'and ';
+      StrLiga:= ' and ';
     except
       on EConvertError do;
     end;
@@ -58,7 +59,7 @@ begin
     try
       StrToInt(edtIdAte.Text);
       Add(StrLiga + 'id <= ''' + edtIDAte.Text + '''');
-      StrLiga:= 'and ';
+      StrLiga:= ' and ';
     except
       on EConvertError do;
     end;
@@ -66,43 +67,43 @@ begin
     if edtNomeDe.Text <> '' then
     begin
       Add(StrLiga + 'nome_fantasia >= ''' + edtNomeDe.Text + '''');
-      StrLiga:= 'and ';
+      StrLiga:= ' and ';
     end;
 
     if edtNomeAte.Text <> '' then
     begin
       Add(StrLiga + 'nome_fantasia <= ''' + edtNomeAte.Text + 'zzzz''');
-      StrLiga:= 'and ';
+      StrLiga:= ' and ';
     end;
 
     if edtCidade.Text <> '' then
     begin
-      Add(StrLiga + 'cidade = ''' + edtCidade.Text + '''');
-      StrLiga:= 'and ';
+      Add(StrLiga + 'cidade like ''%' + edtCidade.Text + '%''');
+      StrLiga:= ' and ';
     end;
 
     if cbEstado.ItemIndex <> -1 then
     begin
       Add(StrLiga + 'estado = ''' + cbEstado.Text + '''');
-      StrLiga := 'and ';
+      StrLiga := ' and ';
     end;
 
     case RadioGroup1.ItemIndex of
       0:
         begin
           Add(StrLiga + 'tipo_pessoa = ''F''');
-          StrLiga := 'and ';
+          StrLiga := ' and ';
         end;
       1:
          begin
           Add(StrLiga + 'tipo_pessoa = ''J''');
-          StrLiga := 'and ';
+          StrLiga := ' and ';
         end;
     end;
 
     case RadioGroup2.ItemIndex of
-      0: Add(StrLiga + 'status = ''S''');
-      1: Add(StrLiga + 'status = ''N''');
+      0: Add(StrLiga + ' status = ''S''');
+      1: Add(StrLiga + ' status = ''N''');
     end;
 
 
@@ -116,6 +117,23 @@ begin
     FDQuery1.Open();
     frxReport1.ShowReport();
   end;
+end;
+
+procedure TFrmRelClientes.btn_limparClick(Sender: TObject);
+begin
+  inherited;
+
+  edtIDDe.Clear;
+  edtIDAte.Clear;
+  edtNomeDe.Clear;
+  edtNomeAte.Clear;
+  edtCidade.Clear;
+  cbEstado.ItemIndex := -1;
+  RadioGroup1.ItemIndex := -1;
+  RadioGroup2.ItemIndex := -1;
+  RadioGroup3.ItemIndex := -1;
+
+  edtIDDe.SetFocus;
 end;
 
 end.

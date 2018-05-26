@@ -22,6 +22,7 @@ type
     FDQuery1: TFDQuery;
     frxDBDataset1: TfrxDBDataset;
     frxReport1: TfrxReport;
+    btn_limpar: TBitBtn;
     procedure btn_cancelarClick(Sender: TObject);
   private
     { Private declarations }

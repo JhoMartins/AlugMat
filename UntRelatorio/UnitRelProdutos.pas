@@ -24,6 +24,7 @@ type
     RadioGroup2: TRadioGroup;
     RadioGroup3: TRadioGroup;
     procedure btn_imprimirClick(Sender: TObject);
+    procedure btn_limparClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -47,14 +48,14 @@ begin
   begin
     Clear;
     add('SELECT p.id, p.descricao, P.cd_interno, p.status, p.disponivel, p.valor_diaria, m.descricao, c.descricao, f.razao_social '+
-   'FROM produto p INNER JOIN marca m on m.id = p.id'+
-   'INNER JOIN categoria c on c.id = p.id'+
-   'INNER JOIN fornecedor f on f.id = p.id ');
+   ' FROM produto p INNER JOIN marca m on m.id = p.id'+
+   ' INNER JOIN categoria c on c.id = p.id'+
+   ' INNER JOIN fornecedor f on f.id = p.id ');
     if edtIDde.Text <> '' then
     try
       StrToInt (edtIDde.Text);
       Add(StrLiga+'ID >= '''+edtIDde.Text+'''');
-      StrLiga:= 'and ';
+      StrLiga:= ' and ';
     except
     on EconvertError do;
     end;
@@ -62,34 +63,34 @@ begin
     try
     StrToInt(EdtIDde.Text);
     Add(StrLiga+'ID <= '''+edtIDAte.Text+'''');
-    StrLiga:='and ';
+    StrLiga:=' and ';
     except
     on EConvertError do;
     end;
     if edtDescricaoDe.Text <> '' then
     begin
     Add(StrLiga+'DESCRICAO >= '''+edtDescricaoDe.Text+'''');
-    StrLiga:='and ';
+    StrLiga:=' and ';
     end;
     if edtDescricaoAte.Text <> '' then
     begin
       Add(StrLiga+'DESCRICAO <= '''+edtDescricaoAte.Text+'zzz''');
-      Strliga:= 'and ';
+      Strliga:= ' and ';
     end;
     if Chb_Marca.Checked = true then
     begin
       add(StrLiga+'M.DESCRICAO = '+#39+'M.ID'+#39);
-      strliga:='and ';
+      strliga:=' and ';
     end;
     if Chb_Categoria.Checked = true then
     begin
       add(strLiga+'C.DESCRICAO = '+#39+'C.ID'+#39);
-      Strliga:='and ';
+      Strliga:=' and ';
     end;
       if Chb_Fornecedor.Checked = true then
     begin
       add(strLiga+'F.NOME_FANTASIA = '+#39+'F.ID'+#39);
-      Strliga:='and ';
+      Strliga:=' and ';
     end;
     case RadioGroup1.ItemIndex of
     0: add(' order by ID');
@@ -110,5 +111,20 @@ begin
   frxReport1.ShowReport();
 end;
 
+
+procedure TFrmRelProdutos.btn_limparClick(Sender: TObject);
+begin
+  inherited;
+
+  edtIDde.Clear;
+  EdtIDate.Clear;
+  edtDescricaoDe.Clear;
+  edtDescricaoAte.Clear;
+  RadioGroup2.ItemIndex := -1;
+  RadioGroup3.ItemIndex := -1;
+  RadioGroup1.ItemIndex := -1;
+
+  edtIDde.SetFocus;
+end;
 
 end.

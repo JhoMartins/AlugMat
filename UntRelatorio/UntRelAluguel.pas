@@ -4,29 +4,43 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UntPadraoRel, FireDAC.Stan.Intf,
-  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
-  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
-  frxClass, frxDBSet, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  Vcl.ComCtrls, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls, Vcl.Mask;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, frxClass, frxDBSet,
+  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.ComCtrls, Vcl.Buttons,
+  Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Mask;
 
 type
-  TFrmRelAluguel = class(TFrmPadraoRel)
+  TFrmRelAluguel = class(TForm)
+    frxReport1: TfrxReport;
+    FDQuery1: TFDQuery;
     FDQuery2: TFDQuery;
     DataSource1: TDataSource;
+    frxDBDataset1: TfrxDBDataset;
     frxDBDataset2: TfrxDBDataset;
-    edNumAluguel: TLabeledEdit;
-    edDataI: TMaskEdit;
-    edDataF: TMaskEdit;
+    btn_cancelar: TBitBtn;
+    btn_imprimir: TBitBtn;
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
+    Label6: TLabel;
+    edNumAluguel: TLabeledEdit;
+    edDataI: TMaskEdit;
+    edDataF: TMaskEdit;
     rbDevolvido: TRadioGroup;
     cbAtrasados: TCheckBox;
-    Label6: TLabel;
     edCdCliente: TEdit;
     edCliente: TEdit;
+    Panel1: TPanel;
+    SpeedButton1: TSpeedButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    StatusBar1: TStatusBar;
+    rbOrdenar: TRadioGroup;
+    btn_limpar: TBitBtn;
+    procedure btn_cancelarClick(Sender: TObject);
     procedure btn_imprimirClick(Sender: TObject);
+    procedure btn_limparClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -42,12 +56,15 @@ implementation
 
 uses UntDM;
 
+procedure TFrmRelAluguel.btn_cancelarClick(Sender: TObject);
+begin
+  Close;
+end;
+
 procedure TFrmRelAluguel.btn_imprimirClick(Sender: TObject);
 var StrLiga: String;
     Data: TDateTime;
 begin
-  inherited;
-
   FDQuery1.Close;
   FDQuery2.Close;
 
@@ -148,19 +165,40 @@ begin
       if StrLiga = '' then StrLiga := ' WHERE '
       else StrLiga := ' AND ';
 
-      Add(StrLiga + 'A.CD_CLIENTE LIKE ' + #39 + '%' + edCliente.Text + '%' + #39);
+      Add(StrLiga + 'C.NOME LIKE ' + #39 + '%' + edCliente.Text + '%' + #39);
     except
       on EConvertError do;
     end;
 
     //GROUP BY
     Add(' GROUP BY A.ID, A.DATA_INC, A.DATA_ALT, A.STATUS, A.CD_CLIENTE, C.NOME, TIPO_PESSOA, CPF, CNPJ, RG, IE, C.TELEFONE, C.CELULAR, C.CIDADE');
+
+    case rbOrdenar.ItemIndex of
+      0: Add(' ORDER BY A.ID');
+      1: Add(' ORDER BY C.NOME');
+      2: Add(' ORDER BY A.DATA_INC');
+    end;
+
   end;
 
   FDQuery1.Open();
   FDQuery2.Open();
 
   frxReport1.ShowReport();
+end;
+
+procedure TFrmRelAluguel.btn_limparClick(Sender: TObject);
+begin
+  edNumAluguel.Clear;
+  edDataI.Clear;
+  edDataF.Clear;
+  edCdCliente.Clear;
+  edCliente.Clear;
+  rbDevolvido.ItemIndex := 2;
+  cbAtrasados.Checked := false;
+  rbOrdenar.ItemIndex := 0;
+
+  edNumAluguel.SetFocus;
 end;
 
 end.

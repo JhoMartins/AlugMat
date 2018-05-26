@@ -45,6 +45,7 @@ type
     Button9: TButton;
     Button10: TButton;
     Button11: TButton;
+    Button12: TButton;
     procedure btn_usuarioClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -65,6 +66,7 @@ type
     procedure Button9Click(Sender: TObject);
     procedure Button10Click(Sender: TObject);
     procedure Button11Click(Sender: TObject);
+    procedure Button12Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -80,7 +82,7 @@ implementation
 
 uses UntUsuario, UntDM, UntLogin, UntPerfil, UntCliente, UntMarca, UntCategoria,
   UntProduto, UntAlugueis, UntDevolucao, UntFornecedor, UntIEProduto,
-  UntIECliente;
+  UntIECliente, UntRelFinanceiro;
 
 procedure TFrmMenuPrincipal.Action10Execute(Sender: TObject);
 begin
@@ -139,6 +141,13 @@ begin
   Application.CreateForm(TFrmIECliente, FrmIECliente);
   FrmIECliente.ShowModal;
   FrmIECliente.Free;
+end;
+
+procedure TFrmMenuPrincipal.Button12Click(Sender: TObject);
+begin
+  Application.CreateForm(TFrmRelFinanceiro, FrmRelFinanceiro);
+  FrmRelFinanceiro.ShowModal;
+  FrmRelFinanceiro.Free;
 end;
 
 procedure TFrmMenuPrincipal.Button1Click(Sender: TObject);

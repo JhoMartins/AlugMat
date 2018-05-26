@@ -169,7 +169,6 @@
             <Form>FrmPadraoRel</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="UntRelatorio\UntRelAluguel.pas">
             <Form>FrmRelAluguel</Form>
             <FormType>dfm</FormType>
         </DCCReference>
@@ -203,6 +202,14 @@
         </DCCReference>
         <DCCReference Include="UntRelatorio\UntRelReservasWeb.pas">
             <Form>FrmRelReservaWeb</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="UntRelatorio\UntRelAluguel.pas">
+            <Form>FrmRelAluguel</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="UntRelatorio\UntRelFinanceiro.pas">
+            <Form>FrmRelFinanceiro</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <None Include="Vendas.dpr"/>

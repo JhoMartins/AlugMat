@@ -3,7 +3,7 @@ inherited FrmRelCategorias: TFrmRelCategorias
   ClientHeight = 327
   ClientWidth = 342
   ExplicitWidth = 348
-  ExplicitHeight = 356
+  ExplicitHeight = 362
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
@@ -20,6 +20,60 @@ inherited FrmRelCategorias: TFrmRelCategorias
       ExplicitWidth = 279
     end
   end
+  object edtDescDe: TLabeledEdit [1]
+    Left = 15
+    Top = 112
+    Width = 311
+    Height = 21
+    EditLabel.Width = 65
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Descri'#231#227'o de:'
+    TabOrder = 6
+  end
+  object RadioGroup1: TRadioGroup [2]
+    Left = 15
+    Top = 187
+    Width = 154
+    Height = 54
+    Caption = 'Ordena'#231#227'o'
+    Columns = 2
+    Items.Strings = (
+      'ID'
+      'Nome')
+    TabOrder = 8
+  end
+  object edtCodigoAte: TLabeledEdit [3]
+    Left = 103
+    Top = 64
+    Width = 66
+    Height = 21
+    EditLabel.Width = 35
+    EditLabel.Height = 13
+    EditLabel.Caption = 'ID At'#233':'
+    NumbersOnly = True
+    TabOrder = 5
+  end
+  object edtCodigoDe: TLabeledEdit [4]
+    Left = 15
+    Top = 64
+    Width = 66
+    Height = 21
+    EditLabel.Width = 30
+    EditLabel.Height = 13
+    EditLabel.Caption = 'ID de:'
+    NumbersOnly = True
+    TabOrder = 9
+  end
+  object edtDescAte: TLabeledEdit [5]
+    Left = 15
+    Top = 160
+    Width = 311
+    Height = 21
+    EditLabel.Width = 69
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Descri'#231#227'o at'#233':'
+    TabOrder = 7
+  end
   inherited btn_cancelar: TBitBtn
     Left = 140
     Top = 264
@@ -33,63 +87,18 @@ inherited FrmRelCategorias: TFrmRelCategorias
     ExplicitLeft = 236
     ExplicitTop = 264
   end
-  object edtDescAte: TLabeledEdit [3]
-    Left = 15
-    Top = 160
-    Width = 311
-    Height = 21
-    EditLabel.Width = 69
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Descri'#231#227'o at'#233':'
-    TabOrder = 7
-  end
-  object RadioGroup1: TRadioGroup [4]
-    Left = 15
-    Top = 187
-    Width = 311
-    Height = 54
-    Caption = 'Ordena'#231#227'o'
-    Columns = 2
-    Items.Strings = (
-      'ID'
-      'Nome')
-    TabOrder = 8
-  end
-  object edtDescDe: TLabeledEdit [5]
-    Left = 15
-    Top = 112
-    Width = 311
-    Height = 21
-    EditLabel.Width = 65
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Descri'#231#227'o de:'
-    TabOrder = 6
-  end
-  object edtCodigoAte: TLabeledEdit [6]
-    Left = 103
-    Top = 64
-    Width = 66
-    Height = 21
-    EditLabel.Width = 35
-    EditLabel.Height = 13
-    EditLabel.Caption = 'ID At'#233':'
-    TabOrder = 5
-  end
-  object edtCodigoDe: TLabeledEdit [7]
-    Left = 15
-    Top = 64
-    Width = 66
-    Height = 21
-    EditLabel.Width = 30
-    EditLabel.Height = 13
-    EditLabel.Caption = 'ID de:'
-    TabOrder = 4
-  end
   inherited StatusBar1: TStatusBar
     Top = 308
     Width = 342
     ExplicitTop = 308
     ExplicitWidth = 342
+  end
+  inherited btn_limpar: TBitBtn
+    Left = 44
+    Top = 264
+    OnClick = btn_limparClick
+    ExplicitLeft = 44
+    ExplicitTop = 264
   end
   inherited FDQuery1: TFDQuery
     Active = True
@@ -188,8 +197,13 @@ inherited FrmRelCategorias: TFrmRelCategorias
         inherited Memo3: TfrxMemoView
           Width = 340.157700000000000000
         end
+        inherited Memo4: TfrxMemoView
+          Top = 30.236240000000000000
+        end
         inherited Memo5: TfrxMemoView
           Top = 102.047310000000000000
+          Memo.UTF8W = (
+            'Relat'#243'rio de Categorias')
         end
       end
       object MasterData1: TfrxMasterData
