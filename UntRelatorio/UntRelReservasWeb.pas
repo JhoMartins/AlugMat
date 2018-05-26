@@ -24,6 +24,8 @@ type
     FDQuery2: TFDQuery;
     frxDBDataset2: TfrxDBDataset;
     frxReport1: TfrxReport;
+    procedure btn_imprimirClick(Sender: TObject);
+    procedure btn_cancelarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -36,5 +38,15 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFrmRelReservaWeb.btn_cancelarClick(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TFrmRelReservaWeb.btn_imprimirClick(Sender: TObject);
+begin
+  frxReport1.ShowReport();
+end;
 
 end.

@@ -25,7 +25,6 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
     Color = clGray
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 523
     object SpeedButton1: TSpeedButton
       Left = 0
       Top = 0
@@ -181,6 +180,7 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
       FFFF00FFFF00FFCC9A99CC9A99CC9A99CC9A99CC9A99FF00FFFF00FFFF00FFFF
       00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
     TabOrder = 1
+    OnClick = btn_imprimirClick
   end
   object btn_cancelar: TBitBtn
     Left = 336
@@ -241,6 +241,7 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
       00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
     NumGlyphs = 2
     TabOrder = 2
+    OnClick = btn_cancelarClick
   end
   object FDQuery1: TFDQuery
     Active = True
@@ -269,6 +270,7 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
     Active = True
     MasterSource = DataSource1
     MasterFields = 'ID'
+    DetailFields = 'id'
     Connection = DM.FDConWeb
     FetchOptions.AssignedValues = [evCache]
     FetchOptions.Cache = [fiBlobs, fiMeta]
@@ -283,7 +285,7 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
         Name = 'ID'
         DataType = ftAutoInc
         ParamType = ptInput
-        Value = 2
+        Value = 1
       end>
   end
   object frxDBDataset2: TfrxDBDataset
