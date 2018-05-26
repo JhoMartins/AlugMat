@@ -133,6 +133,15 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     TabOrder = 11
     OnClick = Button11Click
   end
+  object Button12: TButton
+    Left = 144
+    Top = 224
+    Width = 75
+    Height = 25
+    Caption = 'Rel Financeiro'
+    TabOrder = 12
+    OnClick = Button12Click
+  end
   object QueryLogin: TFDQuery
     Connection = DM.FDConnection1
     SQL.Strings = (
@@ -256,7 +265,7 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     Left = 336
     Top = 360
     Bitmap = {
-      494C010104000800440010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000800480010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

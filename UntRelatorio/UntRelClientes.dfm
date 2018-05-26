@@ -30,27 +30,7 @@ inherited FrmRelClientes: TFrmRelClientes
     Height = 21
     TabOrder = 9
   end
-  object edtNomeAte: TLabeledEdit [3]
-    Left = 8
-    Top = 160
-    Width = 417
-    Height = 21
-    EditLabel.Width = 50
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Nome at'#233':'
-    TabOrder = 7
-  end
-  object edtIDDe: TLabeledEdit [4]
-    Left = 8
-    Top = 64
-    Width = 65
-    Height = 21
-    EditLabel.Width = 30
-    EditLabel.Height = 13
-    EditLabel.Caption = 'ID de:'
-    TabOrder = 4
-  end
-  object RadioGroup2: TRadioGroup [5]
+  object RadioGroup2: TRadioGroup [3]
     Left = 224
     Top = 235
     Width = 201
@@ -62,17 +42,17 @@ inherited FrmRelClientes: TFrmRelClientes
       'Desabilitado')
     TabOrder = 11
   end
-  object edtIDAte: TLabeledEdit [6]
-    Left = 96
+  object edtIDDe: TLabeledEdit [4]
+    Left = 8
     Top = 64
     Width = 65
     Height = 21
-    EditLabel.Width = 34
+    EditLabel.Width = 30
     EditLabel.Height = 13
-    EditLabel.Caption = 'ID at'#233':'
-    TabOrder = 5
+    EditLabel.Caption = 'ID de:'
+    TabOrder = 13
   end
-  object edtNomeDe: TLabeledEdit [7]
+  object edtNomeDe: TLabeledEdit [5]
     Left = 8
     Top = 112
     Width = 417
@@ -82,7 +62,39 @@ inherited FrmRelClientes: TFrmRelClientes
     EditLabel.Caption = 'Nome de:'
     TabOrder = 6
   end
-  object RadioGroup3: TRadioGroup [8]
+  object RadioGroup1: TRadioGroup [6]
+    Left = 8
+    Top = 235
+    Width = 201
+    Height = 54
+    Caption = 'Tipo de Pessoa'
+    Columns = 2
+    Items.Strings = (
+      'F'#237'sica'
+      'Jur'#237'dica')
+    TabOrder = 10
+  end
+  object edtNomeAte: TLabeledEdit [7]
+    Left = 8
+    Top = 160
+    Width = 417
+    Height = 21
+    EditLabel.Width = 50
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Nome at'#233':'
+    TabOrder = 7
+  end
+  object edtIDAte: TLabeledEdit [8]
+    Left = 96
+    Top = 64
+    Width = 65
+    Height = 21
+    EditLabel.Width = 34
+    EditLabel.Height = 13
+    EditLabel.Caption = 'ID at'#233':'
+    TabOrder = 5
+  end
+  object RadioGroup3: TRadioGroup [9]
     Left = 8
     Top = 295
     Width = 417
@@ -96,29 +108,25 @@ inherited FrmRelClientes: TFrmRelClientes
       'Estado')
     TabOrder = 12
   end
-  object RadioGroup1: TRadioGroup [9]
-    Left = 8
-    Top = 235
-    Width = 201
-    Height = 54
-    Caption = 'Tipo de Pessoa'
-    Columns = 2
-    Items.Strings = (
-      'F'#237'sica'
-      'Jur'#237'dica')
-    TabOrder = 10
-  end
   inherited Panel1: TPanel
     Width = 433
     ExplicitWidth = 433
+    inherited SpeedButton1: TSpeedButton
+      Left = 47
+      ExplicitLeft = 47
+    end
     inherited Label1: TLabel
+      Left = 94
       Width = 247
       Caption = 'Relat'#243'rio de Clientes'
+      ExplicitLeft = 94
       ExplicitWidth = 247
     end
     inherited Label2: TLabel
+      Left = 94
       Width = 247
       Caption = 'Relat'#243'rio de Clientes'
+      ExplicitLeft = 94
       ExplicitWidth = 247
     end
   end
@@ -140,6 +148,13 @@ inherited FrmRelClientes: TFrmRelClientes
     Width = 433
     ExplicitTop = 401
     ExplicitWidth = 433
+  end
+  inherited btn_limpar: TBitBtn
+    Left = 143
+    Top = 362
+    OnClick = btn_limparClick
+    ExplicitLeft = 143
+    ExplicitTop = 362
   end
   inherited FDQuery1: TFDQuery
     Active = True
@@ -6319,6 +6334,8 @@ inherited FrmRelClientes: TFrmRelClientes
       inherited PageHeader1: TfrxPageHeader
         inherited Memo5: TfrxMemoView
           Top = 109.606370000000000000
+          Memo.UTF8W = (
+            'Relat'#243'rio de Clientes')
         end
       end
       object MasterData1: TfrxMasterData
