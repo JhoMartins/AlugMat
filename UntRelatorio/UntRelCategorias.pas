@@ -18,6 +18,7 @@ type
     edtDescAte: TLabeledEdit;
     RadioGroup1: TRadioGroup;
     procedure btn_imprimirClick(Sender: TObject);
+    procedure btn_limparClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -78,6 +79,19 @@ begin
     FDQuery1.Open();
     frxReport1.ShowReport();
   end;
+end;
+
+procedure TFrmRelCategorias.btn_limparClick(Sender: TObject);
+begin
+  inherited;
+
+  edtCodigoDe.Clear;
+  edtCodigoAte.Clear;
+  edtDescDe.Clear;
+  edtDescAte.Clear;
+  RadioGroup1.ItemIndex := -1;
+
+  edtCodigoDe.SetFocus;
 end;
 
 end.

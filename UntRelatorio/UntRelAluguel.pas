@@ -37,8 +37,10 @@ type
     Label2: TLabel;
     StatusBar1: TStatusBar;
     rbOrdenar: TRadioGroup;
+    btn_limpar: TBitBtn;
     procedure btn_cancelarClick(Sender: TObject);
     procedure btn_imprimirClick(Sender: TObject);
+    procedure btn_limparClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -183,6 +185,20 @@ begin
   FDQuery2.Open();
 
   frxReport1.ShowReport();
+end;
+
+procedure TFrmRelAluguel.btn_limparClick(Sender: TObject);
+begin
+  edNumAluguel.Clear;
+  edDataI.Clear;
+  edDataF.Clear;
+  edCdCliente.Clear;
+  edCliente.Clear;
+  rbDevolvido.ItemIndex := 2;
+  cbAtrasados.Checked := false;
+  rbOrdenar.ItemIndex := 0;
+
+  edNumAluguel.SetFocus;
 end;
 
 end.

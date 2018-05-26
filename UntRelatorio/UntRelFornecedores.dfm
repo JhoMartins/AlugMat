@@ -3,7 +3,7 @@ inherited FrmRelFornecedores: TFrmRelFornecedores
   ClientHeight = 377
   ClientWidth = 518
   ExplicitWidth = 524
-  ExplicitHeight = 406
+  ExplicitHeight = 412
   PixelsPerInch = 96
   TextHeight = 13
   object Label3: TLabel [0]
@@ -13,21 +13,31 @@ inherited FrmRelFornecedores: TFrmRelFornecedores
     Height = 13
     Caption = 'Estado:'
   end
-  inherited Panel1: TPanel
-    Width = 518
-    ExplicitWidth = 518
-    inherited Label1: TLabel
-      Width = 313
-      Caption = 'Relat'#243'rio de Fornecedores'
-      ExplicitWidth = 313
-    end
-    inherited Label2: TLabel
-      Width = 313
-      Caption = 'Relat'#243'rio de Fornecedores'
-      ExplicitWidth = 313
-    end
+  object RadioGroup2: TRadioGroup [1]
+    Left = 199
+    Top = 235
+    Width = 311
+    Height = 54
+    Caption = 'Ordena'#231#227'o'
+    Columns = 4
+    Items.Strings = (
+      'ID'
+      'Nome'
+      'Cidade'
+      'Estado')
+    TabOrder = 11
   end
-  object edtCidade: TLabeledEdit [2]
+  object edtIdAte: TLabeledEdit [2]
+    Left = 95
+    Top = 64
+    Width = 73
+    Height = 21
+    EditLabel.Width = 33
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Id at'#233':'
+    TabOrder = 5
+  end
+  object edtCidade: TLabeledEdit [3]
     Left = 8
     Top = 208
     Width = 394
@@ -37,11 +47,44 @@ inherited FrmRelFornecedores: TFrmRelFornecedores
     EditLabel.Caption = 'Cidade:'
     TabOrder = 8
   end
-  object cbEstado: TComboBox [3]
+  object edtNFantasiaAte: TLabeledEdit [4]
+    Left = 8
+    Top = 160
+    Width = 500
+    Height = 21
+    EditLabel.Width = 94
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Nome Fantasia at'#233':'
+    TabOrder = 7
+  end
+  object edtIdDe: TLabeledEdit [5]
+    Left = 8
+    Top = 64
+    Width = 73
+    Height = 21
+    EditLabel.Width = 29
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Id de:'
+    TabOrder = 12
+  end
+  object RadioGroup1: TRadioGroup [6]
+    Left = 8
+    Top = 235
+    Width = 185
+    Height = 54
+    Caption = 'Status'
+    Columns = 2
+    Items.Strings = (
+      'Habilitado'
+      'Desabilitado')
+    TabOrder = 10
+  end
+  object cbEstado: TComboBox [7]
     Left = 418
     Top = 208
     Width = 90
     Height = 21
+    Style = csDropDownList
     TabOrder = 9
     Items.Strings = (
       'AC'
@@ -72,31 +115,7 @@ inherited FrmRelFornecedores: TFrmRelFornecedores
       'SE'
       'TO')
   end
-  object edtNFantasiaAte: TLabeledEdit [4]
-    Left = 8
-    Top = 160
-    Width = 500
-    Height = 21
-    EditLabel.Width = 94
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Nome Fantasia at'#233':'
-    TabOrder = 7
-  end
-  object RadioGroup2: TRadioGroup [5]
-    Left = 199
-    Top = 235
-    Width = 311
-    Height = 54
-    Caption = 'Ordena'#231#227'o'
-    Columns = 4
-    Items.Strings = (
-      'ID'
-      'Nome'
-      'Cidade'
-      'Estado')
-    TabOrder = 11
-  end
-  object edtNDantasiaDe: TLabeledEdit [6]
+  object edtNDantasiaDe: TLabeledEdit [8]
     Left = 8
     Top = 112
     Width = 500
@@ -106,40 +125,32 @@ inherited FrmRelFornecedores: TFrmRelFornecedores
     EditLabel.Caption = 'Nome Fantasia de:'
     TabOrder = 6
   end
-  object edtIdAte: TLabeledEdit [7]
-    Left = 95
-    Top = 64
-    Width = 73
-    Height = 21
-    EditLabel.Width = 33
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Id at'#233':'
-    TabOrder = 5
-  end
-  object edtIdDe: TLabeledEdit [8]
-    Left = 8
-    Top = 64
-    Width = 73
-    Height = 21
-    EditLabel.Width = 29
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Id de:'
-    TabOrder = 4
-  end
-  object RadioGroup1: TRadioGroup [9]
-    Left = 8
-    Top = 235
-    Width = 185
-    Height = 54
-    Caption = 'Status'
-    Columns = 2
-    Items.Strings = (
-      'Habilitado'
-      'Desabilitado')
-    TabOrder = 10
+  inherited Panel1: TPanel
+    Width = 518
+    ExplicitWidth = 518
+    inherited SpeedButton1: TSpeedButton
+      Left = 59
+      ExplicitLeft = 59
+    end
+    inherited Label1: TLabel
+      Left = 106
+      Width = 313
+      Caption = 'Relat'#243'rio de Fornecedores'
+      ExplicitLeft = 106
+      ExplicitWidth = 313
+    end
+    inherited Label2: TLabel
+      Left = 106
+      Width = 313
+      Caption = 'Relat'#243'rio de Fornecedores'
+      ExplicitLeft = 106
+      ExplicitWidth = 313
+    end
   end
   inherited btn_cancelar: TBitBtn
+    Left = 324
     Top = 304
+    ExplicitLeft = 324
     ExplicitTop = 304
   end
   inherited btn_imprimir: TBitBtn
@@ -154,6 +165,13 @@ inherited FrmRelFornecedores: TFrmRelFornecedores
     Width = 518
     ExplicitTop = 358
     ExplicitWidth = 518
+  end
+  inherited btn_limpar: TBitBtn
+    Left = 228
+    Top = 304
+    OnClick = btn_limparClick
+    ExplicitLeft = 228
+    ExplicitTop = 304
   end
   inherited FDQuery1: TFDQuery
     Active = True
@@ -18621,6 +18639,8 @@ inherited FrmRelFornecedores: TFrmRelFornecedores
         end
         inherited Memo5: TfrxMemoView
           Top = 117.165430000000000000
+          Memo.UTF8W = (
+            'Relat'#243'rio de Fornecedores')
         end
       end
       object MasterData1: TfrxMasterData

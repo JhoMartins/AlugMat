@@ -24,6 +24,7 @@ type
     RadioGroup2: TRadioGroup;
     RadioGroup3: TRadioGroup;
     procedure btn_imprimirClick(Sender: TObject);
+    procedure btn_limparClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -110,5 +111,20 @@ begin
   frxReport1.ShowReport();
 end;
 
+
+procedure TFrmRelProdutos.btn_limparClick(Sender: TObject);
+begin
+  inherited;
+
+  edtIDde.Clear;
+  EdtIDate.Clear;
+  edtDescricaoDe.Clear;
+  edtDescricaoAte.Clear;
+  RadioGroup2.ItemIndex := -1;
+  RadioGroup3.ItemIndex := -1;
+  RadioGroup1.ItemIndex := -1;
+
+  edtIDde.SetFocus;
+end;
 
 end.

@@ -23,6 +23,7 @@ type
     Label3: TLabel;
     RadioGroup3: TRadioGroup;
     procedure btn_imprimirClick(Sender: TObject);
+    procedure btn_limparClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -77,7 +78,7 @@ begin
 
     if edtCidade.Text <> '' then
     begin
-      Add(StrLiga + 'cidade = ''' + edtCidade.Text + '''');
+      Add(StrLiga + 'cidade like ''%' + edtCidade.Text + '%''');
       StrLiga:= ' and ';
     end;
 
@@ -116,6 +117,23 @@ begin
     FDQuery1.Open();
     frxReport1.ShowReport();
   end;
+end;
+
+procedure TFrmRelClientes.btn_limparClick(Sender: TObject);
+begin
+  inherited;
+
+  edtIDDe.Clear;
+  edtIDAte.Clear;
+  edtNomeDe.Clear;
+  edtNomeAte.Clear;
+  edtCidade.Clear;
+  cbEstado.ItemIndex := -1;
+  RadioGroup1.ItemIndex := -1;
+  RadioGroup2.ItemIndex := -1;
+  RadioGroup3.ItemIndex := -1;
+
+  edtIDDe.SetFocus;
 end;
 
 end.
