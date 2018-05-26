@@ -26,6 +26,7 @@ uses
   UntPadraoImportacao in 'UntPadrao\UntPadraoImportacao.pas' {FrmPadraoImportacao},
   UntIEProduto in 'UntImportacao\UntIEProduto.pas' {FrmIEProduto},
   UntIECliente in 'UntImportacao\UntIECliente.pas' {FrmIECliente},
+  UntRelReservasWeb in 'UntRelatorio\UntRelReservasWeb.pas' {FrmRelReservaWeb},
   UntRelAluguel in 'UntRelatorio\UntRelAluguel.pas' {FrmRelAluguel},
   UntRelFinanceiro in 'UntRelatorio\UntRelFinanceiro.pas' {FrmRelFinanceiro};
 
@@ -45,5 +46,10 @@ begin
   Application.CreateForm(TFrmFornecedor, FrmFornecedor);
   Application.CreateForm(TFrmPadraoRel, FrmPadraoRel);
   Application.CreateForm(TFrmPadraoImportacao, FrmPadraoImportacao);
+  Application.CreateForm(TFrmIEProduto, FrmIEProduto);
+  Application.CreateForm(TFrmIECliente, FrmIECliente);
+  Application.CreateForm(TFrmRelReservaWeb, FrmRelReservaWeb);
+  Application.CreateForm(TFrmRelAluguel, FrmRelAluguel);
+  Application.CreateForm(TFrmRelFinanceiro, FrmRelFinanceiro);
   Application.Run;
 end.
