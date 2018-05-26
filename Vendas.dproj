@@ -169,9 +169,6 @@
             <Form>FrmPadraoRel</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-            <Form>FrmRelAluguel</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <DCCReference Include="UntRelatorio\UntRelCategorias.pas">
             <Form>FrmRelCategorias</Form>
             <FormType>dfm</FormType>
@@ -206,11 +203,9 @@
         </DCCReference>
         <DCCReference Include="UntRelatorio\UntRelAluguel.pas">
             <Form>FrmRelAluguel</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="UntRelatorio\UntRelFinanceiro.pas">
             <Form>FrmRelFinanceiro</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <None Include="Vendas.dpr"/>
         <BuildConfiguration Include="Release">

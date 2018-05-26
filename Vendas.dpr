@@ -26,7 +26,7 @@ uses
   UntPadraoImportacao in 'UntPadrao\UntPadraoImportacao.pas' {FrmPadraoImportacao},
   UntIEProduto in 'UntImportacao\UntIEProduto.pas' {FrmIEProduto},
   UntIECliente in 'UntImportacao\UntIECliente.pas' {FrmIECliente},
-  UntRelReservasWeb in 'UntRelatorio\UntRelReservasWeb.pas' {FrmRelReservaWeb};
+  UntRelReservasWeb in 'UntRelatorio\UntRelReservasWeb.pas' {FrmRelReservaWeb},
   UntRelAluguel in 'UntRelatorio\UntRelAluguel.pas' {FrmRelAluguel},
   UntRelFinanceiro in 'UntRelatorio\UntRelFinanceiro.pas' {FrmRelFinanceiro};
 
