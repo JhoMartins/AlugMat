@@ -46,10 +46,8 @@ begin
   Application.CreateForm(TFrmFornecedor, FrmFornecedor);
   Application.CreateForm(TFrmPadraoRel, FrmPadraoRel);
   Application.CreateForm(TFrmPadraoImportacao, FrmPadraoImportacao);
-  Application.CreateForm(TFrmIEProduto, FrmIEProduto);
-  Application.CreateForm(TFrmIECliente, FrmIECliente);
-  Application.CreateForm(TFrmRelReservaWeb, FrmRelReservaWeb);
-  Application.CreateForm(TFrmRelAluguel, FrmRelAluguel);
-  Application.CreateForm(TFrmRelFinanceiro, FrmRelFinanceiro);
+  Application.CreateForm(TFrmCliente, FrmCliente);
+  Application.CreateForm(TFrmProduto, FrmProduto);
+  Application.CreateForm(TFrmUsuario, FrmUsuario);
   Application.Run;
 end.
