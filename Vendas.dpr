@@ -49,5 +49,7 @@ begin
   Application.CreateForm(TFrmIEProduto, FrmIEProduto);
   Application.CreateForm(TFrmIECliente, FrmIECliente);
   Application.CreateForm(TFrmRelReservaWeb, FrmRelReservaWeb);
+  Application.CreateForm(TFrmRelAluguel, FrmRelAluguel);
+  Application.CreateForm(TFrmRelFinanceiro, FrmRelFinanceiro);
   Application.Run;
 end.
