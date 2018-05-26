@@ -4,8 +4,8 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'Impress'#227'o do Relat'#243'rio de Reservas Web'
-  ClientHeight = 309
-  ClientWidth = 568
+  ClientHeight = 446
+  ClientWidth = 392
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,15 +16,62 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
   Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
+  object Label3: TLabel
+    Left = 183
+    Top = 53
+    Width = 91
+    Height = 14
+    Caption = 'Data de Aluguel:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 284
+    Top = 73
+    Width = 6
+    Height = 14
+    Caption = 'a'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 183
+    Top = 73
+    Width = 14
+    Height = 14
+    Caption = 'de'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 16
+    Top = 147
+    Width = 37
+    Height = 13
+    Caption = 'Cliente:'
+  end
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 568
+    Width = 392
     Height = 41
     Align = alTop
     Color = clGray
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 568
     object SpeedButton1: TSpeedButton
       Left = 0
       Top = 0
@@ -117,8 +164,8 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
     end
   end
   object btn_imprimir: TBitBtn
-    Left = 448
-    Top = 240
+    Left = 288
+    Top = 263
     Width = 90
     Height = 33
     Caption = 'Imprimir'
@@ -183,8 +230,8 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
     OnClick = btn_imprimirClick
   end
   object btn_cancelar: TBitBtn
-    Left = 352
-    Top = 240
+    Left = 192
+    Top = 263
     Width = 90
     Height = 33
     Caption = 'Cancelar'
@@ -244,8 +291,8 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
     OnClick = btn_cancelarClick
   end
   object btn_limpar: TBitBtn
-    Left = 256
-    Top = 240
+    Left = 96
+    Top = 263
     Width = 90
     Height = 33
     Caption = 'Limpar'
@@ -307,16 +354,102 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
       D4C8D0D4C8D0D4C8D0D4C8D0D4C8D0D4C8D0D4C8D0D4C8D0D4C8D0D4C8D0D4C8
       D0D4C8D0D4C8D0D4C8D0D4C8D0D4C8D0D4C8D0D4C8D0D4C8D0D4}
     TabOrder = 3
+    OnClick = btn_limparClick
+  end
+  object edNumReserva: TLabeledEdit
+    Left = 16
+    Top = 72
+    Width = 65
+    Height = 22
+    EditLabel.Width = 58
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Reserva n'#186':'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    NumbersOnly = True
+    ParentFont = False
+    TabOrder = 4
+  end
+  object edDataI: TMaskEdit
+    Left = 203
+    Top = 73
+    Width = 75
+    Height = 22
+    EditMask = '!99/99/0000;1;_'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    MaxLength = 10
+    ParentFont = False
+    TabOrder = 5
+    Text = '  /  /    '
+  end
+  object edDataF: TMaskEdit
+    Left = 296
+    Top = 73
+    Width = 75
+    Height = 22
+    EditMask = '!99/99/0000;1;_'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    MaxLength = 10
+    ParentFont = False
+    TabOrder = 6
+    Text = '  /  /    '
+  end
+  object edCidade: TLabeledEdit
+    Left = 16
+    Top = 120
+    Width = 355
+    Height = 21
+    EditLabel.Width = 37
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Cidade:'
+    TabOrder = 7
+  end
+  object edCdCliente: TEdit
+    Left = 16
+    Top = 166
+    Width = 37
+    Height = 21
+    TabOrder = 8
+  end
+  object edCliente: TEdit
+    Left = 59
+    Top = 166
+    Width = 312
+    Height = 21
+    TabOrder = 9
+  end
+  object rbOrdenar: TRadioGroup
+    Left = 16
+    Top = 193
+    Width = 355
+    Height = 48
+    Caption = 'Ordenar por:'
+    Columns = 3
+    Items.Strings = (
+      'ID'
+      'Cliente'
+      'Data de Reserva')
+    TabOrder = 10
   end
   object FDQuery1: TFDQuery
-    Active = True
     Connection = DM.FDConWeb
     SQL.Strings = (
       'SELECT r.*, c.nome, c.cpf, c.cnpj, c.celular, c.cidade'
       'FROM reservas r '
       'INNER JOIN cliente c ON r.cd_cliente = c.id;')
-    Left = 32
-    Top = 216
+    Left = 24
+    Top = 336
   end
   object frxDBDataset1: TfrxDBDataset
     UserName = 'frxDBDataset1'
@@ -333,14 +466,14 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
       'cidade=cidade')
     DataSet = FDQuery1
     BCDToCurrency = False
-    Left = 104
-    Top = 216
+    Left = 80
+    Top = 336
   end
   object DataSource1: TDataSource
     DataSet = FDQuery1
     OnDataChange = DataSource1DataChange
-    Left = 176
-    Top = 216
+    Left = 144
+    Top = 344
   end
   object FDQuery2: TFDQuery
     MasterSource = DataSource1
@@ -354,8 +487,8 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
       'FROM itens_reserva ir '
       'INNER JOIN produto p on ir.cd_produto = p.id'
       'WHERE ir.cd_reserva = :id')
-    Left = 32
-    Top = 264
+    Left = 24
+    Top = 376
     ParamData = <
       item
         Name = 'ID'
@@ -372,11 +505,11 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
       'descricao=descricao')
     DataSet = FDQuery2
     BCDToCurrency = False
-    Left = 104
-    Top = 264
+    Left = 80
+    Top = 376
   end
   object frxReport1: TfrxReport
-    Version = '5.3.14'
+    Version = '5.4.6'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
@@ -390,8 +523,8 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
       'begin'
       ''
       'end.')
-    Left = 176
-    Top = 264
+    Left = 144
+    Top = 376
     Datasets = <
       item
         DataSet = frxDBDataset1
@@ -3150,11 +3283,12 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
     UpdateOptions.UpdateTableName = 'bd_alugmat.reservas'
     TableName = 'bd_alugmat.reservas'
     Left = 32
-    Top = 160
+    Top = 280
     object FDTabelaID: TFDAutoIncField
       FieldName = 'ID'
       Origin = 'ID'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object FDTabelaCD_CLIENTE: TIntegerField
       AutoGenerateValue = arDefault
@@ -3176,7 +3310,7 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
   end
   object FDCommand1: TFDCommand
     Connection = DM.FDConWeb
-    Left = 112
-    Top = 160
+    Left = 104
+    Top = 296
   end
 end

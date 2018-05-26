@@ -4,7 +4,7 @@ object DM: TDM
   Width = 222
   object FDConnection1: TFDConnection
     Params.Strings = (
-      'SERVER=Cris-PC\SQLServer'
+      'SERVER=DESKTOP-EFLRI4C\SQLEXPRESS'
       'OSAuthent=Yes'
       'ApplicationName=Enterprise/Architect/Ultimate'
       'Workstation=DEIVID-PC'
@@ -32,12 +32,13 @@ object DM: TDM
       'User_Name=root'
       'Server=localhost'
       'DriverID=MySQL')
+    Connected = True
     LoginPrompt = False
     Left = 24
     Top = 120
   end
   object FDPhysWeb: TFDPhysMySQLDriverLink
-    VendorLib = 'C:\Projetos_Delphi\PROJETO FINAL\AlugMat\banco\libmysql.dll'
+    VendorLib = 'C:\Users\Jhonatan\Documents\GitHub\AlugMat\banco\libmysql.dll'
     Left = 96
     Top = 120
   end
