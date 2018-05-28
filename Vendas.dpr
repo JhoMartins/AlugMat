@@ -22,13 +22,14 @@ uses
   UntRelCategorias in 'UntRelatorio\UntRelCategorias.pas' {FrmRelCategorias},
   UntRelFornecedores in 'UntRelatorio\UntRelFornecedores.pas' {FrmRelFornecedores},
   UnitRelProdutos in 'UntRelatorio\UnitRelProdutos.pas' {FrmRelProdutos},
-  UntRelClientes in 'UntRelatorio\UntRelClientes.pas' {FrmRelClientes},
+  UntRelClientesk in 'UntRelatorio\UntRelClientesk.pas' {FrmRelClientesk},
   UntPadraoImportacao in 'UntPadrao\UntPadraoImportacao.pas' {FrmPadraoImportacao},
   UntIEProduto in 'UntImportacao\UntIEProduto.pas' {FrmIEProduto},
   UntIECliente in 'UntImportacao\UntIECliente.pas' {FrmIECliente},
   UntRelReservasWeb in 'UntRelatorio\UntRelReservasWeb.pas' {FrmRelReservaWeb},
   UntRelAluguel in 'UntRelatorio\UntRelAluguel.pas' {FrmRelAluguel},
-  UntRelFinanceiro in 'UntRelatorio\UntRelFinanceiro.pas' {FrmRelFinanceiro};
+  UntRelFinanceiro in 'UntRelatorio\UntRelFinanceiro.pas' {FrmRelFinanceiro},
+  UntRelClientes in 'UntRelatorio\UntRelClientes.pas' {FrmRelClientes};
 
 {$R *.res}
 
@@ -49,5 +50,6 @@ begin
   Application.CreateForm(TFrmCliente, FrmCliente);
   Application.CreateForm(TFrmProduto, FrmProduto);
   Application.CreateForm(TFrmUsuario, FrmUsuario);
+  Application.CreateForm(TFrmRelClientes, FrmRelClientes);
   Application.Run;
 end.
