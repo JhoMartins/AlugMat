@@ -73,6 +73,7 @@ type
     FDTFornecedorDATA_INC: TSQLTimeStampField;
     FDTFornecedorDATA_ALT: TSQLTimeStampField;
     FDTFornecedorSTATUS: TStringField;
+    FDCommand2: TFDCommand;
     procedure btnImportarClick(Sender: TObject);
     procedure btnExportarClick(Sender: TObject);
   private
@@ -118,9 +119,16 @@ begin
       if (FDTDesktopDESCRICAO.AsString = FDTWebDESCRICAO.AsString) then
       begin
         achou_prod := true;
-        break;
+
+        if FDTDesktopDISPONIVEL.AsString = 'N' then
+        begin
+          FDCommand1.CommandText.Clear;
+          FDCommand1.CommandText.Add('UPDATE PRODUTO SET DISPONIVEL = ' + #39 + 'N' + #39 + ' WHERE DESCRICAO = ' + #39 + FDTDesktopDESCRICAO.AsString + #39);
+          FDCommand1.Execute();
+        end;
       end;
-      FDTWeb.Next;
+      if achou_prod = false then FDTWeb.Next
+      else break;
     end;
 
     //Se não existir, importa
@@ -147,9 +155,9 @@ begin
         if (FDTMarcaID.AsString = FDTDesktopCD_MARCA.AsString) then
         begin
           achou_marca := true;
-          break;
         end;
-        FDTMarca.Next;
+        if achou_marca = false then FDTMarca.Next
+        else break;
       end;
 
       FDTWebMARCA.AsString := FDTMarcaDESCRICAO.AsString;
@@ -164,9 +172,9 @@ begin
         if (FDTCategoriaID.AsString = FDTDesktopCD_CATEGORIA.AsString) then
         begin
           achou_cat := true;
-          break;
         end;
-        FDTCategoria.Next;
+        if achou_cat = false then FDTCategoria.Next
+        else break;
       end;
 
       FDTWebCATEGORIA.AsString := FDTCategoriaDESCRICAO.AsString;
@@ -181,9 +189,9 @@ begin
         if (FDTFornecedorID.AsString = FDTDesktopCD_FORNECEDOR.AsString) then
         begin
           achou_forn := true;
-          break;
         end;
-        FDTFornecedor.Next;
+        if achou_forn = false then FDTFornecedor.Next
+        else break;
       end;
 
       FDTWebFORNECEDOR.AsString := FDTFornecedorRAZAO_SOCIAL.AsString;
@@ -193,6 +201,7 @@ begin
       //Salva Dados
       FDTWeb.Post;
     end;
+
     //Indicar o próximo Registro da tabela Local
     FDTDesktop.Next;
   end;
@@ -230,9 +239,16 @@ begin
       if (FDTDesktopDESCRICAO.AsString = FDTWebDESCRICAO.AsString) then
       begin
         achou_prod := true;
-        break;
+
+        if FDTWebDISPONIVEL.AsString = 'N' then
+        begin
+          FDCommand2.CommandText.Clear;
+          FDCommand2.CommandText.Add('UPDATE PRODUTO SET DISPONIVEL = ' + #39 + 'N' + #39 + ' WHERE DESCRICAO = ' + #39 + FDTWebDESCRICAO.AsString + #39);
+          FDCommand2.Execute();
+        end;
       end;
-      FDTDesktop.Next;
+      if achou_prod = false then FDTDesktop.Next
+      else break;
     end;
 
     //Se não existir, importa
@@ -260,9 +276,9 @@ begin
         if (FDTMarcaDESCRICAO.AsString = FDTWebMARCA.AsString) then
         begin
           achou_marca := true;
-          break;
         end;
-        FDTMarca.Next;
+        if achou_marca = false then FDTMarca.Next
+        else break;
       end;
 
       //Se não existe, importar
@@ -288,9 +304,9 @@ begin
         if (FDTCategoriaDESCRICAO.AsString = FDTWebCATEGORIA.AsString) then
         begin
           achou_cat := true;
-          break;
         end;
-        FDTCategoria.Next;
+        if achou_cat = false then FDTCategoria.Next
+        else break;
       end;
 
       if achou_cat = false then
@@ -315,9 +331,9 @@ begin
         if (FDTFornecedorRAZAO_SOCIAL.AsString = FDTWebFORNECEDOR.AsString) then
         begin
           achou_forn := true;
-          break;
         end;
-        FDTFornecedor.Next;
+        if achou_forn = false then FDTFornecedor.Next
+        else break;
       end;
 
       if achou_forn = false then
