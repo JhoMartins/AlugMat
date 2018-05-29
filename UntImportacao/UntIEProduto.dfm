@@ -365,4 +365,9 @@ inherited FrmIEProduto: TFrmIEProduto
       Size = 1
     end
   end
+  object FDCommand2: TFDCommand
+    Connection = DM.FDConnection1
+    Left = 416
+    Top = 328
+  end
 end

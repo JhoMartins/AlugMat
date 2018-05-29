@@ -72,7 +72,6 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
     Color = clGray
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 392
     object SpeedButton1: TSpeedButton
       Left = 0
       Top = 0
@@ -452,9 +451,6 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
       item
         Width = 50
       end>
-    ExplicitLeft = 328
-    ExplicitTop = 528
-    ExplicitWidth = 0
   end
   object rgStatus: TRadioGroup
     Left = 16
@@ -626,7 +622,7 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
         Name = 'ID'
         DataType = ftAutoInc
         ParamType = ptInput
-        Value = 10
+        Value = Null
       end>
   end
   object frxDBDataset2: TfrxDBDataset

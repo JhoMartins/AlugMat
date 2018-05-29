@@ -74,45 +74,53 @@ end;
 procedure TFrmRelReservaWeb.btn_finalizarClick(Sender: TObject);
 var finaliza: integer;
 begin
-  finaliza := Application.MessageBox('Realmente deseja Finalizar esta Reserva?' + #13 + 'O processo não poderá ser revertido!', 'Atenção', MB_YESNO+MB_ICONEXCLAMATION);
-
-  if finaliza = ID_YES then
+  if edReserva.Text <> '' then
   begin
-    //Encontra o Registro na Tabela
-    FDTabela.Open();
-    FDTabela.First;
+    finaliza := Application.MessageBox('Realmente deseja Finalizar esta Reserva?' + #13 + 'O processo não poderá ser revertido!', 'Atenção', MB_YESNO+MB_ICONEXCLAMATION);
 
-    while not FDTabela.Eof do
+    if finaliza = ID_YES then
     begin
-      if FDTabelaID.AsString = edReserva.Text then
+      //Encontra o Registro na Tabela
+      FDTabela.Open();
+      FDTabela.First;
+
+      while not FDTabela.Eof do
       begin
-        break;
+        if FDTabelaID.AsString = edReserva.Text then
+        begin
+          break;
+        end;
+        FDTabela.Next;
       end;
-      FDTabela.Next;
-    end;
 
-    if FDTabelaSTATUS.AsString = '' then
-    begin
-      FDCommand1.CommandText.Clear;
-      FDCommand1.CommandText.Add('UPDATE PRODUTO P SET P.DISPONIVEL = ' + #39 + 'S' + #39 + ' WHERE ID IN (SELECT IR.CD_PRODUTO FROM ITENS_RESERVA IR WHERE IR.CD_PRODUTO = P.ID AND IR.CD_RESERVA = ' + edReserva.Text + ')');
-      FDCommand1.Execute();
+      if FDTabelaSTATUS.AsString = '' then
+      begin
+        FDCommand1.CommandText.Clear;
+        FDCommand1.CommandText.Add('UPDATE PRODUTO P SET P.DISPONIVEL = ' + #39 + 'S' + #39 + ' WHERE ID IN (SELECT IR.CD_PRODUTO FROM ITENS_RESERVA IR WHERE IR.CD_PRODUTO = P.ID AND IR.CD_RESERVA = ' + edReserva.Text + ')');
+        FDCommand1.Execute();
 
-      FDCommand1.CommandText.Clear;
-      FDCommand1.CommandText.Add('UPDATE RESERVAS SET STATUS = ' + #39 + 'F' + #39 + ' WHERE ID = ' + edReserva.Text);
-      FDCommand1.Execute();
+        FDCommand1.CommandText.Clear;
+        FDCommand1.CommandText.Add('UPDATE RESERVAS SET STATUS = ' + #39 + 'F' + #39 + ' WHERE ID = ' + edReserva.Text);
+        FDCommand1.Execute();
 
-      ShowMessage('A reserva nº ' + edReserva.Text + ' foi finalizada com sucesso!' + #13 + 'Por favor, cadastre o aluguel do cliente no sistema.');
-      edReserva.Clear;
-      edReserva.SetFocus;
+        ShowMessage('A reserva nº ' + edReserva.Text + ' foi finalizada com sucesso!' + #13 + 'Por favor, cadastre o aluguel do cliente no sistema.');
+        edReserva.Clear;
+        edReserva.SetFocus;
+      end
+      else
+      begin
+        ShowMessage('A reserva nº ' + edReserva.Text + ' já estava finalizada.' + #13 + 'Nenhuma alteração foi feita.');
+      end;
     end
     else
     begin
-      ShowMessage('A reserva nº ' + edReserva.Text + ' já estava finalizada.' + #13 + 'Nenhuma alteração foi feita.');
+      ShowMessage('A finalização da reserva nº ' + edReserva.Text + ' foi abortada!');
+      edReserva.SetFocus;
     end;
   end
   else
   begin
-    ShowMessage('A finalização da reserva nº ' + edReserva.Text + ' foi abortada!');
+    Application.MessageBox('Por favor, informe o código da Reserva!', 'Erro', MB_OK+MB_ICONERROR);
     edReserva.SetFocus;
   end;
 end;

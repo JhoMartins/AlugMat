@@ -139,7 +139,7 @@ implementation
 {$R *.dfm}
 
 uses UntDM, UntMenuPrincipal, UntUsuario, UntCliente, UntProduto, UntPesqString,
-  UntRelAluguel;
+  UntRelAluguel, UntIEProduto;
 
 function TFrmAluguel.CalcularTotal(): real;
 var total: real;

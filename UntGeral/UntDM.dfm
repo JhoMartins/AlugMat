@@ -4,16 +4,13 @@ object DM: TDM
   Width = 222
   object FDConnection1: TFDConnection
     Params.Strings = (
- RelatorioMarca
-      'SERVER=DEIVID-PC'
- master
+      'SERVER=Cris-PC\SQLServer'
       'OSAuthent=Yes'
       'ApplicationName=Enterprise/Architect/Ultimate'
       'Workstation=DEIVID-PC'
       'DATABASE=ALUGMAT'
       'MARS=yes'
       'DriverID=MSSQL')
-    Connected = True
     LoginPrompt = False
     Transaction = FDTransaction1
     Left = 40
@@ -40,10 +37,7 @@ object DM: TDM
     Top = 120
   end
   object FDPhysWeb: TFDPhysMySQLDriverLink
-RelatorioMarca
-    VendorLib = 'C:\Users\xdeiv\Documents\GitHub\AlugMat\banco\libmysql.dll'
-=======
-    master
+    VendorLib = 'C:\Projetos_Delphi\PROJETO FINAL\AlugMat\banco\libmysql.dll'
     Left = 96
     Top = 120
   end
