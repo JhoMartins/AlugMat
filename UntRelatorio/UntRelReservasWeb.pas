@@ -8,7 +8,7 @@ uses
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.StdCtrls, Vcl.Buttons,
-  Vcl.ExtCtrls, frxClass, frxDBSet, Vcl.Mask;
+  Vcl.ExtCtrls, frxClass, frxDBSet, Vcl.Mask, Vcl.ComCtrls, Vcl.DBCtrls;
 
 type
   TFrmRelReservaWeb = class(TForm)
@@ -42,10 +42,17 @@ type
     edCdCliente: TEdit;
     rbOrdenar: TRadioGroup;
     edCliente: TEdit;
+    StatusBar1: TStatusBar;
+    rgStatus: TRadioGroup;
+    GroupBox1: TGroupBox;
+    Label7: TLabel;
+    btn_finalizar: TBitBtn;
+    edReserva: TEdit;
     procedure btn_imprimirClick(Sender: TObject);
     procedure btn_cancelarClick(Sender: TObject);
-    procedure DataSource1DataChange(Sender: TObject; Field: TField);
     procedure btn_limparClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure btn_finalizarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -64,9 +71,54 @@ begin
   Close;
 end;
 
+procedure TFrmRelReservaWeb.btn_finalizarClick(Sender: TObject);
+var finaliza: integer;
+begin
+  finaliza := Application.MessageBox('Realmente deseja Finalizar esta Reserva?' + #13 + 'O processo não poderá ser revertido!', 'Atenção', MB_YESNO+MB_ICONEXCLAMATION);
+
+  if finaliza = ID_YES then
+  begin
+    //Encontra o Registro na Tabela
+    FDTabela.Open();
+    FDTabela.First;
+
+    while not FDTabela.Eof do
+    begin
+      if FDTabelaID.AsString = edReserva.Text then
+      begin
+        break;
+      end;
+      FDTabela.Next;
+    end;
+
+    if FDTabelaSTATUS.AsString = '' then
+    begin
+      FDCommand1.CommandText.Clear;
+      FDCommand1.CommandText.Add('UPDATE PRODUTO P SET P.DISPONIVEL = ' + #39 + 'S' + #39 + ' WHERE ID IN (SELECT IR.CD_PRODUTO FROM ITENS_RESERVA IR WHERE IR.CD_PRODUTO = P.ID AND IR.CD_RESERVA = ' + edReserva.Text + ')');
+      FDCommand1.Execute();
+
+      FDCommand1.CommandText.Clear;
+      FDCommand1.CommandText.Add('UPDATE RESERVAS SET STATUS = ' + #39 + 'F' + #39 + ' WHERE ID = ' + edReserva.Text);
+      FDCommand1.Execute();
+
+      ShowMessage('A reserva nº ' + edReserva.Text + ' foi finalizada com sucesso!' + #13 + 'Por favor, cadastre o aluguel do cliente no sistema.');
+      edReserva.Clear;
+      edReserva.SetFocus;
+    end
+    else
+    begin
+      ShowMessage('A reserva nº ' + edReserva.Text + ' já estava finalizada.' + #13 + 'Nenhuma alteração foi feita.');
+    end;
+  end
+  else
+  begin
+    ShowMessage('A finalização da reserva nº ' + edReserva.Text + ' foi abortada!');
+    edReserva.SetFocus;
+  end;
+end;
+
 procedure TFrmRelReservaWeb.btn_imprimirClick(Sender: TObject);
-var StrLiga: String;
-    Data: TDateTime;
+var StrLiga, dia, mes, ano: String;
 begin
   FDQuery1.Close;
   FDQuery2.Close;
@@ -77,14 +129,14 @@ begin
   begin
     Clear;
 
-    Add('SELECT r.*, c.nome, c.cpf, c.cnpj, c.celular, c.cidade ');
-	  Add('FROM reservas r ');
-    Add('INNER JOIN cliente c ON r.cd_cliente = c.id');
+    Add('SELECT R.ID, R.CD_CLIENTE, R.DATA_RESERVA, (CASE WHEN R.STATUS IS NULL THEN ' + #39 + 'Em Aberto' + #39 + ' WHEN R.STATUS = ' + #39 + 'F' + #39 + ' THEN ' + #39 + 'Finalizado' + #39 + ' ELSE ' + #39 + 'Finalizado Automaticamente' + #39 + ' END) AS STATUS, C.NOME, C.CPF, C.CNPJ, C.CELULAR, C.TELEFONE, C.CIDADE ');
+	  Add('FROM RESERVAS R ');
+    Add('INNER JOIN CLIENTE C ON R.CD_CLIENTE = C.ID ');
 
     if edNumReserva.Text <> '' then
     try
       StrtoInt(edNumReserva.Text);
-      Add(StrLiga + 'r.id = ' + edNumReserva.Text);
+      Add(StrLiga + 'R.ID = ' + edNumReserva.Text);
       StrLiga:= ' AND ';
     except
       on EConvertError do;
@@ -93,8 +145,10 @@ begin
     //DATA INICIAL DE ALUGUEL
     if edDataI.Text <> '  /  /    ' then
     try
-      Data := StrToDate(edDataI.Text);
-      Add(StrLiga + 'r.data_reserva >= ' + #39 + DateToStr(Data) + #39);
+      dia := formatdatetime('dd', StrToDate(edDataI.Text));
+      mes := formatdatetime('mm', StrToDate(edDataI.Text));
+      ano := formatdatetime('yyyy', StrToDate(edDataI.Text));
+      Add(StrLiga + 'R.DATA_RESERVA >= ' + #39 + ano+'-'+mes+'-'+dia + #39);
       StrLiga := ' AND ';
     except
       on EConvertError do;
@@ -103,8 +157,10 @@ begin
     //DATA FINAL DE ALUGUEL
     if edDataF.Text <> '  /  /    ' then
     try
-      StrToDate(edDataF.Text);
-      Add(StrLiga + 'r.data_reserva <= ' + #39 + edDataF.Text + #39);
+      dia := formatdatetime('dd', StrToDate(edDataF.Text));
+      mes := formatdatetime('mm', StrToDate(edDataF.Text));
+      ano := formatdatetime('yyyy', StrToDate(edDataF.Text));
+      Add(StrLiga + 'R.DATA_RESERVA <= ' + #39 + ano+'-'+mes+'-'+dia + #39);
       StrLiga := ' AND ';
     except
       on EConvertError do;
@@ -113,7 +169,7 @@ begin
     if edCidade.Text <> '' then
     begin
       try
-        Add(StrLiga + 'c.cidade LIKE ' + #39 + '%' + edCidade.Text + '%' + #39);
+        Add(StrLiga + 'C.CIDADE LIKE ' + #39 + '%' + edCidade.Text + '%' + #39);
         StrLiga:= ' AND ';
       except
         on EConvertError do;
@@ -123,7 +179,7 @@ begin
     if edCdCliente.Text <> '' then
     try
       StrtoInt(edCdCliente.Text);
-      Add(StrLiga + 'r.cd_cliente = ' + edCdCliente.Text);
+      Add(StrLiga + 'R.CD_CLIENTE = ' + edCdCliente.Text);
       StrLiga:= ' AND ';
     except
       on EConvertError do;
@@ -131,18 +187,35 @@ begin
 
     if edCliente.Text <> '' then
     try
-      Add(StrLiga + 'c.nome LIKE ' + #39 + '%' + edCliente.Text + '%' + #39);
+      Add(StrLiga + 'C.NOME LIKE ' + #39 + '%' + edCliente.Text + '%' + #39);
       StrLiga:= ' AND ';
     except
       on EConvertError do;
     end;
 
-    case rbOrdenar.ItemIndex of
-      0: Add(' ORDER BY r.id');
-      1: Add(' ORDER BY c.nome');
-      2: Add(' ORDER BY r.data_reserva');
+    if rgStatus.ItemIndex = 1 then
+    begin
+      Add(StrLiga + ' R.STATUS IS NULL');
+      StrLiga := ' AND ';
     end;
 
+    if rgStatus.ItemIndex = 2 then
+    begin
+      Add(StrLiga + ' R.STATUS = ' + #39 + 'F' + #39);
+      StrLiga := ' AND ';
+    end;
+
+    if rgStatus.ItemIndex = 3 then
+    begin
+      Add(StrLiga + ' R.STATUS = ' + #39 + 'A' + #39);
+      StrLiga := ' AND ';
+    end;
+
+    case rbOrdenar.ItemIndex of
+      0: Add(' ORDER BY R.ID');
+      1: Add(' ORDER BY C.NOME');
+      2: Add(' ORDER BY R.DATA_RESERVA');
+    end;
   end;
 
   FDQuery1.Open();
@@ -164,8 +237,7 @@ begin
   edNumReserva.SetFocus;
 end;
 
-procedure TFrmRelReservaWeb.DataSource1DataChange(Sender: TObject;
-  Field: TField);
+procedure TFrmRelReservaWeb.FormActivate(Sender: TObject);
 var msg: string;
     finaliza: boolean;
 begin
