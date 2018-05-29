@@ -4,8 +4,8 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'Impress'#227'o do Relat'#243'rio de Reservas Web'
-  ClientHeight = 446
-  ClientWidth = 392
+  ClientHeight = 447
+  ClientWidth = 386
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,6 +14,7 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnActivate = FormActivate
   PixelsPerInch = 96
   TextHeight = 13
   object Label3: TLabel
@@ -65,13 +66,13 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 392
+    Width = 386
     Height = 41
     Align = alTop
     Color = clGray
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 568
+    ExplicitWidth = 392
     object SpeedButton1: TSpeedButton
       Left = 0
       Top = 0
@@ -164,8 +165,8 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
     end
   end
   object btn_imprimir: TBitBtn
-    Left = 288
-    Top = 263
+    Left = 281
+    Top = 308
     Width = 90
     Height = 33
     Caption = 'Imprimir'
@@ -230,8 +231,8 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
     OnClick = btn_imprimirClick
   end
   object btn_cancelar: TBitBtn
-    Left = 192
-    Top = 263
+    Left = 185
+    Top = 308
     Width = 90
     Height = 33
     Caption = 'Cancelar'
@@ -291,8 +292,8 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
     OnClick = btn_cancelarClick
   end
   object btn_limpar: TBitBtn
-    Left = 96
-    Top = 263
+    Left = 89
+    Top = 308
     Width = 90
     Height = 33
     Caption = 'Limpar'
@@ -431,7 +432,7 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
   end
   object rbOrdenar: TRadioGroup
     Left = 16
-    Top = 193
+    Top = 250
     Width = 355
     Height = 48
     Caption = 'Ordenar por:'
@@ -442,14 +443,144 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
       'Data de Reserva')
     TabOrder = 10
   end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 428
+    Width = 386
+    Height = 19
+    Panels = <
+      item
+        Width = 50
+      end>
+    ExplicitLeft = 328
+    ExplicitTop = 528
+    ExplicitWidth = 0
+  end
+  object rgStatus: TRadioGroup
+    Left = 16
+    Top = 193
+    Width = 351
+    Height = 48
+    Caption = 'Status:'
+    Columns = 4
+    ItemIndex = 0
+    Items.Strings = (
+      'Todos'
+      'Em Aberto'
+      'Finalizado'
+      'Fin. Auto.')
+    TabOrder = 12
+  end
+  object GroupBox1: TGroupBox
+    Left = 16
+    Top = 353
+    Width = 355
+    Height = 62
+    Caption = 'Finaliza'#231#227'o de Reservas:'
+    TabOrder = 13
+    object Label7: TLabel
+      Left = 40
+      Top = 26
+      Width = 95
+      Height = 13
+      Caption = 'C'#243'digo da Reserva:'
+    end
+    object btn_finalizar: TBitBtn
+      Left = 218
+      Top = 17
+      Width = 88
+      Height = 33
+      Caption = 'Finalizar'
+      Glyph.Data = {
+        F6060000424DF606000000000000360000002800000018000000180000000100
+        180000000000C0060000120B0000120B00000000000000000000FF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF006600FF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF00660021A335006600
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF00660024
+        A53912A92028B040006600FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FF00660027A73E1EB43218AE2913AB2227AF3E006600FF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FF0066001F99312EC04A26BA3E1FB53419AF2B13AB2325AE3C0066
+        00FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FF0066001D952E3FCE6337C8572FC14C25A63B006600
+        29B14114AC2524AD3A006600FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FF0066001A902A4FDA7948D56F40CF642F
+        B34A006600FF00FF0066001CB22F15AC2622AC38006600FF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF00660059E28955E0
+        8250DB7B36BC55006600FF00FFFF00FFFF00FF006600148D2117AE2721AB3600
+        6600FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        00660031B04D5BE48A3ABF5B006600FF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FF00660018AE2920AA34006600FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FF00660047CF6D006600FF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FF00660019AF2B14AB23006600FF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF006600FF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF0066000B7E1314AB24
+        006600FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FF006600118D1D006600FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FF00660008790F006600FF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF0066
+        00006600FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FF006600FF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+      TabOrder = 0
+      OnClick = btn_finalizarClick
+    end
+    object edReserva: TEdit
+      Left = 141
+      Top = 23
+      Width = 52
+      Height = 21
+      TabOrder = 1
+    end
+  end
   object FDQuery1: TFDQuery
+    Active = True
     Connection = DM.FDConWeb
     SQL.Strings = (
-      'SELECT r.*, c.nome, c.cpf, c.cnpj, c.celular, c.cidade'
-      'FROM reservas r '
-      'INNER JOIN cliente c ON r.cd_cliente = c.id;')
-    Left = 24
-    Top = 336
+      'SELECT R.ID, '
+      '       R.CD_CLIENTE, '
+      '       R.DATA_RESERVA, '
+      '      (CASE '
+      '       WHEN R.STATUS IS NULL THEN '#39'Em Aberto'#39
+      '       WHEN R.STATUS = '#39'F'#39' THEN '#39'Finalizado'#39
+      '       ELSE '#39'Finalizado Automaticamente'#39
+      '       END) AS STATUS, '
+      '       C.NOME, '
+      '       C.CPF, '
+      '       C.CNPJ, '
+      '       C.CELULAR,'
+      '       C.TELEFONE, '
+      '       C.CIDADE '
+      'FROM RESERVAS R'
+      'INNER JOIN CLIENTE C ON R.CD_CLIENTE = C.ID')
+    Left = 16
+    Top = 496
   end
   object frxDBDataset1: TfrxDBDataset
     UserName = 'frxDBDataset1'
@@ -457,25 +588,26 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
     FieldAliases.Strings = (
       'ID=ID'
       'CD_CLIENTE=CD_CLIENTE'
-      'STATUS=STATUS'
       'DATA_RESERVA=DATA_RESERVA'
-      'nome=nome'
-      'cpf=cpf'
-      'cnpj=cnpj'
-      'celular=celular'
-      'cidade=cidade')
+      'STATUS=STATUS'
+      'NOME=nome'
+      'CPF=cpf'
+      'CNPJ=cnpj'
+      'CELULAR=celular'
+      'TELEFONE=TELEFONE'
+      'CIDADE=cidade')
     DataSet = FDQuery1
     BCDToCurrency = False
-    Left = 80
-    Top = 336
+    Left = 72
+    Top = 496
   end
   object DataSource1: TDataSource
     DataSet = FDQuery1
-    OnDataChange = DataSource1DataChange
-    Left = 144
-    Top = 344
+    Left = 136
+    Top = 496
   end
   object FDQuery2: TFDQuery
+    Active = True
     MasterSource = DataSource1
     MasterFields = 'ID'
     DetailFields = 'id'
@@ -483,18 +615,18 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
     FetchOptions.AssignedValues = [evCache]
     FetchOptions.Cache = [fiBlobs, fiMeta]
     SQL.Strings = (
-      'SELECT ir.id, p.descricao '
+      'SELECT ir.id, p.descricao, p.cd_interno '
       'FROM itens_reserva ir '
       'INNER JOIN produto p on ir.cd_produto = p.id'
       'WHERE ir.cd_reserva = :id')
-    Left = 24
-    Top = 376
+    Left = 16
+    Top = 544
     ParamData = <
       item
         Name = 'ID'
         DataType = ftAutoInc
         ParamType = ptInput
-        Value = Null
+        Value = 10
       end>
   end
   object frxDBDataset2: TfrxDBDataset
@@ -502,14 +634,15 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
     CloseDataSource = False
     FieldAliases.Strings = (
       'id=id'
-      'descricao=descricao')
+      'descricao=descricao'
+      'cd_interno=cd_interno')
     DataSet = FDQuery2
     BCDToCurrency = False
-    Left = 80
-    Top = 376
+    Left = 72
+    Top = 544
   end
   object frxReport1: TfrxReport
-    Version = '5.4.6'
+    Version = '5.3.14'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
@@ -523,8 +656,8 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
       'begin'
       ''
       'end.')
-    Left = 144
-    Top = 376
+    Left = 136
+    Top = 544
     Datasets = <
       item
         DataSet = frxDBDataset1
@@ -2900,13 +3033,14 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
       end
       object MasterData1: TfrxMasterData
         FillType = ftBrush
-        Height = 71.811070000000000000
+        Height = 151.181200000000000000
         Top = 207.874150000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
         RowCount = 0
         object Memo7: TfrxMemoView
+          Top = 52.913420000000000000
           Width = 71.811070000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2920,7 +3054,8 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
         end
         object frxDBDataset1ID: TfrxMemoView
           Left = 75.590600000000000000
-          Width = 41.574830000000000000
+          Top = 52.913420000000000000
+          Width = 49.133890000000000000
           Height = 18.897650000000000000
           DataField = 'ID'
           DataSet = frxDBDataset1
@@ -2930,19 +3065,28 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          HAlign = haCenter
           Memo.UTF8W = (
             '[frxDBDataset1."ID"]')
           ParentFont = False
         end
         object Memo8: TfrxMemoView
-          Left = 120.944960000000000000
+          Left = 245.669450000000000000
+          Top = 52.913420000000000000
           Width = 94.488250000000000000
           Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
           Memo.UTF8W = (
             'Data Reserva:')
+          ParentFont = False
         end
         object frxDBDataset1DATA_RESERVA: TfrxMemoView
-          Left = 219.212740000000000000
+          Left = 343.937230000000000000
+          Top = 52.913420000000000000
           Width = 94.488250000000000000
           Height = 18.897650000000000000
           DataField = 'DATA_RESERVA'
@@ -2958,7 +3102,7 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
           ParentFont = False
         end
         object Memo9: TfrxMemoView
-          Left = 321.260050000000000000
+          Top = 79.370130000000000000
           Width = 45.354360000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2971,8 +3115,9 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
           ParentFont = False
         end
         object frxDBDataset1nome: TfrxMemoView
-          Left = 370.393940000000000000
-          Width = 234.330860000000000000
+          Left = 94.488250000000000000
+          Top = 79.370130000000000000
+          Width = 415.748300000000000000
           Height = 18.897650000000000000
           DataField = 'nome'
           DataSet = frxDBDataset1
@@ -2987,8 +3132,9 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
           ParentFont = False
         end
         object frxDBDataset1STATUS: TfrxMemoView
-          Left = 665.197280000000000000
-          Width = 52.913420000000000000
+          Left = 544.252320000000000000
+          Top = 52.913420000000000000
+          Width = 173.858380000000000000
           Height = 18.897650000000000000
           DataField = 'STATUS'
           DataSet = frxDBDataset1
@@ -3003,7 +3149,8 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
           ParentFont = False
         end
         object Memo10: TfrxMemoView
-          Left = 612.283860000000000000
+          Left = 495.118430000000000000
+          Top = 52.913420000000000000
           Width = 49.133890000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3016,7 +3163,8 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
           ParentFont = False
         end
         object Memo11: TfrxMemoView
-          Top = 22.677180000000000000
+          Left = 517.795610000000000000
+          Top = 79.370130000000000000
           Width = 75.590600000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3029,9 +3177,9 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
           ParentFont = False
         end
         object frxDBDataset1cpf: TfrxMemoView
-          Left = 79.370130000000000000
-          Top = 22.677180000000000000
-          Width = 113.385900000000000000
+          Left = 593.386210000000000000
+          Top = 79.370130000000000000
+          Width = 124.724490000000000000
           Height = 18.897650000000000000
           DataField = 'cpf'
           DataSet = frxDBDataset1
@@ -3041,14 +3189,15 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          HAlign = haRight
           Memo.UTF8W = (
             '[frxDBDataset1."cpf"]')
           ParentFont = False
         end
         object frxDBDataset1cnpj: TfrxMemoView
-          Left = 79.370130000000000000
-          Top = 22.677180000000000000
-          Width = 113.385900000000000000
+          Left = 593.386210000000000000
+          Top = 79.370130000000000000
+          Width = 124.724490000000000000
           Height = 18.897650000000000000
           DataField = 'cnpj'
           DataSet = frxDBDataset1
@@ -3058,13 +3207,13 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          HAlign = haRight
           Memo.UTF8W = (
             '[frxDBDataset1."cnpj"]')
           ParentFont = False
         end
         object Memo12: TfrxMemoView
-          Left = 196.535560000000000000
-          Top = 22.677180000000000000
+          Top = 105.826840000000000000
           Width = 56.692950000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3077,9 +3226,9 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
           ParentFont = False
         end
         object frxDBDataset1cidade: TfrxMemoView
-          Left = 257.008040000000000000
-          Top = 22.677180000000000000
-          Width = 287.244280000000000000
+          Left = 56.692950000000000000
+          Top = 105.826840000000000000
+          Width = 264.567100000000000000
           Height = 18.897650000000000000
           DataField = 'cidade'
           DataSet = frxDBDataset1
@@ -3094,8 +3243,8 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
           ParentFont = False
         end
         object Memo13: TfrxMemoView
-          Left = 548.031850000000000000
-          Top = 22.677180000000000000
+          Left = 566.929500000000000000
+          Top = 105.826840000000000000
           Width = 52.913420000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3108,9 +3257,9 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
           ParentFont = False
         end
         object frxDBDataset1celular: TfrxMemoView
-          Left = 604.724800000000000000
-          Top = 22.677180000000000000
-          Width = 113.385900000000000000
+          Left = 619.842920000000000000
+          Top = 105.826840000000000000
+          Width = 98.267780000000000000
           Height = 18.897650000000000000
           DataField = 'celular'
           DataSet = frxDBDataset1
@@ -3120,55 +3269,126 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          HAlign = haRight
           Memo.UTF8W = (
             '[frxDBDataset1."celular"]')
           ParentFont = False
         end
         object Line1: TfrxLineView
+          Top = 52.913420000000000000
           Width = 718.110700000000000000
           Color = clBlack
           Frame.Width = 1.500000000000000000
           Diagonal = True
         end
         object Line2: TfrxLineView
-          Top = 41.574830000000000000
+          Left = 3.779530000000000000
+          Top = 132.283550000000000000
           Width = 718.110700000000000000
           Color = clBlack
           Frame.Width = 1.500000000000000000
           Diagonal = True
         end
-        object Memo14: TfrxMemoView
-          Top = 49.133890000000000000
-          Width = 49.133890000000000000
+        object Memo15: TfrxMemoView
+          Left = 64.252010000000000000
+          Top = 132.283550000000000000
+          Width = 521.575140000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'Descri'#231#227'o')
+          ParentFont = False
+        end
+        object Line4: TfrxLineView
+          Align = baWidth
+          Top = 151.181200000000000000
+          Width = 718.110700000000000000
+          Color = clBlack
+          Frame.Width = 1.500000000000000000
+          Diagonal = True
+        end
+        object frxDBDataset1CD_CLIENTE: TfrxMemoView
+          Left = 45.354360000000000000
+          Top = 79.370130000000000000
+          Width = 45.354360000000000000
+          Height = 18.897650000000000000
+          DataField = 'CD_CLIENTE'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[frxDBDataset1."CD_CLIENTE"]')
+          ParentFont = False
+        end
+        object Memo14: TfrxMemoView
+          Left = 340.157700000000000000
+          Top = 105.826840000000000000
+          Width = 64.252010000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8W = (
+            'Telefone:')
+          ParentFont = False
+        end
+        object frxDBDataset1TELEFONE: TfrxMemoView
+          Left = 404.409710000000000000
+          Top = 105.826840000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          DataField = 'TELEFONE'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Memo.UTF8W = (
+            '[frxDBDataset1."TELEFONE"]')
+        end
+        object Memo18: TfrxMemoView
+          Top = 132.283550000000000000
+          Width = 60.472480000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          HAlign = haCenter
           Memo.UTF8W = (
             'ID')
           ParentFont = False
         end
-        object Memo15: TfrxMemoView
-          Left = 52.913420000000000000
-          Top = 49.133890000000000000
-          Width = 665.197280000000000000
+        object Memo19: TfrxMemoView
+          Left = 589.606680000000000000
+          Top = 132.283550000000000000
+          Width = 128.504020000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          HAlign = haCenter
           Memo.UTF8W = (
-            'Descri'#231#227'o')
+            'C'#243'd. Interno')
           ParentFont = False
         end
       end
       object DetailData1: TfrxDetailData
         FillType = ftBrush
-        Height = 26.456710000000000000
-        Top = 302.362400000000000000
+        Height = 18.897650000000000000
+        Top = 381.732530000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset2
         DataSetName = 'frxDBDataset2'
@@ -3186,17 +3406,24 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
           Highlight.Fill.BackColor = 15000804
         end
         object frxDBDataset2id: TfrxMemoView
-          Width = 49.133890000000000000
+          Width = 60.472480000000000000
           Height = 18.897650000000000000
           DataField = 'id'
           DataSet = frxDBDataset2
           DataSetName = 'frxDBDataset2'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haCenter
           Memo.UTF8W = (
             '[frxDBDataset2."id"]')
+          ParentFont = False
         end
         object frxDBDataset2descricao: TfrxMemoView
-          Left = 52.913420000000000000
-          Width = 665.197280000000000000
+          Left = 64.252010000000000000
+          Width = 521.575140000000000000
           Height = 18.897650000000000000
           DataField = 'descricao'
           DataSet = frxDBDataset2
@@ -3204,20 +3431,39 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
           Memo.UTF8W = (
             '[frxDBDataset2."descricao"]')
         end
+        object frxDBDataset2cd_interno: TfrxMemoView
+          Left = 589.606680000000000000
+          Width = 128.504020000000000000
+          Height = 18.897650000000000000
+          DataField = 'cd_interno'
+          DataSet = frxDBDataset2
+          DataSetName = 'frxDBDataset2'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[frxDBDataset2."cd_interno"]')
+          ParentFont = False
+        end
       end
       object ReportSummary1: TfrxReportSummary
         FillType = ftBrush
-        Height = 22.677180000000000000
-        Top = 389.291590000000000000
+        Height = 56.692950000000000000
+        Top = 461.102660000000000000
         Width = 718.110700000000000000
         object Line3: TfrxLineView
+          Top = 34.015770000000000000
           Width = 725.669760000000000000
           Color = clBlack
           Frame.Width = 1.500000000000000000
           Diagonal = True
         end
         object Memo6: TfrxMemoView
-          Top = 3.779530000000000000
+          Left = 411.968770000000000000
+          Top = 37.795300000000000000
           Width = 253.228510000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -3230,15 +3476,16 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
           ParentFont = False
         end
         object SysMemo1: TfrxSysMemoView
-          Left = 257.008040000000000000
-          Top = 3.779530000000000000
-          Width = 94.488250000000000000
+          Left = 665.197280000000000000
+          Top = 37.795300000000000000
+          Width = 52.913420000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'Arial'
-          Font.Style = [fsBold]
+          Font.Style = []
+          HAlign = haCenter
           Memo.UTF8W = (
             '[COUNT(DetailData1)]')
           ParentFont = False
@@ -3247,7 +3494,7 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
       object PageFooter1: TfrxPageFooter
         FillType = ftBrush
         Height = 22.677180000000000000
-        Top = 434.645950000000000000
+        Top = 540.472790000000000000
         Width = 718.110700000000000000
         object Memo16: TfrxMemoView
           Left = 419.527830000000000000
@@ -3282,8 +3529,8 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
     Connection = DM.FDConWeb
     UpdateOptions.UpdateTableName = 'bd_alugmat.reservas'
     TableName = 'bd_alugmat.reservas'
-    Left = 32
-    Top = 280
+    Left = 16
+    Top = 440
     object FDTabelaID: TFDAutoIncField
       FieldName = 'ID'
       Origin = 'ID'
@@ -3310,7 +3557,7 @@ object FrmRelReservaWeb: TFrmRelReservaWeb
   end
   object FDCommand1: TFDCommand
     Connection = DM.FDConWeb
-    Left = 104
-    Top = 296
+    Left = 88
+    Top = 440
   end
 end

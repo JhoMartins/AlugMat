@@ -4,7 +4,9 @@ object DM: TDM
   Width = 222
   object FDConnection1: TFDConnection
     Params.Strings = (
+ RelatorioMarca
       'SERVER=DEIVID-PC'
+ master
       'OSAuthent=Yes'
       'ApplicationName=Enterprise/Architect/Ultimate'
       'Workstation=DEIVID-PC'
@@ -33,13 +35,15 @@ object DM: TDM
       'User_Name=root'
       'Server=localhost'
       'DriverID=MySQL')
-    Connected = True
     LoginPrompt = False
     Left = 24
     Top = 120
   end
   object FDPhysWeb: TFDPhysMySQLDriverLink
+RelatorioMarca
     VendorLib = 'C:\Users\xdeiv\Documents\GitHub\AlugMat\banco\libmysql.dll'
+=======
+    master
     Left = 96
     Top = 120
   end
