@@ -12,10 +12,6 @@ uses
 
 type
   TFrmRelProdutos = class(TFrmPadraoRel)
-    GroupBox1: TGroupBox;
-    Chb_Marca: TCheckBox;
-    Chb_Categoria: TCheckBox;
-    Chb_Fornecedor: TCheckBox;
     edtIDde: TLabeledEdit;
     EdtIDate: TLabeledEdit;
     edtDescricaoDe: TLabeledEdit;
@@ -39,76 +35,72 @@ implementation
 {$R *.dfm}
 
 procedure TFrmRelProdutos.btn_imprimirClick(Sender: TObject);
-var StrLiga: String;
+var StrLiga: string;
 begin
   inherited;
-  StrLiga:= 'where ';
   FDQuery1.CLose;
+  StrLiga:='where ';
   with FDQuery1.SQL do
   begin
     Clear;
-    add('SELECT p.id, p.descricao, P.cd_interno, p.status, p.disponivel, p.valor_diaria, m.descricao, c.descricao, f.razao_social '+
-   ' FROM produto p INNER JOIN marca m on m.id = p.id'+
-   ' INNER JOIN categoria c on c.id = p.id'+
-   ' INNER JOIN fornecedor f on f.id = p.id ');
+    add('SELECT m.descricao as marca, c.descricao as categoria, f.nome_fantasia as fornecedor, p.id, p.descricao, p.cd_interno, p.status, p.disponivel, p.valor_diaria ');
+   add('FROM produto P ');
+   add('INNER JOIN marca m on p.cd_marca = m.id');
+   add('INNER JOIN categoria c on p.cd_categoria = c.id ');
+   add('INNER JOIN fornecedor f on p.cd_fornecedor = f.id ');
+
     if edtIDde.Text <> '' then
-    try
-      StrToInt (edtIDde.Text);
-      Add(StrLiga+'ID >= '''+edtIDde.Text+'''');
-      StrLiga:= ' and ';
+   try
+      StrToInt(edtidDe.Text);
+      Add(StrLiga+'p.id >= '''+edtidDe.Text + '''');
+      StrLiga:= 'and ';
     except
-    on EconvertError do;
-    end;
-    if edtIDAte.Text <> '' then
-    try
-    StrToInt(EdtIDde.Text);
-    Add(StrLiga+'ID <= '''+edtIDAte.Text+'''');
-    StrLiga:=' and ';
-    except
-    on EConvertError do;
-    end;
-    if edtDescricaoDe.Text <> '' then
-    begin
-    Add(StrLiga+'DESCRICAO >= '''+edtDescricaoDe.Text+'''');
-    StrLiga:=' and ';
-    end;
-    if edtDescricaoAte.Text <> '' then
-    begin
-      Add(StrLiga+'DESCRICAO <= '''+edtDescricaoAte.Text+'zzz''');
-      Strliga:= ' and ';
-    end;
-    if Chb_Marca.Checked = true then
-    begin
-      add(StrLiga+'M.DESCRICAO = '+#39+'M.ID'+#39);
-      strliga:=' and ';
-    end;
-    if Chb_Categoria.Checked = true then
-    begin
-      add(strLiga+'C.DESCRICAO = '+#39+'C.ID'+#39);
-      Strliga:=' and ';
-    end;
-      if Chb_Fornecedor.Checked = true then
-    begin
-      add(strLiga+'F.NOME_FANTASIA = '+#39+'F.ID'+#39);
-      Strliga:=' and ';
-    end;
-    case RadioGroup1.ItemIndex of
-    0: add(' order by ID');
-    1: add(' order by DESCRICAO');
-    2: add(' order by VALOR_DIARIA');
-    end;
-   case RadioGroup2.ItemIndex of
-      0: Add(StrLiga + 'status = ''S''');
-      1: Add(StrLiga + 'status = ''N''');
-    end;
-     case RadioGroup3.ItemIndex of
-      0: Add(StrLiga + 'status = ''S''');
-      1: Add(StrLiga + 'status = ''N''');
+      on EConvertError do;
     end;
 
-  end;
+    if edtidAte.Text <> '' then
+    try
+      StrToInt(edtidAte.Text);
+      Add(StrLiga+'p.id <= '''+edtidAte.Text + '''');
+      StrLiga:= 'and ';
+    except
+      on EConvertError do;
+    end;
+
+      if edtDescricaoDe.Text <> '' then
+    begin
+      Add(StrLiga+'p.descricao >= '''+edtDescricaoDe.Text + '''');
+      StrLiga:= 'and ';
+    end;
+
+    if edtDescricaoAte.Text <> '' then
+    begin
+      Add(StrLiga+'p.descricao <= '''+edtDescricaoAte.Text + 'zzzz''');
+      StrLiga:= 'and ';
+    end;
+
+       case RadioGroup1.ItemIndex of
+      0: Add(' ORDER BY p.id');
+      1: Add(' ORDER BY p.descricao');
+      2: Add(' ORDER BY p.valor_diaria');
+    end;
+
+
+    case RadioGroup2.ItemIndex of
+      0: Add(StrLiga + 'p.status = ''S''');
+      1: Add(StrLiga + 'p.status = ''N''');
+    end;
+
+    case RadioGroup3.ItemIndex of
+      0: Add(StrLiga + 'p.disponivel = ''S''');
+      1: Add(StrLiga + 'p.disponivel = ''N''');
+    end;
+
+
+
   FDQuery1.Open();
   frxReport1.ShowReport();
+end;
 end;
 
 
