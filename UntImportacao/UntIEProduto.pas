@@ -273,7 +273,7 @@ begin
 
       while not FDTMarca.Eof do
       begin
-        if (FDTMarcaDESCRICAO.AsString = FDTWebMARCA.AsString) then
+        if (UpperCase(FDTMarcaDESCRICAO.AsString) = UpperCase(FDTWebMARCA.AsString)) then
         begin
           achou_marca := true;
         end;
@@ -301,7 +301,7 @@ begin
 
       while not FDTCategoria.Eof do
       begin
-        if (FDTCategoriaDESCRICAO.AsString = FDTWebCATEGORIA.AsString) then
+        if (UpperCase(FDTCategoriaDESCRICAO.AsString) = UpperCase(FDTWebCATEGORIA.AsString)) then
         begin
           achou_cat := true;
         end;
@@ -328,7 +328,7 @@ begin
 
       while not FDTFornecedor.Eof do
       begin
-        if (FDTFornecedorRAZAO_SOCIAL.AsString = FDTWebFORNECEDOR.AsString) then
+        if (UpperCase(FDTFornecedorRAZAO_SOCIAL.AsString) = UpperCase(FDTWebFORNECEDOR.AsString)) then
         begin
           achou_forn := true;
         end;
