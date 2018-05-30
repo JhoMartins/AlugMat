@@ -374,7 +374,7 @@ procedure TFrmDevolucao.grAlugueisDrawColumnCell(Sender: TObject;
 begin
 
   //Pinta Célula ímpares
-  if odd(FDProduto.RecNo) then grAlugueis.Canvas.Brush.Color := clGradientInactiveCaption
+  if odd(FDProduto.RecNo) then grAlugueis.Canvas.Brush.Color := clWindow
   else grAlugueis.Canvas.Brush.Color := clWindow;
 
   grAlugueis.Canvas.FillRect(Rect);
