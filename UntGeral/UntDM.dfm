@@ -11,6 +11,7 @@ object DM: TDM
       'DATABASE=ALUGMAT'
       'MARS=yes'
       'DriverID=MSSQL')
+    Connected = True
     LoginPrompt = False
     Transaction = FDTransaction1
     Left = 40
@@ -32,6 +33,7 @@ object DM: TDM
       'User_Name=root'
       'Server=localhost'
       'DriverID=MySQL')
+    Connected = True
     LoginPrompt = False
     Left = 24
     Top = 120
