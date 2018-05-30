@@ -23,7 +23,6 @@ object FrmDevolucao: TFrmDevolucao
     Height = 117
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 1112
     object gbCliente: TGroupBox
       Left = 179
       Top = 14
@@ -160,7 +159,6 @@ object FrmDevolucao: TFrmDevolucao
     Height = 402
     Align = alClient
     TabOrder = 1
-    ExplicitWidth = 1112
     object StatusBar1: TStatusBar
       Left = 1
       Top = 382
@@ -179,7 +177,6 @@ object FrmDevolucao: TFrmDevolucao
         item
           Width = 50
         end>
-      ExplicitWidth = 1110
     end
     object grAlugueis: TDBGrid
       Left = 1
@@ -324,7 +321,6 @@ object FrmDevolucao: TFrmDevolucao
       Height = 41
       Align = alBottom
       TabOrder = 2
-      ExplicitWidth = 1110
       object Label12: TLabel
         Left = 25
         Top = 12
@@ -649,7 +645,7 @@ object FrmDevolucao: TFrmDevolucao
     Left = 426
     Top = 330
     Bitmap = {
-      494C0101040008002C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000800300010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
