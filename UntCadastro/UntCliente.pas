@@ -94,6 +94,7 @@ type
     procedure Datadealterao1Click(Sender: TObject);
     procedure btn_sairClick(Sender: TObject);
     procedure btn_imprimirClick(Sender: TObject);
+    procedure btnOKClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -108,6 +109,34 @@ implementation
 {$R *.dfm}
 
 uses UntDM, UntMenuPrincipal, UntPesqString, UntPesqRadio, UntAlugueis, UntRelClientes;
+
+procedure TFrmCliente.btnOKClick(Sender: TObject);
+begin
+  inherited;
+
+  if FDTabela.FieldByName('TIPO_PESSOA').Value = 'F' then
+  begin
+    cbTipo.ItemIndex := 0;
+    edCPFCNPJ.DataField :=  'CPF';
+    edRGIE.DataField := 'RG';
+    lbCPFCNPJ.Caption := '* CPF:';
+    lbRGIE.Caption := '* RG:';
+  end
+  else if FDTabela.FieldByName('TIPO_PESSOA').Value = 'J' then
+  begin
+    cbTipo.ItemIndex := 1;
+    edCPFCNPJ.DataField :=  'CNPJ';
+    edRGIE.DataField := 'IE';
+    lbCPFCNPJ.Caption := '* CNPJ:';
+    lbRGIE.Caption := '* IE:';
+  end
+  else
+  begin
+    cbTipo.ItemIndex := -1;
+    lbCPFCNPJ.Caption := '* CPF/CNPJ';
+    lbRGIE.Caption := '* RG/IE:';
+  end;
+end;
 
 procedure TFrmCliente.btn_anteriorClick(Sender: TObject);
 begin

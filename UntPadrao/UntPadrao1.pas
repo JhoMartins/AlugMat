@@ -80,6 +80,7 @@ type
     procedure Datadeincluso1Click(Sender: TObject);
     procedure Datadealterao1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure btnOKClick(Sender: TObject);
   private
     { Private declarations }
     //Criação da Função Executar
@@ -112,6 +113,20 @@ implementation
 uses UntDM, UntPesqData;
 
 { TFrmPadrao1 }
+
+procedure TFrmPadrao1.btnOKClick(Sender: TObject);
+begin
+  tarefa := 'Pesquisa por Código';
+
+  FDTabela.Filter := 'ID = ' + ValorCampo.Text;
+
+  FDTabela.Filtered := True;
+
+  Executar := sentencaSQL;
+  Executar := exibePanels;
+  Executar := navegacao;
+  Executar := habilitaBotoes;
+end;
 
 procedure TFrmPadrao1.btn_anteriorClick(Sender: TObject);
 begin
