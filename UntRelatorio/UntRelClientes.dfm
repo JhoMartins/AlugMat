@@ -32,7 +32,6 @@ object FrmRelClientes: TFrmRelClientes
     Color = clGray
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 433
     object SpeedButton1: TSpeedButton
       Left = 47
       Top = 0
@@ -180,6 +179,34 @@ object FrmRelClientes: TFrmRelClientes
     Width = 90
     Height = 21
     TabOrder = 6
+    Items.Strings = (
+      'AC'
+      'AL'
+      'AP'
+      'AM'
+      'BA'
+      'CE'
+      'DF'
+      'ES'
+      'GO'
+      'MA'
+      'MT'
+      'MS'
+      'MG'
+      'PA'
+      'PB'
+      'PR'
+      'PE'
+      'PI'
+      'RJ'
+      'RN'
+      'RS'
+      'RO'
+      'RR'
+      'SC'
+      'SP'
+      'SE'
+      'TO')
   end
   object RadioGroup1: TRadioGroup
     Left = 8
@@ -228,8 +255,6 @@ object FrmRelClientes: TFrmRelClientes
       item
         Width = 50
       end>
-    ExplicitTop = 401
-    ExplicitWidth = 433
   end
   object btn_imprimir: TBitBtn
     Left = 335
@@ -437,6 +462,7 @@ object FrmRelClientes: TFrmRelClientes
   object frxDBDataset1: TfrxDBDataset
     UserName = 'frxDBDataset1'
     CloseDataSource = False
+    DataSet = FDQuery1
     BCDToCurrency = False
     Left = 64
     Top = 368
@@ -460,7 +486,7 @@ object FrmRelClientes: TFrmRelClientes
     Top = 416
     Datasets = <
       item
-        DataSet = FrmRelClientesk.frxDBDataset1
+        DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
       end
       item
@@ -9124,14 +9150,14 @@ object FrmRelClientes: TFrmRelClientes
         Height = 22.677180000000000000
         Top = 291.023810000000000000
         Width = 718.110700000000000000
-        DataSet = FrmRelClientesk.frxDBDataset1
+        DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
         RowCount = 0
         object frxDBDataset1id: TfrxMemoView
           Width = 45.354360000000000000
           Height = 18.897650000000000000
           DataField = 'id'
-          DataSet = FrmRelClientesk.frxDBDataset1
+          DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Memo.UTF8W = (
             '[frxDBDataset1."id"]')
@@ -9141,7 +9167,7 @@ object FrmRelClientes: TFrmRelClientes
           Width = 207.874150000000000000
           Height = 18.897650000000000000
           DataField = 'nome'
-          DataSet = FrmRelClientesk.frxDBDataset1
+          DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Memo.UTF8W = (
             '[frxDBDataset1."nome"]')
@@ -9151,7 +9177,7 @@ object FrmRelClientes: TFrmRelClientes
           Width = 37.795300000000000000
           Height = 18.897650000000000000
           DataField = 'tipo_pessoa'
-          DataSet = FrmRelClientesk.frxDBDataset1
+          DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Memo.UTF8W = (
             '[frxDBDataset1."tipo_pessoa"]')
@@ -9161,7 +9187,7 @@ object FrmRelClientes: TFrmRelClientes
           Width = 98.267780000000000000
           Height = 18.897650000000000000
           DataField = 'cpf'
-          DataSet = FrmRelClientesk.frxDBDataset1
+          DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Memo.UTF8W = (
             '[frxDBDataset1."cpf"]')
@@ -9171,7 +9197,7 @@ object FrmRelClientes: TFrmRelClientes
           Width = 98.267780000000000000
           Height = 18.897650000000000000
           DataField = 'cnpj'
-          DataSet = FrmRelClientesk.frxDBDataset1
+          DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Memo.UTF8W = (
             '[frxDBDataset1."cnpj"]')
@@ -9181,7 +9207,7 @@ object FrmRelClientes: TFrmRelClientes
           Width = 200.315090000000000000
           Height = 18.897650000000000000
           DataField = 'cidade'
-          DataSet = FrmRelClientesk.frxDBDataset1
+          DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Memo.UTF8W = (
             '[frxDBDataset1."cidade"]')
@@ -9191,7 +9217,7 @@ object FrmRelClientes: TFrmRelClientes
           Width = 52.913420000000000000
           Height = 18.897650000000000000
           DataField = 'estado'
-          DataSet = FrmRelClientesk.frxDBDataset1
+          DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Memo.UTF8W = (
             '[frxDBDataset1."estado"]')
@@ -9201,7 +9227,7 @@ object FrmRelClientes: TFrmRelClientes
           Width = 52.913420000000000000
           Height = 18.897650000000000000
           DataField = 'status'
-          DataSet = FrmRelClientesk.frxDBDataset1
+          DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Memo.UTF8W = (
             '[frxDBDataset1."status"]')
