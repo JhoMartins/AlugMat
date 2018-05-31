@@ -181,10 +181,6 @@
             <Form>FrmRelProdutos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="UntRelatorio\UntRelClientesk.pas">
-            <Form>FrmRelClientesk</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <DCCReference Include="UntPadrao\UntPadraoImportacao.pas">
             <Form>FrmPadraoImportacao</Form>
             <FormType>dfm</FormType>

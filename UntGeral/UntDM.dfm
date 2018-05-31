@@ -4,7 +4,9 @@ object DM: TDM
   Width = 222
   object FDConnection1: TFDConnection
     Params.Strings = (
+Relatorios/produto/marca
       'SERVER=DEIVID-PC'
+ master
       'OSAuthent=Yes'
       'ApplicationName=Enterprise/Architect/Ultimate'
       'Workstation=DEIVID-PC'
@@ -37,7 +39,9 @@ object DM: TDM
     Top = 120
   end
   object FDPhysWeb: TFDPhysMySQLDriverLink
+ Relatorios/produto/marca
     VendorLib = 'C:\Users\xdeiv\Documents\GitHub\AlugMat\banco\libmysql.dll'
+    master
     Left = 96
     Top = 120
   end

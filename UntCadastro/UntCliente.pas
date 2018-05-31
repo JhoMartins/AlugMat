@@ -299,8 +299,6 @@ procedure TFrmCliente.btn_imprimirClick(Sender: TObject);
 begin
   inherited;
   Application.CreateForm(TFrmRelClientes, FrmRelClientes);
-  FrmRelClientes.edtIDDe.Text := FDTabelaID.AsString;
-  FrmRelClientes.edtIDAte.Text := FDTabelaID.AsString;
   FrmRelClientes.ShowModal;
   FrmRelClientes.Free;
 end;
