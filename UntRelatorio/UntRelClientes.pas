@@ -37,6 +37,7 @@ type
     btn_limpar: TBitBtn;
     procedure btn_imprimirClick(Sender: TObject);
     procedure btn_limparClick(Sender: TObject);
+    procedure btn_cancelarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,20 +51,127 @@ implementation
 
 {$R *.dfm}
 
+procedure TFrmRelClientes.btn_cancelarClick(Sender: TObject);
+begin
+  Close;
+end;
+
 procedure TFrmRelClientes.btn_imprimirClick(Sender: TObject);
 var StrLiga: String;
 begin
   StrLiga:= ' where ';
   FDQuery1.Close;
-  FDQuery1.SQL.Clear;
-  FDQuery1.SQL.Add('SELECT * FROM cliente');
-  FDQuery1.Open();
   FDQuery2.Close;
-  FDQuery2.SQL.Clear;
-  FDQuery2.SQL.Add('SELECT * FROM cliente');
-  FDQuery2.Open();
+  with FDQuery1.SQL do
+  begin
+    Clear;
+    FDQuery2.SQL.Clear;
+    Add('SELECT * FROM cliente ');
+    FDQuery2.SQL.Add('SELECT * FROM cliente ');
+    if edtIdDe.Text <> '' then
+    try
+      StrToInt(edtIDDe.Text);
+      Add(StrLiga + 'ID >= ''' + edtIdDe.Text + '''');
+      FDQuery2.SQL.Add(StrLiga + 'ID >= ''' + edtIdDe.Text + '''');
+      StrLiga:= ' and ';
+    except
+      on EConvertError do;
+    end;
 
-  frxReport1.ShowReport();
+    if edtIdAte.Text <> '' then
+    try
+      StrToInt(edtIdAte.Text);
+      Add(StrLiga + 'id <= ''' + edtIDAte.Text + '''');
+      FDQuery2.SQL.Add(StrLiga + 'id <= ''' + edtIDAte.Text + '''');
+      StrLiga:= ' and ';
+    except
+      on EConvertError do;
+    end;
+
+    if edtNomeDe.Text <> '' then
+    begin
+      Add(StrLiga + 'nome_fantasia >= ''' + edtNomeDe.Text + '''');
+      FDQuery2.SQL.Add(StrLiga + 'nome_fantasia >= ''' + edtNomeDe.Text + '''');
+      StrLiga:= ' and ';
+    end;
+
+    if edtNomeAte.Text <> '' then
+    begin
+      Add(StrLiga + 'nome_fantasia <= ''' + edtNomeAte.Text + 'zzzz''');
+      FDQuery2.SQL.Add(StrLiga + 'nome_fantasia <= ''' + edtNomeAte.Text + 'zzzz''');
+      StrLiga:= ' and ';
+    end;
+
+    if edtCidade.Text <> '' then
+    begin
+      Add(StrLiga + 'cidade like ''%' + edtCidade.Text + '%''');
+      FDQuery2.SQL.Add(StrLiga + 'cidade like ''%' + edtCidade.Text + '%''');
+      StrLiga:= ' and ';
+    end;
+
+    if cbEstado.ItemIndex <> -1 then
+    begin
+      Add(StrLiga + 'estado = ''' + cbEstado.Text + '''');
+      FDQuery2.SQL.Add(StrLiga + 'estado = ''' + cbEstado.Text + '''');
+      StrLiga := ' and ';
+    end;
+
+    case RadioGroup1.ItemIndex of
+      0:
+        begin
+          Add(StrLiga + 'tipo_pessoa = ''F''');
+          FDQuery2.SQL.Add(StrLiga + 'tipo_pessoa = ''F''');
+          StrLiga := ' and ';
+        end;
+      1:
+         begin
+          Add(StrLiga + 'tipo_pessoa = ''J''');
+          FDQuery2.SQL.Add(StrLiga + 'tipo_pessoa = ''J''');
+          StrLiga := ' and ';
+        end;
+    end;
+
+    case RadioGroup2.ItemIndex of
+      0:
+        begin
+          Add(StrLiga + ' status = ''S''');
+          FDQuery2.SQL.Add(StrLiga + ' status = ''S''');
+        end;
+      1:
+        begin
+          Add(StrLiga + ' status = ''N''');
+          FDQuery2.SQL.Add(StrLiga + ' status = ''N''');
+        end;
+    end;
+
+
+    case RadioGroup3.ItemIndex of
+      0:
+        begin
+          Add(' ORDER BY id');
+          FDQuery2.SQL.Add(' ORDER BY id');
+        end;
+      1:
+        begin
+          Add(' ORDER BY nome');
+          FDQuery2.SQL.Add(' ORDER BY nome');
+        end;
+      2:
+        begin
+          Add(' ORDER BY cidade');
+          FDQuery2.SQL.Add(' ORDER BY cidade');
+        end;
+      3:
+      begin
+        Add(' ORDER BY estado');
+        FDQuery2.SQL.Add(' ORDER BY estado');
+      end;
+    end;
+
+    FDQuery1.Open();
+    FDQuery2.Open();
+    frxReport1.ShowReport();
+  end;
 end;
 
 procedure TFrmRelClientes.btn_limparClick(Sender: TObject);
