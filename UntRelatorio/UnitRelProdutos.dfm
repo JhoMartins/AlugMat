@@ -2,13 +2,14 @@ inherited FrmRelProdutos: TFrmRelProdutos
   Caption = 'Impress'#227'o do Relat'#243'rio de Produtos'
   ClientHeight = 504
   ClientWidth = 432
-  ExplicitTop = -69
   ExplicitWidth = 438
   ExplicitHeight = 533
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
     Width = 432
+    ExplicitLeft = 8
+    ExplicitTop = -8
     ExplicitWidth = 432
     inherited SpeedButton1: TSpeedButton
       Left = 38
@@ -29,13 +30,7 @@ inherited FrmRelProdutos: TFrmRelProdutos
       ExplicitWidth = 260
     end
   end
-  inherited btn_cancelar: TBitBtn
-    Left = 238
-    Top = 312
-    ExplicitLeft = 238
-    ExplicitTop = 312
-  end
-  object EdtIDate: TLabeledEdit [2]
+  object EdtIDate: TLabeledEdit [1]
     Left = 159
     Top = 64
     Width = 41
@@ -46,19 +41,7 @@ inherited FrmRelProdutos: TFrmRelProdutos
     NumbersOnly = True
     TabOrder = 6
   end
-  object RadioGroup2: TRadioGroup [3]
-    Left = 8
-    Top = 230
-    Width = 193
-    Height = 41
-    Caption = 'Status'
-    Columns = 2
-    Items.Strings = (
-      'Habilitado'
-      'Desabilitado')
-    TabOrder = 10
-  end
-  object edtIDde: TLabeledEdit [4]
+  object edtIDde: TLabeledEdit [2]
     Left = 8
     Top = 64
     Width = 41
@@ -69,7 +52,39 @@ inherited FrmRelProdutos: TFrmRelProdutos
     NumbersOnly = True
     TabOrder = 5
   end
-  object RadioGroup1: TRadioGroup [5]
+  object edtDescricaoAte: TLabeledEdit [3]
+    Left = 8
+    Top = 158
+    Width = 418
+    Height = 21
+    EditLabel.Width = 65
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Descri'#231#227'o at'#233
+    TabOrder = 8
+  end
+  object edtDescricaoDe: TLabeledEdit [4]
+    Left = 8
+    Top = 107
+    Width = 419
+    Height = 21
+    EditLabel.Width = 65
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Descri'#231#227'o de:'
+    TabOrder = 7
+  end
+  object RadioGroup3: TRadioGroup [5]
+    Left = 216
+    Top = 230
+    Width = 208
+    Height = 41
+    Caption = 'Produto'
+    Columns = 2
+    Items.Strings = (
+      'Dispon'#237'vel'
+      'Indispon'#237'vel')
+    TabOrder = 11
+  end
+  object RadioGroup1: TRadioGroup [6]
     Left = 8
     Top = 183
     Width = 418
@@ -82,37 +97,23 @@ inherited FrmRelProdutos: TFrmRelProdutos
       'Valor da Di'#225'ria')
     TabOrder = 9
   end
-  object edtDescricaoAte: TLabeledEdit [6]
+  object RadioGroup2: TRadioGroup [7]
     Left = 8
-    Top = 158
-    Width = 418
-    Height = 21
-    EditLabel.Width = 65
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Descri'#231#227'o at'#233
-    TabOrder = 8
-  end
-  object RadioGroup3: TRadioGroup [7]
-    Left = 216
     Top = 230
-    Width = 208
+    Width = 193
     Height = 41
-    Caption = 'Produto'
+    Caption = 'Status'
     Columns = 2
     Items.Strings = (
-      'Dispon'#237'vel'
-      'Indispon'#237'vel')
-    TabOrder = 11
+      'Habilitado'
+      'Desabilitado')
+    TabOrder = 10
   end
-  object edtDescricaoDe: TLabeledEdit [8]
-    Left = 8
-    Top = 107
-    Width = 419
-    Height = 21
-    EditLabel.Width = 65
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Descri'#231#227'o de:'
-    TabOrder = 7
+  inherited btn_cancelar: TBitBtn
+    Left = 238
+    Top = 312
+    ExplicitLeft = 238
+    ExplicitTop = 312
   end
   inherited btn_imprimir: TBitBtn
     Left = 334

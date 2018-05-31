@@ -30,6 +30,7 @@ type
     procedure FormActivate(Sender: TObject);
     procedure Descrio2Click(Sender: TObject);
     procedure Descrio1Click(Sender: TObject);
+    procedure btn_imprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,7 +44,18 @@ implementation
 
 {$R *.dfm}
 
-uses UntMenuPrincipal, UntDM, UntPesqString, UntPesqData, UntPesqRadio;
+uses UntMenuPrincipal, UntDM, UntPesqString, UntPesqData, UntPesqRadio,
+  UntRelMarca;
+
+procedure TFrmMarca.btn_imprimirClick(Sender: TObject);
+begin
+  inherited;
+  Application.CreateForm(TFrmRelmarca, FrmRelMarca);
+  FrmRelmarca.edtcodigode.Text := FDTabelaID.AsString;
+  FrmRelmarca.Edtcodigoate.Text := FDTabelaID.AsString;
+  FrmRelmarca.ShowModal;
+  FrmRelmarca.Free;
+end;
 
 procedure TFrmMarca.btn_salvarClick(Sender: TObject);
 begin
