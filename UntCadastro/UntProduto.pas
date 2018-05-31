@@ -126,6 +126,8 @@ begin
   FrmAluguel.FDQryProduto.Close;
   FrmAluguel.FDQryProduto.Open();
 
+  FrmAluguel.FDQryProdutoGrid.Close;
+  FrmAluguel.FDQryProdutoGrid.Open();
 end;
 
 procedure TFrmProduto.btn_salvarClick(Sender: TObject);

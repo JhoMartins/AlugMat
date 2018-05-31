@@ -39,7 +39,8 @@ var StrLiga: string;
 begin
   inherited;
   FDQuery1.CLose;
-  StrLiga:='where ';
+  StrLiga:=' where ';
+
   with FDQuery1.SQL do
   begin
     Clear;
@@ -52,8 +53,8 @@ begin
     if edtIDde.Text <> '' then
    try
       StrToInt(edtidDe.Text);
-      Add(StrLiga+'p.id >= '''+edtidDe.Text + '''');
-      StrLiga:= 'and ';
+      Add(StrLiga+'p.id >= '+edtidDe.Text);
+      StrLiga:= ' and ';
     except
       on EConvertError do;
     end;
@@ -61,8 +62,8 @@ begin
     if edtidAte.Text <> '' then
     try
       StrToInt(edtidAte.Text);
-      Add(StrLiga+'p.id <= '''+edtidAte.Text + '''');
-      StrLiga:= 'and ';
+      Add(StrLiga+'p.id <= '+edtidAte.Text);
+      StrLiga:= ' and ';
     except
       on EConvertError do;
     end;
@@ -70,13 +71,13 @@ begin
       if edtDescricaoDe.Text <> '' then
     begin
       Add(StrLiga+'p.descricao >= '''+edtDescricaoDe.Text + '''');
-      StrLiga:= 'and ';
+      StrLiga:= ' and ';
     end;
 
     if edtDescricaoAte.Text <> '' then
     begin
       Add(StrLiga+'p.descricao <= '''+edtDescricaoAte.Text + 'zzzz''');
-      StrLiga:= 'and ';
+      StrLiga:= ' and ';
     end;
 
        case RadioGroup1.ItemIndex of
@@ -87,16 +88,14 @@ begin
 
 
     case RadioGroup2.ItemIndex of
-      0: Add(StrLiga + 'p.status = ''S''');
-      1: Add(StrLiga + 'p.status = ''N''');
+      0: Add(StrLiga + 'p.status = ''' + 'S' + '''');
+      1: Add(StrLiga + 'p.status = ''' +'N' +'''');
     end;
 
     case RadioGroup3.ItemIndex of
-      0: Add(StrLiga + 'p.disponivel = ''S''');
-      1: Add(StrLiga + 'p.disponivel = ''N''');
+      0: Add(StrLiga + 'p.disponivel = ''' +'S'+'''');
+      1: Add(StrLiga + 'p.disponivel = '''+'N'+'''');
     end;
-
-
 
   FDQuery1.Open();
   frxReport1.ShowReport();

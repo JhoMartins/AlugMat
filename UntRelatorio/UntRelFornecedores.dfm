@@ -13,51 +13,7 @@ inherited FrmRelFornecedores: TFrmRelFornecedores
     Height = 13
     Caption = 'Estado:'
   end
-  object RadioGroup2: TRadioGroup [1]
-    Left = 199
-    Top = 235
-    Width = 311
-    Height = 54
-    Caption = 'Ordena'#231#227'o'
-    Columns = 4
-    Items.Strings = (
-      'ID'
-      'Nome'
-      'Cidade'
-      'Estado')
-    TabOrder = 11
-  end
-  object edtIdAte: TLabeledEdit [2]
-    Left = 95
-    Top = 64
-    Width = 73
-    Height = 21
-    EditLabel.Width = 33
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Id at'#233':'
-    TabOrder = 5
-  end
-  object edtCidade: TLabeledEdit [3]
-    Left = 8
-    Top = 208
-    Width = 394
-    Height = 21
-    EditLabel.Width = 37
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Cidade:'
-    TabOrder = 8
-  end
-  object edtNFantasiaAte: TLabeledEdit [4]
-    Left = 8
-    Top = 160
-    Width = 500
-    Height = 21
-    EditLabel.Width = 94
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Nome Fantasia at'#233':'
-    TabOrder = 7
-  end
-  object edtIdDe: TLabeledEdit [5]
+  object edtIdDe: TLabeledEdit [1]
     Left = 8
     Top = 64
     Width = 73
@@ -65,9 +21,10 @@ inherited FrmRelFornecedores: TFrmRelFornecedores
     EditLabel.Width = 29
     EditLabel.Height = 13
     EditLabel.Caption = 'Id de:'
+    NumbersOnly = True
     TabOrder = 12
   end
-  object RadioGroup1: TRadioGroup [6]
+  object RadioGroup1: TRadioGroup [2]
     Left = 8
     Top = 235
     Width = 185
@@ -79,7 +36,17 @@ inherited FrmRelFornecedores: TFrmRelFornecedores
       'Desabilitado')
     TabOrder = 10
   end
-  object cbEstado: TComboBox [7]
+  object edtNDantasiaDe: TLabeledEdit [3]
+    Left = 8
+    Top = 112
+    Width = 500
+    Height = 21
+    EditLabel.Width = 90
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Nome Fantasia de:'
+    TabOrder = 6
+  end
+  object cbEstado: TComboBox [4]
     Left = 418
     Top = 208
     Width = 90
@@ -115,15 +82,50 @@ inherited FrmRelFornecedores: TFrmRelFornecedores
       'SE'
       'TO')
   end
-  object edtNDantasiaDe: TLabeledEdit [8]
+  object edtNFantasiaAte: TLabeledEdit [5]
     Left = 8
-    Top = 112
+    Top = 160
     Width = 500
     Height = 21
-    EditLabel.Width = 90
+    EditLabel.Width = 94
     EditLabel.Height = 13
-    EditLabel.Caption = 'Nome Fantasia de:'
-    TabOrder = 6
+    EditLabel.Caption = 'Nome Fantasia at'#233':'
+    TabOrder = 7
+  end
+  object edtCidade: TLabeledEdit [6]
+    Left = 8
+    Top = 208
+    Width = 394
+    Height = 21
+    EditLabel.Width = 37
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Cidade:'
+    TabOrder = 8
+  end
+  object edtIdAte: TLabeledEdit [7]
+    Left = 95
+    Top = 64
+    Width = 73
+    Height = 21
+    EditLabel.Width = 33
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Id at'#233':'
+    NumbersOnly = True
+    TabOrder = 5
+  end
+  object RadioGroup2: TRadioGroup [8]
+    Left = 199
+    Top = 235
+    Width = 311
+    Height = 54
+    Caption = 'Ordena'#231#227'o'
+    Columns = 4
+    Items.Strings = (
+      'ID'
+      'Nome'
+      'Cidade'
+      'Estado')
+    TabOrder = 11
   end
   inherited Panel1: TPanel
     Width = 518
@@ -174,7 +176,6 @@ inherited FrmRelFornecedores: TFrmRelFornecedores
     ExplicitTop = 304
   end
   inherited FDQuery1: TFDQuery
-    Active = True
     SQL.Strings = (
       'SELECT * FROM fornecedor')
     Left = 16
@@ -18634,11 +18635,7 @@ inherited FrmRelFornecedores: TFrmRelFornecedores
         end
       end
       inherited PageHeader1: TfrxPageHeader
-        inherited Memo4: TfrxMemoView
-          Top = 30.236240000000000000
-        end
         inherited Memo5: TfrxMemoView
-          Top = 117.165430000000000000
           Memo.UTF8W = (
             'Relat'#243'rio de Fornecedores')
         end

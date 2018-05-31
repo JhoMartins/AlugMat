@@ -426,6 +426,7 @@ object FrmRelAluguel: TFrmRelAluguel
       item
         Width = 50
       end>
+    ExplicitTop = 459
   end
   object rbOrdenar: TRadioGroup
     Left = 16
@@ -508,7 +509,7 @@ object FrmRelAluguel: TFrmRelAluguel
     OnClick = btn_limparClick
   end
   object frxReport1: TfrxReport
-    Version = '5.4.6'
+    Version = '5.3.14'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
@@ -3437,16 +3438,6 @@ object FrmRelAluguel: TFrmRelAluguel
           DataField = 'VALOR_MULTA'
           DataSet = frxDBDataset2
           DataSetName = 'frxDBDataset2'
-          Memo.UTF8W = (
-            '[frxDBDataset2."VALOR_MULTA"]')
-        end
-        object frxDBDataset2VALOR_TOTAL: TfrxMemoView
-          Left = 657.638220000000000000
-          Width = 60.472480000000000000
-          Height = 18.897650000000000000
-          DataField = 'VALOR_TOTAL'
-          DataSet = frxDBDataset2
-          DataSetName = 'frxDBDataset2'
           DisplayFormat.FormatStr = '%2.2n'
           DisplayFormat.Kind = fkNumeric
           Font.Charset = DEFAULT_CHARSET
@@ -3456,7 +3447,23 @@ object FrmRelAluguel: TFrmRelAluguel
           Font.Style = []
           HAlign = haRight
           Memo.UTF8W = (
-            '[frxDBDataset2."VALOR_TOTAL"]')
+            '[frxDBDataset2."VALOR_MULTA"]')
+          ParentFont = False
+        end
+        object SysMemo3: TfrxSysMemoView
+          Left = 657.638220000000000000
+          Width = 60.472480000000000000
+          Height = 18.897650000000000000
+          DisplayFormat.FormatStr = '%2.2n'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[<frxDBDataset2."VALOR_MULTA">+<frxDBDataset2."VALOR_TOTAL">]')
           ParentFont = False
         end
       end
@@ -3667,6 +3674,7 @@ object FrmRelAluguel: TFrmRelAluguel
           Width = 79.370130000000000000
           Height = 18.897650000000000000
           DisplayFormat.FormatStr = '%2.2n'
+          DisplayFormat.Kind = fkNumeric
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -13
@@ -3674,7 +3682,9 @@ object FrmRelAluguel: TFrmRelAluguel
           Font.Style = []
           HAlign = haRight
           Memo.UTF8W = (
-            '[SUM(<frxDBDataset1."VALOR_TOTAL">,MasterData1)]')
+            
+              '[SUM(<frxDBDataset2."VALOR_MULTA">+<frxDBDataset2."VALOR_TOTAL">' +
+              ',DetailData1)]')
           ParentFont = False
         end
         object Line3: TfrxLineView
@@ -3746,7 +3756,7 @@ object FrmRelAluguel: TFrmRelAluguel
         Name = 'ID'
         DataType = ftAutoInc
         ParamType = ptInput
-        Value = 1
+        Value = 8
       end>
   end
   object DataSource1: TDataSource

@@ -1,9 +1,11 @@
 object FrmRelMarca: TFrmRelMarca
   Left = 0
   Top = 0
-  Caption = 'FrmRelMarca'
-  ClientHeight = 323
-  ClientWidth = 369
+  BorderIcons = []
+  BorderStyle = bsSingle
+  Caption = 'Relat'#243'rio de Marca'
+  ClientHeight = 332
+  ClientWidth = 381
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,15 +18,13 @@ object FrmRelMarca: TFrmRelMarca
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 369
+    Width = 381
     Height = 41
     Align = alTop
     Color = clGray
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitTop = -8
-    ExplicitWidth = 432
+    ExplicitWidth = 369
     object SpeedButton1: TSpeedButton
       Left = 38
       Top = 0
@@ -124,16 +124,18 @@ object FrmRelMarca: TFrmRelMarca
     EditLabel.Width = 30
     EditLabel.Height = 13
     EditLabel.Caption = 'ID de:'
+    NumbersOnly = True
     TabOrder = 1
   end
   object edtCodigoate: TLabeledEdit
     Left = 85
     Top = 73
-    Width = 60
+    Width = 52
     Height = 21
     EditLabel.Width = 34
     EditLabel.Height = 13
     EditLabel.Caption = 'ID at'#233':'
+    NumbersOnly = True
     TabOrder = 2
   end
   object edtDescricaode: TLabeledEdit
@@ -374,6 +376,19 @@ object FrmRelMarca: TFrmRelMarca
     TabOrder = 8
     OnClick = btn_imprimirClick
   end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 313
+    Width = 381
+    Height = 19
+    Panels = <
+      item
+        Width = 50
+      end>
+    ExplicitLeft = 296
+    ExplicitTop = 312
+    ExplicitWidth = 0
+  end
   object FDQuery1: TFDQuery
     Active = True
     Connection = DM.FDConnection1
@@ -383,7 +398,7 @@ object FrmRelMarca: TFrmRelMarca
     Top = 312
   end
   object frxReport1: TfrxReport
-    Version = '5.4.6'
+    Version = '5.3.14'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
@@ -420,12 +435,12 @@ object FrmRelMarca: TFrmRelMarca
       BottomMargin = 10.000000000000000000
       object PageHeader1: TfrxPageHeader
         FillType = ftBrush
-        Height = 143.622140000000000000
+        Height = 132.283550000000000000
         Top = 18.897650000000000000
         Width = 718.110700000000000000
         object Memo2: TfrxMemoView
           Left = 162.519790000000000000
-          Top = 7.559059999999999000
+          Top = 7.559060000000000000
           Width = 396.850650000000000000
           Height = 34.015770000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -439,7 +454,7 @@ object FrmRelMarca: TFrmRelMarca
         end
         object Picture1: TfrxPictureView
           Left = 3.779530000000000000
-          Top = 7.559059999999999000
+          Top = 7.559060000000000000
           Width = 139.842610000000000000
           Height = 90.708720000000000000
           Picture.Data = {
@@ -2771,13 +2786,6 @@ object FrmRelMarca: TFrmRelMarca
             'Relat'#243'rio de Categorias')
           ParentFont = False
         end
-        object Line1: TfrxLineView
-          Left = 3.779530000000000000
-          Top = 136.063080000000000000
-          Width = 710.551640000000000000
-          Color = clBlack
-          Frame.Typ = [ftTop]
-        end
       end
       object PageFooter1: TfrxPageFooter
         FillType = ftBrush
@@ -2872,36 +2880,44 @@ object FrmRelMarca: TFrmRelMarca
       end
       object ColumnHeader1: TfrxColumnHeader
         FillType = ftBrush
-        Height = 22.677180000000000000
-        Top = 185.196970000000000000
+        Height = 18.897650000000000000
+        Top = 173.858380000000000000
         Width = 718.110700000000000000
+        object Line1: TfrxLineView
+          Align = baWidth
+          Width = 718.110700000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
         object Memo7: TfrxMemoView
-          Width = 22.677180000000000000
+          Width = 45.354360000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          HAlign = haCenter
           Memo.UTF8W = (
             'ID')
           ParentFont = False
         end
         object Memo8: TfrxMemoView
-          Left = 30.236240000000000000
-          Width = 200.315090000000000000
+          Left = 45.354360000000000000
+          Width = 343.937230000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          HAlign = haCenter
           Memo.UTF8W = (
             'Descri'#231#227'o')
           ParentFont = False
         end
         object Memo9: TfrxMemoView
-          Left = 234.330860000000000000
+          Left = 389.291590000000000000
           Width = 124.724490000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2909,25 +2925,27 @@ object FrmRelMarca: TFrmRelMarca
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          HAlign = haCenter
           Memo.UTF8W = (
             'Data da Inclus'#227'o')
           ParentFont = False
         end
         object Memo10: TfrxMemoView
-          Left = 362.834880000000000000
-          Width = 139.842610000000000000
+          Left = 514.016080000000000000
+          Width = 136.063080000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          HAlign = haCenter
           Memo.UTF8W = (
             'Data da Modifica'#231#227'o')
           ParentFont = False
         end
         object Memo11: TfrxMemoView
-          Left = 525.354670000000000000
+          Left = 650.079160000000000000
           Width = 68.031540000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -2935,21 +2953,30 @@ object FrmRelMarca: TFrmRelMarca
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          HAlign = haCenter
           Memo.UTF8W = (
             'Status')
           ParentFont = False
+        end
+        object Line4: TfrxLineView
+          Align = baWidth
+          Top = 18.897650000000000000
+          Width = 718.110700000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
         end
       end
       object MasterData1: TfrxMasterData
         FillType = ftBrush
         Height = 18.897650000000000000
-        Top = 268.346630000000000000
+        Top = 253.228510000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
         RowCount = 0
         object Memo13: TfrxMemoView
-          Width = 714.331170000000000000
+          Align = baClient
+          Width = 718.110700000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -2961,23 +2988,30 @@ object FrmRelMarca: TFrmRelMarca
           Highlight.Font.Height = -13
           Highlight.Font.Name = 'Arial'
           Highlight.Font.Style = []
-          Highlight.Condition = '<line> mod 2 = 1'
+          Highlight.Condition = '<line> mod 2 = 0'
           Highlight.FillType = ftBrush
-          Highlight.Fill.BackColor = clSilver
+          Highlight.Fill.BackColor = clBtnFace
           ParentFont = False
         end
         object frxDBDataset1ID: TfrxMemoView
-          Width = 30.236240000000000000
+          Width = 45.354360000000000000
           Height = 18.897650000000000000
           DataField = 'ID'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haCenter
           Memo.UTF8W = (
             '[frxDBDataset1."ID"]')
+          ParentFont = False
         end
         object frxDBDataset1DESCRICAO: TfrxMemoView
-          Left = 34.015770000000000000
-          Width = 196.535560000000000000
+          Left = 45.354360000000000000
+          Width = 343.937230000000000000
           Height = 18.897650000000000000
           DataField = 'DESCRICAO'
           DataSet = frxDBDataset1
@@ -2986,28 +3020,42 @@ object FrmRelMarca: TFrmRelMarca
             '[frxDBDataset1."DESCRICAO"]')
         end
         object frxDBDataset1DATA_INC: TfrxMemoView
-          Left = 241.889920000000000000
-          Width = 79.370130000000000000
+          Left = 389.291590000000000000
+          Width = 124.724490000000000000
           Height = 18.897650000000000000
           DataField = 'DATA_INC'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haCenter
           Memo.UTF8W = (
             '[frxDBDataset1."DATA_INC"]')
+          ParentFont = False
         end
         object frxDBDataset1DATA_ALT: TfrxMemoView
-          Left = 359.055350000000000000
-          Width = 79.370130000000000000
+          Left = 514.016080000000000000
+          Width = 136.063080000000000000
           Height = 18.897650000000000000
           DataField = 'DATA_ALT'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haCenter
           Memo.UTF8W = (
             '[frxDBDataset1."DATA_ALT"]')
+          ParentFont = False
         end
         object frxDBDataset1STATUS: TfrxMemoView
-          Left = 510.236550000000000000
-          Width = 79.370130000000000000
+          Left = 650.079160000000000000
+          Width = 68.031540000000000000
           Height = 18.897650000000000000
           DataField = 'STATUS'
           DataSet = frxDBDataset1
@@ -3022,43 +3070,53 @@ object FrmRelMarca: TFrmRelMarca
             '[frxDBDataset1."STATUS"]')
           ParentFont = False
         end
+        object Line3: TfrxLineView
+          Align = baWidth
+          Top = 18.897650000000000000
+          Width = 718.110700000000000000
+          Color = clBlack
+          Diagonal = True
+        end
       end
       object ReportSummary1: TfrxReportSummary
         FillType = ftBrush
-        Height = 41.574830000000000000
-        Top = 347.716760000000000000
+        Height = 56.692950000000000000
+        Top = 332.598640000000000000
         Width = 718.110700000000000000
         object SysMemo1: TfrxSysMemoView
-          Left = 476.220780000000000000
-          Top = 7.559059999999988000
-          Width = 151.181200000000000000
+          Left = 668.976810000000000000
+          Top = 37.795300000000000000
+          Width = 49.133890000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'Arial'
-          Font.Style = [fsBold]
+          Font.Style = []
+          HAlign = haCenter
           Memo.UTF8W = (
             '[COUNT(MasterData1)]')
           ParentFont = False
         end
         object Memo12: TfrxMemoView
-          Left = 275.905690000000000000
-          Top = 7.559059999999988000
-          Width = 192.756030000000000000
+          Left = 555.590910000000000000
+          Top = 37.795300000000000000
+          Width = 113.385900000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          HAlign = haRight
           Memo.UTF8W = (
-            'Total de Marcas Cadastradas:')
+            'Total de Marcas:')
           ParentFont = False
         end
         object Line2: TfrxLineView
-          Left = 3.779530000000000000
-          Width = 710.551640000000000000
+          Align = baWidth
+          Top = 37.795300000000000000
+          Width = 718.110700000000000000
           Color = clBlack
           Frame.Typ = [ftTop]
         end

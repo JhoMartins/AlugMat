@@ -4,7 +4,7 @@ object FrmDevolucao: TFrmDevolucao
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'Devolu'#231#227'o de Produtos Alugados'
-  ClientHeight = 519
+  ClientHeight = 521
   ClientWidth = 1067
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -156,12 +156,12 @@ object FrmDevolucao: TFrmDevolucao
     Left = 0
     Top = 117
     Width = 1067
-    Height = 402
+    Height = 404
     Align = alClient
     TabOrder = 1
     object StatusBar1: TStatusBar
       Left = 1
-      Top = 382
+      Top = 384
       Width = 1065
       Height = 19
       Panels = <
@@ -182,7 +182,7 @@ object FrmDevolucao: TFrmDevolucao
       Left = 1
       Top = 1
       Width = 1065
-      Height = 340
+      Height = 342
       Align = alClient
       DataSource = DSProduto
       Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -316,7 +316,7 @@ object FrmDevolucao: TFrmDevolucao
     end
     object Panel3: TPanel
       Left = 1
-      Top = 341
+      Top = 343
       Width = 1065
       Height = 41
       Align = alBottom
@@ -469,7 +469,7 @@ object FrmDevolucao: TFrmDevolucao
   end
   object DSItensAluguel: TDataSource
     DataSet = FDItensAluguel
-    Left = 792
+    Left = 800
     Top = 409
   end
   object DSProduto: TDataSource
@@ -620,8 +620,7 @@ object FrmDevolucao: TFrmDevolucao
     SQL.Strings = (
       'SELECT *'
       'FROM ITENSALUGUEL'
-      'WHERE QTDE_DIAS_ATRASO IS NULL'
-      'AND DEVOLVIDO = '#39'N'#39)
+      'WHERE DEVOLVIDO = '#39'N'#39)
     Left = 427
     Top = 280
   end
@@ -645,7 +644,7 @@ object FrmDevolucao: TFrmDevolucao
     Left = 426
     Top = 330
     Bitmap = {
-      494C010104000800300010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101040008003C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

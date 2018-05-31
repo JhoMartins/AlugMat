@@ -71,8 +71,8 @@ begin
     if edtIdDe.Text <> '' then
     try
       StrToInt(edtIDDe.Text);
-      Add(StrLiga + 'ID >= ''' + edtIdDe.Text + '''');
-      FDQuery2.SQL.Add(StrLiga + 'ID >= ''' + edtIdDe.Text + '''');
+      Add(StrLiga + 'ID >= ' + edtIdDe.Text);
+      FDQuery2.SQL.Add(StrLiga + 'ID >= ' + edtIdDe.Text);
       StrLiga:= ' and ';
     except
       on EConvertError do;
@@ -81,8 +81,8 @@ begin
     if edtIdAte.Text <> '' then
     try
       StrToInt(edtIdAte.Text);
-      Add(StrLiga + 'id <= ''' + edtIDAte.Text + '''');
-      FDQuery2.SQL.Add(StrLiga + 'id <= ''' + edtIDAte.Text + '''');
+      Add(StrLiga + 'id <= ' + edtIDAte.Text);
+      FDQuery2.SQL.Add(StrLiga + 'id <= ' + edtIDAte.Text);
       StrLiga:= ' and ';
     except
       on EConvertError do;
@@ -90,15 +90,15 @@ begin
 
     if edtNomeDe.Text <> '' then
     begin
-      Add(StrLiga + 'nome_fantasia >= ''' + edtNomeDe.Text + '''');
-      FDQuery2.SQL.Add(StrLiga + 'nome_fantasia >= ''' + edtNomeDe.Text + '''');
+      Add(StrLiga + 'nome >= ''' + edtNomeDe.Text + '''');
+      FDQuery2.SQL.Add(StrLiga + 'nome >= ''' + edtNomeDe.Text + '''');
       StrLiga:= ' and ';
     end;
 
     if edtNomeAte.Text <> '' then
     begin
-      Add(StrLiga + 'nome_fantasia <= ''' + edtNomeAte.Text + 'zzzz''');
-      FDQuery2.SQL.Add(StrLiga + 'nome_fantasia <= ''' + edtNomeAte.Text + 'zzzz''');
+      Add(StrLiga + 'nome <= ''' + edtNomeAte.Text + 'zzzz''');
+      FDQuery2.SQL.Add(StrLiga + 'nome <= ''' + edtNomeAte.Text + 'zzzz''');
       StrLiga:= ' and ';
     end;
 

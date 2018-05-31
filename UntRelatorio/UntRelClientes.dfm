@@ -4,7 +4,7 @@ object FrmRelClientes: TFrmRelClientes
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'FrmRelClientes'
-  ClientHeight = 420
+  ClientHeight = 425
   ClientWidth = 434
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -178,6 +178,7 @@ object FrmRelClientes: TFrmRelClientes
     Top = 208
     Width = 90
     Height = 21
+    Style = csDropDownList
     TabOrder = 6
     Items.Strings = (
       'AC'
@@ -248,14 +249,14 @@ object FrmRelClientes: TFrmRelClientes
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 401
+    Top = 406
     Width = 434
     Height = 19
     Panels = <
       item
         Width = 50
       end>
-    ExplicitTop = 497
+    ExplicitTop = 401
   end
   object btn_imprimir: TBitBtn
     Left = 335
@@ -470,7 +471,7 @@ object FrmRelClientes: TFrmRelClientes
     Top = 368
   end
   object frxReport1: TfrxReport
-    Version = '5.4.6'
+    Version = '5.3.14'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]

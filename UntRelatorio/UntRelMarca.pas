@@ -8,7 +8,7 @@ uses
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, frxClass, frxDBSet,
   Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.StdCtrls, Vcl.Buttons,
-  Vcl.ExtCtrls, Vcl.Mask;
+  Vcl.ExtCtrls, Vcl.Mask, Vcl.ComCtrls;
 
 type
   TFrmRelMarca = class(TForm)
@@ -27,6 +27,7 @@ type
     btn_limpar: TBitBtn;
     btn_cancelar: TBitBtn;
     btn_imprimir: TBitBtn;
+    StatusBar1: TStatusBar;
     procedure btn_imprimirClick(Sender: TObject);
     procedure btn_limparClick(Sender: TObject);
     procedure btn_cancelarClick(Sender: TObject);
