@@ -3,22 +3,66 @@ inherited FrmCliente: TFrmCliente
   ClientHeight = 308
   OnActivate = FormActivate
   OnClose = FormClose
-  ExplicitHeight = 343
+  ExplicitHeight = 337
   PixelsPerInch = 96
   TextHeight = 13
   inherited ToolBar1: TToolBar
+    inherited btn_ordenar: TToolButton
+      Left = 74
+    end
+    inherited Separador1: TToolButton
+      Left = 148
+    end
+    inherited btn_primeiro: TToolButton
+      Left = 156
+    end
+    inherited btn_anterior: TToolButton
+      Left = 215
+    end
+    inherited btn_proximo: TToolButton
+      Left = 274
+    end
+    inherited btn_ultimo: TToolButton
+      Left = 333
+    end
+    inherited Separador2: TToolButton
+      Left = 392
+    end
+    inherited btn_inserir: TToolButton
+      Left = 400
+    end
+    inherited btn_editar: TToolButton
+      Left = 459
+    end
+    inherited btn_excluir: TToolButton
+      Left = 518
+    end
+    inherited Separador3: TToolButton
+      Left = 577
+    end
+    inherited btn_salvar: TToolButton
+      Left = 585
+    end
+    inherited btn_cancelar: TToolButton
+      Left = 644
+    end
+    inherited Separador4: TToolButton
+      Left = 703
+    end
     inherited btn_imprimir: TToolButton
+      Left = 711
       OnClick = btn_imprimirClick
+    end
+    inherited Separador5: TToolButton
+      Left = 770
+    end
+    inherited btn_sair: TToolButton
+      Left = 778
     end
   end
   inherited StatusBar1: TStatusBar
     Top = 289
     ExplicitTop = 289
-  end
-  inherited PanelEntrada: TPanel
-    inherited btnOK: TSpeedButton
-      OnClick = btnOKClick
-    end
   end
   inherited PnlFicha: TPanel
     Height = 202
@@ -318,7 +362,7 @@ inherited FrmCliente: TFrmCliente
     Left = 473
     Top = 264
     Bitmap = {
-      494C01010D001800500018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800540018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1517,7 +1561,7 @@ inherited FrmCliente: TFrmCliente
     Left = 529
     Top = 264
     Bitmap = {
-      494C01010D001800500018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800540018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2716,7 +2760,7 @@ inherited FrmCliente: TFrmCliente
     Left = 585
     Top = 264
     Bitmap = {
-      494C01010D001800500018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800540018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -4034,7 +4078,7 @@ inherited FrmCliente: TFrmCliente
     Left = 641
     Top = 263
     Bitmap = {
-      494C010104000800480010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101040008004C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

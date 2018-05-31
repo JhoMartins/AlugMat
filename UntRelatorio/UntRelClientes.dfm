@@ -4,7 +4,7 @@ object FrmRelClientes: TFrmRelClientes
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'FrmRelClientes'
-  ClientHeight = 516
+  ClientHeight = 420
   ClientWidth = 434
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -248,13 +248,14 @@ object FrmRelClientes: TFrmRelClientes
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 497
+    Top = 401
     Width = 434
     Height = 19
     Panels = <
       item
         Width = 50
       end>
+    ExplicitTop = 497
   end
   object btn_imprimir: TBitBtn
     Left = 335
