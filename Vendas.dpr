@@ -22,7 +22,6 @@ uses
   UntRelCategorias in 'UntRelatorio\UntRelCategorias.pas' {FrmRelCategorias},
   UntRelFornecedores in 'UntRelatorio\UntRelFornecedores.pas' {FrmRelFornecedores},
   UnitRelProdutos in 'UntRelatorio\UnitRelProdutos.pas' {FrmRelProdutos},
-  UntRelClientesk in 'UntRelatorio\UntRelClientesk.pas' {FrmRelClientesk},
   UntPadraoImportacao in 'UntPadrao\UntPadraoImportacao.pas' {FrmPadraoImportacao},
   UntIEProduto in 'UntImportacao\UntIEProduto.pas' {FrmIEProduto},
   UntIECliente in 'UntImportacao\UntIECliente.pas' {FrmIECliente},

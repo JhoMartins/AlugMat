@@ -382,6 +382,7 @@ object FrmRelClientes: TFrmRelClientes
       00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
     NumGlyphs = 2
     TabOrder = 12
+    OnClick = btn_cancelarClick
   end
   object btn_limpar: TBitBtn
     Left = 143

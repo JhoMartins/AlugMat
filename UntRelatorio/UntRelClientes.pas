@@ -37,6 +37,7 @@ type
     btn_limpar: TBitBtn;
     procedure btn_imprimirClick(Sender: TObject);
     procedure btn_limparClick(Sender: TObject);
+    procedure btn_cancelarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -49,6 +50,11 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFrmRelClientes.btn_cancelarClick(Sender: TObject);
+begin
+  Close;
+end;
 
 procedure TFrmRelClientes.btn_imprimirClick(Sender: TObject);
 var StrLiga: String;
