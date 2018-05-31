@@ -4,14 +4,15 @@ object DM: TDM
   Width = 222
   object FDConnection1: TFDConnection
     Params.Strings = (
-      'SERVER=DESKTOP-EFLRI4C\SQLEXPRESS'
+Relatorios/produto/marca
+      'SERVER=DEIVID-PC'
+ master
       'OSAuthent=Yes'
       'ApplicationName=Enterprise/Architect/Ultimate'
       'Workstation=DEIVID-PC'
       'DATABASE=ALUGMAT'
       'MARS=yes'
       'DriverID=MSSQL')
-    Connected = True
     LoginPrompt = False
     Transaction = FDTransaction1
     Left = 40
@@ -38,7 +39,9 @@ object DM: TDM
     Top = 120
   end
   object FDPhysWeb: TFDPhysMySQLDriverLink
-    VendorLib = 'C:\Users\Jhonatan\Documents\GitHub\AlugMat\banco\libmysql.dll'
+ Relatorios/produto/marca
+    VendorLib = 'C:\Users\xdeiv\Documents\GitHub\AlugMat\banco\libmysql.dll'
+    master
     Left = 96
     Top = 120
   end

@@ -28,7 +28,8 @@ uses
   UntRelReservasWeb in 'UntRelatorio\UntRelReservasWeb.pas' {FrmRelReservaWeb},
   UntRelAluguel in 'UntRelatorio\UntRelAluguel.pas' {FrmRelAluguel},
   UntRelFinanceiro in 'UntRelatorio\UntRelFinanceiro.pas' {FrmRelFinanceiro},
-  UntRelClientes in 'UntRelatorio\UntRelClientes.pas' {FrmRelClientes};
+  UntRelClientes in 'UntRelatorio\UntRelClientes.pas' {FrmRelClientes},
+  UntRelMarca in 'UntRelatorio\UntRelMarca.pas' {FrmRelMarca};
 
 {$R *.res}
 
@@ -50,5 +51,6 @@ begin
   Application.CreateForm(TFrmProduto, FrmProduto);
   Application.CreateForm(TFrmUsuario, FrmUsuario);
   Application.CreateForm(TFrmRelClientes, FrmRelClientes);
+  Application.CreateForm(TFrmRelMarca, FrmRelMarca);
   Application.Run;
 end.
