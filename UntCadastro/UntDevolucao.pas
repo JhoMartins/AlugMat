@@ -120,11 +120,11 @@ implementation
 uses UntDM, UntAlugueis;
 
 procedure TFrmDevolucao.btn_devolverClick(Sender: TObject);
+var total_prod, i: integer;
 begin
+  total_prod := FDProduto.RecordCount;
 
-  FDProduto.First;
-
-  while not FDProduto.Eof do
+  for i := 1 to total_prod do
   begin
     if (FDProduto.FieldByName('DEVOLVER').AsString = 'S') then
     begin
@@ -157,16 +157,13 @@ begin
       FDProduto.Post;
     end;
   end;
-  FDAluguel.Edit;
-  FDAluguel.FieldByName('SUBTOTAL').Value := 0;
-  FDAluguel.FieldByName('TOTAL_MULTA').Value := 0;
-  FDAluguel.FieldByName('TOTAL').Value := 0;
-  FDAluguel.Post;
 
   ShowMessage('Produtos devolvidos com sucesso!');
+  btn_pesquisar.Click;
 end;
 
 procedure TFrmDevolucao.btn_pesquisarClick(Sender: TObject);
+var achou: boolean;
 begin
   FDAluguel.Close;
   FDAluguel.Open();
@@ -194,7 +191,7 @@ begin
   begin
     FDProduto.Filter := 'CD_CLIENTE = ' + edCodCliente.Text;
     FDProduto.Filtered := True;
-    FDItensAluguel.Filter := 'QTDE_DIAS_ATRASO IS NULL AND DEVOLVIDO = ' + #39 + 'N' + #39;
+    FDItensAluguel.Filter := 'DEVOLVIDO = ' + #39 + 'N' + #39;
     FDItensAluguel.Filtered := True;
     StatusBar1.Panels[2].Text := 'Cliente: ' + FDCliente.FieldByName('NOME').AsString;
   end;
@@ -208,25 +205,78 @@ begin
 
   FDProduto.Open();
   btn_devolver.Enabled := False;
+
+  achou := false;
+  FDProduto.First;
+  while not FDProduto.eof do
+  begin
+    if (FDProdutoDEVOLVER.AsString = 'S') and (achou = false) then
+    begin
+      achou := true;
+      btn_sair.Enabled := false;
+    end;
+    if achou = false then FDProduto.Next
+    else break;
+  end;
+
+  if achou = false then   btn_sair.Enabled := true;
+
 end;
 
 procedure TFrmDevolucao.btn_sairClick(Sender: TObject);
+var total_produtos, x: integer;
 begin
-  if FDProduto.RecordCount > 0 then
+{
+  total_produtos := FDProduto.RecordCount;
+
+  if total_produtos > 0 then
   begin
-    FDProduto.First;
-    while not FDProduto.eof do
+    for x := 1 to total_produtos do
     begin
-      if FDProdutoDEVOLVER.AsString = 'S' then
+      FDProduto.First;
+      while not FDProduto.eof do
       begin
-        FDProduto.Edit;
-        FDProdutoDEVOLVER.AsString := 'N';
+        if FDProdutoDEVOLVER.AsString = 'S' then
+        begin
+          FDProduto.Edit;
+          FDProduto.FieldByName('DEVOLVER').Value := NULL;
+          FDProduto.Post;
+
+          FDAluguel.First;
+          while not FDAluguel.Eof do
+          begin
+
+            FDItensAluguel.First;
+            while not FDItensAluguel.eof do
+            begin
+              //ShowMessage('Produto: '+FDProdutoID.AsString);
+              //ShowMessage('Item: '+FDItensAluguelCD_PRODUTO.AsString);
+              //ShowMessage('Aluguel: '+FDItensAluguelCD_ALUGUEL.AsString);
+
+              if (FDItensAluguel.FieldByName('CD_PRODUTO').Value = FDProduto.FieldByName('ID').Value) then
+              begin
+                FDItensAluguel.Edit;
+                FDItensAluguel.FieldByName('DEVOLVIDO').Value := 'N';
+                FDItensAluguel.FieldByName('QTDE_DIAS_ATRASO').Value := NULL;
+                FDItensAluguel.FieldByName('VALOR_MULTA').Value := NULL;
+                FDItensAluguel.Post;
+              end;
+              FDItensAluguel.Next;
+            end;
+
+            FDAluguel.Next;
+          end;
+        end;
+
+        FDProduto.Next;
       end;
-      FDProduto.Next;
+
+      Close;
     end;
-    Close;
   end
   else Close;
+}
+  Close;
 end;
 
 procedure TFrmDevolucao.cbClienteClick(Sender: TObject);
@@ -274,23 +324,25 @@ begin
 end;
 
 procedure TFrmDevolucao.edDescontoExit(Sender: TObject);
-var Bmk: TBookmark;
-    subtotal, total: Real;
+var subtotal, total: Real;
+    total_prod, i: integer;
 begin
-  FDProduto.First;
   subtotal:= 0;
+  FDProduto.First;
 
-  while not FDProduto.Eof do
+  while not FDProduto.eof do
   begin
-    if FDProdutoDEVOLVER.AsString = 'S' then
+    FDItensAluguel.Filter := 'CD_PRODUTO = ' + FDProdutoID.AsString + ' AND DEVOLVIDO = ''' + 'N' + '''';
+    FDItensAluguel.Filtered := True;
+    FDItensAluguel.First;
+    while not FDItensAluguel.eof do
     begin
-      FDItensAluguel.Filter := 'CD_PRODUTO = ' + FDProdutoID.AsString;
-      FDItensAluguel.Filtered := True;
-
       subtotal:= subtotal + FDItensAluguelVALOR_TOTAL.AsFloat + FDItensAluguelVALOR_MULTA.AsFloat;
+      FDItensAluguel.Next;
     end;
-     FDProduto.Next;
+    FDProduto.Next;
   end;
+
   FDAluguelTOTAL.AsFloat := subtotal - (subtotal * FDAluguelDESCONTO.AsFloat / 100);
 end;
 
@@ -305,6 +357,7 @@ begin
 end;
 
 procedure TFrmDevolucao.grAlugueisCellClick(Column: TColumn);
+var achou: boolean;
 begin
   btn_devolver.Enabled := false;
 
@@ -319,7 +372,6 @@ begin
 
     if FDProduto.FieldByName('DEVOLVER').AsString = 'S' then
     begin
-
       FDProduto.FieldByName('DEVOLVER').AsString := 'N';
 
       FDAluguel.FieldByName('TOTAL_MULTA').AsFloat := FDAluguel.FieldByName('TOTAL_MULTA').AsFloat - FDItensAluguel.FieldByName('VALOR_MULTA').AsFloat;
@@ -361,6 +413,21 @@ begin
     end;
     FDProduto.Next;
   end;
+
+  achou := false;
+  FDProduto.First;
+  while not FDProduto.eof do
+  begin
+    if (FDProdutoDEVOLVER.AsString = 'S') and (achou = false) then
+    begin
+      achou := true;
+      btn_sair.Enabled := false;
+    end;
+    if achou = false then FDProduto.Next
+    else break;
+  end;
+
+  if achou = false then   btn_sair.Enabled := true;
 end;
 
 procedure TFrmDevolucao.grAlugueisColEnter(Sender: TObject);

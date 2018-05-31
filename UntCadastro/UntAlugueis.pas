@@ -87,6 +87,7 @@ type
     N4: TMenuItem;
     Cliente1: TMenuItem;
     Atendente1: TMenuItem;
+    FDQryProdutoGrid: TFDQuery;
     procedure FDTabelaCD_USUARIOValidate(Sender: TField);
     procedure FDTabelaCD_CLIENTEValidate(Sender: TField);
     procedure FormActivate(Sender: TObject);
@@ -154,7 +155,7 @@ begin
 
       while not eof do
       begin
-        total := total + FDItensAluguelVALOR_TOTAL.AsFloat;
+        total := total + FDItensAluguelVALOR_TOTAL.AsFloat + FDItensAluguelVALOR_MULTA.AsFloat;
         Next;
       end;
 
@@ -660,6 +661,9 @@ begin
   FDQryProduto.Close;
   FDQryProduto.Open();
 
+  FDQryProdutoGrid.Close;
+  FDQryProdutoGrid.Open();
+
   edTotal.Text := formatfloat('#0.00',CalcularTotal());
 end;
 
@@ -671,10 +675,15 @@ begin
   if FDItensAluguelQTDE_DIAS_ATRASO.AsInteger > 0 then
   begin
     grProdutos.Canvas.Font.Color := clRed;
+    grProdutos.Fields[1].Alignment := taCenter;
+    grProdutos.Fields[2].Alignment := taCenter;
+    grProdutos.Fields[3].Alignment := taCenter;
+    grProdutos.Fields[4].Alignment := taCenter;
+    grProdutos.Fields[5].Alignment := taCenter;
+    grProdutos.Fields[6].Alignment := taRightJustify;
     grProdutos.Canvas.FillRect(Rect);
     grProdutos.DefaultDrawDataCell(Rect, Column.Field, State);
   end;
-
 end;
 
 procedure TFrmAluguel.sbtn_CadUsuarioClick(Sender: TObject);

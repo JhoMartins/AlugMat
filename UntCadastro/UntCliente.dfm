@@ -3,61 +3,18 @@ inherited FrmCliente: TFrmCliente
   ClientHeight = 308
   OnActivate = FormActivate
   OnClose = FormClose
-  ExplicitHeight = 337
+  ExplicitHeight = 343
   PixelsPerInch = 96
   TextHeight = 13
   inherited ToolBar1: TToolBar
+    inherited btn_pesquisa: TToolButton
+      ExplicitWidth = 78
+    end
     inherited btn_ordenar: TToolButton
-      Left = 74
-    end
-    inherited Separador1: TToolButton
-      Left = 148
-    end
-    inherited btn_primeiro: TToolButton
-      Left = 156
-    end
-    inherited btn_anterior: TToolButton
-      Left = 215
-    end
-    inherited btn_proximo: TToolButton
-      Left = 274
-    end
-    inherited btn_ultimo: TToolButton
-      Left = 333
-    end
-    inherited Separador2: TToolButton
-      Left = 392
-    end
-    inherited btn_inserir: TToolButton
-      Left = 400
-    end
-    inherited btn_editar: TToolButton
-      Left = 459
-    end
-    inherited btn_excluir: TToolButton
-      Left = 518
-    end
-    inherited Separador3: TToolButton
-      Left = 577
-    end
-    inherited btn_salvar: TToolButton
-      Left = 585
-    end
-    inherited btn_cancelar: TToolButton
-      Left = 644
-    end
-    inherited Separador4: TToolButton
-      Left = 703
+      ExplicitWidth = 78
     end
     inherited btn_imprimir: TToolButton
-      Left = 711
       OnClick = btn_imprimirClick
-    end
-    inherited Separador5: TToolButton
-      Left = 770
-    end
-    inherited btn_sair: TToolButton
-      Left = 778
     end
   end
   inherited StatusBar1: TStatusBar
@@ -175,7 +132,7 @@ inherited FrmCliente: TFrmCliente
       Caption = '* Data de Inclus'#227'o:'
     end
     object Label5: TLabel
-      Left = 638
+      Left = 645
       Top = 24
       Width = 91
       Height = 13
@@ -342,16 +299,16 @@ inherited FrmCliente: TFrmCliente
     object edDataInc: TDBEdit
       Left = 453
       Top = 21
-      Width = 75
+      Width = 68
       Height = 21
       DataField = 'DATA_INC'
       DataSource = DataSource1
       TabOrder = 14
     end
     object edDataAlt: TDBEdit
-      Left = 735
+      Left = 742
       Top = 21
-      Width = 75
+      Width = 68
       Height = 21
       DataField = 'DATA_ALT'
       DataSource = DataSource1
@@ -362,7 +319,7 @@ inherited FrmCliente: TFrmCliente
     Left = 473
     Top = 264
     Bitmap = {
-      494C01010D001800540018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D0018005C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1561,7 +1518,7 @@ inherited FrmCliente: TFrmCliente
     Left = 529
     Top = 264
     Bitmap = {
-      494C01010D001800540018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D0018005C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -2760,7 +2717,7 @@ inherited FrmCliente: TFrmCliente
     Left = 585
     Top = 264
     Bitmap = {
-      494C01010D001800540018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D0018005C0018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -4078,7 +4035,7 @@ inherited FrmCliente: TFrmCliente
     Left = 641
     Top = 263
     Bitmap = {
-      494C0101040008004C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000800540010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

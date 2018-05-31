@@ -46,7 +46,7 @@ begin
   end
   else
   begin
-    if nomeJanela = 'Cliente' then
+    if (nomeJanela = 'Cliente') and (tarefa = 'Pesquisa por CPF/CNPJ') then
     begin
 
       if (Edit1.Text <> '') and (length(Edit1.Text) <> 11) and (length(Edit1.Text) <> 14) then

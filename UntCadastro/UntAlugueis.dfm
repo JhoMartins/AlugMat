@@ -1,8 +1,8 @@
 inherited FrmAluguel: TFrmAluguel
   Caption = 'Manuten'#231#227'o na Movimenta'#231#227'o de Alugu'#233'is'
-  ClientHeight = 667
+  ClientHeight = 666
   OnActivate = FormActivate
-  ExplicitHeight = 702
+  ExplicitHeight = 701
   PixelsPerInch = 96
   TextHeight = 13
   inherited ToolBar1: TToolBar
@@ -17,12 +17,12 @@ inherited FrmAluguel: TFrmAluguel
     end
   end
   inherited StatusBar1: TStatusBar
-    Top = 648
-    ExplicitTop = 648
+    Top = 647
+    ExplicitTop = 647
   end
   inherited PnlFicha: TPanel
-    Height = 561
-    ExplicitHeight = 561
+    Height = 560
+    ExplicitHeight = 560
     object Label2: TLabel
       Left = 53
       Top = 53
@@ -443,7 +443,6 @@ inherited FrmAluguel: TFrmAluguel
             Visible = True
           end
           item
-            Alignment = taCenter
             Expanded = False
             FieldName = 'VALOR_TOTAL'
             Title.Alignment = taCenter
@@ -604,7 +603,7 @@ inherited FrmAluguel: TFrmAluguel
     object edDataInc: TDBEdit
       Left = 114
       Top = 13
-      Width = 75
+      Width = 68
       Height = 21
       DataField = 'DATA_INC'
       DataSource = DataSource1
@@ -614,7 +613,7 @@ inherited FrmAluguel: TFrmAluguel
     object edDataAlt: TDBEdit
       Left = 456
       Top = 13
-      Width = 75
+      Width = 68
       Height = 21
       DataField = 'DATA_ALT'
       DataSource = DataSource1
@@ -639,7 +638,7 @@ inherited FrmAluguel: TFrmAluguel
     Left = 609
     Top = 702
     Bitmap = {
-      494C01010D001800740018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800800018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000009A66
@@ -1838,7 +1837,7 @@ inherited FrmAluguel: TFrmAluguel
     Left = 665
     Top = 702
     Bitmap = {
-      494C01010D001800740018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800800018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000008080
@@ -3037,7 +3036,7 @@ inherited FrmAluguel: TFrmAluguel
     Left = 721
     Top = 702
     Bitmap = {
-      494C01010D001800740018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D001800800018001800FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000006000000001002000000000000090
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000824B
@@ -4296,7 +4295,7 @@ inherited FrmAluguel: TFrmAluguel
     Left = 777
     Top = 701
     Bitmap = {
-      494C0101040008006C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010104000800780010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4643,7 +4642,7 @@ inherited FrmAluguel: TFrmAluguel
     object FDItensAluguelDescProduto: TStringField
       FieldKind = fkLookup
       FieldName = 'DescProduto'
-      LookupDataSet = FDQryProduto
+      LookupDataSet = FDQryProdutoGrid
       LookupKeyFields = 'ID'
       LookupResultField = 'DESCRICAO'
       KeyFields = 'CD_PRODUTO'
@@ -4699,7 +4698,7 @@ inherited FrmAluguel: TFrmAluguel
     object FDItensAluguelCodInterno: TStringField
       FieldKind = fkLookup
       FieldName = 'CodInterno'
-      LookupDataSet = FDQryProduto
+      LookupDataSet = FDQryProdutoGrid
       LookupKeyFields = 'ID'
       LookupResultField = 'CD_INTERNO'
       KeyFields = 'CD_PRODUTO'
@@ -4741,5 +4740,16 @@ inherited FrmAluguel: TFrmAluguel
     Transaction = DM.FDTransaction1
     Left = 192
     Top = 700
+  end
+  object FDQryProdutoGrid: TFDQuery
+    Connection = DM.FDConnection1
+    SQL.Strings = (
+      
+        'SELECT P.ID, P.DESCRICAO, P.CD_INTERNO, P.VALOR_DIARIA, P.DISPON' +
+        'IVEL'
+      'FROM PRODUTO P'
+      'ORDER BY P.DESCRICAO')
+    Left = 200
+    Top = 752
   end
 end
