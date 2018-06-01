@@ -59,6 +59,7 @@ type
     procedure Departamento2Click(Sender: TObject);
     procedure Login2Click(Sender: TObject);
     procedure btn_sairClick(Sender: TObject);
+    procedure btn_imprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -72,7 +73,18 @@ implementation
 
 {$R *.dfm}
 
-uses UntMenuPrincipal, UntDM, UntPesqString, UntPerfil, UntAlugueis;
+uses UntMenuPrincipal, UntDM, UntPesqString, UntPerfil, UntAlugueis, UntRelUsuarios;
+
+procedure TFrmUsuario.btn_imprimirClick(Sender: TObject);
+begin
+  inherited;
+  Application.CreateForm(TFrmRelUsuarios, FrmRelUsuarios);
+  FrmRelUsuarios.edtIDDe.Text := FDTabelaID.AsString;
+  FrmRelUsuarios.edtIDAte.Text := FDTabelaID.AsString;
+  FrmRelUsuarios.edtNomeDe.Text := FDTabelaUSU_NOME.AsString;
+  FrmRelUsuarios.ShowModal;
+  FrmRelUsuarios.Free;
+end;
 
 procedure TFrmUsuario.btn_sairClick(Sender: TObject);
 begin

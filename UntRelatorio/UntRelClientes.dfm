@@ -256,7 +256,6 @@ object FrmRelClientes: TFrmRelClientes
       item
         Width = 50
       end>
-    ExplicitTop = 401
   end
   object btn_imprimir: TBitBtn
     Left = 335
@@ -471,7 +470,7 @@ object FrmRelClientes: TFrmRelClientes
     Top = 368
   end
   object frxReport1: TfrxReport
-    Version = '5.3.14'
+    Version = '5.4.6'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
@@ -9457,7 +9456,6 @@ object FrmRelClientes: TFrmRelClientes
     end
   end
   object FDQuery2: TFDQuery
-    Active = True
     Connection = DM.FDConWeb
     SQL.Strings = (
       'SELECT * FROM cliente')
