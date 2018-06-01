@@ -213,6 +213,10 @@
             <Form>FrmRelMarca</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="UntRelatorio\UntRelUsuarios.pas">
+            <Form>FrmRelUsuarios</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <None Include="Vendas.dpr"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>

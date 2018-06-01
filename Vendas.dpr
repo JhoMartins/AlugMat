@@ -29,7 +29,8 @@ uses
   UntRelAluguel in 'UntRelatorio\UntRelAluguel.pas' {FrmRelAluguel},
   UntRelFinanceiro in 'UntRelatorio\UntRelFinanceiro.pas' {FrmRelFinanceiro},
   UntRelClientes in 'UntRelatorio\UntRelClientes.pas' {FrmRelClientes},
-  UntRelMarca in 'UntRelatorio\UntRelMarca.pas' {FrmRelMarca};
+  UntRelMarca in 'UntRelatorio\UntRelMarca.pas' {FrmRelMarca},
+  UntRelUsuarios in 'UntRelatorio\UntRelUsuarios.pas' {FrmRelUsuarios};
 
 {$R *.res}
 
@@ -52,5 +53,6 @@ begin
   Application.CreateForm(TFrmUsuario, FrmUsuario);
   Application.CreateForm(TFrmRelClientes, FrmRelClientes);
   Application.CreateForm(TFrmRelMarca, FrmRelMarca);
+  Application.CreateForm(TFrmRelUsuarios, FrmRelUsuarios);
   Application.Run;
 end.
