@@ -1,11 +1,13 @@
 inherited FrmRelUsuarios: TFrmRelUsuarios
   Caption = 'Impress'#227'o do Relat'#243'rio de Usu'#225'rios'
-  ClientWidth = 514
-  ExplicitWidth = 520
+  ClientHeight = 319
+  ClientWidth = 433
+  ExplicitWidth = 439
+  ExplicitHeight = 348
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
-    Width = 514
+    Width = 433
     inherited Label1: TLabel
       Width = 255
       Caption = 'Relat'#243'rio de Usu'#225'rios'
@@ -17,21 +19,109 @@ inherited FrmRelUsuarios: TFrmRelUsuarios
       ExplicitWidth = 255
     end
   end
+  inherited btn_cancelar: TBitBtn
+    Left = 239
+    Top = 255
+    ExplicitLeft = 239
+    ExplicitTop = 255
+  end
   inherited btn_imprimir: TBitBtn
-    Left = 408
-    ExplicitLeft = 408
+    Left = 335
+    Top = 255
+    OnClick = btn_imprimirClick
+    ExplicitLeft = 335
+    ExplicitTop = 255
   end
   inherited StatusBar1: TStatusBar
-    Width = 514
+    Top = 300
+    Width = 433
+  end
+  inherited btn_limpar: TBitBtn
+    Left = 143
+    Top = 255
+    OnClick = btn_limparClick
+    ExplicitLeft = 143
+    ExplicitTop = 255
+  end
+  object edtIDDe: TLabeledEdit [5]
+    Left = 8
+    Top = 64
+    Width = 65
+    Height = 21
+    EditLabel.Width = 30
+    EditLabel.Height = 13
+    EditLabel.Caption = 'ID de:'
+    TabOrder = 5
+  end
+  object edtIDAte: TLabeledEdit [6]
+    Left = 104
+    Top = 64
+    Width = 65
+    Height = 21
+    EditLabel.Width = 34
+    EditLabel.Height = 13
+    EditLabel.Caption = 'ID at'#233':'
+    TabOrder = 6
+  end
+  object edtNomeDe: TLabeledEdit [7]
+    Left = 8
+    Top = 112
+    Width = 417
+    Height = 21
+    EditLabel.Width = 46
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Nome de:'
+    TabOrder = 7
+  end
+  object edtNomeAte: TLabeledEdit [8]
+    Left = 8
+    Top = 160
+    Width = 417
+    Height = 21
+    EditLabel.Width = 50
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Nome at'#233':'
+    TabOrder = 8
+  end
+  object RadioGroup3: TRadioGroup [9]
+    Left = 224
+    Top = 187
+    Width = 201
+    Height = 54
+    Caption = 'Ordena'#231#227'o'
+    Columns = 2
+    Items.Strings = (
+      'ID'
+      'Nome')
+    TabOrder = 9
+  end
+  object RadioGroup2: TRadioGroup [10]
+    Left = 8
+    Top = 187
+    Width = 201
+    Height = 54
+    Caption = 'Status'
+    Columns = 2
+    Items.Strings = (
+      'Habilitado'
+      'Desabilitado')
+    TabOrder = 10
   end
   inherited FDQuery1: TFDQuery
-    Active = True
     SQL.Strings = (
-      'SELECT u.*, p.per_descricao FROM usuario u '
+      'SELECT u.*, p.per_descricao as PER_DESCRICAO FROM usuario u '
       'INNER JOIN perfil p '
       'ON u.usu_id_perfil = p.id')
+    Left = 32
+    Top = 256
+  end
+  inherited frxDBDataset1: TfrxDBDataset
+    Left = 72
+    Top = 256
   end
   inherited frxReport1: TfrxReport
+    Left = 112
+    Top = 256
     Datasets = <
       item
         DataSet = frxDBDataset1
@@ -239,15 +329,15 @@ inherited FrmRelUsuarios: TFrmRelUsuarios
           Memo.UTF8W = (
             '[frxDBDataset1."USU_LOGIN"]')
         end
-        object frxDBDataset1per_descricao: TfrxMemoView
+        object frxDBDataset1PER_DESCRICAO: TfrxMemoView
           Left = 468.661720000000000000
           Width = 102.047310000000000000
           Height = 18.897650000000000000
-          DataField = 'per_descricao'
+          DataField = 'PER_DESCRICAO'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Memo.UTF8W = (
-            '[frxDBDataset1."per_descricao"]')
+            '[frxDBDataset1."PER_DESCRICAO"]')
         end
       end
       object ColumnHeader1: TfrxColumnHeader
