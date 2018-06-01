@@ -81,7 +81,6 @@ begin
   Application.CreateForm(TFrmRelUsuarios, FrmRelUsuarios);
   FrmRelUsuarios.edtIDDe.Text := FDTabelaID.AsString;
   FrmRelUsuarios.edtIDAte.Text := FDTabelaID.AsString;
-  FrmRelUsuarios.edtNomeDe.Text := FDTabelaUSU_NOME.AsString;
   FrmRelUsuarios.ShowModal;
   FrmRelUsuarios.Free;
 end;

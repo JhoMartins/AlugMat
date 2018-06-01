@@ -3,11 +3,12 @@ inherited FrmRelUsuarios: TFrmRelUsuarios
   ClientHeight = 319
   ClientWidth = 433
   ExplicitWidth = 439
-  ExplicitHeight = 348
+  ExplicitHeight = 354
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
     Width = 433
+    ExplicitWidth = 433
     inherited Label1: TLabel
       Width = 255
       Caption = 'Relat'#243'rio de Usu'#225'rios'
@@ -35,45 +36,10 @@ inherited FrmRelUsuarios: TFrmRelUsuarios
   inherited StatusBar1: TStatusBar
     Top = 300
     Width = 433
+    ExplicitTop = 300
+    ExplicitWidth = 433
   end
-  inherited btn_limpar: TBitBtn
-    Left = 143
-    Top = 255
-    OnClick = btn_limparClick
-    ExplicitLeft = 143
-    ExplicitTop = 255
-  end
-  object edtIDDe: TLabeledEdit [5]
-    Left = 8
-    Top = 64
-    Width = 65
-    Height = 21
-    EditLabel.Width = 30
-    EditLabel.Height = 13
-    EditLabel.Caption = 'ID de:'
-    TabOrder = 5
-  end
-  object edtIDAte: TLabeledEdit [6]
-    Left = 104
-    Top = 64
-    Width = 65
-    Height = 21
-    EditLabel.Width = 34
-    EditLabel.Height = 13
-    EditLabel.Caption = 'ID at'#233':'
-    TabOrder = 6
-  end
-  object edtNomeDe: TLabeledEdit [7]
-    Left = 8
-    Top = 112
-    Width = 417
-    Height = 21
-    EditLabel.Width = 46
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Nome de:'
-    TabOrder = 7
-  end
-  object edtNomeAte: TLabeledEdit [8]
+  object edtNomeAte: TLabeledEdit [4]
     Left = 8
     Top = 160
     Width = 417
@@ -83,7 +49,7 @@ inherited FrmRelUsuarios: TFrmRelUsuarios
     EditLabel.Caption = 'Nome at'#233':'
     TabOrder = 8
   end
-  object RadioGroup3: TRadioGroup [9]
+  object RadioGroup3: TRadioGroup [5]
     Left = 224
     Top = 187
     Width = 201
@@ -95,7 +61,7 @@ inherited FrmRelUsuarios: TFrmRelUsuarios
       'Nome')
     TabOrder = 9
   end
-  object RadioGroup2: TRadioGroup [10]
+  object RadioGroup2: TRadioGroup [6]
     Left = 8
     Top = 187
     Width = 201
@@ -107,7 +73,45 @@ inherited FrmRelUsuarios: TFrmRelUsuarios
       'Desabilitado')
     TabOrder = 10
   end
+  object edtNomeDe: TLabeledEdit [7]
+    Left = 8
+    Top = 112
+    Width = 417
+    Height = 21
+    EditLabel.Width = 46
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Nome de:'
+    TabOrder = 7
+  end
+  object edtIDAte: TLabeledEdit [8]
+    Left = 104
+    Top = 64
+    Width = 65
+    Height = 21
+    EditLabel.Width = 34
+    EditLabel.Height = 13
+    EditLabel.Caption = 'ID at'#233':'
+    TabOrder = 6
+  end
+  object edtIDDe: TLabeledEdit [9]
+    Left = 8
+    Top = 64
+    Width = 65
+    Height = 21
+    EditLabel.Width = 30
+    EditLabel.Height = 13
+    EditLabel.Caption = 'ID de:'
+    TabOrder = 5
+  end
+  inherited btn_limpar: TBitBtn
+    Left = 143
+    Top = 255
+    OnClick = btn_limparClick
+    ExplicitLeft = 143
+    ExplicitTop = 255
+  end
   inherited FDQuery1: TFDQuery
+    Active = True
     SQL.Strings = (
       'SELECT u.*, p.per_descricao as PER_DESCRICAO FROM usuario u '
       'INNER JOIN perfil p '
@@ -131,9 +135,393 @@ inherited FrmRelUsuarios: TFrmRelUsuarios
     Style = <>
     inherited Page1: TfrxReportPage
       inherited PageFooter1: TfrxPageFooter
-        Top = 355.275820000000000000
+        Top = 351.496290000000000000
         inherited Memo6: TfrxMemoView
           Formats = <
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
             item
             end
             item
@@ -274,12 +662,25 @@ inherited FrmRelUsuarios: TFrmRelUsuarios
       end
       object MasterData1: TfrxMasterData
         FillType = ftBrush
-        Height = 22.677180000000000000
+        Height = 18.897650000000000000
         Top = 272.126160000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
         RowCount = 0
+        object Memo13: TfrxMemoView
+          Align = baClient
+          Width = 718.110700000000000000
+          Height = 18.897650000000000000
+          Highlight.Font.Charset = DEFAULT_CHARSET
+          Highlight.Font.Color = clRed
+          Highlight.Font.Height = -13
+          Highlight.Font.Name = 'Arial'
+          Highlight.Font.Style = []
+          Highlight.Condition = '<line> mod 2 = 0'
+          Highlight.FillType = ftBrush
+          Highlight.Fill.BackColor = clBtnFace
+        end
         object frxDBDataset1ID: TfrxMemoView
           Width = 37.795300000000000000
           Height = 18.897650000000000000
@@ -421,6 +822,19 @@ inherited FrmRelUsuarios: TFrmRelUsuarios
           Memo.UTF8W = (
             'Status')
           ParentFont = False
+        end
+        object Line1: TfrxLineView
+          Align = baWidth
+          Top = 18.897650000000000000
+          Width = 718.110700000000000000
+          Color = clBlack
+          Diagonal = True
+        end
+        object Line2: TfrxLineView
+          Align = baWidth
+          Width = 718.110700000000000000
+          Color = clBlack
+          Diagonal = True
         end
       end
     end
