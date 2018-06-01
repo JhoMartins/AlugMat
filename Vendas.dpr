@@ -27,10 +27,10 @@ uses
   UntIECliente in 'UntImportacao\UntIECliente.pas' {FrmIECliente},
   UntRelReservasWeb in 'UntRelatorio\UntRelReservasWeb.pas' {FrmRelReservaWeb},
   UntRelAluguel in 'UntRelatorio\UntRelAluguel.pas' {FrmRelAluguel},
-  UntRelFinanceiro in 'UntRelatorio\UntRelFinanceiro.pas' {FrmRelFinanceiro},
   UntRelClientes in 'UntRelatorio\UntRelClientes.pas' {FrmRelClientes},
   UntRelMarca in 'UntRelatorio\UntRelMarca.pas' {FrmRelMarca},
-  UntRelUsuarios in 'UntRelatorio\UntRelUsuarios.pas' {FrmRelUsuarios};
+  UntRelUsuarios in 'UntRelatorio\UntRelUsuarios.pas' {FrmRelUsuarios},
+  UntRelFinanceiro in 'UntRelatorio\UntRelFinanceiro.pas' {FrmRelFinanceiro};
 
 {$R *.res}
 
@@ -54,5 +54,6 @@ begin
   Application.CreateForm(TFrmRelClientes, FrmRelClientes);
   Application.CreateForm(TFrmRelMarca, FrmRelMarca);
   Application.CreateForm(TFrmRelUsuarios, FrmRelUsuarios);
+  Application.CreateForm(TFrmRelFinanceiro, FrmRelFinanceiro);
   Application.Run;
 end.

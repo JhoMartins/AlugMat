@@ -24,7 +24,6 @@ object FrmRelMarca: TFrmRelMarca
     Color = clGray
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 369
     object SpeedButton1: TSpeedButton
       Left = 38
       Top = 0
@@ -385,9 +384,6 @@ object FrmRelMarca: TFrmRelMarca
       item
         Width = 50
       end>
-    ExplicitLeft = 296
-    ExplicitTop = 312
-    ExplicitWidth = 0
   end
   object FDQuery1: TFDQuery
     Active = True
@@ -2772,9 +2768,8 @@ object FrmRelMarca: TFrmRelMarca
           ParentFont = False
         end
         object Memo5: TfrxMemoView
-          Left = 3.779530000000000000
           Top = 109.606370000000000000
-          Width = 718.110700000000000000
+          Width = 721.890230000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -2783,7 +2778,7 @@ object FrmRelMarca: TFrmRelMarca
           Font.Style = [fsBold]
           HAlign = haCenter
           Memo.UTF8W = (
-            'Relat'#243'rio de Categorias')
+            'Relat'#243'rio de Marcas')
           ParentFont = False
         end
       end

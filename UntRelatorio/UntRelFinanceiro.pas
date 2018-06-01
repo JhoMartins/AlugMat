@@ -4,29 +4,37 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UntPadraoRel, FireDAC.Stan.Intf,
-  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
-  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
-  frxClass, frxDBSet, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  Vcl.ComCtrls, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, frxClass, frxDBSet,
+  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.ComCtrls,
+  Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Buttons;
 
 type
-  TFrmRelFinanceiro = class(TFrmPadraoRel)
-    cbMesIni: TComboBox;
-    cbMesFinal: TComboBox;
+  TFrmRelFinanceiro = class(TForm)
+    Panel1: TPanel;
+    SpeedButton1: TSpeedButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    btn_cancelar: TBitBtn;
+    btn_imprimir: TBitBtn;
+    btn_limpar: TBitBtn;
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
+    Label6: TLabel;
+    cbMesIni: TComboBox;
+    cbMesFinal: TComboBox;
     cbAnoIni: TComboBox;
     cbAnoFinal: TComboBox;
-    Label6: TLabel;
     rgOrdenar: TRadioGroup;
-    procedure btn_imprimirClick(Sender: TObject);
-    procedure cbMesIniSelect(Sender: TObject);
-    procedure cbMesFinalSelect(Sender: TObject);
-    procedure cbAnoIniSelect(Sender: TObject);
-    procedure cbAnoFinalSelect(Sender: TObject);
+    StatusBar1: TStatusBar;
+    FDQuery1: TFDQuery;
+    frxDBDataset1: TfrxDBDataset;
+    frxReport1: TfrxReport;
+    procedure btn_cancelarClick(Sender: TObject);
     procedure btn_limparClick(Sender: TObject);
+    procedure btn_imprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,9 +48,13 @@ implementation
 
 {$R *.dfm}
 
+procedure TFrmRelFinanceiro.btn_cancelarClick(Sender: TObject);
+begin
+  Close;
+end;
+
 procedure TFrmRelFinanceiro.btn_imprimirClick(Sender: TObject);
 begin
-  inherited;
 
   FDQuery1.Close;
 
@@ -73,10 +85,10 @@ begin
       Add(' AND YEAR(IA.DT_LOCACAO) <= ' + cbAnoFinal.Text);
     end;
 
-    Add(' GROUP BY DT_LOCACAO ');
+    Add(' GROUP BY MONTH(DT_LOCACAO), YEAR(DT_LOCACAO) ');
 
     case rgOrdenar.ItemIndex of
-      0: Add('ORDER BY IA.DT_LOCACAO');
+      0: Add('ORDER BY MONTH(DT_LOCACAO), YEAR(DT_LOCACAO)');
       1: Add('ORDER BY VALOR_TOTAL ASC');
       2: Add('ORDER BY VALOR_TOTAL DESC');
     end;
@@ -88,8 +100,6 @@ end;
 
 procedure TFrmRelFinanceiro.btn_limparClick(Sender: TObject);
 begin
-  inherited;
-
   cbMesIni.ItemIndex := -1;
   cbMesFinal.ItemIndex := -1;
   cbAnoIni.ItemIndex := -1;
@@ -98,70 +108,6 @@ begin
   rgOrdenar.ItemIndex := 0;
 
   cbMesIni.SetFocus;
-end;
-
-procedure TFrmRelFinanceiro.cbAnoFinalSelect(Sender: TObject);
-begin
-  inherited;
-
-  if ((cbAnoIni.ItemIndex <> -1) and (cbAnoFinal.ItemIndex <> -1)) then
-  begin
-    if cbAnoIni.ItemIndex > cbAnoFinal.ItemIndex then
-    begin
-      Application.MessageBox('O Ano Inicial não pode ser menor que o Ano Final.','Atenção',MB_OK + MB_ICONERROR);
-      cbAnoFinal.ItemIndex := -1;
-      cbAnoFinal.SetFocus;
-      Abort;
-    end;
-  end;
-end;
-
-procedure TFrmRelFinanceiro.cbAnoIniSelect(Sender: TObject);
-begin
-  inherited;
-
-  if ((cbAnoIni.ItemIndex <> -1) and (cbAnoFinal.ItemIndex <> -1)) then
-  begin
-    if cbAnoIni.ItemIndex > cbAnoFinal.ItemIndex then
-    begin
-      Application.MessageBox('O Ano Inicial não pode ser menor que o Ano Final.','Atenção',MB_OK + MB_ICONERROR);
-      cbAnoIni.ItemIndex := -1;
-      cbAnoIni.SetFocus;
-      Abort;
-    end;
-  end;
-end;
-
-procedure TFrmRelFinanceiro.cbMesFinalSelect(Sender: TObject);
-begin
-  inherited;
-
-  if ((cbMesIni.ItemIndex <> -1) and (cbMesFinal.ItemIndex <> -1)) then
-  begin
-    if cbMesIni.ItemIndex > cbMesFinal.ItemIndex then
-    begin
-      Application.MessageBox('O Mês Inicial não pode ser menor que o Mês Final.','Atenção',MB_OK + MB_ICONERROR);
-      cbMesFinal.ItemIndex := -1;
-      cbMesFinal.SetFocus;
-      Abort;
-    end;
-  end;
-end;
-
-procedure TFrmRelFinanceiro.cbMesIniSelect(Sender: TObject);
-begin
-  inherited;
-
-  if ((cbMesIni.ItemIndex <> -1) and (cbMesFinal.ItemIndex <> -1)) then
-  begin
-    if cbMesIni.ItemIndex > cbMesFinal.ItemIndex then
-    begin
-      Application.MessageBox('O Mês Inicial não pode ser menor que o Mês Final.','Atenção',MB_OK + MB_ICONERROR);
-      cbMesIni.ItemIndex := -1;
-      cbMesIni.SetFocus;
-      Abort;
-    end;
-  end;
 end;
 
 end.
