@@ -21,7 +21,6 @@ type
     Action2: TAction;
     Action3: TAction;
     Action7: TAction;
-    Action8: TAction;
     Action9: TAction;
     Action10: TAction;
     ImageList1: TImageList;

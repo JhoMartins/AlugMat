@@ -2,8 +2,8 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
   Left = 0
   Top = 0
   Caption = 'AlugaMAT'
-  ClientHeight = 455
-  ClientWidth = 700
+  ClientHeight = 482
+  ClientWidth = 686
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,19 +17,21 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
-    Top = 28
-    Width = 700
-    Height = 408
+    Top = 32
+    Width = 686
+    Height = 431
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 2
-    ExplicitTop = 22
+    ExplicitWidth = 700
+    ExplicitHeight = 404
     object Image1: TImage
       Left = 0
       Top = 0
-      Width = 700
-      Height = 408
+      Width = 686
+      Height = 431
       Align = alClient
+      Center = True
       Picture.Data = {
         0954506E67496D61676589504E470D0A1A0A0000000D49484452000003200000
         03200806000000DB700668000000097048597300000B1300000B1301009A9C18
@@ -4890,12 +4892,14 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
         400000000038860001000000E018020400000080630810000000008E21400000
         000038E6FF036AD3FBF52EE023450000000049454E44AE426082}
       ExplicitTop = -6
+      ExplicitWidth = 700
+      ExplicitHeight = 408
     end
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 436
-    Width = 700
+    Top = 463
+    Width = 686
     Height = 19
     Panels = <
       item
@@ -4910,13 +4914,15 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
       item
         Width = 50
       end>
-    ExplicitWidth = 619
+    ExplicitTop = 436
+    ExplicitWidth = 700
   end
   object ActionMainMenuBar1: TActionMainMenuBar
     Left = 0
     Top = 0
-    Width = 700
-    Height = 28
+    Width = 686
+    Height = 32
+    UseSystemFont = False
     ActionManager = ActionManager1
     AnimationStyle = asFade
     Color = clMenuBar
@@ -4926,14 +4932,14 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     ColorMap.UnusedColor = clWhite
     EdgeBorders = [ebBottom]
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
+    Font.Color = clBlack
     Font.Height = -12
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentShowHint = False
     ShowHint = True
     Spacing = 0
-    ExplicitTop = -6
+    ExplicitWidth = 700
   end
   object QueryLogin: TFDQuery
     Connection = DM.FDConnection1
@@ -5005,6 +5011,11 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
                 Action = Action18
                 Caption = '&Fornecedor'
                 ImageIndex = 12
+              end
+              item
+                Action = Action10
+                Caption = '&Usu'#225'rio'
+                ImageIndex = 5
               end>
             Caption = '&Cadastro'
             ImageIndex = 6
@@ -5018,11 +5029,6 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
                 Action = Action9
                 Caption = '&Perfil'
                 ImageIndex = 0
-              end
-              item
-                Action = Action10
-                Caption = '&Usu'#225'rio'
-                ImageIndex = 5
               end>
             Caption = '&Ferramenta'
             ImageIndex = 7
@@ -5034,47 +5040,47 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
             Items = <
               item
                 Action = Action7
-                Caption = '&Relat'#243'rio Produtos'
+                Caption = '&Produtos'
                 ImageIndex = 11
               end
               item
                 Action = Action1
-                Caption = 'R&elat'#243'rio Aluguel'
+                Caption = '&Alugu'#233'is'
                 ImageIndex = 15
               end
               item
                 Action = Action14
-                Caption = 'Re&lat'#243'rio Categoria'
+                Caption = '&Categorias'
                 ImageIndex = 10
               end
               item
                 Action = Action19
-                Caption = 'Rel&at'#243'rio Clientes'
+                Caption = 'C&lientes'
                 ImageIndex = 17
               end
               item
                 Action = Action20
-                Caption = 'Rela&t'#243'rio Financeiro'
+                Caption = '&Financeiro por M'#234's'
                 ImageIndex = 19
               end
               item
                 Action = Action21
-                Caption = 'Relat'#243'r&io Fornecedor'
+                Caption = 'F&ornecedores'
                 ImageIndex = 12
               end
               item
                 Action = Action22
-                Caption = 'Relat'#243'ri&o Marca'
+                Caption = '&Marcas'
                 ImageIndex = 14
               end
               item
                 Action = Action23
-                Caption = 'Relat'#243'rio Re&servas Web'
+                Caption = '&Reservas'
                 ImageIndex = 18
               end
               item
                 Action = Action24
-                Caption = 'Relat'#243'rio &Usu'#225'rios'
+                Caption = '&Usu'#225'rios'
                 ImageIndex = 5
               end>
             Caption = '&Relat'#243'rio'
@@ -5092,10 +5098,10 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
               end
               item
                 Action = Action13
-                Caption = 'I&mporta'#231#227'o De Uu'#225'rio'
+                Caption = 'I&mporta'#231#227'o de Uu'#225'rio'
                 ImageIndex = 5
               end>
-            Caption = '&Importa/Exporta'
+            Caption = '&Importar/Exportar'
             ImageIndex = 9
           end
           item
@@ -5146,22 +5152,18 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     end
     object Action7: TAction
       Category = 'Relat'#243'rio'
-      Caption = 'Relat'#243'rio Produtos'
+      Caption = 'Produtos'
       OnExecute = Action7Execute
     end
-    object Action8: TAction
-      Category = 'Gr'#225'fico'
-      Caption = 'Action8'
-    end
     object Action9: TAction
-      Category = 'Ferramenta'
+      Category = 'Ferramentas'
       Caption = 'Perfil'
       ImageIndex = 0
       OnExecute = Action9Execute
       OnUpdate = Action9Update
     end
     object Action10: TAction
-      Category = 'Ferramenta'
+      Category = 'Cadastro'
       Caption = 'Usu'#225'rio'
       ImageIndex = 3
       OnExecute = Action10Execute
@@ -5174,42 +5176,42 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     end
     object Action1: TAction
       Category = 'Relat'#243'rio'
-      Caption = 'Relat'#243'rio Aluguel'
+      Caption = 'Alugu'#233'is'
       OnExecute = Action1Execute
     end
     object Action14: TAction
       Category = 'Relat'#243'rio'
-      Caption = 'Relat'#243'rio Categoria'
+      Caption = 'Categorias'
       OnExecute = Action14Execute
     end
     object Action19: TAction
       Category = 'Relat'#243'rio'
-      Caption = 'Relat'#243'rio Clientes'
+      Caption = 'Clientes'
       OnExecute = Action19Execute
     end
     object Action20: TAction
       Category = 'Relat'#243'rio'
-      Caption = 'Relat'#243'rio Financeiro'
+      Caption = 'Financeiro por M'#234's'
       OnExecute = Action20Execute
     end
     object Action21: TAction
       Category = 'Relat'#243'rio'
-      Caption = 'Relat'#243'rio Fornecedor'
+      Caption = 'Fornecedores'
       OnExecute = Action21Execute
     end
     object Action22: TAction
       Category = 'Relat'#243'rio'
-      Caption = 'Relat'#243'rio Marca'
+      Caption = 'Marcas'
       OnExecute = Action22Execute
     end
     object Action23: TAction
       Category = 'Relat'#243'rio'
-      Caption = 'Relat'#243'rio Reservas Web'
+      Caption = 'Reservas'
       OnExecute = Action23Execute
     end
     object Action24: TAction
       Category = 'Relat'#243'rio'
-      Caption = 'Relat'#243'rio Usu'#225'rios'
+      Caption = 'Usu'#225'rios'
       OnExecute = Action24Execute
     end
     object Action25: TAction
@@ -5218,13 +5220,13 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
       OnExecute = Action25Execute
     end
     object Action26: TAction
-      Category = 'Importa/Exporta'
+      Category = 'Importar/Exportar'
       Caption = 'Importa'#231#227'o de Produto'
       OnExecute = Action26Execute
     end
     object Action13: TAction
-      Category = 'Importa/Exporta'
-      Caption = 'Importa'#231#227'o De Uu'#225'rio'
+      Category = 'Importar/Exportar'
+      Caption = 'Importa'#231#227'o de Uu'#225'rio'
       OnExecute = Action13Execute
     end
     object Action5: TAction
@@ -5237,7 +5239,7 @@ object FrmMenuPrincipal: TFrmMenuPrincipal
     Left = 336
     Top = 360
     Bitmap = {
-      494C01011400B000E40010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01011400B000E80010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000006000000001002000000000000060
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
