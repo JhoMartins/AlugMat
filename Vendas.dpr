@@ -51,9 +51,5 @@ begin
   Application.CreateForm(TFrmCliente, FrmCliente);
   Application.CreateForm(TFrmProduto, FrmProduto);
   Application.CreateForm(TFrmUsuario, FrmUsuario);
-  Application.CreateForm(TFrmRelClientes, FrmRelClientes);
-  Application.CreateForm(TFrmRelMarca, FrmRelMarca);
-  Application.CreateForm(TFrmRelUsuarios, FrmRelUsuarios);
-  Application.CreateForm(TFrmRelFinanceiro, FrmRelFinanceiro);
   Application.Run;
 end.

@@ -44,6 +44,8 @@ type
     Action13: TAction;
     Action5: TAction;
     Image1: TImage;
+    Action4: TAction;
+    Action6: TAction;
     procedure btn_usuarioClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -86,6 +88,7 @@ type
     procedure Action26Execute(Sender: TObject);
     procedure Action25Execute(Sender: TObject);
     procedure Action5Execute(Sender: TObject);
+    procedure Action6Execute(Sender: TObject);
   private
     { Private declarations }
   public
@@ -263,7 +266,7 @@ end;
 
 procedure TFrmMenuPrincipal.Action4Execute(Sender: TObject);
 begin
-FrmAluguel.ShowModal;
+  Close;
 end;
 
 procedure TFrmMenuPrincipal.Action5Execute(Sender: TObject);
@@ -271,6 +274,16 @@ begin
  Application.CreateForm(TFrmDevolucao, FrmDevolucao);
   FrmDevolucao.ShowModal;
   FrmDevolucao.Free;
+end;
+
+procedure TFrmMenuPrincipal.Action6Execute(Sender: TObject);
+begin
+  Application.CreateForm(TFrmLogin, FrmLogin);
+
+  FrmLogin.ValorNome.Clear;
+  FrmLogin.ValorSenha.Clear;
+  FrmLogin.ShowModal;
+  FrmLogin.Free;
 end;
 
 procedure TFrmMenuPrincipal.Action7Execute(Sender: TObject);
